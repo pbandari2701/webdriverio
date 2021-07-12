@@ -45,7 +45,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  ' $(System.DefaultWorkingDirectory)/wdio.hds.autotest/testReports/'
+    searchFolder:  ' $(System.DefaultWorkingDirectory)/Reports/testReports/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
