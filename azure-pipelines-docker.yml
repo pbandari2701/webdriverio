@@ -38,7 +38,7 @@ steps:
       docker run $(autotest-image-name) 
       npx wdio run wdio.docker.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
       ls -altr
-  workingDirectory: $(System.DefaultWorkingDirectory)/testautomation_wdio
+  workingDirectory: $(System.DefaultWorkingDirectory)/wdio.hds.autotest
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
@@ -46,7 +46,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  ' $(System.DefaultWorkingDirectory)/testautomation_wdio/testReports/'
+    searchFolder:  ' $(System.DefaultWorkingDirectory)/wdio.hds.autotest/testReports/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
