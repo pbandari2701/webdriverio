@@ -1,0 +1,54 @@
+parameters:
+
+  - name: Env
+    displayName: Test Environment
+    type : string
+    default : qa
+    values :
+    - qa
+    - dev
+    - uat
+    - prod
+
+  - name: suiteName
+    displayName : Test Suite
+    default: sanity
+    values :
+    - sanity
+    - regression
+    - feature 1
+    - feature 2
+
+pool: autotest1
+
+steps:
+ 
+- script: |
+    npm install
+  workingDirectory: $(Agent.WorkFolder)/1/s/testautomation_wdio
+  displayName: 'npm install'
+  
+- script: |
+    npx wdio run .\wdio.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
+  workingDirectory: $(Agent.WorkFolder)/1/s/testautomation_wdio
+  displayName: 'Run Automation Tests'
+  
+- task: PublishTestResults@2
+  condition: always()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'TEST-*.xml'
+    searchFolder:  '$(Agent.WorkFolder)/1/s/testautomation_wdio/testReports/'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    publishRunAttachments: true
+    testRunTitle : 'Home Connect Tests'
+  displayName: 'Test Execution Results'
+    
+- task: AllureGenerate@1
+  condition: always()
+  inputs:
+    resultsDir: '$(Agent.WorkFolder)/1/s/testautomation_wdio/allure-results'
+    targetDir: '$(Agent.WorkFolder)/1/s/testautomation_wdio/allure-report'
+  displayName: 'Allure HTML Reports'
+    
