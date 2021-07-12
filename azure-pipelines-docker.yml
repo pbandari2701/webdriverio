@@ -20,7 +20,7 @@ parameters:
     values :
     - sanity
     - regression
-    - feature 1
+    - demo
     - feature 2
 
 pool:
