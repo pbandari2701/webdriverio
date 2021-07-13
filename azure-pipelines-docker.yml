@@ -40,13 +40,17 @@ resources:
 - repo: self
 
 variables:
+  TEST_BROWSER       :  ${{ parameters.browser }}
+  SUITE_NAME         :  ${{ parameters.suiteName }}
+  TEST_ENVIRONMENT   :  ${{ parameters.environment }}
   autotest-image-name: 'autotest-design-systems'
+
 
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run $(autotest-image-name) 
-      npx wdio run wdio.docker.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
+      npx wdio run wdio.docker.conf.js --cucumberOpts.tagExpression=@${SUITE_NAME}
       ls -altr
   displayName: 'build docker image and run tests'
 
