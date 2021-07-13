@@ -1,8 +1,10 @@
 var allure           = require('allure-commandline')
 var baseUrl          = 'https://qa.homedesignsystems.com';
 const commands       = require('./test/helpers/customcommands.js')
-console.log('browser is '+process.env.DB_HOST)
-let testBrowser      = 'firefox';
+console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
+console.log('SUITE_NAME is '+process.env.SUITE_NAME)
+console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
+let testBrowser      = 'chrome';
 var browserService = 'geckodriver';
 
 if(testBrowser === 'firefox'){
