@@ -2,9 +2,9 @@
   "name": "wdio.hds.autotest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "wdio.conf.js",
   "scripts": {
-    "test": "command to run your tests with --parallel=true"
+    "test": "npx wdio run .\\wdio.conf.js"
   },
   "author": "",
   "license": "ISC",

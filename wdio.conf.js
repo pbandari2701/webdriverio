@@ -1,7 +1,15 @@
+var allure           = require('allure-commandline')
+var baseUrl          = 'https://qa.homedesignsystems.com';
+const commands       = require('./test/helpers/customcommands.js')
+console.log('browser is '+process.env.DB_HOST)
+let testBrowser      = 'firefox';
+var browserService = 'geckodriver';
 
-var allure = require('allure-commandline')
-var baseUrl = 'https://qa.homedesignsystems.com';
-const commands = require('./test/helpers/customcommands.js')
+if(testBrowser === 'firefox'){
+    browserService = 'geckodriver'
+}else{
+    browserService = 'chromedriver'
+}
 exports.config = {
     runner: 'local',
     specs: [
@@ -13,7 +21,7 @@ exports.config = {
     maxInstances: 10,
     capabilities: [{
         maxInstances: 5,
-        browserName: 'chrome',
+        browserName: testBrowser,
         // 'goog:chromeOptions': {
         //     // to run chrome headless the following flags are required
         //     // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
@@ -28,7 +36,7 @@ exports.config = {
     //waitforTimeout: 300000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['chromedriver'],
+    services: [browserService],
     framework: 'cucumber',
     reporters: [
         ['junit', {

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Home Design System Validations" timestamp="2021-07-12T23:56:46" time="94.275" tests="1" failures="1" errors="1" skipped="0">
+  <testsuite name="Home Design System Validations" timestamp="2021-07-13T16:40:26" time="64.154" tests="1" failures="1" errors="1" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="Home Design System Validations"/>
       <property name="capabilities" value="chrome.91_0_4472_124.windows"/>
       <property name="featureFile" value=".\test\features\ui\homedesignsystem.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.91_0_4472_124.windows.Home Design System Validations" name="Validate settings for Group Locked Subscriber" time="94.205">
+    <testcase classname="CucumberJUnitReport-chrome.91_0_4472_124.windows.Home Design System Validations" name="Validate settings for Group Locked Subscriber" time="64.103">
       <failure/>
       <error message="AssertionError [ERR_ASSERTION]: WebElement Save Changes Button is not clickable"/>
       <system-out><![CDATA[
