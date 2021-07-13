@@ -27,9 +27,9 @@ parameters:
     displayName: Test Browser
     default : chrome
     values:
-      - chrome
-      - firefox
-      - safari
+    - chrome
+    - firefox
+    - safari
 
 pool:
   vmImage: 'ubuntu-latest'
