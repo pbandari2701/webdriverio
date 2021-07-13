@@ -4,7 +4,7 @@
 
 parameters:
 
-  - name: Env
+  - name: environment
     displayName: Test Environment
     type : string
     default : qa
@@ -16,6 +16,7 @@ parameters:
 
   - name: suiteName
     displayName : Test Suite
+    type: string
     default: sanity
     values :
     - sanity
@@ -25,6 +26,7 @@ parameters:
   
   - name: browser
     displayName: Test Browser
+    type: string
     default : chrome
     values:
     - chrome
