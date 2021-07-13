@@ -9,9 +9,9 @@ ENV DISPLAY=${XVFB_DISPLAY}
 RUN mkdir -p /usr/share/man/man1 && \
   apt-get update; apt-get -y install openjdk-8-jre-headless xvfb wget
 
-ENV CHROME_VERSION=91.0.4472.124
-RUN wget --no-verbose https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb && \
-  dpkg -i google-chrome-stable_${CHROME_VERSION}_amd64.deb; apt-get -fy install
+ENV CHROME_VERSION=91.0.4472.114-1
+RUN wget --no-verbose https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_91.0.4472.114-1_amd64.deb && \
+  dpkg -i google-chrome-stable_91.0.4472.114-1_amd64.deb; apt-get -fy install
 
 WORKDIR /app
 
