@@ -22,6 +22,14 @@ parameters:
     - regression
     - demo
     - feature 2
+  
+  - name: browser
+    displayName: Test Browser
+    default : chrome
+    values:
+      - chrome
+      - firefox
+      - safari
 
 pool:
   vmImage: 'ubuntu-latest'
