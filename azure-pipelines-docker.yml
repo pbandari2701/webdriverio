@@ -40,9 +40,9 @@ resources:
 - repo: self
 
 variables:
-  TEST_BROWSER       :  ${{ parameters.browser }}
-  SUITE_NAME         :  ${{ parameters.suiteName }}
-  TEST_ENVIRONMENT   :  ${{ parameters.environment }}
+  TEST_BROWSER       :  ${parameters.browser}
+  SUITE_NAME         :  ${parameters.suiteName}
+  TEST_ENVIRONMENT   :  ${parameters.environment}
   autotest-image-name: 'autotest-design-systems'
 
 
