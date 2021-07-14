@@ -50,6 +50,7 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run $(autotest-image-name) 
+      echo ${{ parameters.suiteName }}
       npx wdio run wdio.docker.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
       ls -altr
   displayName: 'build docker image and run tests'
