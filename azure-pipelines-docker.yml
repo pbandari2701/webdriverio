@@ -50,6 +50,7 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run $(autotest-image-name) npm test
+      ls -altr
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
