@@ -2,7 +2,6 @@
 FROM node:13.12.0-slim AS build
 RUN apt-get update || : && apt-get install python -y && apt-get install build-essential -y
 
-ENV IS_DOCKER=true
 ENV XVFB_DISPLAY=:99
 ENV XVFB_ARGS="-screen 0 1280x1024x16 -dpi 72 -ac +extension RANDR"
 ENV DISPLAY=${XVFB_DISPLAY}
