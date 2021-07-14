@@ -1,5 +1,5 @@
 Feature: Flooring Estimator API Tests
-
+   @api
    Scenario: Get List Of Envision Enabled Scenario's for Buyers
         Given I make a GET request to /v1/buyers/scenarios?token={token} 
         When  I receive a response
@@ -12,7 +12,7 @@ Feature: Flooring Estimator API Tests
           "Price": 1310 
           } 
         """
-
+   @api
    Scenario: Get Scenario Information for a Scenario ID
         Given I make a GET request to /v1/scenarios/{scenarioId}?token={token}
         When I receive a response

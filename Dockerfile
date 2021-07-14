@@ -37,6 +37,3 @@ COPY . /app
 FROM build AS test  
 
 RUN npm install
-
-CMD npx wdio
-
