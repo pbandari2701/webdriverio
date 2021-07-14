@@ -16,7 +16,7 @@ exports.config = {
         maxInstances: 1,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--no-sandbox', '--headless','--disable-dev-shm-usage'],
+            args: ['--headless']
           },
     }],
     sync :true,

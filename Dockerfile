@@ -24,9 +24,9 @@ RUN apt-get update && apt-get -y install google-chrome-stable
 # RUN wget --no-verbose https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_91.0.4472.114-1_amd64.deb && \
 #   dpkg -i google-chrome-stable_91.0.4472.114-1_amd64.deb; apt-get -fy install
 
-# COPY bootstrap.sh /
+COPY bootstrap.sh /
 
-# CMD '/bootstrap.sh'
+CMD '/bootstrap.sh'
 
 WORKDIR /app
 
