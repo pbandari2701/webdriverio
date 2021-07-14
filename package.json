@@ -4,7 +4,7 @@
   "description": "",
   "main": "wdio.conf.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+    "testondocker": "npx wdio run wdio.docker.conf.js"
   },
   "author": "",
   "license": "ISC",

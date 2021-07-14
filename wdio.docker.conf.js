@@ -1,37 +1,48 @@
-const allure = require('allure-commandline')
-const allureReporter = require('@wdio/allure-reporter').default;
-var baseUrl = 'https://qa-studiolink.isidc.com'
+var allure           = require('allure-commandline')
+var baseUrl          = 'https://qa.homedesignsystems.com';
+const commands       = require('./test/helpers/customcommands.js')
+console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
+console.log('SUITE_NAME is '+process.env.SUITE_NAME)
+console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
+let testBrowser      = 'chrome';
+var browserService = 'geckodriver';
 
+if(testBrowser === 'firefox'){
+    browserService = 'geckodriver'
+}else{
+    browserService = 'chromedriver'
+}
 exports.config = {
-
     runner: 'local',
     specs: [
-        './test/features/**/*.feature'
+        './test/features/**/**/*.feature'
     ],
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 1,
+    maxInstances: 10,
     capabilities: [{
-        maxInstances: 1,
-        browserName: 'chrome',
+        maxInstances: 5,
+        browserName: testBrowser,
         'goog:chromeOptions': {
-            args: ['--no-sandbox','--disable-dev-shm-usage','--headless']
-          },
-          ...chrome,
+            // to run chrome headless the following flags are required
+            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+            args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
+            },
+        acceptInsecureCerts: true
     }],
-    sync :true,
-    logLevel: 'info',
+    sync: true,
+    logLevel: 'debug',
     bail: 0,
     baseUrl: baseUrl,
-    waitforTimeout: 10000,
+    //waitforTimeout: 300000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['chromedriver'],
+    services: [browserService],
     framework: 'cucumber',
     reporters: [
         ['junit', {
-            outputDir: './Reports/testReports/',
+            outputDir: 'Reports/testReports',
             outputFileFormat: function(options) { // optional
                 return `TEST-${options.cid}.${options.capabilities.browserName}.xml`
             }
@@ -39,12 +50,12 @@ exports.config = {
         ['allure',{
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
+            disableWebdriverScreenshotsReporting: false,
         }]
     ],
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./test/step-definitions/*.js'],
+        require: ['./test/stepDefs/**/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -66,7 +77,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 60000,
+        timeout: 120000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
@@ -123,7 +134,9 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-
+        Object.keys(commands).forEach(key =>{
+            browser.addCommand(key, commands[key]);
+        })
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -133,8 +146,9 @@ exports.config = {
     // beforeCommand: function (commandName, args) {
     // },
     /**
-     * Cucumber Hooks
-     *
+     ***********************************************
+     ************** Cucumber Hooks *****************
+     ***********************************************
      * Runs before a Cucumber Feature.
      * @param {String}                   uri      path to feature file
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
@@ -146,7 +160,7 @@ exports.config = {
      * Runs before a Cucumber Scenario.
      * @param {ITestCaseHookParameter} world world object containing information on pickle and test step
      */
-    beforeScenario: function (world) {
+    beforeScenario: function (scenario) {
         browser.maximizeWindow();
     },
     /**
@@ -169,11 +183,9 @@ exports.config = {
      */
     // afterStep: function (step, scenario, result) {
     // },
-    afterStep: function (test, scenario, { error, duration, passed }) {
-        if (error) {
-          browser.takeScreenshot();
-        }
-      },
+    // afterStep: function (test, scenario, { error, duration, passed }) {
+    //    browser.takeScree
+    //   },
     /**
      *
      * Runs before a Cucumber Scenario.
@@ -184,9 +196,7 @@ exports.config = {
      * @param {number}                 result.duration duration of scenario in milliseconds
      */
     // afterScenario: function (world, result) {
-    //     if (result.error) {
-    //         browser.takeScreenshot();
-    //       }
+
     // },
     /**
      *
@@ -234,7 +244,6 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     onComplete: function() {
-       // const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
