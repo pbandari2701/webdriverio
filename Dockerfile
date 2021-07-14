@@ -14,6 +14,10 @@ RUN apt-get install -y fluxbox
 RUN apt-get install -y wget
 RUN apt-get install -y wmctrl
 
+ADD xvfb-chromium /usr/bin/xvfb-chromium
+RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome \
+    && chmod 777 /usr/bin/xvfb-chromium
+
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 
