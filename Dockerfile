@@ -20,14 +20,6 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 
 RUN apt-get update && apt-get -y install google-chrome-stable
 
-# ENV CHROME_VERSION=91.0.4472.114-1
-# RUN wget --no-verbose https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_91.0.4472.114-1_amd64.deb && \
-#   dpkg -i google-chrome-stable_91.0.4472.114-1_amd64.deb; apt-get -fy install
-
-# COPY bootstrap.sh /
-
-# CMD '/bootstrap.sh'
-
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
