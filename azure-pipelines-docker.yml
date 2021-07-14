@@ -49,7 +49,8 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run $(autotest-image-name) npx wdio run wdio.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
+      docker run $(autotest-image-name) 
+      docker run npx wdio run wdio.conf.js --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
       echo 'suite name is'${{ parameters.suiteName }}
       ls -altr
   displayName: 'build docker image and run tests'
