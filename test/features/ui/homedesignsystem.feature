@@ -1,7 +1,7 @@
 @HDS
 Feature: Home Design System Validations
 
-  @MeritageHomes @demo
+  @MeritageHomes
   Scenario Outline: Validate settings for Group Locked Subscriber
 
     Given I am logged into HDS as a Administrator <username>
