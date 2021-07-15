@@ -50,9 +50,8 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run $(autotest-image-name) npm run testondocker
-      cd $(Agent.WorkFolder)/1/s/
-      ls -altr
-    
+      $(Agent.WorkFolder)/1/s/WDIO.HDS.AUTOTEST/Reports/testReports/
+      ls -altr   
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
@@ -60,7 +59,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)'
+    searchFolder:  '$(Agent.WorkFolder)/1/s/WDIO.HDS.AUTOTEST/Reports/testReports/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true

@@ -42,7 +42,7 @@ exports.config = {
     framework: 'cucumber',
     reporters: [
         ['junit', {
-            outputDir: '.',
+            outputDir: './',
             outputFileFormat: function(options) { // optional
                 return `TEST-${options.cid}.${options.capabilities.browserName}.xml`
             }
