@@ -48,8 +48,8 @@ variables:
 
 steps:
 - script: |
-      # docker build -f Dockerfile -t $(autotest-image-name) .
-      # docker run $(autotest-image-name) npm run testondocker
+      docker build -f Dockerfile -t $(autotest-image-name) .
+      docker run $(autotest-image-name) npm run testondocker
       cd $(Agent.WorkFolder)/1/s/
       ls -altr
     
