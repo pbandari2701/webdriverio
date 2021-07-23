@@ -1,11 +1,16 @@
 var allure           = require('allure-commandline')
 var baseUrl          = 'https://qa.homedesignsystems.com';
 const commands       = require('./test/helpers/customcommands.js')
+const pactum         = require('pactum');
+const request        = pactum.request;
+const response       = pactum.response;
+
 console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
 console.log('SUITE_NAME is '+process.env.SUITE_NAME)
 console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
 let testBrowser      = 'chrome';
 var browserService = 'geckodriver';
+var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
 
 if(testBrowser === 'firefox'){
     browserService = 'geckodriver'
@@ -20,9 +25,9 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
-        maxInstances: 5,
+        maxInstances: 1,
         browserName: testBrowser,
         'goog:chromeOptions': {
             // to run chrome headless the following flags are required
@@ -161,7 +166,9 @@ exports.config = {
      * @param {ITestCaseHookParameter} world world object containing information on pickle and test step
      */
     beforeScenario: function (scenario) {
-        browser.maximizeWindow();
+                browser.maximizeWindow();
+                request.setBaseUrl(baseUrlapi);
+                request.setDefaultTimeout(20000);
     },
     /**
      *
