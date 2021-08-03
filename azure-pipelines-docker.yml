@@ -50,6 +50,8 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run -v $(System.DefaultWorkingDirectory)/Testing:/app/Reports $(autotest-image-name) npm run testondocker
+      cd $(System.DefaultWorkingDirectory)/Testing
+      ls -altr
       docker ps -a
   displayName: 'build docker image and run tests'
 
