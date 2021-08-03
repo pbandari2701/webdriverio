@@ -49,7 +49,7 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -v $(System.DefaultWorkingDirectory)/Testing:/Reports $(autotest-image-name) npm run testondocker
+      docker run -v $(System.DefaultWorkingDirectory)/Testing:/Reports/testReports $(autotest-image-name) npm run testondocker
       cd $(System.DefaultWorkingDirectory)/Testing
       pwd
       ls -altr
@@ -61,7 +61,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/Testing/Reports/testReports/'
+    searchFolder:  '$(System.DefaultWorkingDirectory)/Testing/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
