@@ -50,8 +50,8 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run --name autotest $(autotest-image-name) npm run testondocker
-      sudo docker exec -it autotest /bin/bash
-      cd /app/Reports/testReport
+      docker exec -it autotest /bin/bash
+      pwd
       ls -altr
   displayName: 'build docker image and run tests'
 
