@@ -49,8 +49,9 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run $(autotest-image-name) npm run testondocker
-      sudo docker exec -it $(autotest-image-name) /bin/bash
+      docker run autotest $(autotest-image-name) npm run testondocker
+      sudo docker exec -it autotest /bin/bash
+      cd /app/Reports/testReport
       ls -altr
   displayName: 'build docker image and run tests'
 
