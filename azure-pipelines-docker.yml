@@ -50,14 +50,7 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run $(autotest-image-name) npm run testondocker
-      cd $(Agent.RootDirectory)/1/b
-      ls -altr   
-      cd $(Agent.RootDirectory)/1/a
-      ls -altr
-      cd $(Agent.RootDirectory)/1/s
-      ls -altr
-      cd $(Agent.RootDirectory)/1/TestResults
-      ls -altr
+      docker cp $(autotest-image-name):app/wdio.hc.autotest/Reports $(System.DefaultWorkingDirectory)  
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
