@@ -49,8 +49,10 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -it --name autotest $(autotest-image-name) /bin/bash -c "npm run testondocker"
+      docker run -dit --name autotest $(autotest-image-name) /bin/bash -c "npm run testondocker"
+      docker container logs autotest
       docker cp autotest:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-reports
+      
       sudo docker ps -a
       ls -altr
       docker stop autotest
