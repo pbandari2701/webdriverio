@@ -49,11 +49,7 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -v $(System.DefaultWorkingDirectory)/Reports/testReports:/Reports/testReports testReports $(autotest-image-name) npm run testondocker
-      cd $(System.DefaultWorkingDirectory)/Testing
-      pwd
-      ls -altr
-      docker ps -a
+      docker run -v $(System.DefaultWorkingDirectory)/Reports/testReports:/Reports/testReports $(autotest-image-name) npm run testondocker
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
