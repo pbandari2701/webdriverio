@@ -49,13 +49,10 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -dit --name autotest $(autotest-image-name) /bin/bash -c "npm run testondocker"
-      docker container wait autotest
-      docker container logs autotest
-      docker cp autotest:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-reports
+      docker run -v "${PWD}/Reports/testReports:/app/Reports/testReports" \
+      -dit --name autotest $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       sudo docker ps -a
       ls -altr
-      docker stop autotest
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
@@ -63,7 +60,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/junit-reports/'
+    searchFolder:  '$(System.DefaultWorkingDirectory)/Reports/testReports/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
