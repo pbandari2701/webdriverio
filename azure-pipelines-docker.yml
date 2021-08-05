@@ -54,12 +54,10 @@ steps:
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       CONTAINER_ID=$(docker ps -alq)
       echo $CONTAINER_ID
-      docker cp $CONTAINER_ID:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-results
-      docker exec -it $CONTAINER_ID /bin/bash
-      echo "in container"
-      ls -altr
-      pwd
+      sudo docker cp $CONTAINER_ID:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-results
       docker ps -a
+      cd junit-results
+      ls -altr
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
