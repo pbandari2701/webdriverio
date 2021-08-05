@@ -50,12 +50,12 @@ steps:
 - script: |
       mkdir junit-results
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -dit --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
+      docker run -it --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       sudo docker ps -a
       CONTAINER_ID=$(docker ps -alq)
       echo $CONTAINER_ID
-      docker cp $CONTAINER_ID:/app/Reports/testReports junit-reports
+      docker cp $CONTAINER_ID:/app/Reports/testReports junit-results
       cd junit-results
       ls -altr
       docker ps -a
