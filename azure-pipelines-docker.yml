@@ -52,8 +52,8 @@ steps:
       docker run --name autotest -v "${PWD}/Reports/testReports:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       sudo docker ps -a
-      ls -altr
       docker cp autotest:/app/Reports/testReports junit-reports
+      ls -altr
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
