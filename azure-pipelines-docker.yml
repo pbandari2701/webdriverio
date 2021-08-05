@@ -48,7 +48,6 @@ variables:
 
 steps:
 - script: |
-      mkdir junit-results
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
@@ -56,6 +55,7 @@ steps:
   displayName: 'build docker image and run tests'
 
 - script: |
+      mkdir junit-results
       docker ps -a
       CONTAINER_ID=$(docker ps -alq)
       echo $CONTAINER_ID
