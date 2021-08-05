@@ -49,7 +49,7 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run --name autotest
+      docker run --name autotest $(autotest-image-name)
       docker ps -a
   displayName: 'build docker image and run tests'
 
