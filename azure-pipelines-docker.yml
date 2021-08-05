@@ -50,7 +50,7 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       sudo docker run -d --name autotest $(autotest-image-name)
-      docker ps -a
+      sudo docker ps -a
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
