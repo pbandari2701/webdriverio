@@ -49,15 +49,15 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run --name autotest -v "${PWD}/Reports/testReports:/app/Reports/testReports" \
+      docker run --name autotest -v "${PWD}/Reports/testReports:Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       sudo docker ps -a
-      docker exec -it autotest /bin/bash
+      docker exec -dit autotest /bin/bash
       pwd
-      cd /app/Reports/testReports
+      cd Reports/testReports
       ls -altr
       exit
-      docker cp autotest:/app/Reports/testReports junit-reports
+      docker cp autotest:Reports/testReports junit-reports
       ls -altr
   displayName: 'build docker image and run tests'
 
