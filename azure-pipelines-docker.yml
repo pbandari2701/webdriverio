@@ -47,14 +47,11 @@ variables:
 
 
 steps:
+
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
-     
-  displayName: 'build docker image and run tests'
-
-- script: |
       mkdir junit-results
       docker ps -a
       CONTAINER_ID=$(docker ps -alq)
@@ -62,8 +59,7 @@ steps:
       docker container cp $CONTAINER_ID:/app/Reports/testReports junit-results
       cd junit-results
       ls -altr
-
-  displayName : "copy files from container to local directory"
+  displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
   condition: always()
