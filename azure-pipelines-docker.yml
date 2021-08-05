@@ -48,12 +48,11 @@ variables:
 
 steps:
 - script: |
+      mkdir junit-results
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run --name autotest -v "${PWD}/test:/app/Reports/testReports" \
+      docker run --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
       sudo docker ps -a
-      ls -altr
-      exit
       docker cp autotest:Reports/testReports junit-reports
       cd junit-reports
       ls -altr
@@ -65,7 +64,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/test/'
+    searchFolder:  '$(System.DefaultWorkingDirectory)/junit-results/'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
