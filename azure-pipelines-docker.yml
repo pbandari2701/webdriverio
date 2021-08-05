@@ -56,12 +56,13 @@ steps:
   displayName: 'build docker image and run tests'
 
 - script: |
+      docker ps -a
       CONTAINER_ID=$(docker ps -alq)
       echo $CONTAINER_ID
       docker container cp $CONTAINER_ID:/app/Reports/testReports junit-results
       cd junit-results
       ls -altr
-      
+
   displayName : "copy files from container to local directory"
 
 - task: PublishTestResults@2
