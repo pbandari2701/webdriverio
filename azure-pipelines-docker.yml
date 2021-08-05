@@ -50,6 +50,7 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run -d --name autotest $(autotest-image-name) -it npm run testondocker
+      docker container logs autotest
       docker cp autotest:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-reports
       sudo docker ps -a
       ls -altr
