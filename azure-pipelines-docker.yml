@@ -52,12 +52,11 @@ steps:
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run --name autotest -v "$(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports" \
       $(autotest-image-name) /bin/bash -c "npm run testondocker" 
-      mkdir junit-results
       docker ps -a
       CONTAINER_ID=$(docker ps -alq)
       echo $CONTAINER_ID
-      docker container cp $CONTAINER_ID:/app/Reports/testReports junit-results
-      cd junit-results
+      sudo docker container cp $CONTAINER_ID:/app/Reports/testReports $(System.DefaultWorkingDirectory)/testing
+      cd testing
       ls -altr
   displayName: 'build docker image and run tests'
 
@@ -66,7 +65,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/junit-results'
+    searchFolder:  '$(System.DefaultWorkingDirectory)/testing'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
