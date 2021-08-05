@@ -49,11 +49,12 @@ variables:
 steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -d --name autotest $(autotest-image-name) -it npm run testondocker
-      docker container logs autotest
+      docker run -dit --name autotest $(autotest-image-name)
+      docker exec -it autotest bash -c "npm run testondocker"
       docker cp autotest:/app/Reports/testReports $(System.DefaultWorkingDirectory)/junit-reports
       sudo docker ps -a
       ls -altr
+      docker stop autotest
   displayName: 'build docker image and run tests'
 
 - task: PublishTestResults@2
