@@ -50,7 +50,7 @@ steps:
 
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
-      docker run -dit -P --name autotest -v $(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports \
+      docker run -it -P --name autotest -v $(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports \
       $(autotest-image-name) npm run testondocker
       docker ps -a
       CONTAINER_ID=$(docker ps -alq)
