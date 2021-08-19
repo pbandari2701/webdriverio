@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Home Design System Validations" timestamp="2021-08-19T15:34:46" time="67.488" tests="2" failures="2" errors="2" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Home Design System Validations"/>
+      <property name="capabilities" value="chrome.92_0_4515_131.windows"/>
+      <property name="featureFile" value=".\test\features\ui\homedesignsystem.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.92_0_4515_131.windows.Home Design System Validations" name="Validate settings for Group Locked Subscriber" time="34.632">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:"/>
+      <system-out><![CDATA[
+✅ Given I am logged into HDS as a Administrator pbandari✅ When I select an subscriber as Meritage Homes - CO❗ Then The appropriate settings pertaining to the Meritage Homes - CO should be validated
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  ASSERT(eleStatus)
+
+    + expected - actual
+
+    -false
+    +true
+
+    at waitUntilElementIsEnabled (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\helpers\customcommands.js:193:13)
+    at HomePage.validateProductDetails (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\pageobjects\/home.page.js:43:5)
+    at World.<anonymous> (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\stepDefs\/homepagesteps.js:7:14)
+    at World.executeSync (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.92_0_4515_131.windows.Home Design System Validations" name="validate settings for Install Cost Subscriber" time="32.806">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement undefined as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged into HDS as a Administrator pbandari⚠️ I select an subscriber as Tri Pointe Homes Austin
+⚠️ The appropriate settings pertaining to the Tri Pointe Homes Austin should be validated
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement undefined as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\helpers\customcommands.js:49:13)
+    at LoginPage.loginHDS (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\pageobjects\/login.page.js:12:9)
+    at World.<anonymous> (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:6:15)
+    at World.executeSync (C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\Users\Paramesh Bandari\Desktop\ILG\wdio.hds.autotest\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
