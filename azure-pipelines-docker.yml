@@ -52,7 +52,6 @@ steps:
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run -it -P --name autotest -v $(System.DefaultWorkingDirectory)/junit-results:/app/Reports/testReports \
       $(autotest-image-name) npm run testondocker
-      docker ps -a
       CONTAINER_ID=$(docker ps -alq)
       sudo docker exec -it $CONTAINER_ID /bin/bash -c "pwd" ; "cd /app/Reports/testReports" ;  "ls -altr"
       echo $CONTAINER_ID
