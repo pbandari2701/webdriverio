@@ -2,6 +2,8 @@ const ASSERT = require('assert')
 const allureReporter = require('@wdio/allure-reporter').default
 const WAIT_FOR_TIMEOUT   = 30000;
 const WAIT_UNTIL_TIMEOUT = 120000;
+const WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE = 3000000;
+const moment = require('moment');
 
 class ElementNotFoundError extends Error{
     constructor(message){
@@ -18,7 +20,7 @@ class WDIOAssertionError extends ASSERT.AssertionError{
 }
 
 function getScreenshot() {
-    browser.saveScreenshot('./Reports/screenshots/'+Date.now()+'.png');
+    browser.saveScreenshot('./Reports/screenshots/'+moment().format('DD-MMM-YYYY-HH-mm-ss')+'.png');
 }
 
 module.exports = {
@@ -27,7 +29,7 @@ module.exports = {
         let eleStatus = false;
         try {
             element.waitForClickable({timeout:WAIT_FOR_TIMEOUT});
-            eleStatus = expect(element).toBeEnabled();
+            eleStatus = expect(element).toBeClickable();
             element.click();
             allureReporter.addStep("Clicked on Webelement "+elementLabel, 'passed'); 
         } catch (Error) {
@@ -35,6 +37,32 @@ module.exports = {
             ASSERT(eleStatus,'WebElement '+elementLabel+' is not clickable');
             throw new ElementNotFoundError(elementLabel+ ' Element is not clickable')
         }
+    },
+
+    doubleClickOnElement(element,elementLabel){
+        let eleStatus = false;
+        try {
+            element.waitForClickable({timeout:WAIT_FOR_TIMEOUT});
+            eleStatus = expect(element).toBeClickable();
+            element.doubleClick();
+            allureReporter.addStep("Clicked on Webelement "+elementLabel, 'passed'); 
+        } catch (Error) {
+            allureReporter.addStep(elementLabel+' Webelement is not Clickable after waiting for '+WAIT_FOR_TIMEOUT/1000+' seconds', getScreenshot(), 'failed');
+            ASSERT(eleStatus,'WebElement '+elementLabel+' is not clickable');
+            throw new ElementNotFoundError(elementLabel+ ' Element is not clickable')
+        } 
+    },
+
+    javaScriptClick(element,elementLabel){
+        var selector = "document.querySelector("+element+").click()";
+        console.log(selector);
+        try {
+            browser.executeScript(selector);
+            allureReporter.addStep("Clicked on Webelement "+elementLabel, 'passed'); 
+        } catch (Error) {
+            allureReporter.addStep(elementLabel+' Webelement is not Clickable after waiting for '+WAIT_FOR_TIMEOUT/1000+' seconds', getScreenshot(), 'failed');
+            throw new ElementNotFoundError(elementLabel+ ' Element is not clickable')
+        } 
     },
 
     sendKeys: function(element, value, elementLabel) {
@@ -63,38 +91,68 @@ module.exports = {
         browser.keys('Tab')
     },
 
+    sendKeyStroke: function(value){
+        browser.keys(value);
+    },
+
     switchToNewWindow: function(windowName){
         browser.switchWindow(windowName);
         console.log("switched to window"+windowName)
     },
 
+    acceptAlert: function(){
+        browser.acceptAlert();
+    },
+
     assertTextPresentOnElement: function(element , expectedText){
         try {
             const assertionElement = element;
-            console.log(assertionElement.getText()+"GET TEXT");
-            this.waitAndClick(assertionElement)
             expect(assertionElement).toExist();
+            allureReporter.addStep('Verified that '+expectedText+' is logged in successfully', getScreenshot() ,'passed');
         } catch (Error) {
-            console.log("unable to find lbluser name");
+            allureReporter.addStep(expectedText+' user is not logged in ', getScreenshot() ,'failed');
         }
     },
 
-    selectByTxt: function(element ,visibleTxt){
-        const ddElement = element;
-        ddElement.waitForExist();
-        ddElement.selectByVisibleText(visibleTxt);
+    selectByTxt: function(element ,visibleTxt, elementLabel){
+        try {
+            const ddElement = element;
+            ddElement.waitForEnabled({timeout: WAIT_FOR_TIMEOUT});
+            var  eleStatus = expect(element).toBeEnabled();
+            ddElement.selectByVisibleText(visibleTxt);  
+            allureReporter.addStep('Selected value '+visibleTxt+' from dropdown '+elementLabel, getScreenshot() ,'passed');
+        } catch (error) {
+            allureReporter.addStep('unable to set value to dropdown '+elementLabel, getScreenshot() ,'failed');
+            ASSERT(eleStatus, 'Unable to set value to webelement '+elementLabel+' as the element is not enabled');
+        }
+       
     },
 
     expectToBeEnabled: function(element ,elementLabel){
+        var status = false;
        try {
         const ele = element;
-        expect(ele).toBeEnabled();
+        status = expect(ele).toBeEnabled();
         allureReporter.addStep(elementLabel+' is Enabled', 'passed');
        } catch (Error) {
         allureReporter.addStep(elementLabel+' is not Enabled',getScreenshot(), 'failed');
         throw new ElementNotFoundError(elementLabel+' Element is not enabled');
        }
+       return status;
     },
+
+    expectToBeClickable: function(element ,elementLabel){
+        var status = false;
+        try {
+         const ele = element;
+         status = expect(ele).toBeClickable();
+         allureReporter.addStep(elementLabel+' is clickable', 'passed');
+        } catch (Error) {
+         allureReporter.addStep(elementLabel+' is not clickable',getScreenshot(), 'failed');
+         throw new ElementNotFoundError(elementLabel+' Element is not clickable');
+        }
+        return status;
+     },
 
     expectToBePresent: function(element, elementLabel){
         try {
@@ -161,7 +219,7 @@ module.exports = {
                 () => element.waitForExist(), 
                 WAIT_UNTIL_TIMEOUT,
                 '**=ELEMENT IS NOT DISPLAYED AFTER WAITING FOR=** '+WAIT_UNTIL_TIMEOUT);
-                allureReporter.addStep(elementLabel+' element is not displayed', 'passed');
+                allureReporter.addStep(elementLabel+' element is displayed', 'passed');
         } catch (Error) {
             allureReporter.addStep('Element is not Displayed',getScreenshot(), 'failed');
         }
@@ -181,16 +239,69 @@ module.exports = {
     },
 
     waitUntilElementIsEnabled : function (element, elementLabel) {
-        let eleStatus = false;
+        // try {
+        //     browser.waitUntil(
+        //         () => element.isEnabled(),
+        //         WAIT_UNTIL_TIMEOUT,
+        //         '**=ELEMENT IS NOT ENABLED AFTER WAITING FOR=** '+WAIT_UNTIL_TIMEOUT);
+        //     allureReporter.addStep(elementLabel+' Element is enabled', 'passed');
+        // } catch (Error) {      
+        //     allureReporter.addStep(elementLabel+' Element is not enabled', getScreenshot(), 'failed'); 
+          
+        // }
+        // return element;
         try {
             browser.waitUntil(
-                () => eleStatus = element.isEnabled(),
-                WAIT_UNTIL_TIMEOUT,
-                '**=ELEMENT IS NOT ENABLED AFTER WAITING FOR=** '+WAIT_UNTIL_TIMEOUT);
-            allureReporter.addStep(elementLabel+' Element is enabled', 'passed');
-        } catch (Error) {      
-            allureReporter.addStep(elementLabel+' Element is not enabled', getScreenshot(), 'failed'); 
-            ASSERT(eleStatus);
+                () => element.isEnabled(),
+                {
+                    timeout : WAIT_UNTIL_TIMEOUT,
+                    timeoutMsg : "Element"+elementLabel+" is not enabled even after "+WAIT_UNTIL_TIMEOUT
+                }
+            )
+        } catch (Error) {
+            
         }
+        return element;
+    },
+
+    waitUntilElementIsDisplayed : function (element, elementLabel) {
+        // let eleStatus = false;
+        // try {
+        //     browser.waitUntil(
+        //         () => element.isEnabled(),
+        //         WAIT_UNTIL_TIMEOUT,
+        //         '**=ELEMENT IS NOT ENABLED AFTER WAITING FOR=** '+WAIT_UNTIL_TIMEOUT);
+        //     allureReporter.addStep(elementLabel+' Element is enabled', 'passed');
+        // } catch (Error) {      
+        //     allureReporter.addStep(elementLabel+' Element is not enabled after '+WAIT_UNTIL_TIMEOUT, getScreenshot(), 'failed'); 
+          
+        // }
+        try {
+            browser.waitUntil(
+                () => element.isDisplayed(),
+                {
+                    timeout : WAIT_UNTIL_TIMEOUT,
+                    timeoutMsg : "Element"+elementLabel+" is not enabled even after "+WAIT_UNTIL_TIMEOUT
+                }
+               
+            )
+            allureReporter.addStep(elementLabel+' Element is Displayed',getScreenshot(), 'passed');
+        } catch (Error) {
+            allureReporter.addStep(elementLabel+' Element is not enabled after '+WAIT_UNTIL_TIMEOUT, getScreenshot(), 'failed'); 
+        }
+        return element;
+    },
+
+    waitUntilElementIsDisabled : function (element) {
+    try {
+        console.log("IN WAIT UNTIL");
+        browser.waitUntil(
+            () => element.isDisplayed() === false,
+            WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE,
+            'ELEMENT IS STILL ENABLED AFTER '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+    } catch (Error) {
+        console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+    }
+        
     }
 }

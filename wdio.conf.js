@@ -29,11 +29,11 @@ exports.config = {
     capabilities: [{
         maxInstances: 1,
         browserName: testBrowser,
-        'goog:chromeOptions': {
-            // to run chrome headless the following flags are required
-            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-            args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
-            },
+        // 'goog:chromeOptions': {
+        //     // to run chrome headless the following flags are required
+        //     // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+        //     args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
+        //     },
         acceptInsecureCerts: true
     }],
     sync: true,

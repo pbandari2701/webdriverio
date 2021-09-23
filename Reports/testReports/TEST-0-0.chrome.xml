@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Home Design System Validations for a designer" timestamp="2021-09-22T23:03:34" time="19.054" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Home Design System Validations for a designer"/>
+      <property name="capabilities" value="chrome.93_0_4577_82.windows"/>
+      <property name="featureFile" value=".\test\features\ui\designer.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.93_0_4577_82.windows.Home Design System Validations for a designer" name="Verify the system produces the correct designer quote report" time="19.029">
+      <system-out><![CDATA[
+✅ Given I am logged into HDS as a designer DesignerTest✅ When I select an subscriber as Taylor Morrison - NC - Raleigh✅ Then I should be displayed with a correct quote report
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
