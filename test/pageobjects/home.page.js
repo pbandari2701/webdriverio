@@ -24,6 +24,9 @@ class HomePage extends BasePage{
  get groupChangedMessage() { return $('//*[@id="top-nav"]/div[2]/span[text()="The changes that you made caused the total cost to not align with the current Group selected, please confirm the assigned Group."]')}
  get productGroupPriceAlert() { return $('//div[text()="Total Cost does not align with the currently selected Group."]')}
 
+ get buyersListPage()   { return $('//a[text()="Buyers"]')}
+
+
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -92,6 +95,10 @@ saveChangeAndConfirm(){
     //expectToBeEnabled(this.saveConfirmation,"");
     waitAndClick(this.saveChanges, "Save Changes Button");
     waitUntilElementIsDisplayed(this.saveConfirmation);
+}
+
+navigateToBuyerList(){
+    waitAndClick(this.buyersListPage, "Buyers");
 }
 
 }

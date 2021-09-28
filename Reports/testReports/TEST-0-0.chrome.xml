@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Home Design System Validations for a designer" timestamp="2021-09-22T23:03:34" time="19.054" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="BVT Check Reports Tier1 Feature" timestamp="2021-09-28T21:58:23" time="99.274" tests="3" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
-      <property name="featureName" value="Home Design System Validations for a designer"/>
-      <property name="capabilities" value="chrome.93_0_4577_82.windows"/>
-      <property name="featureFile" value=".\test\features\ui\designer.feature"/>
+      <property name="featureName" value="BVT Check Reports Tier1 Feature"/>
+      <property name="capabilities" value="chrome.94_0_4606_61.windows"/>
+      <property name="featureFile" value=".\test\features\bvt_tier1\bvt_checkreports_tier1.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.93_0_4577_82.windows.Home Design System Validations for a designer" name="Verify the system produces the correct designer quote report" time="19.029">
+    <testcase classname="CucumberJUnitReport-chrome.94_0_4606_61.windows.BVT Check Reports Tier1 Feature" name="Check Quote Reports generated Off of Active designs Option Selections" time="49.678">
       <system-out><![CDATA[
-✅ Given I am logged into HDS as a designer DesignerTest✅ When I select an subscriber as Taylor Morrison - NC - Raleigh✅ Then I should be displayed with a correct quote report
+✅ Given I am logged in to HDS as a Admin✅ Given I am on Buyer list page✅ And A buyer with the following attributes is opened Westford 3s PH 2 , autotest✅ And User navigates to the buyer's scenario options selector Page for Flooring Service Offering✅ And User navigates to the Buyer report page for Flooring✅ When The create quote button is clicked in the Buyer Report page✅ Then A quote should be successfully created for Flooring
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.94_0_4606_61.windows.BVT Check Reports Tier1 Feature" name="Check Quote Reports generated Off of Active designs Option Selections" time="22.089">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given I am on Buyer list page✅ And A buyer with the following attributes is opened Westford 3s PH 2 , autotest✅ And User navigates to the buyer's scenario options selector Page for Lifestyle Options Service Offering✅ And User navigates to the Buyer report page for Lifestyle Options✅ When The create quote button is clicked in the Buyer Report page✅ Then A quote should be successfully created for Lifestyle Options
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.94_0_4606_61.windows.BVT Check Reports Tier1 Feature" name="Check Quote Reports generated Off of Active designs Option Selections" time="27.397">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given I am on Buyer list page✅ And A buyer with the following attributes is opened Westford 3s PH 2 , autotest✅ And User navigates to the buyer's scenario options selector Page for Wall Tile Service Offering✅ And User navigates to the Buyer report page for Wall Tile✅ When The create quote button is clicked in the Buyer Report page✅ Then A quote should be successfully created for Wall Tile
 ]]></system-out>
     </testcase>
   </testsuite>

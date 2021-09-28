@@ -14,3 +14,8 @@ Given(/^I am logged into HDS as a designer (.+)$/, function(username) {
     LoginPage.open();
     LoginPage.loginHDS(username);
 });
+
+Given(/^I am logged in to HDS as a (.+)$/, function(username){
+    LoginPage.open();
+    LoginPage.loginHDS(username);
+})

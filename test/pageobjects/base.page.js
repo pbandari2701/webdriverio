@@ -2,7 +2,7 @@
 * main page object containing all methods, selectors and functionality
 * that is shared across all page objects
 */
-
+import fs from 'fs'
 export default class BasePage {
     /**
     * Opens a sub page of the page
@@ -10,6 +10,12 @@ export default class BasePage {
     */
     open () {
         return browser.url('/')
+    }
+
+    testDataJson(fileName){
+        let data = fs.readFileSync('test/data/'+fileName+'.json');
+        let dataStream = JSON.parse(data);
+        return dataStream;
     }
 
 }

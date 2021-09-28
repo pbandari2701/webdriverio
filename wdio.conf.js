@@ -1,5 +1,5 @@
 var allure           = require('allure-commandline')
-var baseUrl          = 'https://qa.homedesignsystems.com';
+var baseUrl          = 'https://uat.homedesignsystems.com';
 const commands       = require('./test/helpers/customcommands.js')
 const pactum         = require('pactum');
 const request        = pactum.request;

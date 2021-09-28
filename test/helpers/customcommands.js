@@ -107,10 +107,11 @@ module.exports = {
     assertTextPresentOnElement: function(element , expectedText){
         try {
             const assertionElement = element;
-            expect(assertionElement).toExist();
-            allureReporter.addStep('Verified that '+expectedText+' is logged in successfully', getScreenshot() ,'passed');
+            assertionElement.waitForDisplayed({timeout : WAIT_FOR_TIMEOUT})
+            expect(assertionElement).toHaveTextContaining(expectedText)
+            allureReporter.addStep('Verified that '+expectedText+' successfully ', getScreenshot() ,'passed');
         } catch (Error) {
-            allureReporter.addStep(expectedText+' user is not logged in ', getScreenshot() ,'failed');
+            allureReporter.addStep(expectedText+' not present ', getScreenshot() ,'failed');
         }
     },
 
