@@ -2,7 +2,7 @@ var allure           = require('allure-commandline')
 const fsextra        = require('fs-extra')
 const path           = require('path')
 const fs             = require('fs')
-var baseUrl          = 'https://uat.homedesignsystems.com';
+var baseUrl          = 'https://qa.homedesignsystems.com';
 const commands       = require('./test/helpers/customcommands.js')
 const pactum         = require('pactum');
 const { clear } = require('console');
@@ -10,10 +10,10 @@ const request        = pactum.request;
 const response       = pactum.response;
 const folderPaths    = ['./Reports/downloads','./Reports/screenshots','./allure-report','./allure-results']
 global.downloadDir   = path.join(__dirname, './Reports/downloads')
-
 console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
 console.log('SUITE_NAME is '+process.env.SUITE_NAME)
 console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
+console.log('ENVIRONMENT IS '+process.env['env'])
 let testBrowser      = 'chrome';
 var browserService = 'geckodriver';
 var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
@@ -31,7 +31,7 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 1,
+    maxInstances: 3,
     capabilities: [{
         maxInstances: 1,
         browserName: testBrowser,
@@ -271,14 +271,12 @@ exports.config = {
             const generationTimeout = setTimeout(
                 () => reject(new Error('Could not generate Allure report')),
                 5000)
-
             generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)
 
                 if (exitCode !== 0) {
                     return reject(new Error('Could not generate Allure report'))
                 }
-
                 console.log('Allure report successfully generated')
                 resolve()
             })

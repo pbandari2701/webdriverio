@@ -19,7 +19,13 @@ Given(/^User navigates to the Buyer report page for (.+)$/,function(svcOffering)
     if((svcOffering == 'Flooring') || (svcOffering == 'Wall Tile')){
 
         buyersPage.openSVCRecord();
-
-    }
-    
+    }    
 })
+
+Given(/^User Navigates to The Buyer's Report page$/, function(){
+    buyersPage.openActiveBuyer();
+    buyersPage.navigateToBuyersReportsPage();
+})
+
+
+

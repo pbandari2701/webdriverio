@@ -7,7 +7,8 @@ class BuyersPage extends BasePage{
     get searchKeyWordTxt()          { return $('#txtSearchPhrase')}
     get cmdSearchbtn()              { return $('#cmdSearch')}
     get openBuyer()                 { return $('//a[text()="Open"]')}
-    get openSearchedRecord()                { return $('//a[text()="Open"]')}
+    get openSearchedRecord()        { return $('//a[text()="Open"]')}
+    get buyersReportsPage()         { return $('//a[text()="Reports"]')}
 
     searchBuyer(buyerName){
         sendKeys(this.searchKeyWordTxt,buyerName);
@@ -26,7 +27,11 @@ class BuyersPage extends BasePage{
     openSVCRecord(){
         waitAndClick(this.openSearchedRecord,"Open Searched Record")
         
-    }    
+    }
+
+    navigateToBuyersReportsPage(){
+        waitAndClick(this.buyersReportsPage, "Buyers Reports")
+    }
 
     getServiceOffering(svcName) { return $('//strong[text()="Design Center"]/../following-sibling::div//a[text()="'+svcName+'"]')}
 }
