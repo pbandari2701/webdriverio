@@ -4,6 +4,7 @@ const WAIT_FOR_TIMEOUT   = 30000;
 const WAIT_UNTIL_TIMEOUT = 120000;
 const WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE = 3000000;
 const moment = require('moment');
+const fs = require('fs');
 
 class ElementNotFoundError extends Error{
     constructor(message){
@@ -304,5 +305,19 @@ module.exports = {
         console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
     }
         
+    },
+
+    waitForFileToDownload : function(fileName){
+        try {
+            browser.waitUntil(
+                () => fs.existsSync('./Reports/downloads/'+fileName) == true,{
+                timeout : WAIT_UNTIL_TIMEOUT,
+                timeoutMsg : "FIle "+fileName+" not downloaded within "+WAIT_UNTIL_TIMEOUT/1000+" seconds"
+                }
+            )
+            allureReporter.addStep("successfully downloaded the fileName "+fileName,getScreenshot(), 'passed')
+        } catch (Error) {
+            allureReporter.addStep(fileName+" not downloaded within "+WAIT_UNTIL_TIMEOUT/1000+" seconds" ,getScreenshot(), 'failed')
+        }
     }
 }

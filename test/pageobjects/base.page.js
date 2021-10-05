@@ -3,6 +3,11 @@
 * that is shared across all page objects
 */
 import fs from 'fs'
+import path from 'path';
+import URL from 'url'
+
+
+
 export default class BasePage {
     /**
     * Opens a sub page of the page
