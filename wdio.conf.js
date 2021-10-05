@@ -15,7 +15,7 @@ console.log('SUITE_NAME is '+process.env.SUITE_NAME)
 console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
 console.log('ENVIRONMENT IS '+process.env['env'])
 let testBrowser      = 'chrome';
-var browserService = 'geckodriver';
+var browserService   = 'geckodriver';
 var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
 
 if(testBrowser === 'firefox'){

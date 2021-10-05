@@ -19,10 +19,10 @@ parameters:
     type: string
     default: sanity
     values :
-    - sanity
+    - tier1
+    - tier2
+    - clickthrough
     - regression
-    - demo
-    - feature 2
   
   - name: browser
     displayName: Test Browser
