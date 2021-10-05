@@ -1,13 +1,19 @@
 var allure           = require('allure-commandline')
+const fsextra        = require('fs-extra')
+const path           = require('path')
+const fs             = require('fs')
 var baseUrl          = 'https://qa.homedesignsystems.com';
 const commands       = require('./test/helpers/customcommands.js')
 const pactum         = require('pactum');
+const { clear } = require('console');
 const request        = pactum.request;
 const response       = pactum.response;
-
+const folderPaths    = ['./Reports/downloads','./Reports/screenshots','./allure-report','./allure-results']
+global.downloadDir   = path.join(__dirname, './Reports/downloads')
 console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
 console.log('SUITE_NAME is '+process.env.SUITE_NAME)
 console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
+console.log('ENVIRONMENT IS '+process.env['env'])
 let testBrowser      = 'chrome';
 var browserService = 'geckodriver';
 var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
@@ -25,15 +31,21 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 1,
+    maxInstances: 3,
     capabilities: [{
         maxInstances: 1,
         browserName: testBrowser,
-        // 'goog:chromeOptions': {
-        //     // to run chrome headless the following flags are required
-        //     // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        //     args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
-        //     },
+        'goog:chromeOptions': {
+            // to run chrome headless the following flags are required
+            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+            // args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
+            prefs:{
+            'directory_upgrade': true,
+            'prompt_for_download': false,
+            'download.default_directory': global.downloadDir
+            }
+           
+            },
         acceptInsecureCerts: true
     }],
     sync: true,
@@ -100,17 +112,20 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    //     fs.readdir(directory, (err, files) => {
-    //         if (err) throw err;
+    onPrepare: function (config, capabilities) {
+        // fs.readdir(directory, (err, files) => {
+        //     if (err) throw err;
           
-    //         for (const file of files) {
-    //           fs.unlink(path.join(directory, file), err => {
-    //             if (err) throw err;
-    //           });
-    //         }
-    //       });
-    // },
+        //     for (const file of files) {
+        //       fs.unlink(path.join(directory, file), err => {
+        //         if (err) throw err;
+        //       });
+        //     }
+        //   });
+        folderPaths.forEach(path =>{
+            fsextra.emptyDirSync(path);
+        })
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -256,14 +271,12 @@ exports.config = {
             const generationTimeout = setTimeout(
                 () => reject(new Error('Could not generate Allure report')),
                 5000)
-
             generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)
 
                 if (exitCode !== 0) {
                     return reject(new Error('Could not generate Allure report'))
                 }
-
                 console.log('Allure report successfully generated')
                 resolve()
             })

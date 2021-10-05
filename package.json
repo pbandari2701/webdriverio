@@ -5,7 +5,8 @@
   "main": "wdio.conf.js",
   "scripts": {
     "test": "npx wdio run wdio.conf.js",
-    "testondocker": "npx wdio run wdio.docker.conf.js"
+    "testondocker": "npx wdio run wdio.docker.conf.js",
+    "generatetestresults": "allure serve"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "@wdio/sync": "^7.7.4",
     "allure-commandline": "^2.13.8",
     "chromedriver": "^93.0.1",
+    "fs-extra": "^10.0.0",
     "geckodriver": "^2.0.1",
     "moment": "^2.29.1",
     "pactum": "^3.0.17",
