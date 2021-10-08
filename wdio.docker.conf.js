@@ -55,20 +55,23 @@ exports.config = {
     //waitforTimeout: 300000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
+    port:9515,
+    path:'/',
     services: [browserService],
     framework: 'cucumber',
     reporters: [
         ['junit', {
-            outputDir: './Reports/testReports',
+            outputDir: './junit',
             outputFileFormat: function(options) { // optional
+                console.log('****JUnit Report Is Generated****')
                 return `TEST-${options.cid}.${options.capabilities.browserName}.xml`
             }
-        }],
-        ['allure',{
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: false,
         }]
+        // ['allure',{
+        //     outputDir: 'allure-results',
+        //     disableWebdriverStepsReporting: true,
+        //     disableWebdriverScreenshotsReporting: false,
+        // }]
     ],
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
