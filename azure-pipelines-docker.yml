@@ -63,7 +63,7 @@ steps:
 - script: |
       docker run --user="$(id -u):$(id -g)" -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 \
                  -v ${PWD}/test/allure-results:/app/allure-results \
-                 -v ${PWD}/test/allure-reports:/app/default-reports \
+                 -v ${PWD}/test/allure-reports:/app/allure-reports \
                  frankescobar/allure-docker-service
   displayName: 'Run Allure Reporting Service'    
 
