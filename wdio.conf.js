@@ -31,7 +31,7 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 3,
+    maxInstances: 10,
     capabilities: [{
         maxInstances: 1,
         browserName: testBrowser,

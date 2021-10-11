@@ -209,7 +209,7 @@ ClientBin/
 node_modules/
 allure-report/
 allure-results/
-Reports/screenshots/*
+Reports/*
 orleans.codegen.cs
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components

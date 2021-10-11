@@ -19,8 +19,6 @@ Examples:
     | Lifestyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-Design Center - Buyers - Open - CW - Open - Calculator Breakdown (Report)
-Design Center - Buyers - Open - Flooring - Open - Print - Calculator Breakdown (Report)
 @bvt @tier1
 Scenario Outline: Check CalcBreakDown report off of Active Design
 	Given I am on Buyer list page
@@ -73,6 +71,7 @@ Scenario Outline: Check Job Report - Material and Labor Breakdown
 Examples: 
 	| Service_offering      | Buyer_Name    | Community_Name   |
 	| All Service Offerings | autotest      | Westford 3s PH 2 |
+
 @bvt @tier1
 Scenario Outline: Check Quote Report - Design Summary Particpant
 	Given I am on Buyer list page
