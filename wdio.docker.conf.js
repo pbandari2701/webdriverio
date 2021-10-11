@@ -55,8 +55,6 @@ exports.config = {
     //waitforTimeout: 300000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    port:9515,
-    path:'/',
     services: [browserService],
     framework: 'cucumber',
     reporters: [
