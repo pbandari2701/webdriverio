@@ -55,7 +55,7 @@ steps:
   displayName: 'build docker image and run tests'
 
 - script: |
-      docker cp autotest:app/junit ${System.DefaultWorkingDirectory}/Reports/testReports/
+      docker cp autotest:app/junit ${PWD}/test
   displayName: 'copy Junit Reports'    
 
 - task: PublishTestResults@2
@@ -63,7 +63,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/Reports/testReports/junit'
+    searchFolder:  '$(System.DefaultWorkingDirectory)/test/junit'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
