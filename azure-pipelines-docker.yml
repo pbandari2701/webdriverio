@@ -17,12 +17,13 @@ parameters:
   - name: suiteName
     displayName : Test Suite
     type: string
-    default: sanity
+    default: tier1
     values :
     - tier1
     - tier2
     - clickthrough
     - regression
+    - wip
   
   - name: browser
     displayName: Test Browser
@@ -51,8 +52,11 @@ steps:
 - script: |
       docker build -f Dockerfile -t $(autotest-image-name) .
       docker run --name autotest $(autotest-image-name) npm run testondocker --cucumberOpts.tagExpression=@${{ parameters.suiteName }}
-      docker cp autotest:app/junit '$(System.DefaultWorkingDirectory)/Reports/testReports/'
   displayName: 'build docker image and run tests'
+
+- script: |
+      docker cp autotest:app/junit '$(System.DefaultWorkingDirectory)/Reports/testReports/'
+  displayName: 'copy Junit Reports'    
 
 - task: PublishTestResults@2
   condition: always()

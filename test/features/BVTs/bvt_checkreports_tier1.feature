@@ -5,7 +5,7 @@ Feature: BVT Check Reports Tier1 Feature
 Background: Pre Login as HDS Admin
     Given I am logged in to HDS as a Admin
 
-@bvt @tier1
+@bvt @tier1 @wip
 Scenario Outline: Check Quote Reports generated Off of Active designs/Option Selections
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
