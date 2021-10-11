@@ -56,7 +56,16 @@ steps:
 
 - script: |
       docker cp autotest:app/junit ${PWD}/test
-  displayName: 'copy Junit Reports'    
+      docker cp autotest:allure-report ${PWD}/test
+      docker cp autotest:allure-results ${PWD}/test
+  displayName: 'Copy Generated Test Reports'
+
+- script: |
+      docker run -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 \
+                 -v ${PWD}/test/allure-results:/app/allure-results \
+                 -v ${PWD}/test/allure-reports:/app/default-reports \
+                 frankescobar/allure-docker-service
+  displayName: 'Run Allure Reporting Service'    
 
 - task: PublishTestResults@2
   condition: always()
