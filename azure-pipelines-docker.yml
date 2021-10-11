@@ -55,7 +55,7 @@ steps:
   displayName: 'build docker image and run tests'
 
 - script: |
-      docker cp autotest:app/junit '$(System.DefaultWorkingDirectory)/Reports/testReports/'
+      docker cp autotest:app/junit ${PWD}/Reports/testReports/
   displayName: 'copy Junit Reports'    
 
 - task: PublishTestResults@2
