@@ -5,7 +5,7 @@ Feature: BVT Check Reports Tier1 Feature
 Background: Pre Login as HDS Admin
     Given I am logged in to HDS as a Admin
 
-@bvt @tier1 @wip
+@bvt @tier1
 Scenario Outline: Check Quote Reports generated Off of Active designs/Option Selections
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -48,7 +48,7 @@ Examples:
     | LifeStyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-@bvt @tier1
+@bvt @tier1 @wip
 Scenario Outline: Check Flooring Quote Calculator breakdown Reports
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
