@@ -10,13 +10,10 @@ const request        = pactum.request;
 const response       = pactum.response;
 const folderPaths    = ['./Reports/downloads','./Reports/screenshots','./allure-report','./allure-results']
 global.downloadDir   = path.join(__dirname, './Reports/downloads')
-console.log('TEST_BROWSER is '+process.env.TEST_BROWSER)
-console.log('SUITE_NAME is '+process.env.SUITE_NAME)
-console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
-console.log('ENVIRONMENT IS '+process.env['env'])
+
 let testBrowser      = 'chrome';
-var browserService = 'geckodriver';
-var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
+var browserService   = 'geckodriver';
+var baseUrlapi       = 'https://api-uat.homedesignsystems.com/';
 
 if(testBrowser === 'firefox'){
     browserService = 'geckodriver'
@@ -95,7 +92,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 120000,
+        timeout: 180000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
