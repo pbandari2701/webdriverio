@@ -33,7 +33,7 @@ exports.config = {
     ],
     maxInstances: 10,
     capabilities: [{
-        maxInstances: 1,
+        maxInstances: 6,
         browserName: testBrowser,
         'goog:chromeOptions': {
             // to run chrome headless the following flags are required
