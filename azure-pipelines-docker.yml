@@ -73,7 +73,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'TEST-*.xml'
-    searchFolder:  '$(System.DefaultWorkingDirectory)/test/junit'
+    searchFolder:  '${PWD}/test/junit'
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true

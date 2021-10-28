@@ -59,7 +59,7 @@ Examples:
 	| Service_offering | Buyer_Name    | Community_Name   |
 	| Flooring         | autotest      | Westford 3s PH 2 |
 
-@bvt @tier1
+@bvt @tier1 @wip
 Scenario Outline: Check Job Report - Material and Labor Breakdown
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -72,7 +72,7 @@ Examples:
 	| Service_offering      | Buyer_Name    | Community_Name   |
 	| All Service Offerings | autotest      | Westford 3s PH 2 |
 
-@bvt @tier1
+@bvt @tier1 @wip
 Scenario Outline: Check Quote Report - Design Summary Particpant
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -84,7 +84,7 @@ Examples:
 	| Service_offering       	| Buyer_Name | Community_Name   |
 	|   All Service Offerings	| autotest   | Westford 3s PH 2 |
 
-@bvt @tier1
+@bvt @tier1 @wip
 Scenario Outline: Check Design Summary Buyer - Quote Report
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>

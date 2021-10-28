@@ -1,7 +1,8 @@
 import { selectByTxt, waitAndClick, waitForFileToDownload, waitUntilElementIsDisplayed } from "../helpers/customcommands";
-
+import FindFiles from 'file-regex'
 const { default: BasePage } = require("./base.page");
-const FLOORING_QUOTE_FILE_NAME = 'CalculatorBreakdown(Job_159332).xlsx'
+const DirName = './Reports/downloads'
+const FLOORING_QUOTE_FILE_NAME = 'CalculatorBreakdown(Job_159338).xlsx'
 
 class ReportsPage extends BasePage{
 
@@ -40,6 +41,7 @@ class ReportsPage extends BasePage{
     }
 
     validateFlooringQuoteBreakDownReportIsDownloaded(){
+       
         waitForFileToDownload(FLOORING_QUOTE_FILE_NAME);
     }
 
