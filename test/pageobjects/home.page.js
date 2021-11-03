@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -39,7 +39,7 @@ class HomePage extends BasePage{
  }
 
  validateHDSHomePageIsDisplayed(){
-     expectToBeDisplayed(this.homeDashboardText,'Home Page')
+    expectToHaveTitle('- HDS');
  }
 
  getManageUsers(){

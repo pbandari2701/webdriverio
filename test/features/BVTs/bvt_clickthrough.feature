@@ -16,15 +16,12 @@ Background: Pre Login as HDS Admin
     Given I am logged in to HDS as a Admin
 
 	
-
-# #HDS Home page #4
-
-# @tc:2054
-# Scenario: Verify HDS Home  Page
-# 	Then HDS Home page is displayed
+@tc:2054
+Scenario: Verify HDS Home Page
+	Then HDS Home page is displayed
 
 
-@tc:2055 @wip28
+@tc:2055 @clickthrough @bvt
 Scenario: Verify_Security_Manage_Users_page  
 	Given HDS Home page is displayed
 	When Manage User link under Security Menu is clicked
@@ -32,8 +29,6 @@ Scenario: Verify_Security_Manage_Users_page
 
 	
 # # Manage Users - New
-
-
 # @tc:2056
 # Scenario: Verify_Security_User_Editor_Page_for_New_User
 # 	Given HDS Home page is displayed
@@ -60,10 +55,10 @@ Scenario: Verify_Security_Manage_Users_page
 # ##SITE ADMINISTRATION MENU======================================================
 
 # @tc:2058
-# Scenario: Verify_Site_Admin_Area_Types_page  
-# 	Given HDS Home page is displayed
-# 	When  Area Types link under Site Administration Menu is clicked
-# 	Then  Area Typespage is loaded 
+Scenario: Verify_Site_Admin_Area_Types_page  
+	Given HDS Home page is displayed
+	When  Area Types link under Site Administration Menu is clicked
+	Then  Area Typespage is loaded 
 
 # #Area Types-New
 # @tc:2059

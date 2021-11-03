@@ -1,8 +1,8 @@
 const { When, Then } = require("@cucumber/cucumber");
 const { pauseBrowser, waitForFileToDownload } = require("../helpers/customcommands");
 const { default: quotePage } = require("../pageobjects/quote.page");
-const Flooring_Design_FileName = 'CalculatorBreakdown(Flooring Design_315150).xlsx';
-const WallTile_FileName        = 'CalculatorBreakdownWall(Wall Tile Design_92895).xlsx'; 
+const Flooring_Design_FileName = 'CalculatorBreakdown(Flooring Design_321668).xlsx';
+const WallTile_FileName        = 'CalculatorBreakdownWall(Wall Tile Design_93178).xlsx'; 
 
 
 When(/^The create quote button is clicked in the Buyer Report page$/,function(){

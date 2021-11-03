@@ -2,7 +2,7 @@ import { selectByTxt, waitAndClick, waitForFileToDownload, waitUntilElementIsDis
 import FindFiles from 'file-regex'
 const { default: BasePage } = require("./base.page");
 const DirName = './Reports/downloads'
-const FLOORING_QUOTE_FILE_NAME = 'CalculatorBreakdown(Job_159338).xlsx'
+const FLOORING_QUOTE_FILE_NAME = 'CalculatorBreakdown(Job_163401).xlsx'
 
 class ReportsPage extends BasePage{
 
