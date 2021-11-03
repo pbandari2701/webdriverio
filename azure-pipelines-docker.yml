@@ -11,7 +11,7 @@ parameters:
     values :
     - qa
     - dev
-    - uat
+    - staging
     - prod
 
   - name: suiteName
