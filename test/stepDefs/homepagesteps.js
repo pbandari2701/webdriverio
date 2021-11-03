@@ -1,4 +1,5 @@
 import { Given, When, Then } from "@cucumber/cucumber";
+import { expectToBeDisplayed, expectToHaveTitle } from "../helpers/customcommands";
 import HomePage from '../pageobjects/home.page'
 
 Then(/^The appropriate settings pertaining to the (.+) should be validated$/, function(subscriber){
@@ -16,5 +17,5 @@ When(/^Manage User link under Security Menu is clicked$/, function(){
 })
 
 Then(/^Manage Users page is loaded$/, async function(){   
-    await expect(browser).toHaveTitle('	Manage Users - HDS')
+    expectToHaveTitle('Manage Users - HDS')
 })

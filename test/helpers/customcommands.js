@@ -186,6 +186,15 @@ module.exports = {
         }
     },
 
+    expectToHaveTitle:async function(title){
+        try {
+            await expect(browser).toHaveTitle(title);
+            allureReporter.addStep('Validated that '+title+' is successfully displayed','passed');
+        } catch (Error) {
+            allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');
+        }
+    },
+
     getAttributeValue: function(element, attribute){
         try {
            const ele = element;
