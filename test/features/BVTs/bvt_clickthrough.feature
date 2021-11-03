@@ -1,16 +1,21 @@
 
 # @BVT_ClickThrough @tfs:https://isidev.visualstudio.com/Apps
 # Feature: BVT_Click_Through_Tests
-# low level BVT that clicks through HDS Pages to verify that they load
-
-
-# Background: 
-# 	Given I am logged in to  HDS as Admin 
+	
+# Background: Pre Login as HDS Admin
+#     Given I am logged in to HDS as a Admin
 
 
 # ##SECURITY MENU======================================================
 
+Feature: BVT Check Reports Tier1 Feature
 
+    Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
+
+Background: Pre Login as HDS Admin
+    Given I am logged in to HDS as a Admin
+
+	
 
 # #HDS Home page #4
 
@@ -19,11 +24,11 @@
 # 	Then HDS Home page is displayed
 
 
-# @tc:2055
-# Scenario: Verify_Security_Manage_Users_page  
-# 	Given HDS Home page is displayed
-# 	When  Manage User link under Security Menu is clicked
-# 	Then  Manage Users page is loaded
+@tc:2055 @wip28
+Scenario: Verify_Security_Manage_Users_page  
+	Given HDS Home page is displayed
+	When Manage User link under Security Menu is clicked
+	Then Manage Users page is loaded
 
 	
 # # Manage Users - New

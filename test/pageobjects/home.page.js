@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeEnabled, expectToBePresent, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -19,12 +19,14 @@ class HomePage extends BasePage{
  get miscMaterialtxt()  { return $('//*[@id="TempID_1"]/div[3]/div[1]/div[5]/div[2]/div[1]/input[1]')}
  get miscMaterialtxt2() { return $('//*[@id="TempID_1"]/div[3]/div[1]/div[5]/div[2]/div[1]/input[2]')}
  get redAlert()         { return $('//strong[text()="YOU HAVE UNSAVED CHANGES!"]')}
- get saveChanges()      { return $('#koSave')}
- get saveConfirmation() { return $('//span[text()="Products Have Been Saved."]')}
- get groupChangedMessage() { return $('//*[@id="top-nav"]/div[2]/span[text()="The changes that you made caused the total cost to not align with the current Group selected, please confirm the assigned Group."]')}
- get productGroupPriceAlert() { return $('//div[text()="Total Cost does not align with the currently selected Group."]')}
+ get saveChanges()              { return $('#koSave')}
+ get saveConfirmation()         { return $('//span[text()="Products Have Been Saved."]')}
+ get groupChangedMessage()      {  return $('//*[@id="top-nav"]/div[2]/span[text()="The changes that you made caused the total cost to not align with the current Group selected, please confirm the assigned Group."]')}
+ get productGroupPriceAlert()   { return $('//div[text()="Total Cost does not align with the currently selected Group."]')}
+ get homeDashboardText()        { return $('//span[text()="Dashboard"]')}    
+ get buyersListPage()           { return $('//a[text()="Buyers"]')}
+ get managerUsers()             { return $('=Manage Users')}
 
- get buyersListPage()   { return $('//a[text()="Buyers"]')}
 
 
  getFloorGroupVal(groupVal) {
@@ -34,7 +36,14 @@ class HomePage extends BasePage{
  navigateToProductListPage(){
      waitAndClick(this.productList, "Product List");
      waitAndClick(this.openProduct, "Product")
-     
+ }
+
+ validateHDSHomePageIsDisplayed(){
+     expectToBeDisplayed(this.homeDashboardText,'Home Page')
+ }
+
+ getManageUsers(){
+     waitAndClick(this.managerUsers, 'Manage Users Link')
  }
 
  validateProductDetails(subsciber){

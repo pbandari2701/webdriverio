@@ -177,6 +177,15 @@ module.exports = {
         }
     },
 
+    expectToBeDisplayed: function(element, elementLabel){
+        try {
+            expect(ele).toBeDisplayed();
+            allureReporter.addStep(elementLabel+' is displayed', 'passed');
+        } catch (Error) {
+            allureReporter.addStep(elementLabel+' is not displayed', getScreenshot(), 'failed');
+        }
+    },
+
     getAttributeValue: function(element, attribute){
         try {
            const ele = element;
