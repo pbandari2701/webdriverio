@@ -19,7 +19,7 @@ Examples:
     | Lifestyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-@bvt @tier1
+@bvt @tier1 @filenames
 Scenario Outline: Check CalcBreakDown report off of Active Design
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -48,7 +48,7 @@ Examples:
     | LifeStyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-@bvt @tier1 @wip
+@bvt @tier1 @filenames
 Scenario Outline: Check Flooring Quote Calculator breakdown Reports
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -59,7 +59,7 @@ Examples:
 	| Service_offering | Buyer_Name    | Community_Name   |
 	| Flooring         | autotest      | Westford 3s PH 2 |
 
-@bvt @tier1 @wip
+@bvt @tier1
 Scenario Outline: Check Job Report - Material and Labor Breakdown
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>

@@ -1,7 +1,6 @@
 # Docker
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 parameters:
 
   - name: environment
@@ -22,18 +21,9 @@ parameters:
     - tier1
     - tier2
     - clickthrough
-    - regression
+    - bvt
     - wip
   
-  - name: browser
-    displayName: Test Browser
-    type: string
-    default : chrome
-    values:
-    - chrome
-    - firefox
-    - safari
-
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -45,7 +35,6 @@ variables:
   SUITE_NAME         :  ${parameters.suiteName}
   TEST_ENVIRONMENT   :  ${parameters.environment}
   autotest-image-name: 'autotest-design-systems'
-
 
 steps:
 

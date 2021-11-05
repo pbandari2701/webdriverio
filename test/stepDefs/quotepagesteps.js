@@ -24,8 +24,10 @@ When(/^User Clicks on the Calculator Breakdown Report Link for (.+)$/, function(
 Then(/^A Calculator breakdown report for the (.+) design scenario is successfully generated$/, function(svcOffering){
     if(svcOffering == 'Flooring'){
         console.log("IN FILE DOWNLOAD")
-        waitForFileToDownload(Flooring_Design_FileName);
+        quotePage.validateDownloadedFilesFor('Flooring Design');
+       // waitForFileToDownload(Flooring_Design_FileName);
     }else{
-        waitForFileToDownload(WallTile_FileName);
+        quotePage.validateDownloadedFilesFor('Wall Tile Design');
+      //  waitForFileToDownload(WallTile_FileName);
     }
 })

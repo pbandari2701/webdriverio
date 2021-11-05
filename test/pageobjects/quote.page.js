@@ -1,4 +1,6 @@
-const { waitAndClick, waitUntilElementIsDisplayed, assertTextPresentOnElement } = require("../helpers/customcommands");
+const fs = require('fs')
+const allureReporter = require('@wdio/allure-reporter').default
+const { waitAndClick, waitUntilElementIsDisplayed, assertTextPresentOnElement, pauseBrowser } = require("../helpers/customcommands");
 const { default: BasePage } = require("./base.page");
 
 class QuotePage extends BasePage{
@@ -23,6 +25,17 @@ class QuotePage extends BasePage{
 
     downloadReportWallTile(){
         waitAndClick(this.downloadBreakdownReportWallTile, "Download Breakdown report Wall Tile")
+    }
+
+    validateDownloadedFilesFor(expectedFileName){
+        pauseBrowser(10000)
+        fs.readdirSync('./Reports/downloads/').forEach(file=>{
+            if(file.includes(expectedFileName)){  
+                allureReporter.addStep('Validated that the Quote Reports '+file+ ' is downloaded succesfully', 'passed')
+            }else{ 
+                pauseBrowser(10000)     
+            }
+        })
     }
 
 }
