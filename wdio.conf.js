@@ -31,9 +31,9 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
-        maxInstances: 6,
+        maxInstances: 1,
         browserName: testBrowser,
         'goog:chromeOptions': {
             // to run chrome headless the following flags are required

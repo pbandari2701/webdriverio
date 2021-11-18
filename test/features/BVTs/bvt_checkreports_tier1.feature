@@ -48,7 +48,7 @@ Examples:
     | LifeStyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-@bvt @tier1 @filenames
+@bvt @tier1 
 Scenario Outline: Check Flooring Quote Calculator breakdown Reports
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -72,7 +72,7 @@ Examples:
 	| Service_offering      | Buyer_Name    | Community_Name   |
 	| All Service Offerings | autotest      | Westford 3s PH 2 |
 
-@bvt @tier1 @wip
+@bvt @tier1
 Scenario Outline: Check Quote Report - Design Summary Particpant
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
@@ -84,7 +84,7 @@ Examples:
 	| Service_offering       	| Buyer_Name | Community_Name   |
 	|   All Service Offerings	| autotest   | Westford 3s PH 2 |
 
-@bvt @tier1 @wip
+@bvt @tier1
 Scenario Outline: Check Design Summary Buyer - Quote Report
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>

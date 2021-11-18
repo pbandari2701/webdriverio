@@ -21,7 +21,7 @@ Scenario: Verify HDS Home Page
 	Then HDS Home page is displayed
 
 
-@tc:2055 @clickthrough @bvt
+@tc:2055 @clickthrough @wip
 Scenario: Verify_Security_Manage_Users_page  
 	Given HDS Home page is displayed
 	When Manage User link under Security Menu is clicked
