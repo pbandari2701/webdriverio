@@ -19,7 +19,7 @@ Examples:
     | Lifestyle Options | autotest	   | Westford 3s PH 2  |
 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
 
-@bvt @tier1 @filenames
+@bvt @tier1 
 Scenario Outline: Check CalcBreakDown report off of Active Design
 	Given I am on Buyer list page
 		And A buyer with the following attributes is opened <Community_Name> , <Buyer_Name>
