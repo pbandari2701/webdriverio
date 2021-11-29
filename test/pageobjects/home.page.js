@@ -26,8 +26,7 @@ class HomePage extends BasePage{
  get homeDashboardText()        { return $('//span[text()="Dashboard"]')}    
  get buyersListPage()           { return $('//a[text()="Buyers"]')}
  get managerUsers()             { return $('=Manage Users')}
-
-
+ get areaTypes()                { return $("//a[text()='Area Types']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -38,9 +37,9 @@ class HomePage extends BasePage{
      waitAndClick(this.openProduct, "Product")
  }
 
- validateHDSHomePageIsDisplayed(){
-    expectToHaveTitle('- HDS');
- }
+    validateHDSHomePageIsDisplayed(){
+        expectToBeDisplayed(this.homeDashboardText, "Home Dashboard");
+}
 
  getManageUsers(){
      waitAndClick(this.managerUsers, 'Manage Users Link')
@@ -108,6 +107,9 @@ saveChangeAndConfirm(){
 
 navigateToBuyerList(){
     waitAndClick(this.buyersListPage, "Buyers");
+}
+clcikingOnAreaTypesInSiteAdmin(){
+    waitAndClick(this.areaTypes, "Area Types");
 }
 
 }

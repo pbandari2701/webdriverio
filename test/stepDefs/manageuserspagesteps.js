@@ -5,7 +5,7 @@ When(/^the New button is clicked in the Manage Users list page$/, function(){
     manageusersPage.clickNewUser();
 })
 
-Then(/^the User editor page is loaded$/, function(){
+Then(/^the User editor page is loaded$/, async function(){
     manageusersPage.validateUserEditorPageIsloaded();
 })
 

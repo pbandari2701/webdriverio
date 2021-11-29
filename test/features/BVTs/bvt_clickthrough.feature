@@ -35,31 +35,33 @@ Scenario: Verify_Security_User_Editor_Page_for_New_User
 		And  Manage User link under Security Menu is clicked
 	When the New button is clicked in the Manage Users list page
 	Then  the User editor page is loaded
+	
 
-@clickthrough @bvt @wip
+@clickthrough @bvt @test
 Scenario: Verify_Security_Users_New_ERP_Linked_bttn
 	Given HDS Home page is displayed
 		And  Manage User link under Security Menu is clicked
 	When the New ERP Linked button is clicked in the Manage Users list page
 	Then  The ERP Designer Search modal is displayed
 
+
 # 	# Manage Users - Open
 
-@tc:2057 @clickthrough @bvt @wip
+@tc:2057 @clickthrough @bvt
 Scenario: Verify_Security_User_Editor_Page_for_existing_User  
 	Given HDS Home page is displayed
 		And  Manage User link under Security Menu is clicked
 	When the Open button is clicked for the first user listed in the Manage users list page
-Then  the User editor page is loaded
-
+    Then  the User editor page is loaded
 
 # ##SITE ADMINISTRATION MENU======================================================
 
-# @tc:2058
+@tc:2058 @clickthrough
 Scenario: Verify_Site_Admin_Area_Types_page  
 	Given HDS Home page is displayed
 	When  Area Types link under Site Administration Menu is clicked
-	Then  Area Typespage is loaded 
+	Then  Area Typespage is loaded
+
 
 # #Area Types-New
 # @tc:2059

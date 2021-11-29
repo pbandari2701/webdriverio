@@ -170,7 +170,7 @@ module.exports = {
 
     expectToBeDisabled: function(element, elementLabel){
         try {
-            expect(ele).toBeDisabled();
+            expect(element).toBeDisabled();
             allureReporter.addStep(elementLabel+' is Disabled', 'passed');
         } catch (Error) {
             allureReporter.addStep(elementLabel+' is not Disabled', getScreenshot(), 'failed');
@@ -179,7 +179,7 @@ module.exports = {
 
     expectToBeDisplayed: function(element, elementLabel){
         try {
-            expect(ele).toBeDisplayed();
+            expect(element).toBeDisplayed();
             allureReporter.addStep(elementLabel+' is displayed', 'passed');
         } catch (Error) {
             allureReporter.addStep(elementLabel+' is not displayed', getScreenshot(), 'failed');
@@ -224,13 +224,12 @@ module.exports = {
         browser.reload();
     },
 
-    waitForDisplay: function (element) {
+    waitForDisplay: function (element, elementLabel) {
         try {
             element.waitForDisplayed({timeout : WAIT_FOR_TIMEOUT})
-            allureReporter.addStep(' is Disabled', 'passed');
+            allureReporter.addStep(elementLabel +' is Displayed', 'passed');
         } catch (Error) {
-
-            allureReporter.addStep(' is Disabled',getScreenshot(), 'failed');
+            allureReporter.addStep(elementLabel +' is NOT Displayed',getScreenshot(), 'failed');
         }
        
     },

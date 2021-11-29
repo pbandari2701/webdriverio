@@ -15,7 +15,7 @@ class LoginPage extends BasePage{
         if(!(this.signoutLink.isDisplayed())){
         sendKeys(this.hdsUserNametxt, this.getTestData()[userType]['username'], 'UserName txt') ;
         sendKeys(this.hdsPasswordtxt, this.getTestData()[userType]['password'], 'Password TXT');
-        waitAndClick(this.ssoBtnSubmit);
+        waitAndClick(this.ssoBtnSubmit,"submit button");
         selectByTxt(this.subsciberDD,this.getTestData()[userType]['subscriber'],"subscriber Dropdown");
         }
     }
