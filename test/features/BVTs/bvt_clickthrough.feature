@@ -63,65 +63,63 @@ Scenario: Verify_Site_Admin_Area_Types_page
 	Then  Area Typespage is loaded
 
 
-# #Area Types-New
-# @tc:2059
-# Scenario: Verify_Site_Admin_Area_Types_New
-# 	Given HDS Home page is displayed
-# 		And Area Types link under Site Administration Menu is clicked
-# 	When the New button is clicked in the site-level Area Type page
-# 	Then the modal for creating new Area type is displayed in the site-level Area Type page
+#Area Types-New
+@tc:2059
+Scenario: Verify_Site_Admin_Area_Types_New
+	Given HDS Home page is displayed
+		And Area Types link under Site Administration Menu is clicked
+	When the New button is clicked in the site-level Area Type page
+	Then the modal for creating new Area type is displayed in the site-level Area Type page
 
 
-# #Area Types-Edit
-# @tc:2060
-# Scenario: Verify_Site_Admin_Area_Types_Edit
-# 	Given HDS Home page is displayed
-# 		And Area Types link under Site Administration Menu is clicked
-# 	When the Edit button is clicked for a randomly selected AreaType in the site-level Area Type page
-# 	Then the Area Type editor Modal is displayed in the site-level Area Type page
+#Area Types-Edit
+@tc:2060
+Scenario: Verify_Site_Admin_Area_Types_Edit
+	Given HDS Home page is displayed
+		And Area Types link under Site Administration Menu is clicked
+	When the Edit button is clicked for a randomly selected AreaType in the site-level Area Type page
+	Then the Area Type editor Modal is displayed in the site-level Area Type page
 
 
-# #Area Types-Disable
-# @tc:2061
-# Scenario: Verify_Site_Admin_Area_Types_disable
-# 	Given HDS Home page is displayed
-# 		And Area Types link under Site Administration Menu is clicked
-# 	When the Disable button is clicked for a randomly selected AreaType in the site-level Area Type page
-# 	Then the modal for disabling an Area type is displayed in the site-level Area Type page
+#Area Types-Disable
+@tc:2061
+Scenario: Verify_Site_Admin_Area_Types_disable
+	Given HDS Home page is displayed
+		And Area Types link under Site Administration Menu is clicked
+	When the Disable button is clicked for a randomly selected AreaType in the site-level Area Type page
+	Then the modal for disabling an Area type is displayed in the site-level Area Type page
 
 
-# #Area Types-Delete
-# @tc:2062
-# Scenario: Verify_Site_Admin_Area_Types_delete
-# 	Given HDS Home page is displayed
-# 		And Area Types link under Site Administration Menu is clicked
-# 	When the Delete button is clicked for a randomly selected AreaType in the site-level Area Type page
-# 	Then the modal for deleting an Area type is displayed in the site-level Area Type page
+#Area Types-Delete
+@tc:2062 @wip
+Scenario: Verify_Site_Admin_Area_Types_delete
+	Given HDS Home page is displayed
+		And Area Types link under Site Administration Menu is clicked
+	When the Delete button is clicked for a randomly selected AreaType in the site-level Area Type page
+	Then the modal for deleting an Area type is displayed in the site-level Area Type page
 
 
+@tc:2063
+Scenario: Verify_Site_Admin_Assign_Take_Off_page  
+	Given HDS Home page is displayed
+	When  Assign Take Offs page link under Site Administration Menu is clicked
+	Then  Assign Take Offs page is loaded
 
 
-# @tc:2063
-# Scenario: Verify_Site_Admin_Assign_Take_Off_page  
-# 	Given HDS Home page is displayed
-# 		When  Assign Take Offs page link under Site Administration Menu is clicked
-# 	Then  Assign Take Offs page is loaded
+#Assign Take Off--Missing Quantities Report
+@tc:2064
+Scenario: Verify_Site_Admin_Assign_Take_Off_Missing_Qty's_Rprt_link
+	Given HDS Home page is displayed
+	When the Missing Quantities Report link in the Site Admin menu is clicked
+	Then the Report Viewer page loaded
 
-
-# #Assign Take Off--Missing Quantities Report
-# @tc:2064
-# Scenario: Verify_Site_Admin_Assign_Take_Off_Missing_Qty's_Rprt_link
-# 	Given HDS Home page is displayed
-# 	When the Missing Quantities Report link in the Site Admin menu is clicked
-# 	#Then the Report Viewer page loaded
-
-# #Assign Take Offs-Edit
-# @tc:2065
-# Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
-# 	Given HDS Home page is displayed
-# 		And  Assign Take Offs page link under Site Administration Menu is clicked
-# 	When the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
-# 	Then the take Off editor Modal is displayed in the site-level Assign Take Offs list page
+#Assign Take Offs-Edit
+@tc:2065
+Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
+	Given HDS Home page is displayed
+		And  Assign Take Offs page link under Site Administration Menu is clicked
+	When the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
+	Then the take Off editor Modal is displayed in the site-level Assign Take Offs list page
 
 
 # #Assign Take Offs-Delete

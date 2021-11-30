@@ -25,8 +25,20 @@ class HomePage extends BasePage{
  get productGroupPriceAlert()   { return $('//div[text()="Total Cost does not align with the currently selected Group."]')}
  get homeDashboardText()        { return $('//span[text()="Dashboard"]')}    
  get buyersListPage()           { return $('//a[text()="Buyers"]')}
- get managerUsers()             { return $('=Manage Users')}
+ get managerUsers()             { return $("//a[text()='Manage Users']")}
  get areaTypes()                { return $("//a[text()='Area Types']")}
+ get newButton()                { return $("//a[@title='New']")}
+ get addDefaultArea()           { return $("//h4[@class='modal-title']")}
+ get editButton()               { return $('//a[@title="Edit"]')}
+ get editDefaultArea()          { return $("//h4[text()='Edit Default Area']")}
+ get disableButton()            { return $('//a[@title="Disable"]')}
+ get disableDefaultArea()       { return $("//h4[text()='Disable Default Area']")}
+ get deleteButton()             { return $('//a[@title="Delete"]')}
+ get deleteDefaultArea()        { return $("//h4[text()='Delete Area Type']")}
+ get assignTakeOffs()           { return $("//a[text()='Assign Take Offs']")}                      
+ get missingQuantitiesReport()  { return $("//a[text()='Missing Quantities Report']")}
+ get editTakeOff()              { return $("//h4[text()='Edit Take Off']")}                  
+
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -111,7 +123,46 @@ navigateToBuyerList(){
 clcikingOnAreaTypesInSiteAdmin(){
     waitAndClick(this.areaTypes, "Area Types");
 }
+clickingONNewButtonInAreaType(){ 
+    waitAndClick(this.newButton, 'new Button in AreaTypes');
+    pauseBrowser(5000);
+}
+validateAddDefaultAreaPopUpIsDisplayed(){
+    expectToBeDisplayed(this.addDefaultArea, "Add Default Area pop up");
+}
+clckingOnEditButtonINAreaType(){
+    waitAndClick(this.editButton, 'Edit Button in Area Types');
+    pauseBrowser(5000);
+}
+valiadteEditDefaultAreaPopUpIsDisplayed(){ 
+    expectToBeDisplayed(this.editDefaultArea, "Edit Default Area pop up");
+}
+clickingOnDisableButtonInAreaTypes(){
+    waitAndClick(this.disableButton, 'Disable button Area Types');
+    pauseBrowser(5000);
+}
+validateDisableDefaultAreaPopUpIsDisplayed(){ 
+    expectToBeDisplayed(this.disableDefaultArea, "Disable Default Area pop up");
+}
+clickingOnDeleteButtonAreaTypes(){
+    waitAndClick(this.deleteButton,  'Delete button Area Types');
+}
+validateDeleteDefaultArea(){ 
+    expectToBeDisplayed(this.deleteDefaultArea, "Delete Default Area pop up");
+ }
+ clickingOnAssignTakeOffs() {
+     waitAndClick(this.assignTakeOffs, "Assign Take Offs");
+ }
+ clickingOnMissingQuantitiesReport(){
+     waitAndClick(this.missingQuantitiesReport, "Missing Quantities Report");
+ } 
+ clickingOnEditButtonInAssignTakeOffs(){
+     waitAndClick(this.editButton, "Edit button");
+ } 
+ validateTakeOffEditorModalIsDisplayed() {
+     expectToBeDisplayed(this.editTakeOff, "Edit take off pop up");
+ }   
+
 
 }
-
 export default new HomePage();

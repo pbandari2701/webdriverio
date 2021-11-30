@@ -180,7 +180,7 @@ module.exports = {
     expectToBeDisplayed: function(element, elementLabel){
         try {
             expect(element).toBeDisplayed();
-            allureReporter.addStep(elementLabel+' is displayed', 'passed');
+            allureReporter.addStep(elementLabel+' is displayed',getScreenshot(), 'passed');
         } catch (Error) {
             allureReporter.addStep(elementLabel+' is not displayed', getScreenshot(), 'failed');
         }
