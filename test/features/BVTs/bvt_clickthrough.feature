@@ -132,29 +132,29 @@ Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
 
 
 
-# #Assign Take Offs-Disable 
-# @tc:2067
-# Scenario: Verify_Site_Admin_Assign_Take_Off_page_disable_bttn
-# 	Given HDS Home page is displayed
-# 		And  Assign Take Offs page link under Site Administration Menu is clicked
-# 	When the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
-# 	Then the Modal for disabling a take off is displayed in the site-level Assign Take Offs list page
+#Assign Take Offs-Disable 
+@tc:2067
+Scenario: Verify_Site_Admin_Assign_Take_Off_page_disable_bttn
+	Given HDS Home page is displayed
+		And  Assign Take Offs page link under Site Administration Menu is clicked
+	When the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
+	Then the Modal for disabling a take off is displayed in the site-level Assign Take Offs list page
 
 
 
-# #Assign Take Offs-Add Take Off 
-# @tc:2068
-# Scenario: Verify_Site_Admin_Assign_Take_Off_page_add_TakeOff_bttn
-# 	Given HDS Home page is displayed
-# 		And  Assign Take Offs page link under Site Administration Menu is clicked
-# 	When the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page
-# 	Then the Modal for adding a take off is displayed in the site-level Assign Take Offs list page
+#Assign Take Offs-Add Take Off 
+@tc:2068
+Scenario: Verify_Site_Admin_Assign_Take_Off_page_add_TakeOff_bttn
+	Given HDS Home page is displayed
+		And  Assign Take Offs page link under Site Administration Menu is clicked
+	When the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page
+	Then the Modal for adding a take off is displayed in the site-level Assign Take Offs list page
 
-# @tc:2069
-# Scenario: Verify_Site_Admin_Patterns_page  
-# 	Given HDS Home page is displayed
-# 	When  Patterns link under Site Administration Menu is clicked
-# 	Then  Patterns page is loaded 
+@tc:2069
+Scenario: Verify_Site_Admin_Patterns_page  
+	Given HDS Home page is displayed
+	When  Patterns link under Site Administration Menu is clicked
+	Then  Patterns page is loaded 
 
 # @tc:2070
 # Scenario: Verify_Site_Admin_Patterns_New_Pattern_bttn  

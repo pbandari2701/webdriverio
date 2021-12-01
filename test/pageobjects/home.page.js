@@ -38,7 +38,11 @@ class HomePage extends BasePage{
  get assignTakeOffs()           { return $("//a[text()='Assign Take Offs']")}                      
  get missingQuantitiesReport()  { return $("//a[text()='Missing Quantities Report']")}
  get editTakeOff()              { return $("//h4[text()='Edit Take Off']")}                  
-
+ get LoadingGif()               { return $("//h3[text()='Loading...']")}
+ get disableTakeOff()           { return $("//h4[text()='Disable Take Off']")}
+ get addTakeOffButton()         { return $('//a[text()=" Add Take Off"]')}
+ get addTakeOffPopUp ()         { return $('//h4[text()="Add Take Off"]')}
+ get patterns()                 { return $("//a[text()='Patterns']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -162,7 +166,21 @@ validateDeleteDefaultArea(){
  validateTakeOffEditorModalIsDisplayed() {
      expectToBeDisplayed(this.editTakeOff, "Edit take off pop up");
  }   
-
+clickingOnDisableButtonAssignTakeOffs(){
+    waitAndClick(this.disableButton, "Disable button");
+}
+validateDisableTakeOffPopUpIsDisplayed(){
+    expectToBeDisplayed(this.disableTakeOff, "Disable take off pop up");
+}
+clickingOnAddTakeOffButtonInareaType() {
+    waitAndClick(this.addTakeOffButton, "Add take off button");
+}
+validateAddTakeOffPopUpIsDisplayed(){
+    expectToBeDisplayed(this.addTakeOffPopUp, "Add take off pop up");
+}
+clickingOnPatterns (){
+    waitAndClick(this.patterns, "Patterns");
+}
 
 }
 export default new HomePage();

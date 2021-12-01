@@ -11,8 +11,8 @@ Then(/^The appropriate settings pertaining to the (.+) should be validated$/, fu
     HomePage.validateProductDetails(subscriber)
 });
 
-Given(/^HDS Home page is displayed$/,  function(){
-    HomePage.validateHDSHomePageIsDisplayed();
+Given(/^HDS Home page is displayed$/, async function(){
+    expectToHaveTitle('  - HDS');
 })
 
 When(/^Manage User link under Security Menu is clicked$/, function(){
@@ -70,5 +70,24 @@ When(/^the Edit button is clicked for a randomly selected Takeoff in the site-le
 Then(/^the take Off editor Modal is displayed in the site-level Assign Take Offs list page$/, function(){
     HomePage.validateTakeOffEditorModalIsDisplayed();
 })
+When(/^the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
+    HomePage.clickingOnDisableButtonAssignTakeOffs();
+})
+Then(/^the Modal for disabling a take off is displayed in the site-level Assign Take Offs list page$/, function(){
+    HomePage.validateDisableTakeOffPopUpIsDisplayed();
+})
+When(/^the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page$/, function(){
+    HomePage.clickingOnAddTakeOffButtonInareaType();
+})
+Then(/^the Modal for adding a take off is displayed in the site-level Assign Take Offs list page$/, function(){
+    HomePage.validateAddTakeOffPopUpIsDisplayed();
+})
+When(/^Patterns link under Site Administration Menu is clicked$/, function(){
+    HomePage.clickingOnPatterns();
+})
+Then(/^Patterns page is loaded$/, async function(){
+    expectToHaveTitle('Patterns - HDS');
+})
+
 
 
