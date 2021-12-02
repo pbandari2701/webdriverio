@@ -46,10 +46,27 @@ class HomePage extends BasePage{
  get newPattern ()              { return $("//button[text()=' New Pattern']")}
  get addPatternPopUp ()         { return $ ("//h4[text()='Add Pattern']")}
  get taggingProductCategories() { return $("//a[text()='Tagging Product Categories']")}
+ get buyerTypes ()              { return $("//a[text()='Buyer Types']")}
+ get newButton2 ()              { return $("//a[text()=' New']")}
+ get openButton ()              { return $('//a[@class="btn btn-info btn-xs"]')}
+ get categoryServiceOffering()  { return $("//a[text()='Category Service Offering']")}
+ get subscriberSettings ()      { return $("//a[text()='Subscriber Settings']")}
+ get companySetupPage()         { return $("//th[text()='Company Information:']")}
+ get globalSettingsPage()       { return $("//th[text()='Product Settings:']")}
+ get reportSetUpPage()          { return $("//th[text()='Report Setup - Default Disclosure Statements:']")}
+ get featuresPage()             { return $("//th[text()='Extras']")}
+ get erpPage()                  { return $("//th[text()='Integration']")}
+ get patternAvailability()      { return $("//a[text()='Pattern Availability']")}
+ get flooringGroups()           { return $("//a[text()='Flooring Groups']")}
+ get viewButton()               { return $("//a[text()=' View']")}
+
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
+ getSubscriberSettingsPageTab(SubscriberSettingsPageTab){ 
+    return $('//a[text()="'+SubscriberSettingsPageTab+'"]')
+}
 
  navigateToProductListPage(){
      waitAndClick(this.productList, "Product List");
@@ -160,7 +177,7 @@ validateDeleteDefaultArea(){
  }
  clickingOnAssignTakeOffs() {
      waitAndClick(this.assignTakeOffs, "Assign Take Offs");
-     waitUntilElementIsDisabled(this.LoadingGif);
+     waitUntilElementIsDisabled(this.LoadingGif, ' LoadingGif');
 
  }
  clickingOnMissingQuantitiesReport(){
@@ -191,11 +208,65 @@ clickingOnPatterns (){
 }
 clickingOnNewPatternButtonInPatterns() { 
     waitAndClick(this.newPattern, "New pattern button");
-}
+}0
 validateAddPatternPopUpIsDisplayed(){
     expectToBeDisplayed(this.addPatternPopUp, "Add pattern pop up");
 }
 clickingOnTaggingProductCategories(){ 
+    waitAndClick(this.taggingProductCategories, "tagging  Product categories");
 }
+clickingOnBuyerTypes (){
+    waitAndClick(this.buyerTypes, "Buyer types");
+}
+clickingOnNewButtonInBuyerTypes() {
+    waitAndClick(this.newButton2, "New button  in buyer types");
+} 
+clickingOnOpenButtonInBuyerTypes() {
+    waitAndClick(this.openButton, "Open button");
+}
+clickingOnCategoryServiceOffering(){
+    waitAndClick(this.categoryServiceOffering, "Category service offering");
+}
+clickingOnNewButtonInCategoryServiceOffering() {
+    waitAndClick(this.newButton2, "New button in category service  offering");
+}
+clickingOnOpenButtonInCategoryServiceOffering() {
+    waitAndClick(this.openButton, "Open button");
+} 
+clicikingSubscriberSettings() {
+    waitAndClick(this.subscriberSettings, "subscriber settings");
+} 
+clickingOnSubscriberSettingsPageTab(SubscriberSettingsPageTab){
+    waitAndClick(this.getSubscriberSettingsPageTab(SubscriberSettingsPageTab), 'subscriber settings page tab');
+}  
+validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
+    if (SubscriberSettingsPageTab == 'Company Setup') {
+        expectToBeDisplayed(this.companySetupPage, 'company setup page');
+    } else if(SubscriberSettingsPageTab == 'Global Settings'){
+        expectToBeDisplayed(this.globalSettingsPage, 'global settings page');
+    }else if(SubscriberSettingsPageTab == 'Report Setup'){
+        expectToBeDisplayed(this.reportSetUpPage, 'report set up page');
+    }else if(SubscriberSettingsPageTab == 'Features') {
+        expectToBeDisplayed(this.featuresPage,  'featuresPage');
+    } else if(SubscriberSettingsPageTab == 'ERP')  {
+        expectToBeDisplayed(this.erpPage, ' ERP Page');
+    } 
+ }
+ clickingOnPatternAvailability(){
+     waitAndClick(this.patternAvailability, 'pattern availability');
+     waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
+ } 
+ clickingOnFlooringGroups(){
+    waitAndClick(this.flooringGroups, 'flooring groups'); 
+ }
+ clckingOnNewButtonInFlooringGroups(){
+     waitAndClick (this.newButton2,'newButton');
+ }
+ clickingOnOpenButtonFlooringGroups(){
+     waitAndClick (this.openButton, "Open button")
+ }
+ clickingOnViewButtonFlooringGroups(){
+     waitAndClick (this.viewButton, "View button")
+ }  
 }
 export default new HomePage();

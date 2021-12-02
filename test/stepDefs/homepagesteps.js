@@ -104,11 +104,93 @@ Then(/^the pattern editor Modal is displayed in the site-level patterns list pag
 
 })
 When(/^Tagging Product Categories page link under Site Administration Menu is clicked$/, function(){
-    
+    HomePage.clickingOnTaggingProductCategories();
 })
-Then(/^Tagging Product Categories page is loaded$ /, function () {
-
+Then(/^Tagging Product Categories page is loaded$/,async function () {
+    expectToHaveTitle('Tagging Product Categories - HDS');
 }) 
+When(/^Buyer Types Page link under Site Administration Menu is clicked$/, function(){
+    HomePage.clickingOnBuyerTypes();
+})
+Then(/^Buyer Types Page is loaded$/, async function () {
+    expectToHaveTitle('Buy Type List - HDS');
+}) 
+When(/^the New button is clicked in the Buyer Type list page$/, function(){
+    HomePage.clickingOnNewButtonInBuyerTypes();
+    })
+Then(/^the Buyer type editor page under Site Admin menu is loaded$/, async function(){
+    expectToHaveTitle('HDS (QA) - Buyer Types Editor - HDS');
+})
+When(/^the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page$/, function(){
+    HomePage.clickingOnOpenButtonInBuyerTypes();
+})
+When(/^Category Service Offering page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnCategoryServiceOffering();
+})
+Then(/^Category Service Offering page is loaded$/, async function(){
+    expectToHaveTitle('Category Service Offering - HDS');
+})
+When(/^the New button is clicked in the Category Service Offering list page$/, function(){
+    HomePage.clickingOnCategoryServiceOffering();
+})
+Then(/^the Category Service Offering editor page is loaded$/, async function(){
+    expectToHaveTitle('Category Service Offering Editor - HDS')
+})
+When(/^the Open button is clicked for a randomly selected Category in the Category Service Offering list page$/, function(){
+    HomePage.clickingOnOpenButtonInCategoryServiceOffering();
+})
+When(/^Subscriber Settings page link under Administration Menu is clicked$/, function(){
+    HomePage.clicikingSubscriberSettings();
+})
+Then(/^Subscriber Settings page is loaded$/, async function() {
+    expectToHaveTitle('HDS (QA) - Subscriber Settings - HDS');
+}) 
+When(/^the (.+) drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page$/, function(Service_Offering){
+
+})
+Then(/^a drop down for showing max install Method waste factor is displayed for (.+) service offering is displayed in the Subscriber Settings page$/, function(Service_Offering){
+
+})
+When(/^the (.+) tab is clicked in the Subscriber Settings page$/, function(SubscriberSettingsPageTab){
+    HomePage.clickingOnSubscriberSettingsPageTab(SubscriberSettingsPageTab);
+})
+Then(/^the panel for (.+) tab is displayed in the Subscriber Settings page$/, function(SubscriberSettingsPageTab){
+    HomePage.validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab);
+})
+When(/^Pattern Availability page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnPatternAvailability();
+})
+Then(/^Pattern Availability page is loaded$/, async function() {
+    expectToHaveTitle('Pattern Availability - HDS');
+}) 
+When(/^Flooring Groups page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnFlooringGroups();
+})
+Then(/^Flooring Groups page is loaded$/, async function() {
+    expectToHaveTitle(' Flooring Groups - HDS');
+}) 
+When(/^the New button is clicked in the in the Flooring Groups list page under Administration Menu$/, function(){
+    HomePage.clckingOnNewButtonInFlooringGroups();
+})
+Then(/^the Flooring Groups editor page is loaded$/, async function(){
+    expectToHaveTitle('	Flooring Group Editor - HDS');
+})
+When(/^the Open button is clicked for a randomly selected group in the flooring group list page$/, function(){
+    HomePage.clickingOnOpenButtonFlooringGroups();
+})
+When(/^the 'view' button is clicked in the Flooring Group Editor page under Administration menu$/,function () {
+    HomePage.clickingOnViewButtonFlooringGroups();
+})
+Then(/^the view history page for the flooring group is loaded$/, async function(){
+    expectToHaveTitle('	Flooring Group History - HDS');
+})
+
+
+
+
+
+
+
 
 
 

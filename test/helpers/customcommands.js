@@ -189,7 +189,7 @@ module.exports = {
     expectToHaveTitle:async function(title){
         try {
             await expect(browser).toHaveTitle(title);
-            this.pauseBrowser(5000)
+            this.pauseBrowser(5000);
             allureReporter.addStep('Validated that '+title+' is successfully displayed', getScreenshot(),'passed');
         } catch (Error) {
             allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');

@@ -225,136 +225,142 @@ Scenario: Verify_Site_Admin_Patterns_Edit_bttn
 # 	When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page
 # 	Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page. 
 
-@2075
+@tc:2075
 Scenario: Verify_Tagging_Prod_Categories_page  
 	Given HDS Home page is displayed
 	When  Tagging Product Categories page link under Site Administration Menu is clicked
-	Then  Tagging Product Categories page is loaded 
+	Then  Tagging Product Categories page is loaded
 
-# Scenario: Verify_Buyer_Types_page  
-# 	Given HDS Home page is displayed
-# 	When  Buyer Types Page link under Site Administration Menu is clicked
-# 	Then  Buyer Types Page is loaded 
+@tc:2076
+Scenario: Verify_Buyer_Types_page  
+	Given HDS Home page is displayed
+	When  Buyer Types Page link under Site Administration Menu is clicked
+	Then  Buyer Types Page is loaded 
 
-# #Buyer Types - New
-# #46
-# Scenario: Verify_Buyer_Types_page_New_bttn 
-# 	Given HDS Home page is displayed
-# 		And Buyer Types Page link under Site Administration Menu is clicked
-# 	When the New button is clicked in the Buyer Type list page
-# 	Then the Buyer type editor page under Site Admin menu is loaded
-
-
-# #Buyer Types - Edit
-# #47
-# Scenario: Verify_Buyer_Types_page_Open
-# 	Given HDS Home page is displayed
-# 		And Buyer Types Page link under Site Administration Menu is clicked
-#     When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page
-# 	Then the Buyer type editor page under Site Admin menu is loaded
+#Buyer Types - New
+#46
+@tc:2077
+Scenario: Verify_Buyer_Types_page_New_bttn 
+	Given HDS Home page is displayed
+		And Buyer Types Page link under Site Administration Menu is clicked
+	When the New button is clicked in the Buyer Type list page
+	Then the Buyer type editor page under Site Admin menu is loaded
 
 
-# ##ADMINISTRATION MENU======================================================
-# Scenario: Verify_Admin_Category_Svc_Offering_listPage  
-# 	Given HDS Home page is displayed
-# 	When  Category Service Offering page link under Administration Menu is clicked
-# 	Then  Category Service Offering page is loaded 
+#Buyer Types - Edit
+#47
+@tc:2078
+Scenario: Verify_Buyer_Types_page_Open
+	Given HDS Home page is displayed
+		And Buyer Types Page link under Site Administration Menu is clicked
+    When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page
+	Then the Buyer type editor page under Site Admin menu is loaded
 
-# #Category Svc Offerings - New
-# #50
-# Scenario: Verify_Admin_Category_Svc_Offering_New_bttn  
-# 	Given HDS Home page is displayed
-# 		And Category Service Offering page link under Administration Menu is clicked
-# 	When the New button is clicked in the Category Service Offering list page
-# 	Then the Category Service Offering editor page is loaded
+@tc:2079
+Scenario: Verify_Admin_Category_Svc_Offering_listPage  
+	Given HDS Home page is displayed
+	When  Category Service Offering page link under Administration Menu is clicked
+	Then  Category Service Offering page is loaded 
 
-# #Category Svc Offerings  - Edit
-# #51
-# Scenario: Verify_Admin_Category_Svc_Offering_Open  
-# 	Given HDS Home page is displayed
-# 		And Category Service Offering page link under Administration Menu is clicked
-# 	When the Open button is clicked for a randomly selected Category in the Category Service Offering list page
-# 	Then the Category Service Offering editor page is loaded
+#Category Svc Offerings - New
+#50
+@tc:2080
+Scenario: Verify_Admin_Category_Svc_Offering_New_bttn  
+	Given HDS Home page is displayed
+		And Category Service Offering page link under Administration Menu is clicked
+	When the New button is clicked in the Category Service Offering list page
+	Then the Category Service Offering editor page is loaded
+
+#Category Svc Offerings  - Edit
+#51
+@tc:2081
+Scenario: Verify_Admin_Category_Svc_Offering_Open  
+	Given HDS Home page is displayed
+		And Category Service Offering page link under Administration Menu is clicked
+	When the Open button is clicked for a randomly selected Category in the Category Service Offering list page
+	Then the Category Service Offering editor page is loaded
            
+# ##ADMINISTRATION MENU======================================================
+@tc:2082
+Scenario: Verify_Admin_Subscriber_Settings_page  
+	Given HDS Home page is displayed
+	When  Subscriber Settings page link under Administration Menu is clicked
+	Then  Subscriber Settings page is loaded
 
-# Scenario: Verify_Admin_Subscriber_Settings_page  
-# 	Given HDS Home page is displayed
-# 	When  Subscriber Settings page link under Administration Menu is clicked
-# 	Then  Subscriber Settings page is loaded 
+@tc:2083
+#Subscriber Settings - Company setup - Flooring DD (max IM wast factore)
+#Subscriber Settings - Company setup - CW DD (max IM wast factore)
+Scenario Outline: Verify_Admin_Subscriber_Settings_page_MaxIM waste factor drop down bttn
+	Given HDS Home page is displayed
+		And Subscriber Settings page link under Administration Menu is clicked
+	When the <Service_Offering> drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page
+	Then a drop down for showing max install Method waste factor is displayed for <Service_Offering> service offering is displayed in the Subscriber Settings page
 
-
-
-
-
-# #Subscriber Settings - Company setup - Flooring DD (max IM wast factore)
-# #Subscriber Settings - Company setup - CW DD (max IM wast factore)
-# Scenario Outline: Verify_Admin_Subscriber_Settings_page_MaxIM waste factor drop down bttn
-# 	Given HDS Home page is displayed
-# 		And Subscriber Settings page link under Administration Menu is clicked
-# 	When the <Service_Offering> drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page
-# 	Then a drop down for showing max install Method waste factor is displayed for <Service_Offering> service offering is displayed in the Subscriber Settings page
-
-# Examples: 
-# | Service_Offering |
-# | Flooring         |
-# | Counter and Wall |
+Examples: 
+| Service_Offering |
+| Flooring         |
+| Counter and Wall |
 
 
 
-# #Subscriber Settings - Company setup
-# #Subscriber Settings - Repot setup - 
-# #Subscriber Settings - Email setup - 
-# #Subscriber Settings - Available Patterns- 
-# Scenario Outline: Verify_Admin_Subscriber_Settings_page_tabs
-# 	Given HDS Home page is displayed
-# 		And Subscriber Settings page link under Administration Menu is clicked
-# 	When the <SubscriberSettingsPageTab> tab is clicked in the Subscriber Settings page
-# 	Then the panel for <SubscriberSettingsPageTab> tab is displayed in the Subscriber Settings page
+#Subscriber Settings - Company setup
+#Subscriber Settings - Repot setup - 
+#Subscriber Settings - Email setup - 
+#Subscriber Settings - Available Patterns- 
 
-# Examples: 
-# | SubscriberSettingsPageTab |
-# | Company_Setup             |
-# | Global_Settings           |
-# | Report_Setup              |
-# | Features                  |
-# | ERP                       |
+@tc:2084
+Scenario Outline: Verify_Admin_Subscriber_Settings_page_tabs
+	Given HDS Home page is displayed
+		And Subscriber Settings page link under Administration Menu is clicked
+	When the <SubscriberSettingsPageTab> tab is clicked in the Subscriber Settings page
+	Then the panel for <SubscriberSettingsPageTab> tab is displayed in the Subscriber Settings page
 
-
-
-# Scenario: Verify_Pattern_Availability_page   
-# 	Given HDS Home page is displayed
-# 	When  Pattern Availability page link under Administration Menu is clicked
-# 	Then  Pattern Availability page is loaded 
-
-# Scenario: Verify_Admin_Flooring_Groups_listpage  
-# 	Given HDS Home page is displayed
-# 	When  Flooring Groups page link under Administration Menu is clicked
-# 	Then  Flooring Groups page is loaded 
-
-# #Flooring Groups - New 
-# Scenario: Verify_Admin_Flooring_Groups_New_Bttn
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
-# 	When the New button is clicked in the in the Flooring Groups list page under Administration Menu
-# 	Then the Flooring Groups editor page is loaded
+Examples: 
+| SubscriberSettingsPageTab |
+| Company Setup             |
+| Global Settings           |
+| Report Setup              |
+| Features                  |
+| ERP                       |
 
 
-# #Flooring Groups - Open
-# Scenario: Verify_Admin_Flooring_Groups_pg_Open
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
-# 	When the Open button is clicked for a randomly selected group in the flooring group list page
-# 	Then the Flooring Groups editor page is loaded
+@tc:2085
+Scenario: Verify_Pattern_Availability_page   
+	Given HDS Home page is displayed
+	When  Pattern Availability page link under Administration Menu is clicked
+	Then  Pattern Availability page is loaded
+
+@tc:2086
+Scenario: Verify_Admin_Flooring_Groups_listpage  
+	Given HDS Home page is displayed
+	When  Flooring Groups page link under Administration Menu is clicked
+	Then  Flooring Groups page is loaded 
+
+#Flooring Groups - New 
+@tc:2087
+Scenario: Verify_Admin_Flooring_Groups_New_Bttn
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+	When the New button is clicked in the in the Flooring Groups list page under Administration Menu
+	Then the Flooring Groups editor page is loaded
 
 
-# #Flooring Groups - Open - View History
-# Scenario: Verify_Admin_Flooring_Groups_Open_View_history
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
+#Flooring Groups - Open
+@tc:2088
+Scenario: Verify_Admin_Flooring_Groups_pg_Open
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+	When the Open button is clicked for a randomly selected group in the flooring group list page
+	Then the Flooring Groups editor page is loaded
 
-# 		And the Open button is clicked for a randomly selected group in the flooring group list page
-# 	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
-# 	Then the view history page for the flooring group is loaded
+@tc:2089
+#Flooring Groups - Open - View History
+Scenario: Verify_Admin_Flooring_Groups_Open_View_history
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+		And the Open button is clicked for a randomly selected group in the flooring group list page
+	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
+	Then the view history page for the flooring group is loaded
 
 
 # Scenario: Verify_Diagram_Colors_page  
