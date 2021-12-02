@@ -45,6 +45,7 @@ class HomePage extends BasePage{
  get patterns()                 { return $("//a[text()='Patterns']")}
  get newPattern ()              { return $("//button[text()=' New Pattern']")}
  get addPatternPopUp ()         { return $ ("//h4[text()='Add Pattern']")}
+ get taggingProductCategories() { return $("//a[text()='Tagging Product Categories']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -194,6 +195,7 @@ clickingOnNewPatternButtonInPatterns() {
 validateAddPatternPopUpIsDisplayed(){
     expectToBeDisplayed(this.addPatternPopUp, "Add pattern pop up");
 }
-
+clickingOnTaggingProductCategories(){ 
+}
 }
 export default new HomePage();

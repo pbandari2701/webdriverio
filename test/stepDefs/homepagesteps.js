@@ -103,6 +103,13 @@ When(/^the Edit button is clicked for a randomly selected Pattern in the site-le
 Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
 
 })
+When(/^Tagging Product Categories page link under Site Administration Menu is clicked$/, function(){
+    
+})
+Then(/^Tagging Product Categories page is loaded$ /, function () {
+
+}) 
+
 
 
 
