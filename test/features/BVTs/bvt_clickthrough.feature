@@ -156,20 +156,20 @@ Scenario: Verify_Site_Admin_Patterns_page
 	When  Patterns link under Site Administration Menu is clicked
 	Then  Patterns page is loaded 
 
-# @tc:2070
-# Scenario: Verify_Site_Admin_Patterns_New_Pattern_bttn  
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 	When the New Pattern button is clicked in the site-level Patterns list page
-# 	Then the New Pattern Modal is displayed in the site-level patterns list page
+@tc:2070
+Scenario: Verify_Site_Admin_Patterns_New_Pattern_bttn  
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+	When the New Pattern button is clicked in the site-level Patterns list page
+	Then the New Pattern Modal is displayed in the site-level patterns list page
 
-# @tc:2071
-# Scenario: Verify_Site_Admin_Patterns_Edit_bttn
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected 
-# 	When the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page
-# 	Then the pattern editor Modal is displayed in the site-level patterns list page
+@tc:2071
+Scenario: Verify_Site_Admin_Patterns_Edit_bttn
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected
+	When the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page
+	Then the pattern editor Modal is displayed in the site-level patterns list page
 
 # Scenario: Verify_Site_Admin_Patterns_Copy_bttn
 # 	Given HDS Home page is displayed
@@ -217,7 +217,7 @@ Scenario: Verify_Site_Admin_Patterns_page
 # 		And Area Type Selected
 # 	When the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page
 # 	Then the Add New TakeOff Modal is displayed in the site-level patterns list page
-
+@2074
 # Scenario: 04 Verify_Site_Admin_Patterns_Tracer_bttn
 # 	Given HDS Home page is displayed
 # 		And Patterns link under Site Administration Menu is clicked
@@ -225,11 +225,11 @@ Scenario: Verify_Site_Admin_Patterns_page
 # 	When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page
 # 	Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page. 
 
-
-# Scenario: Verify_Tagging_Prod_Categories_page  
-# 	Given HDS Home page is displayed
-# 	When  Tagging Product Categories page link under Site Administration Menu is clicked
-# 	Then  Tagging Product Categories page is loaded 
+@2075
+Scenario: Verify_Tagging_Prod_Categories_page  
+	Given HDS Home page is displayed
+	When  Tagging Product Categories page link under Site Administration Menu is clicked
+	Then  Tagging Product Categories page is loaded 
 
 # Scenario: Verify_Buyer_Types_page  
 # 	Given HDS Home page is displayed

@@ -88,6 +88,21 @@ When(/^Patterns link under Site Administration Menu is clicked$/, function(){
 Then(/^Patterns page is loaded$/, async function(){
     expectToHaveTitle('Patterns - HDS');
 })
+When(/^the New Pattern button is clicked in the site-level Patterns list page$/, function(){
+    HomePage.clickingOnNewPatternButtonInPatterns();
+    })
+Then(/^the New Pattern Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateAddPatternPopUpIsDisplayed();
+})
+Given(/^Area Type Selected$/, function(){
+
+})
+When(/^the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page$/, function(){
+
+})
+Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
+
+})
 
 
 

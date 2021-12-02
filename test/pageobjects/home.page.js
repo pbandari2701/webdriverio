@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -43,6 +43,8 @@ class HomePage extends BasePage{
  get addTakeOffButton()         { return $('//a[text()=" Add Take Off"]')}
  get addTakeOffPopUp ()         { return $('//h4[text()="Add Take Off"]')}
  get patterns()                 { return $("//a[text()='Patterns']")}
+ get newPattern ()              { return $("//button[text()=' New Pattern']")}
+ get addPatternPopUp ()         { return $ ("//h4[text()='Add Pattern']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -126,6 +128,7 @@ navigateToBuyerList(){
 }
 clcikingOnAreaTypesInSiteAdmin(){
     waitAndClick(this.areaTypes, "Area Types");
+    waitUntilElementIsDisabled(this.LoadingGif);
 }
 clickingONNewButtonInAreaType(){ 
     waitAndClick(this.newButton, 'new Button in AreaTypes');
@@ -156,6 +159,8 @@ validateDeleteDefaultArea(){
  }
  clickingOnAssignTakeOffs() {
      waitAndClick(this.assignTakeOffs, "Assign Take Offs");
+     waitUntilElementIsDisabled(this.LoadingGif);
+
  }
  clickingOnMissingQuantitiesReport(){
      waitAndClick(this.missingQuantitiesReport, "Missing Quantities Report");
@@ -180,6 +185,14 @@ validateAddTakeOffPopUpIsDisplayed(){
 }
 clickingOnPatterns (){
     waitAndClick(this.patterns, "Patterns");
+    waitUntilElementIsDisabled(this.LoadingGif);
+
+}
+clickingOnNewPatternButtonInPatterns() { 
+    waitAndClick(this.newPattern, "New pattern button");
+}
+validateAddPatternPopUpIsDisplayed(){
+    expectToBeDisplayed(this.addPatternPopUp, "Add pattern pop up");
 }
 
 }
