@@ -59,8 +59,10 @@ class HomePage extends BasePage{
  get patternAvailability()      { return $("//a[text()='Pattern Availability']")}
  get flooringGroups()           { return $("//a[text()='Flooring Groups']")}
  get viewButton()               { return $("//a[text()=' View']")}
-
-
+ get diagramColors()            { return $("//a[text()='Diagram Colors']")}
+ get aboutLink()                { return $("//a[text()='About']")}
+ get DECounterWall()            {return $("//a[@href='/Administration/SubscriberDesignExtras.aspx']")}
+ get DEFlooring()               { return $("//a[@href='/Administration/FlooringDesignExtras.aspx']")}
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -267,6 +269,21 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
  }
  clickingOnViewButtonFlooringGroups(){
      waitAndClick (this.viewButton, "View button")
- }  
+ }
+ clickingOnDiagramColors()  {
+     waitAndClick(this.diagramColors,  'diagram Colors');
+ }
+ clickingOnAboutLink (){
+     waitAndClick(this.aboutLink, 'about');
+ }
+ clickingOnDesignExtras(ServiceOffering){
+     if (ServiceOffering == 'Counter & Wall') {
+         waitAndClick(this.DECounterWall, ' DE CounterWall');
+         
+     } else if (ServiceOffering == 'Flooring'){ 
+         waitAndClick(this.DEFlooring, '  DE Flooring');
+     }
+
+ }
 }
 export default new HomePage();

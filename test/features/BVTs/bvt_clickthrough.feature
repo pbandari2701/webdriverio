@@ -362,25 +362,27 @@ Scenario: Verify_Admin_Flooring_Groups_Open_View_history
 	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
 	Then the view history page for the flooring group is loaded
 
+@tc:2090
+Scenario: Verify_Diagram_Colors_page  
+	Given HDS Home page is displayed
+	When  Diagram Colors page link under Administration Menu is clicked
+	Then  Diagram Colors page is loaded
 
-# Scenario: Verify_Diagram_Colors_page  
-# 	Given HDS Home page is displayed
-# 	When  Diagram Colors page link under Administration Menu is clicked
-# 	Then  Diagram Colors page is loaded 
+@tc:2091
+Scenario: Verify_Admin_About_page  
+	Given HDS Home page is displayed
+	When  About page link under Administration Menu is clicked
+	Then  About page is loaded 
 
-# Scenario: Verify_Admin_About_page  
-# 	Given HDS Home page is displayed
-# 	When  About page link under Administration Menu is clicked
-# 	Then  About page is loaded 
-
-# Scenario Outline: Verify_Admin_Design_Extras
-# 	Given HDS Home page is displayed
-# 	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
-# 	Then  Design Extras page is loaded 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-# | Counter and Wall|
+@tc:2092
+Scenario Outline: Verify_Admin_Design_Extras
+	Given HDS Home page is displayed
+	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	Then  Design Extras page is loaded 
+Examples: 
+| ServiceOffering |
+| Flooring        |
+| Counter & Wall  |
 
 # #Design Extras - Open
 # # 66

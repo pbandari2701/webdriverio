@@ -2,7 +2,6 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { pauseBrowser, expectToHaveTitle } from "../helpers/customcommands";
 import homePage from "../pageobjects/home.page";
 import HomePage from '../pageobjects/home.page'
-const allureReporter = require('@wdio/allure-reporter').default
 
 
 Then(/^The appropriate settings pertaining to the (.+) should be validated$/, function(subscriber){
@@ -183,6 +182,25 @@ When(/^the 'view' button is clicked in the Flooring Group Editor page under Admi
 })
 Then(/^the view history page for the flooring group is loaded$/, async function(){
     expectToHaveTitle('	Flooring Group History - HDS');
+})
+When(/^Diagram Colors page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnDiagramColors();
+})
+Then(/^Diagram Colors page is loaded$/, async function(){
+    expectToHaveTitle('	Diagram Color Preferences - HDS');
+})
+
+When(/^About page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnAboutLink();
+})
+Then(/^About page is loaded$/, async function(){
+    expectToHaveTitle('	About - HDS');
+}) 
+When(/^Design Extras page link under Administration Menu is clicked for (.+) service offering$/, function(ServiceOffering){
+    HomePage.clickingOnDesignExtras(ServiceOffering);
+})
+Then(/^Design Extras page is loaded$/, async function(){
+    expectToHaveTitle('	HDS (QA) - Design Extras - HDS');
 })
 
 
