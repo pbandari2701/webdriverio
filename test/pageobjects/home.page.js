@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDisplayed, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -38,7 +38,7 @@ class HomePage extends BasePage{
  get assignTakeOffs()           { return $("//a[text()='Assign Take Offs']")}                      
  get missingQuantitiesReport()  { return $("//a[text()='Missing Quantities Report']")}
  get editTakeOff()              { return $("//h4[text()='Edit Take Off']")}                  
- get LoadingGif()               { return $("//h3[text()='Loading...']")}
+ get LoadingGif()               { return $("//h3[contains(text(),'Loading')]")}
  get disableTakeOff()           { return $("//h4[text()='Disable Take Off']")}
  get addTakeOffButton()         { return $('//a[text()=" Add Take Off"]')}
  get addTakeOffPopUp ()         { return $('//h4[text()="Add Take Off"]')}
@@ -63,6 +63,19 @@ class HomePage extends BasePage{
  get aboutLink()                { return $("//a[text()='About']")}
  get DECounterWall()            {return $("//a[@href='/Administration/SubscriberDesignExtras.aspx']")}
  get DEFlooring()               { return $("//a[@href='/Administration/FlooringDesignExtras.aspx']")}
+ get openButton2()              {return $("//a[text()='Open']")}
+ get DEeditorPanel()            { return $("#PageLabel")}
+ get DEeditorPanel2()           { return $("//span[text()='Edit Counter & Wall Design Extra']")}
+ get NewDesignExtra()           {return $("//a[@id='NewDesignExtra']")}
+ get cancelButton()             {return $("//button[contains(text(), 'Cancel')]")}
+ get taggingInstallMethods ()   { return $("//a[text()='Tagging Install Methods']")}
+ get auditReports()             { return $("//a[text()='Audit Reports']")}
+ get completeQuotesBuyers()     { return $("//a[text()='Complete Quotes/Buyers']")}
+ get setCutoffDate()            { return $("//a[text()='Set Cut-off Date']")}
+ get commissionForms()          { return $("//a[text()='Commission Forms']")}
+ get catalogs ()                { return $("//a[text()='Catalogs']")}
+ get editButton2()              { return $('//a[text()=" Edit"]')}
+ get excludedOffering ()        { return $('#filtersLabel')}
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -210,7 +223,7 @@ clickingOnPatterns (){
 }
 clickingOnNewPatternButtonInPatterns() { 
     waitAndClick(this.newPattern, "New pattern button");
-}0
+}
 validateAddPatternPopUpIsDisplayed(){
     expectToBeDisplayed(this.addPatternPopUp, "Add pattern pop up");
 }
@@ -278,12 +291,54 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
  }
  clickingOnDesignExtras(ServiceOffering){
      if (ServiceOffering == 'Counter & Wall') {
-         waitAndClick(this.DECounterWall, ' DE CounterWall');
-         
+         waitAndClick(this.DECounterWall, 'DE CounterWall');
+         waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
      } else if (ServiceOffering == 'Flooring'){ 
          waitAndClick(this.DEFlooring, '  DE Flooring');
+         waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
      }
-
- }
+  }
+  clickingOnOpenButtonInCounterWallDesignExtras(){
+      waitAndClick(this.openButton2, ' Open button' );
+  }
+  valiadteDesignExtrasEditorPanelIsDisplayed(){
+      expectToBeDisplayed(this.DEeditorPanel, 'design extras Editor  Panel');
+  }
+  clickingOnNewButtonInDECounterWall(){
+      waitAndClick(this.NewDesignExtra, ' New button   in DE CounterWall');
+  }
+  clickingOnCancelButton(){
+      waitAndClick(this.cancelButton, ' Cancel button');
+  }
+  valiadteDesignExtrasEditorPanelIsNOTDisplayed(){
+      expectNotToBeDisplayed(this.DEeditorPanel2, "design extras Editor  Panel")
+  }
+  clickingOnTaggingInstallMethods()   {
+      waitAndClick (this.taggingInstallMethods, 'Tagging Install Methods');
+  }
+  clickingOnAuditReports() {
+      waitAndClick (this.auditReports, 'Audit Reports');
+  }
+  clickingOnCompleteQuotesBuyers() {
+      waitAndClick (this.completeQuotesBuyers, 'CompleteQuotes')
+  }
+  clickingOnSetCutoffDate() {
+      waitAndClick (this.setCutoffDate, 'Set Cutoff Date');
+  }
+  clickingOnCommissionForms() {
+      waitAndClick (this.commissionForms, 'Commission Forms');
+  }
+  clickingOnOpenButtonInCommissionForms() {
+      waitAndClick (this.openButton, 'Open button');
+  }
+  clickingOnCatalogs() {
+    waitAndClick (this.catalogs, 'Catalogs');
+  }
+  clickingOnEditButtonInCatalogList() {
+      waitAndClick (this.editButton2, 'Edit button');
+  }
+  validateExcludedOfferingIsDisplayed(){
+      expectToBeDisplayed(this.excludedOffering, ' excluded Offering')
+  } 
 }
 export default new HomePage();

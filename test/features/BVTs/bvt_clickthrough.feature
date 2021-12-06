@@ -7,7 +7,7 @@
 
 
 # ##SECURITY MENU======================================================
-
+@test
 Feature: BVT Click Through Functionality of HDS application
 
     Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
@@ -378,96 +378,116 @@ Scenario: Verify_Admin_About_page
 Scenario Outline: Verify_Admin_Design_Extras
 	Given HDS Home page is displayed
 	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
-	Then  Design Extras page is loaded 
+	Then  Design Extras page is loaded
 Examples: 
 | ServiceOffering |
 | Flooring        |
 | Counter & Wall  |
 
-# #Design Extras - Open
-# # 66
-# Scenario: Verify_Admin_Design_Extras_Open
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	When the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	Then the design extra editor panel is displayed in the subscriber design extra page
+@tc:2093
+#Design Extras - Open
+# 66
+Scenario Outline: Verify_Admin_Design_Extras_Open
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	When the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+	Then the design extra editor panel is displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
+
+#Design Extras - New
+#68
+@tc:2094
+Scenario Outline: Verify_Admin_Design_Extras_New
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	When the New button is clicked in the subscriber Design Extra list page
+	Then the design extra editor panel is displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
 
 
-# #Design Extras - New
-# #68
-# Scenario: Verify_Admin_Design_Extras_New
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	When the New button is clicked in the subscriber Design Extra list page
-# 	Then the design extra editor panel is displayed in the subscriber design extra page
+#Design Extras - Open - Product Search 
+#67
+@tc:2095
+Scenario Outline: Verify_Admin_Design_Extras_Open_ProdSearch_Modal 
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
+		And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+	# When the product search button is clicked in the design Extra page 
+	# Then the Design Extra Item Selector Modal is displayed in the subscriber design extra page
 
-# #Design Extras - Open - Product Search 
-# #67
-# Scenario: Verify_Admin_Design_Extras_Open_ProdSearch_Modal 
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	#When the product search button is clicked in the design Extra page 
-# 	#Then the Design Extra Item Selector Modal is displayed in the subscriber design extra page
+#Design Extras - Open - Cancel 
+#69
+@tc:2096
+Scenario: Verify_Admin_Design_Extras_Open_Cancel_bttn
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+		And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+	When the Cancel button is clicked in the design Extra page
+	Then the design extra editor panel is no longer displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
 
-# #Design Extras - Open - Cancel 
-# #69
-# Scenario: Verify_Admin_Design_Extras_Open_Cancel_bttn
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	When the Cancel button is clicked in the design Extra page 
-# 	Then the design extra editor panel is no longer displayed in the subscriber design extra page
+@tc:2097
+Scenario: Verify_Admin_Tagging_Install_Methods_page  
+	Given HDS Home page is displayed
+	When  Tagging Install Methods page link under Administration Menu is clicked
+	Then  Tagging Install Methods page is loaded
 
-# Scenario: Verify_Admin_Tagging_Install_Methods_page  
-# 	Given HDS Home page is displayed
-# 	When  Tagging Install Methods page link under Administration Menu is clicked
-# 	Then  Tagging Install Methods page is loaded 
-
-# Scenario: Verify_Admin_Audit_Report_page  
-# 	Given HDS Home page is displayed
-# 	When  Audit Report page link under Administration Menu is clicked
-# 	Then  Admin Audit Report page is loaded 
+@tc:2098
+Scenario: Verify_Admin_Audit_Report_page  
+	Given HDS Home page is displayed
+	When  Audit Report page link under Administration Menu is clicked
+	Then  Admin Audit Report page is loaded 
 
 
-# ##ADMINISTRATION MENU======================================================
-# Scenario: Verify_Accounting_Complete_Qoute_Buyers_page  
-# 	Given HDS Home page is displayed
-# 	When  Complete Qoute/Buyers page link under Accounting Menu is clicked
-# 	Then  Complete Qoute/Buyers page is loaded 
+# ##ACCOUNTING======================================================
+@tc:2099
+Scenario: Verify_Accounting_Complete_Qoute_Buyers_page  
+	Given HDS Home page is displayed
+	When  Complete Quote or Buyers page link under Accounting Menu is clicked
+	Then  Complete Quote or Buyers page is loaded
 
-# Scenario: Verify_Accounting_Set_Cut_Off_Dates_page  
-# 	Given HDS Home page is displayed
-# 	When  Set Cut Off Dates page link under Accounting Menu is clicked
-# 	Then  Set Cut Off Dates page is loaded 
+@tc:2100
+Scenario: Verify_Accounting_Set_Cut_Off_Dates_page  
+	Given HDS Home page is displayed
+	When  Set Cut Off Dates page link under Accounting Menu is clicked
+	Then  Set Cut Off Dates page is loaded 
 
-# #Commission Forms  16
-# Scenario: Verify_Accounting_CommissionForms_list page 
-# 	Given HDS Home page is displayed
-# 	When  Commission Forms page link under Accounting Menu is clicked
-# 	Then  the Commission Forms list page under Accounting menu is loaded 
 
-# #Commission Forms - Open 18
-# Scenario: Verify_Accounting_CommissionForms_Open (editor) 
-# 	Given HDS Home page is displayed
-# 		And  Commission Forms page link under Accounting Menu is clicked
-# 	When the Open button for the first Commission form  listed in the commission forms list page is clicked
-# 	Then  the Commission Form detail page under Accounting menu is loaded 
+@tc:2101
+#Commission Forms  16
+Scenario: Verify_Accounting_CommissionForms_list page 
+	Given HDS Home page is displayed
+	When  Commission Forms page link under Accounting Menu is clicked
+	Then  the Commission Forms list page under Accounting menu is loaded
+
+@tc:2102
+#Commission Forms - Open 18
+Scenario: Verify_Accounting_CommissionForms_Open (editor) 
+	Given HDS Home page is displayed
+		And  Commission Forms page link under Accounting Menu is clicked
+	When the Open button for the first Commission form  listed in the commission forms list page is clicked
+	Then  the Commission Form detail page under Accounting menu is loaded 
 
 # ##PRODUCT MANAGEMENT========================================================
 
-# #Product Management - Catalogs
-# Scenario: Verify_Prod_Mgmt_Catalogs_page  
-# 	Given HDS Home page is displayed
-# 	When  Catalogs page link under Product Management Menu is clicked
-# 	Then  Catalogs page is loaded 
+#Product Management - Catalogs
+Scenario: Verify_Prod_Mgmt_Catalogs_page  
+	Given HDS Home page is displayed
+	When  Catalogs page link under Product Management Menu is clicked
+	Then  Catalogs page is loaded 
 
-# #Product Management - Catalogs - Edit
-# Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog  
-# 	Given HDS Home page is displayed
-# 		And Catalogs page link under Product Management Menu is clicked
-# 	When the Edit button for the first catalog listed is clicked
-# 	Then  Excluded Offering text element is displayed
+#Product Management - Catalogs - Edit
+Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog  
+	Given HDS Home page is displayed
+		And Catalogs page link under Product Management Menu is clicked
+	When the Edit button for the first catalog listed is clicked
+	Then  Excluded Offering text element is displayed
 
 # #Product Management - Catalogs - Show Products
 # Scenario: Verify_Prod_Mgmt_Catalogs_page_showProducts  

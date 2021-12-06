@@ -185,11 +185,22 @@ module.exports = {
             allureReporter.addStep(elementLabel+' is not displayed', getScreenshot(), 'failed');
         }
     },
-
-    expectToHaveTitle:async function(title){
+    expectNotToBeDisplayed: function(element, elementLabel){
         try {
-            await expect(browser).toHaveTitle(title);
-            this.pauseBrowser(5000);
+            const ele = element;
+            expect(ele).not.toBeDisplayed();
+            allureReporter.addStep(elementLabel+' is not displayed',getScreenshot(), 'passed');
+        } catch (Error) {   
+            allureReporter.addStep(elementLabel+' is  Present',getScreenshot(), 'failed');   
+            throw new ElementNotFoundError(elementLabel+' Element Is  Present ');
+        }
+    },
+    
+
+
+    expectToHaveTitle: function(title){
+        try {
+            expect(browser).toHaveTitle(title);
             allureReporter.addStep('Validated that '+title+' is successfully displayed', getScreenshot(),'passed');
         } catch (Error) {
             allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');
@@ -318,10 +329,10 @@ module.exports = {
         console.log("IN WAIT UNTIL");
         browser.waitUntil(
             () => element.isDisplayed() === false,
-            WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE,
-            'ELEMENT IS STILL ENABLED AFTER '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+            WAIT_UNTIL_TIMEOUT,
+            'ELEMENT IS STILL ENABLED AFTER '+WAIT_UNTIL_TIMEOUT);
     } catch (Error) {
-        console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+        console.log('Element is still displayed after '+WAIT_UNTIL_TIMEOUT);
     }
         
     },

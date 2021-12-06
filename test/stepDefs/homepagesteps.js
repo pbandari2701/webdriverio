@@ -10,21 +10,21 @@ Then(/^The appropriate settings pertaining to the (.+) should be validated$/, fu
     HomePage.validateProductDetails(subscriber)
 });
 
-Given(/^HDS Home page is displayed$/, async function(){
-    expectToHaveTitle('  - HDS');
+Given(/^HDS Home page is displayed$/, function(){
+    expectToHaveTitle('- HDS');
 })
 
 When(/^Manage User link under Security Menu is clicked$/, function(){
     HomePage.getManageUsers();
 })
 
-Then(/^Manage Users page is loaded$/, async function(){   
+Then(/^Manage Users page is loaded$/,  function(){   
     expectToHaveTitle('Manage Users - HDS')
 })
 When(/^Area Types link under Site Administration Menu is clicked$/, function(){
     HomePage.clcikingOnAreaTypesInSiteAdmin();
 })
-Then(/^Area Typespage is loaded$/, async function(){
+Then(/^Area Typespage is loaded$/,  function(){
     expectToHaveTitle('Area Types - HDS');
 })
 When(/^the New button is clicked in the site-level Area Type page$/, function(){
@@ -54,13 +54,13 @@ Then(/^the modal for deleting an Area type is displayed in the site-level Area T
 When(/^Assign Take Offs page link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnAssignTakeOffs();
 })
-Then(/^Assign Take Offs page is loaded$/, async function(){
+Then(/^Assign Take Offs page is loaded$/,  function(){
     expectToHaveTitle('Assign Take Offs - HDS');
 })
 When(/^the Missing Quantities Report link in the Site Admin menu is clicked$/, function(){ 
     HomePage.clickingOnMissingQuantitiesReport();
 })    
-Then(/^the Report Viewer page loaded$/, async function() {
+Then(/^the Report Viewer page loaded$/,  function() {
     expectToHaveTitle('Report Viewer - HDS');
 })
 When(/^the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
@@ -84,7 +84,7 @@ Then(/^the Modal for adding a take off is displayed in the site-level Assign Tak
 When(/^Patterns link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnPatterns();
 })
-Then(/^Patterns page is loaded$/, async function(){
+Then(/^Patterns page is loaded$/,  function(){
     expectToHaveTitle('Patterns - HDS');
 })
 When(/^the New Pattern button is clicked in the site-level Patterns list page$/, function(){
@@ -105,19 +105,19 @@ Then(/^the pattern editor Modal is displayed in the site-level patterns list pag
 When(/^Tagging Product Categories page link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnTaggingProductCategories();
 })
-Then(/^Tagging Product Categories page is loaded$/,async function () {
+Then(/^Tagging Product Categories page is loaded$/, function () {
     expectToHaveTitle('Tagging Product Categories - HDS');
 }) 
 When(/^Buyer Types Page link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnBuyerTypes();
 })
-Then(/^Buyer Types Page is loaded$/, async function () {
+Then(/^Buyer Types Page is loaded$/,  function () {
     expectToHaveTitle('Buy Type List - HDS');
 }) 
 When(/^the New button is clicked in the Buyer Type list page$/, function(){
     HomePage.clickingOnNewButtonInBuyerTypes();
     })
-Then(/^the Buyer type editor page under Site Admin menu is loaded$/, async function(){
+Then(/^the Buyer type editor page under Site Admin menu is loaded$/,  function(){
     expectToHaveTitle('HDS (QA) - Buyer Types Editor - HDS');
 })
 When(/^the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page$/, function(){
@@ -126,13 +126,13 @@ When(/^the Open button is clicked for a randomly selected Buyer type in the Buye
 When(/^Category Service Offering page link under Administration Menu is clicked$/, function(){
     HomePage.clickingOnCategoryServiceOffering();
 })
-Then(/^Category Service Offering page is loaded$/, async function(){
+Then(/^Category Service Offering page is loaded$/,  function(){
     expectToHaveTitle('Category Service Offering - HDS');
 })
 When(/^the New button is clicked in the Category Service Offering list page$/, function(){
     HomePage.clickingOnCategoryServiceOffering();
 })
-Then(/^the Category Service Offering editor page is loaded$/, async function(){
+Then(/^the Category Service Offering editor page is loaded$/,  function(){
     expectToHaveTitle('Category Service Offering Editor - HDS')
 })
 When(/^the Open button is clicked for a randomly selected Category in the Category Service Offering list page$/, function(){
@@ -141,7 +141,7 @@ When(/^the Open button is clicked for a randomly selected Category in the Catego
 When(/^Subscriber Settings page link under Administration Menu is clicked$/, function(){
     HomePage.clicikingSubscriberSettings();
 })
-Then(/^Subscriber Settings page is loaded$/, async function() {
+Then(/^Subscriber Settings page is loaded$/,  function() {
     expectToHaveTitle('HDS (QA) - Subscriber Settings - HDS');
 }) 
 When(/^the (.+) drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page$/, function(Service_Offering){
@@ -159,20 +159,20 @@ Then(/^the panel for (.+) tab is displayed in the Subscriber Settings page$/, fu
 When(/^Pattern Availability page link under Administration Menu is clicked$/, function(){
     HomePage.clickingOnPatternAvailability();
 })
-Then(/^Pattern Availability page is loaded$/, async function() {
+Then(/^Pattern Availability page is loaded$/,  function() {
     expectToHaveTitle('Pattern Availability - HDS');
 }) 
 When(/^Flooring Groups page link under Administration Menu is clicked$/, function(){
     HomePage.clickingOnFlooringGroups();
 })
-Then(/^Flooring Groups page is loaded$/, async function() {
-    expectToHaveTitle(' Flooring Groups - HDS');
+Then(/^Flooring Groups page is loaded$/,  function() {
+    expectToHaveTitle('Flooring Groups - HDS');
 }) 
 When(/^the New button is clicked in the in the Flooring Groups list page under Administration Menu$/, function(){
     HomePage.clckingOnNewButtonInFlooringGroups();
 })
-Then(/^the Flooring Groups editor page is loaded$/, async function(){
-    expectToHaveTitle('	Flooring Group Editor - HDS');
+Then(/^the Flooring Groups editor page is loaded$/,  function(){
+    expectToHaveTitle('Flooring Group Editor - HDS');
 })
 When(/^the Open button is clicked for a randomly selected group in the flooring group list page$/, function(){
     HomePage.clickingOnOpenButtonFlooringGroups();
@@ -180,28 +180,103 @@ When(/^the Open button is clicked for a randomly selected group in the flooring 
 When(/^the 'view' button is clicked in the Flooring Group Editor page under Administration menu$/,function () {
     HomePage.clickingOnViewButtonFlooringGroups();
 })
-Then(/^the view history page for the flooring group is loaded$/, async function(){
-    expectToHaveTitle('	Flooring Group History - HDS');
+Then(/^the view history page for the flooring group is loaded$/,  function(){
+    expectToHaveTitle('Flooring Group History - HDS');
 })
 When(/^Diagram Colors page link under Administration Menu is clicked$/, function(){
     HomePage.clickingOnDiagramColors();
 })
-Then(/^Diagram Colors page is loaded$/, async function(){
-    expectToHaveTitle('	Diagram Color Preferences - HDS');
+Then(/^Diagram Colors page is loaded$/,  function(){
+    expectToHaveTitle('Diagram Color Preferences - HDS');
 })
 
 When(/^About page link under Administration Menu is clicked$/, function(){
     HomePage.clickingOnAboutLink();
 })
-Then(/^About page is loaded$/, async function(){
-    expectToHaveTitle('	About - HDS');
+Then(/^About page is loaded$/,  function(){
+    expectToHaveTitle('About - HDS');
 }) 
 When(/^Design Extras page link under Administration Menu is clicked for (.+) service offering$/, function(ServiceOffering){
     HomePage.clickingOnDesignExtras(ServiceOffering);
 })
-Then(/^Design Extras page is loaded$/, async function(){
-    expectToHaveTitle('	HDS (QA) - Design Extras - HDS');
+Then(/^Design Extras page is loaded$/,  function(){
+    expectToHaveTitle(' HDS (QA) - Design Extras - HDS');
 })
+When(/^the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page$/, function(){
+    HomePage.clickingOnOpenButtonInCounterWallDesignExtras();
+})
+Then(/^the design extra editor panel is displayed in the subscriber design extra page$/, function() { 
+    HomePage.valiadteDesignExtrasEditorPanelIsDisplayed();
+})
+When(/^the New button is clicked in the subscriber Design Extra list page$/, function(){
+    HomePage.clickingOnNewButtonInDECounterWall();
+})
+When(/^the product search button is clicked in the design Extra page$/, function() {
+
+}) 
+Then(/^the Design Extra Item Selector Modal is displayed in the subscriber design extra page$/, function() { 
+
+})
+When(/^the Cancel button is clicked in the design Extra page$/, function() {
+    HomePage.clickingOnCancelButton();
+}) 
+Then(/^the design extra editor panel is no longer displayed in the subscriber design extra page$/, function(){
+    HomePage.valiadteDesignExtrasEditorPanelIsNOTDisplayed();
+})
+When(/^Tagging Install Methods page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnTaggingInstallMethods();
+})
+Then(/^Tagging Install Methods page is loaded$/,  function(){
+    expectToHaveTitle('Tagging Install Methods - HDS');
+}) 
+When(/^Audit Report page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnAuditReports();
+})
+Then(/^Admin Audit Report page is loaded$/,  function(){
+    expectToHaveTitle('Audit Reports - HDS');
+}) 
+When(/^Complete Quote or Buyers page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnCompleteQuotesBuyers();
+})
+Then(/^Complete Quote or Buyers page is loaded$/,  function(){
+    expectToHaveTitle('Complete Quotes or Buyers - HDS');
+})
+When(/^Set Cut Off Dates page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnSetCutoffDate();
+})
+Then(/^Set Cut Off Dates page is loaded$/,  function(){
+    expectToHaveTitle('	Set Completion Cut-off Date - HDS');
+}) 
+When(/^Commission Forms page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnCommissionForms();
+})
+Then(/^the Commission Forms list page under Accounting menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Commission Forms - HDS')
+}) 
+When(/^the Open button for the first Commission form  listed in the commission forms list page is clicked$/, function(){ 
+    HomePage.clickingOnOpenButtonInCommissionForms();
+}) 
+Then(/^the Commission Form detail page under Accounting menu is loaded$/,  function(){
+    expectToHaveTitle('Commission Form - HDS');
+})
+When(/^Catalogs page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnCatalogs();
+})
+Then(/^Catalogs page is loaded$/, function(){
+    expectToHaveTitle('Catalog List - HDS')
+}) 
+When(/^the Edit button for the first catalog listed is clicked$/, function(){
+     HomePage.clickingOnEditButtonInCatalogList();
+})
+Then(/^Excluded Offering text element is displayed$/, function(){
+    HomePage.validateExcludedOfferingIsDisplayed();
+})
+
+
+
+
+
+
 
 
 
