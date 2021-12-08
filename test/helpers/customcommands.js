@@ -328,9 +328,12 @@ module.exports = {
     try {
         console.log("IN WAIT UNTIL");
         browser.waitUntil(
-            () => element.isDisplayed() === false,
-            WAIT_UNTIL_TIMEOUT,
-            'ELEMENT IS STILL ENABLED AFTER '+WAIT_UNTIL_TIMEOUT);
+            () => element.isDisplayed() == false,
+           {
+            timeout: WAIT_UNTIL_TIMEOUT,
+            timeoutMsg  : 'ELEMENT IS STILL ENABLED AFTER '+WAIT_UNTIL_TIMEOUT
+           }
+        )
     } catch (Error) {
         console.log('Element is still displayed after '+WAIT_UNTIL_TIMEOUT);
     }

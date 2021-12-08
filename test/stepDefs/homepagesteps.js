@@ -266,11 +266,106 @@ Then(/^Catalogs page is loaded$/, function(){
     expectToHaveTitle('Catalog List - HDS')
 }) 
 When(/^the Edit button for the first catalog listed is clicked$/, function(){
-     HomePage.clickingOnEditButtonInCatalogList();
+    HomePage.clickingOnEditButtonInCatalogList();
 })
 Then(/^Excluded Offering text element is displayed$/, function(){
     HomePage.validateExcludedOfferingIsDisplayed();
 })
+When(/^the Show Products button for the first catalog listed is clicked$/, function(){
+    HomePage.clickingOnShowProducts();
+})
+Then(/^Product List page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Product List - HDS');
+})
+When(/^new button is clicked in the Catalog list page$/, function(){
+    HomePage.clickingOnNewButtonInCatalogList();
+})
+Then(/^the catalog drop down field is displayed$/,  function(){
+    HomePage.validateCatalogDDIsDisplayed();
+})
+When(/^Product List page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnProductsList();
+})
+When(/^the Import button in the Product list page is clicked$/, function(){
+    HomePage.clickingOnImportButtonInProductList();
+})
+Then(/^Subscriber Catalog Import page is loaded$/,  function(){
+    HomePage.validateCatalogImportPage();
+}) 
+When(/^the Open button for the first product listed in the Product list page is clicked$/, function(){
+    HomePage.clickingOnOpenButtonInProductList();
+})
+Then(/^Product Editor page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Product Editor - HDS');
+})
+When(/^the 'Open Communities' link is clicked in the Product Editor page$/, function()    {
+    HomePage.clickingOnOpenCommunitiesInProductInfo();
+})
+Then(/^Communities page of the Community Management Menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Communities List - HDS');
+})
+When(/^the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page$/, function() {
+    HomePage.clickingOnAnyOpenBuyerScenariosInDetailsTab();
+})
+Then(/^the Buyers list page is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Buyers - HDS');
+})
+When(/^the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#$/, function() {
+    HomePage.clickingOnOpenBuyerActiveScenariosInDetailsTab();
+})
+When(/^Global HDS Catalog Search List page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnGlobalHDSCatalogSearch();
+})
+Then(/^Global HDS Catalog Search List page is loaded$/,  function(){
+    expectToHaveTitle('Global HDS Catalog Search - HDS');
+})
+Then(/^Write (.+) on SAP Number textbox and Searched$/, function(){
+
+})
+Then(/^verify the search filter products according to the given keyword for Style Number$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForSN();
+})
+Then(/^click on Export Button to export the product to the spreadsheet$/, function() {
+
+})
+Then(/^Write F70ACCE on Style Number textbox and Searched$/, function(){
+    HomePage.setValueToStyleNumberTextBox();
+})
+Then(/^Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched$/, function() {
+    HomePage.setValueToStyleTypeTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Style Type$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForST();
+})
+Then(/^Write ante on Style Name textbox and Searched$/,  function(){
+    HomePage.setValueToStyleNameTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Style Name$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForStyleName();
+})
+Then(/^Write ARIZONA TILE LLC 11067 on Vendor textbox and Searched$/, function(){
+    HomePage.setValueToVendorTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for vendor$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForVendor();
+})
+Then(/^Write ILG-1001-10040 on ILG Number textbox and Searched$/, function(){
+
+})
+Then(/^verify the search filter products according to the given keyword for ILG Number$/, function() {
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 

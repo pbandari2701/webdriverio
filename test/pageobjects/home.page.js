@@ -2,6 +2,7 @@ import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDis
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
+const CATALOG_DATA_FILE_NAME = "catalog";
 
 
 class HomePage extends BasePage{
@@ -76,6 +77,27 @@ class HomePage extends BasePage{
  get catalogs ()                { return $("//a[text()='Catalogs']")}
  get editButton2()              { return $('//a[text()=" Edit"]')}
  get excludedOffering ()        { return $('#filtersLabel')}
+ get showProducts ()            { return $("//a[text()=' Show Products']")}
+ get catalogDD()                { return $("//select[@id='_ctl0_body_ddlCatalogNames']")}
+ get productsList()             { return $("//a[text()='Products List']")}
+ get importButton()             { return $("//a[text()=' Import']")}
+ get catalogImportPage()        { return $("#_ctl0_body_lblHeading")}
+ get detailsTabInProductInfo()  { return $("//a[text()='Details']")}
+ get openCommunitiesInDetailsTab()           { return $("//a[text()='Open Communities']")}
+ get anyOpenBuyerScenariosInDetailsTab ()    { return $("//a[text()='Any Open Buyer Scenarios']")}
+ get openBuyerActiveScenariosInDetailsTab () { return $("//a[text()='Open Buyer Active Scenarios']")}
+ get globalHDSCatalogSearch ()              { return $("//a[text()='Global HDS Catalog Search']")}
+ get styleNumberTextBox()                   { return $("//input[@id='txtStyleNumber']")}
+ get globalSearchButton ()                  { return $("//a[@id='globalSearchButton']")}
+ get styleNumberColumnInTable()             { return $("//tbody/tr[1]/td[2]/span[1]")}
+ get styleTypeTextBox()                     { return $("//input[@id='txtStyleType']")}
+ get commercialLevelCutLoop()               { return $("//span[text()='COMMERCIAL LEVEL CUT LOOP']")}
+ get styleNameTextBox()                     { return $("//input[@id='txtStyleName']")}
+ get styleNameCoumnInTable()                { return $("//tbody/tr[2]/td[1]/span[1]")}
+ get vendorTextBox()                        { return $("//input[@id='txtVendor']")}
+ get arizonaTileLLC()                       { return $("//span[text()='ARIZONA TILE LLC (11067)']")}
+ get ILGNumber()                            { return $("//input[@id='txtILGNumber']")}
+
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -192,7 +214,7 @@ validateDeleteDefaultArea(){
  }
  clickingOnAssignTakeOffs() {
      waitAndClick(this.assignTakeOffs, "Assign Take Offs");
-     waitUntilElementIsDisabled(this.LoadingGif, ' LoadingGif');
+     waitUntilElementIsDisabled(this.LoadingGif);
 
  }
  clickingOnMissingQuantitiesReport(){
@@ -269,7 +291,7 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
  }
  clickingOnPatternAvailability(){
      waitAndClick(this.patternAvailability, 'pattern availability');
-     waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
+     waitUntilElementIsDisabled(this.LoadingGif);
  } 
  clickingOnFlooringGroups(){
     waitAndClick(this.flooringGroups, 'flooring groups'); 
@@ -292,10 +314,10 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
  clickingOnDesignExtras(ServiceOffering){
      if (ServiceOffering == 'Counter & Wall') {
          waitAndClick(this.DECounterWall, 'DE CounterWall');
-         waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
+         waitUntilElementIsDisabled(this.LoadingGif);
      } else if (ServiceOffering == 'Flooring'){ 
          waitAndClick(this.DEFlooring, '  DE Flooring');
-         waitUntilElementIsDisabled(this.LoadingGif, 'LoadingGif');
+         waitUntilElementIsDisabled(this.LoadingGif);
      }
   }
   clickingOnOpenButtonInCounterWallDesignExtras(){
@@ -340,5 +362,97 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
   validateExcludedOfferingIsDisplayed(){
       expectToBeDisplayed(this.excludedOffering, ' excluded Offering')
   } 
+  clickingOnShowProducts(){
+      waitAndClick(this.showProducts, ' show  Products');
+  }
+  clickingOnNewButtonInCatalogList(){ 
+      waitAndClick(this.newButton2, 'New button');
+  }
+  validateCatalogDDIsDisplayed (){
+      expectToBeDisplayed(this.catalogDD, ' catalog Drop Down');
+  }
+  clickingOnProductsList() {
+      waitAndClick(this.productsList, ' products List');
+  }
+  clickingOnImportButtonInProductList(){ 
+      waitAndClick(this.importButton, 'Import button');
+  }
+  validateCatalogImportPage() {
+      expectToBeDisplayed(this.catalogImportPage, ' catalog Import Page');
+  }
+  clickingOnOpenButtonInProductList() {
+      waitAndClick(this.openButton, 'Open button');
+      waitUntilElementIsDisabled(this.LoadingGif);
+  }
+  clickingOnOpenCommunitiesInProductInfo()  {
+      waitAndClick(this.detailsTabInProductInfo, '  details tab in product info');
+      waitAndClick(this.openCommunitiesInDetailsTab, ' open communities in details tab');
+  }
+  clickingOnAnyOpenBuyerScenariosInDetailsTab(){ 
+      waitAndClick(this.detailsTabInProductInfo, 'details tab in product info');
+      waitAndClick(this.anyOpenBuyerScenariosInDetailsTab, ' any open scenarios in details tab');
+  }
+  clickingOnOpenBuyerActiveScenariosInDetailsTab (){
+    waitAndClick(this.detailsTabInProductInfo, 'details tab in product info');
+    waitAndClick(this.openBuyerActiveScenariosInDetailsTab, 'open buyer active scenarios in details tab');
+  }
+  clickingOnGlobalHDSCatalogSearch (){
+      waitAndClick(this.globalHDSCatalogSearch, 'global catalog search'); 
+  }
+  setValueToStyleNumberTextBox (){
+      sendKeys(this.styleNumberTextBox, this.getData()['stylenumber'], 'style Number TextBox');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(10000)
+  }
+  validateSearchFilterProductsIsDisplayedForSN (){
+      let text = this.styleNumberColumnInTable.getText();
+      let isDisplayed = text.includes(this.getData()['stylenumber']);
+      allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+      return isDisplayed;
+  }
+  setValueToStyleTypeTextBox (){
+    sendKeys(this.styleTypeTextBox, this.getData()['styletype'], 'style type');
+    waitAndClick(this.globalSearchButton, 'global search');
+    waitUntilElementIsDisabled(this.LoadingGif);
+    pauseBrowser(10000)
+  }
+  validateSearchFilterProductsIsDisplayedForST() {
+      this.commercialLevelCutLoop.scrollIntoView();
+      expectToBeDisplayed(this.commercialLevelCutLoop, 'commercial level cut loop');
+  }
+  setValueToStyleNameTextBox (){
+      sendKeys(this.styleNameTextBox, this.getData()['stylename'], 'style name');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(25000)
+  }
+  validateSearchFilterProductsIsDisplayedForStyleName() {
+    this.styleNameCoumnInTable.scrollIntoView();
+    let text = this.styleNameCoumnInTable.getText();
+    let isDisplayed = text.includes(this.getData()['stylename']);
+    allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+    return isDisplayed;
+  }
+  setValueToVendorTextBox() {
+      sendKeys(this.vendorTextBox, this.getData()['vendor'], 'vendor');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      //pauseBrowser(25000);
+  }
+  validateSearchFilterProductsIsDisplayedForVendor() {
+    //this.arizonaTileLLC.scrollIntoView();
+    expectToBeDisplayed(this.arizonaTileLLC, 'ARIZONA TILE LLC (11067)')
+  }
+  setValueToILGNumberTextBox() {
+      sendKeys(this.ILGNumber, this.getTestData()['ILG-1001-10040'], 'ILG Number');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+  }
+
+  getData(){
+    return super.testDataJson(CATALOG_DATA_FILE_NAME);
+    }
+
 }
 export default new HomePage();
