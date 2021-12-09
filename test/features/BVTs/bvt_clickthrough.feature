@@ -618,6 +618,7 @@ Scenario: Verify_Global_HDS_Catalog_Search_for_Vendor
 		And  Write ARIZONA TILE LLC 11067 on Vendor textbox and Searched
 		And verify the search filter products according to the given keyword for vendor
 
+@tc:2117 @clickthrough @bvt					 
 Scenario: Verify_Global_HDS_Catalog_Search_for_ILG_Number
 	Given HDS Home page is displayed
 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
@@ -626,33 +627,38 @@ Scenario: Verify_Global_HDS_Catalog_Search_for_ILG_Number
 		And verify the search filter products according to the given keyword for ILG Number
 
 
+@tc:2118 @clickthrough @bvt					 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Product_Category 
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write hardwood on Product Category textbox and Searched
+		And verify the search filter products according to the given keyword for Product Category
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Product_Category
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write hardwood on Product Category textbox and Searched
+@tc:2119 @clickthrough @bvt					
+Scenario: Verify_Global_HDS_Catalog_Search_for_Color_Name
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write TOUR  on Color Name textbox and Searched
+		And verify the search filter products according to the given keyword for Color Name
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Color_Name
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	#Then  Write TOUR  on Color Name textbox and Searched
-
-# #Product Type list
-# #88
-# Scenario: Verify_Prod_Mgmt_Product_Types_List_page  
-# 	Given HDS Home page is displayed
-# 	When  Product Types list page link under Product Management Menu is clicked
-# 	Then  Product Types list page is loaded 
+#Product Type 
+#88
+@tc:2120 @clickthrough @bvt					
+Scenario: Verify_Prod_Mgmt_Product_Types_List_page  
+	Given HDS Home page is displayed
+	When  Product Types  page link under Product Management Menu is clicked
+	Then  Product Types  page is loaded 
  
-# #Product Type - Open
-# #89
-# Scenario: Verify_Prod_Mgmt_Product_Types_Editor_page  
-# 	Given HDS Home page is displayed
-# 		And Product Types list page link under Product Management Menu is clicked
-# 	When the Open button for the first product type In the product types list page is clicked
-# 	Then  Product Types Editor page is loaded
+#Product Type - Open
+#89
+@tc:2121 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Product_Types_Editor_page  
+	Given HDS Home page is displayed
+		And Product Types  page link under Product Management Menu is clicked
+	When the Open button for the first product type In the product types list page is clicked
+	Then  Product Types Editor page is loaded
 
 
 
@@ -665,19 +671,20 @@ Scenario: Verify_Global_HDS_Catalog_Search_for_ILG_Number
 # #Install Methods - Open -  View history
 # #96
 
-# #Product Type - New
-# #90
-# 	Scenario: Verify_Prod_Mgmt_Product_Types_List_page_New 
-# 	Given HDS Home page is displayed
-# 		And Product Types list page link under Product Management Menu is clicked
-# 	When the New button in the Product Type list page is clicked
-# 	Then  Product Types Editor page is loaded
+#Product Type - New
+#90
+@tc:2122 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Product_Types_List_page_New 
+	Given HDS Home page is displayed
+		And Product Types  page link under Product Management Menu is clicked
+	When the New button in the Product Type list page is clicked
+	Then  Product Types Editor page is loaded
 
-
-# Scenario: Verify_Prod_Mgmt_Install_Methods_page  
-# 	Given HDS Home page is displayed
-# 	When  Install Methods page link under Product Management Menu is clicked
-# 	Then  Install Methods list page is loaded 
+@tc:2123 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Install_Methods_page  
+	Given HDS Home page is displayed
+	When  Install Methods page link under Product Management Menu is clicked
+	Then  Install Methods list page is loaded 
 
 
 

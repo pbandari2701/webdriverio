@@ -97,6 +97,13 @@ class HomePage extends BasePage{
  get vendorTextBox()                        { return $("//input[@id='txtVendor']")}
  get arizonaTileLLC()                       { return $("//span[text()='ARIZONA TILE LLC (11067)']")}
  get ILGNumber()                            { return $("//input[@id='txtILGNumber']")}
+ get ILGNumberColumnInTable()               { return $("//tbody/tr[1]/td[8]/span")}
+ get productCategory()                      { return $("//input[@id='txtProductCategory']")}
+ get hardwood()                             { return $("//span[text()='Hardwood']")}
+ get colorNameTextBox()                     { return $("//input[@id='txtColorName']")}
+ get colorColumnInTable ()                  { return $("//tbody/tr[1]/td[6]")}
+ get productTypes ()                        { return $("//a[text()='Product Types']")}
+ get installMethods()                       { return $("//a[text()='Install Methods']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -445,11 +452,54 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
     expectToBeDisplayed(this.arizonaTileLLC, 'ARIZONA TILE LLC (11067)')
   }
   setValueToILGNumberTextBox() {
-      sendKeys(this.ILGNumber, this.getTestData()['ILG-1001-10040'], 'ILG Number');
+      sendKeys(this.ILGNumber, this.getData()['ilgnumber'], 'ILG Number');
       waitAndClick(this.globalSearchButton, 'global search');
       waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(10000)
   }
-
+    validateILGNumberColumnInTable() { 
+        this.ILGNumberColumnInTable.scrollIntoView();
+        let text = this.ILGNumberColumnInTable.getText();
+        let isDisplayed = text.includes(this.getData()['ilgnumber']);
+        allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+        return isDisplayed;    
+    }
+    setValueToProductCategoryTextBox  () { 
+        sendKeys(this.productCategory,this.getData()['productcategory'] , ' product Category');
+        waitAndClick(this.globalSearchButton, 'global search');
+        waitUntilElementIsDisabled(this.LoadingGif);
+        pauseBrowser(20000)  
+    }
+    validateSearchFilterProductsIsDisplayedForPC(){
+        this.hardwood.scrollIntoView();
+        expectToBeDisplayed(this.hardwood, 'hardwood');
+    }
+   setValueToColorNameTextBox (){
+       sendKeys(this.colorNameTextBox, this.getData()['colorname'],'colorName');
+       waitAndClick(this.globalSearchButton, 'global search');
+       waitUntilElementIsDisabled(this.LoadingGif);
+       pauseBrowser(15000);
+   }
+   validateSearchFilterProductsIsDisplayedForCN(){
+    this.colorColumnInTable.scrollIntoView();
+    let text = this.colorColumnInTable.getText();
+    let isDisplayed = text.includes(this.getData()['colorname']);
+    allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+    return isDisplayed; 
+   }  
+   clickingOnproductTypes(){
+       waitAndClick(this.productTypes, 'product Types')
+   }
+   clickingOnOpenButtonInProductTypes(){
+       waitAndClick(this.openButton,  'open button')
+   }
+   clickingOnNewButtonInProductTypes(){
+       waitAndClick(this.newButton2, 'new button')
+   }
+   clickingOnInstallMethods (){
+       waitAndClick(this.installMethods, 'install methods')
+   }  
+   
   getData(){
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }

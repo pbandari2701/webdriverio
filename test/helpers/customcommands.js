@@ -325,25 +325,22 @@ module.exports = {
     },
 
     waitUntilElementIsDisabled : function (element) {
-    try {
-        console.log("IN WAIT UNTIL");
-        browser.waitUntil(
-            () => element.isDisplayed() == false,
-           {
-            timeout: WAIT_UNTIL_TIMEOUT,
-            timeoutMsg  : 'ELEMENT IS STILL ENABLED AFTER '+WAIT_UNTIL_TIMEOUT
-           }
-        )
-    } catch (Error) {
-        console.log('Element is still displayed after '+WAIT_UNTIL_TIMEOUT);
-    }
-        
-    },
+        try {
+            console.log("IN WAIT UNTIL");
+            browser.waitUntil(
+                () => element.isDisplayed() === false,{
+                timeout : WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE,
+                timeoutMsg : 'ELEMENT IS STILL ENABLED AFTER '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE});
+        } catch (Error) {
+            console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+        }
+            
+        },
 
     waitForFileToDownload : function(fileName){
         try {
             browser.waitUntil(
-                () => fs.existsSync('./Reports/downloads/'+fileName) == true,{
+                () => fs.existsSync('./Reports/downloads/'+fileName) === true,{
                 timeout : WAIT_UNTIL_FILE_DOWNLOAD,
                 timeoutMsg : "FIle "+fileName+" not downloaded within "+WAIT_UNTIL_FILE_DOWNLOAD/1000+" seconds"
                 }

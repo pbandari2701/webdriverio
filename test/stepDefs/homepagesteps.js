@@ -350,11 +350,48 @@ Then(/^verify the search filter products according to the given keyword for vend
     HomePage.validateSearchFilterProductsIsDisplayedForVendor();
 })
 Then(/^Write ILG-1001-10040 on ILG Number textbox and Searched$/, function(){
-
+    HomePage.setValueToILGNumberTextBox();
 })
 Then(/^verify the search filter products according to the given keyword for ILG Number$/, function() {
-
+    HomePage.validateILGNumberColumnInTable();
 })
+Then(/^Write hardwood on Product Category textbox and Searched$/,  function(){
+    HomePage.setValueToProductCategoryTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Product Category$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForPC();
+})
+Then(/^Write TOUR  on Color Name textbox and Searched$/,  function(){
+    HomePage.setValueToColorNameTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Color Name$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForCN();
+})
+When(/^Product Types  page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnproductTypes();
+})
+Then(/^Product Types  page is loaded$/,  function() {
+    expectToHaveTitle('Product Types - HDS')
+}) 
+When(/^the Open button for the first product type In the product types list page is clicked$/, function(){
+    HomePage.clickingOnOpenButtonInProductTypes();
+})
+Then(/^Product Types Editor page is loaded$/,  function(){
+    expectToHaveTitle('Product Type Editor - HDS')
+})
+When(/^the New button in the Product Type list page is clicked$/, function(){
+    HomePage.clickingOnNewButtonInProductTypes();
+})
+When(/^Install Methods page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnInstallMethods();
+})
+Then(/^Install Methods list page is loaded$/,  function(){
+    expectToHaveTitle('Install Methods - HDS');
+}) 
+
+
+
+
 
 
 
