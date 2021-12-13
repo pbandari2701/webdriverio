@@ -809,38 +809,41 @@ Scenario: Verify_DC_Communities_page_Open_Homesites_New_bttn
 	Then the Homesite editor or information page for the design center community homesite is loaded
 	Then ignore Homesite unsaved alert message 
 
-# #Communities - Open - Home Sites - Open
-# Scenario: Verify_DC_Communities_page_Open_Homesites_editor_page
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 		And the Homesite setup link is clikced in the design center community home page
-# 	When the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page
-# 	Then the Homesite editor/information page for the design center community homesite is loaded
+@tc:2136 @clickthrough @bvt
+#Communities - Open - Home Sites - Open
+Scenario: Verify_DC_Communities_page_Open_Homesites_editor_page
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+		And the Homesite setup link is clikced in the design center community home page
+	When the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page
+	Then the Homesite editor or information page for the design center community homesite is loaded
+
+@tc:2137 @clickthrough @bvt
+Scenario: Verify_DC_Buyers_page  
+	Given HDS Home page is displayed
+	When  Buyers page link under Design Center Menu is clicked
+	Then  the Buyers list page is loaded
 
 
-# Scenario: Verify_DC_Buyers_page  
-# 	Given HDS Home page is displayed
-# 	When  Buyers page link under Design Center Menu is clicked
-# 	Then  the Buyers' list page is loaded
+#Buyers -  New 
+#190
+@tc:2138 @clickthrough @bvt
+Scenario: Verify_DC_Buyers_page_New_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When the New button is clicked in the Buyers List Page
+	Then  The buyers info page loaded 
 
-
-# #Buyers -  New 
-# #190
-# Scenario: Verify_DC_Buyers_page_New_bttn
-# 	Given HDS Home page is displayed
-# 		And Buyers page link under Design Center Menu is clicked
-# 	When the New button is clicked in the Buyers List Page
-# 	Then  The buyer's info page loaded 
-
-# Scenario Outline:  Verify_DC_Buyers_Info_Page
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	When A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	Then  The buyer's info page loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+@tc:2139 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Info_Page
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
+	Then  The buyers info page loaded 
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |Automation101 | Bella Fiore-25522250000 |
 
 
 #  Scenario Outline:  Verify_DC_Buyers_Info_Page_EstMoPmt_bttn

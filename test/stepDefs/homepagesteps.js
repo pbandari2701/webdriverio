@@ -456,14 +456,28 @@ Then(/^the Homesite list page for the  design center community is loaded$/, func
     expectToHaveTitle("Homesite Setup - HDS")
 })
 When(/^the New button is clikced in the design center Community Homesite list page$/, function(){
-
+    HomePage.clickingOnNewButtonInHomesites();
 })
 Then(/^the Homesite editor or information page for the design center community homesite is loaded$/,  function(){
-
+    expectToHaveTitle('HDS (QA) - Homesite Information - HDS')
 })
 Then(/^ignore Homesite unsaved alert message$/,  function() {
-
+    HomePage.valiadateUnsavedChangesIsDisplayed();
 }) 
+When(/^the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page$/, function(){
+    HomePage.clickingOnEditButtonInHomesites();
+})
+When(/^Buyers page link under Design Center Menu is clicked$/,  function(){
+    HomePage.clickingOnBuyersDC();
+})
+When(/^the New button is clicked in the Buyers List Page$/, function() {
+    HomePage.clickingOnNewButtonInBuyerListPage();
+})
+Then(/^The buyers info page loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Buyer Information - HDS')
+}) 
+
+
 
 
 

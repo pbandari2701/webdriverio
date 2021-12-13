@@ -112,6 +112,8 @@ class HomePage extends BasePage{
  get DCCommunities()                        { return $("//a[@href='/dc__community_list.aspx']")}
  get commissionFormDC ()                    { return $('//a[@href="/dc__commission_form.aspx"]')}
  get homesiteSetupDC ()                     { return $("//a[text()='Homesite Setup']")}
+ get unsavedChanges ()                      { return $("//strong[text()='YOU HAVE UNSAVED CHANGES!']")}
+ get buyersDC ()                            { return $('//a[@href="/dc__buyer_list.aspx"]')}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -554,6 +556,23 @@ clickingOnCommissionFormDC() {
 }
 clickingOnHomesiteSetupDC (){
     waitAndClick(this.homesiteSetupDC, 'homesite Setup DC')
+}
+clickingOnNewButtonInHomesites(){
+    waitAndClick(this.newButton2, ' new button');
+    pauseBrowser(7000)
+}
+valiadateUnsavedChangesIsDisplayed () {
+    expectToBeDisplayed(this.unsavedChanges, ' unsaved changes');
+}
+clickingOnEditButtonInHomesites () {
+    waitAndClick(this.editButton2, ' edit button');
+    pauseBrowser(7000)
+}
+clickingOnBuyersDC () {
+    waitAndClick(this.buyersDC, ' buyers DC');
+}
+clickingOnNewButtonInBuyerListPage () {
+    waitAndClick(this.newButton2, ' new button');
 }
 
   getData(){
