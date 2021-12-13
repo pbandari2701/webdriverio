@@ -388,8 +388,91 @@ When(/^Install Methods page link under Product Management Menu is clicked$/, fun
 Then(/^Install Methods list page is loaded$/,  function(){
     expectToHaveTitle('Install Methods - HDS');
 }) 
+When(/^the Open button for the first Install method is clicked in the Install methods page$/, function() {
+    HomePage.clickingOnOpenButtonInInstallmethods();
+})
+Then(/^the install Methods Editor page is loaded$/,  function() {
+    expectToHaveTitle('Install Method Editor - HDS');
+})
+When(/^the New button is clicked in the Install Methods list page$/, function(){
+    HomePage.clickingOnNewButtonInInstallMethods();
+})
+When(/^the View button is clicked in the Install Method Editor page$/, function() { 
+    HomePage.clickingOnViewButtonInInstallmethodsEDitorPage();
+})
+Then(/^the Install Method History page is loaded$/,  function(){
+    expectToHaveTitle('Install Method History List - HDS')
+})
+When(/^the (.+) Install Methods Group link under Product Management Menu is clicked$/, function (ServiceOffering){
+    HomePage.clickOnServiceOfferingInInstallMethods(ServiceOffering);
+})           
+Then(/^the (.+) Install Methods Group page is loaded$/, function (ServiceOffering) {
+    if (ServiceOffering == 'Flooring'){
+        expectToHaveTitle('Flooring Install Method Groups - HDS')
+    }else if (ServiceOffering == 'Counter & Wall'){
+        expectToHaveTitle('Counter & Wall Install Method Groups - HDS')
+    }
+})       
+When(/^the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring$/, function() { 
+    HomePage.clickingOnEditButtonInInstallMethodsForFlooring();
+})       
+Then(/^the selected install method group displays in edit mode in the in the Install Method group page$/, function() {
+    HomePage.validateInstallMethodPageDisplayedInEditMode();
+}) 
+When(/^the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW$/, function() { 
+    HomePage.clickingOnEditButtonInInstallMethodsForCW();
+})
+When(/^the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW$/, function() { 
+    HomePage.clickingOnDeleteButtonInInstallMethodsForCW();
+})
+Then(/^a confirmation dialog or alert is displayed in the Install Method group page$/, function(){ 
+    HomePage.validateConfirmationDialogIsDisplayed();
+})
+When(/^the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring$/, function() {
+    HomePage.clickingOnDeleteButtonInInstallMethodsForFlooring();
+})
+When(/^Communities page link under Design Center Menu is clicked$/, function(){
+    HomePage.clickingOnDCCommunities();
+})
+Then(/^Communities page of the Design Center Menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Communities - HDS')
+})
+When(/^the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page$/, function(){
+    HomePage.clickingOnOpenButtonInDCCommunities();
+})
+Then(/^the design center community home page is loaded$/,  function(){
+    expectToHaveTitle('Community Details - HDS');
+})
+When(/^Commission Forms page link under Design Center Menu is clicked$/, function(){
+    HomePage.clickingOnCommissionFormDC();
+})
+Then(/^the design center Commission Form page is loaded$/,  function(){
+    expectToHaveTitle('Commission Form - HDS')
+}) 
+When(/^the Homesite setup link is clikced in the design center community home page$/, function() {
+    HomePage.clickingOnHomesiteSetupDC();
+} )
+Then(/^the Homesite list page for the  design center community is loaded$/, function() {
+    expectToHaveTitle("Homesite Setup - HDS")
+})
+When(/^the New button is clikced in the design center Community Homesite list page$/, function(){
+
+})
+Then(/^the Homesite editor or information page for the design center community homesite is loaded$/,  function(){
+
+})
+Then(/^ignore Homesite unsaved alert message$/,  function() {
+
+}) 
 
 
+
+
+
+
+
+
+ 
 
 
 

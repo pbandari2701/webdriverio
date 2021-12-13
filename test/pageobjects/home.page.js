@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDisplayed, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDisplayed, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -104,6 +104,14 @@ class HomePage extends BasePage{
  get colorColumnInTable ()                  { return $("//tbody/tr[1]/td[6]")}
  get productTypes ()                        { return $("//a[text()='Product Types']")}
  get installMethods()                       { return $("//a[text()='Install Methods']")}
+ get IMCounterAndWall()                     { return $("//a[@href='/ProductManagement/CWInstallMethodGroups.aspx']")}
+ get IMFlooring()                           { return $("//a[@href='/ProductManagement/FlooringInstallMethodGroups.aspx']")}
+ get editButton2()                          { return $('//a[text()=" Edit"]')}
+ get updateButton ()                        { return $("//a[text()=' Update']")}
+ get deleteButton2 ()                       { return $('//a[text()=" Delete"]')}
+ get DCCommunities()                        { return $("//a[@href='/dc__community_list.aspx']")}
+ get commissionFormDC ()                    { return $('//a[@href="/dc__commission_form.aspx"]')}
+ get homesiteSetupDC ()                     { return $("//a[text()='Homesite Setup']")}
 
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
@@ -498,8 +506,56 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
    }
    clickingOnInstallMethods (){
        waitAndClick(this.installMethods, 'install methods')
-   }  
-   
+   }
+   clickingOnOpenButtonInInstallmethods()   {
+       waitAndClick(this.openButton, 'open button');
+   }
+   clickingOnNewButtonInInstallMethods() {
+       waitAndClick(this.newButton2, 'new button');
+   }
+   clickingOnViewButtonInInstallmethodsEDitorPage() {
+       waitAndClick(this.viewButton, 'view button');
+   }
+   clickOnServiceOfferingInInstallMethods (ServiceOffering) {
+        if (ServiceOffering == 'Counter & Wall'){
+            waitAndClick(this.IMCounterAndWall, 'IM Counter And Wall')
+        }else if (ServiceOffering == 'Flooring'){
+            waitAndClick(this.IMFlooring,'IM Flooring ')
+        }
+   }
+   clickingOnEditButtonInInstallMethodsForFlooring () {
+       waitAndClick(this.editButton2, ' edit button');
+   }
+   validateInstallMethodPageDisplayedInEditMode () {
+       expectToBeDisplayed( this.updateButton, 'Install Method Page  In Edit Mode');
+   }
+   clickingOnEditButtonInInstallMethodsForCW() {
+       waitAndClick(this.editButton2, ' edit button');
+   }
+   clickingOnDeleteButtonInInstallMethodsForCW() {
+       waitAndClick(this.deleteButton2, ' delete button');
+   }
+   validateConfirmationDialogIsDisplayed() {
+    acceptAlert();
+    allureReporter.addStep('alert/confirmation dialog is displayed');
+}
+   clickingOnDeleteButtonInInstallMethodsForFlooring() {
+    waitAndClick(this.deleteButton2, ' delete button');
+    pauseBrowser(5000)
+}
+clickingOnDCCommunities (){
+    waitAndClick(this.DCCommunities, 'DC Communities')
+}
+clickingOnOpenButtonInDCCommunities (){
+    waitAndClick(this.openButton2, ' open button');
+}
+clickingOnCommissionFormDC() {
+    waitAndClick(this.commissionFormDC, 'commission Form DC')
+}
+clickingOnHomesiteSetupDC (){
+    waitAndClick(this.homesiteSetupDC, 'homesite Setup DC')
+}
+
   getData(){
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }

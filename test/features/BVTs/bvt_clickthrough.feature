@@ -56,7 +56,7 @@ Scenario: Verify_Security_User_Editor_Page_for_existing_User
 
 # ##SITE ADMINISTRATION MENU======================================================
 
-@tc:2058 @clickthrough
+@tc:2058 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_page  
 	Given HDS Home page is displayed
 	When  Area Types link under Site Administration Menu is clicked
@@ -64,7 +64,7 @@ Scenario: Verify_Site_Admin_Area_Types_page
 
 
 #Area Types-New
-@tc:2059
+@tc:2059   @clickthrough @bvt    
 Scenario: Verify_Site_Admin_Area_Types_New
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -73,7 +73,7 @@ Scenario: Verify_Site_Admin_Area_Types_New
 
 
 #Area Types-Edit
-@tc:2060
+@tc:2060 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_Edit
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -82,7 +82,7 @@ Scenario: Verify_Site_Admin_Area_Types_Edit
 
 
 #Area Types-Disable
-@tc:2061
+@tc:2061 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_disable
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -91,7 +91,7 @@ Scenario: Verify_Site_Admin_Area_Types_disable
 
 
 #Area Types-Delete
-@tc:2062 @wip
+@tc:2062 @wip @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_delete
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -99,7 +99,7 @@ Scenario: Verify_Site_Admin_Area_Types_delete
 	Then the modal for deleting an Area type is displayed in the site-level Area Type page
 
 
-@tc:2063
+@tc:2063 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page  
 	Given HDS Home page is displayed
 	When  Assign Take Offs page link under Site Administration Menu is clicked
@@ -107,14 +107,14 @@ Scenario: Verify_Site_Admin_Assign_Take_Off_page
 
 
 #Assign Take Off--Missing Quantities Report
-@tc:2064
+@tc:2064 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_Missing_Qty's_Rprt_link
 	Given HDS Home page is displayed
 	When the Missing Quantities Report link in the Site Admin menu is clicked
 	Then the Report Viewer page loaded
 
 #Assign Take Offs-Edit
-@tc:2065
+@tc:2065 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
@@ -133,7 +133,7 @@ Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
 
 
 #Assign Take Offs-Disable 
-@tc:2067
+@tc:2067 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_disable_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
@@ -143,27 +143,27 @@ Scenario: Verify_Site_Admin_Assign_Take_Off_page_disable_bttn
 
 
 #Assign Take Offs-Add Take Off 
-@tc:2068
+@tc:2068 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_add_TakeOff_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
 	When the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page
 	Then the Modal for adding a take off is displayed in the site-level Assign Take Offs list page
 
-@tc:2069
+@tc:2069 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_page  
 	Given HDS Home page is displayed
 	When  Patterns link under Site Administration Menu is clicked
 	Then  Patterns page is loaded 
 
-@tc:2070
+@tc:2070 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_New_Pattern_bttn  
 	Given HDS Home page is displayed
 		And Patterns link under Site Administration Menu is clicked
 	When the New Pattern button is clicked in the site-level Patterns list page
 	Then the New Pattern Modal is displayed in the site-level patterns list page
-
-@tc:2071
+ 
+@tc:2071 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_Edit_bttn
 	Given HDS Home page is displayed
 		And Patterns link under Site Administration Menu is clicked
@@ -225,13 +225,13 @@ Scenario: Verify_Site_Admin_Patterns_Edit_bttn
 # 	When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page
 # 	Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page. 
 
-@tc:2075
+@tc:2075 @clickthrough @bvt
 Scenario: Verify_Tagging_Prod_Categories_page  
 	Given HDS Home page is displayed
 	When  Tagging Product Categories page link under Site Administration Menu is clicked
 	Then  Tagging Product Categories page is loaded
 
-@tc:2076
+@tc:2076 @clickthrough @bvt
 Scenario: Verify_Buyer_Types_page  
 	Given HDS Home page is displayed
 	When  Buyer Types Page link under Site Administration Menu is clicked
@@ -239,7 +239,7 @@ Scenario: Verify_Buyer_Types_page
 
 #Buyer Types - New
 #46
-@tc:2077
+@tc:2077 @clickthrough @bvt
 Scenario: Verify_Buyer_Types_page_New_bttn 
 	Given HDS Home page is displayed
 		And Buyer Types Page link under Site Administration Menu is clicked
@@ -249,14 +249,14 @@ Scenario: Verify_Buyer_Types_page_New_bttn
 
 #Buyer Types - Edit
 #47
-@tc:2078
+@tc:2078 @clickthrough @bvt
 Scenario: Verify_Buyer_Types_page_Open
 	Given HDS Home page is displayed
 		And Buyer Types Page link under Site Administration Menu is clicked
     When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page
 	Then the Buyer type editor page under Site Admin menu is loaded
 
-@tc:2079
+@tc:2079 @clickthrough @bvt
 Scenario: Verify_Admin_Category_Svc_Offering_listPage  
 	Given HDS Home page is displayed
 	When  Category Service Offering page link under Administration Menu is clicked
@@ -264,7 +264,7 @@ Scenario: Verify_Admin_Category_Svc_Offering_listPage
 
 #Category Svc Offerings - New
 #50
-@tc:2080
+@tc:2080 @clickthrough @bvt
 Scenario: Verify_Admin_Category_Svc_Offering_New_bttn  
 	Given HDS Home page is displayed
 		And Category Service Offering page link under Administration Menu is clicked
@@ -273,7 +273,7 @@ Scenario: Verify_Admin_Category_Svc_Offering_New_bttn
 
 #Category Svc Offerings  - Edit
 #51
-@tc:2081
+@tc:2081 @clickthrough @bvt
 Scenario: Verify_Admin_Category_Svc_Offering_Open  
 	Given HDS Home page is displayed
 		And Category Service Offering page link under Administration Menu is clicked
@@ -281,13 +281,13 @@ Scenario: Verify_Admin_Category_Svc_Offering_Open
 	Then the Category Service Offering editor page is loaded
            
 # ##ADMINISTRATION MENU======================================================
-@tc:2082
+@tc:2082 @clickthrough @bvt
 Scenario: Verify_Admin_Subscriber_Settings_page  
 	Given HDS Home page is displayed
 	When  Subscriber Settings page link under Administration Menu is clicked
 	Then  Subscriber Settings page is loaded
 
-@tc:2083
+@tc:2083 @clickthrough @bvt
 #Subscriber Settings - Company setup - Flooring DD (max IM wast factore)
 #Subscriber Settings - Company setup - CW DD (max IM wast factore)
 Scenario Outline: Verify_Admin_Subscriber_Settings_page_MaxIM waste factor drop down bttn
@@ -308,7 +308,7 @@ Examples:
 #Subscriber Settings - Email setup - 
 #Subscriber Settings - Available Patterns- 
 
-@tc:2084
+@tc:2084 @clickthrough @bvt
 Scenario Outline: Verify_Admin_Subscriber_Settings_page_tabs
 	Given HDS Home page is displayed
 		And Subscriber Settings page link under Administration Menu is clicked
@@ -324,20 +324,20 @@ Examples:
 | ERP                       |
 
 
-@tc:2085
+@tc:2085 @clickthrough @bvt        
 Scenario: Verify_Pattern_Availability_page   
 	Given HDS Home page is displayed
 	When  Pattern Availability page link under Administration Menu is clicked
 	Then  Pattern Availability page is loaded
 
-@tc:2086
+@tc:2086 @clickthrough @bvt
 Scenario: Verify_Admin_Flooring_Groups_listpage  
 	Given HDS Home page is displayed
 	When  Flooring Groups page link under Administration Menu is clicked
 	Then  Flooring Groups page is loaded 
 
 #Flooring Groups - New 
-@tc:2087
+@tc:2087 @clickthrough @bvt
 Scenario: Verify_Admin_Flooring_Groups_New_Bttn
 	Given HDS Home page is displayed
 		And Flooring Groups page link under Administration Menu is clicked
@@ -346,14 +346,14 @@ Scenario: Verify_Admin_Flooring_Groups_New_Bttn
 
 
 #Flooring Groups - Open
-@tc:2088
+@tc:2088 @clickthrough @bvt
 Scenario: Verify_Admin_Flooring_Groups_pg_Open
 	Given HDS Home page is displayed
 		And Flooring Groups page link under Administration Menu is clicked
 	When the Open button is clicked for a randomly selected group in the flooring group list page
 	Then the Flooring Groups editor page is loaded
 
-@tc:2089
+@tc:2089 @clickthrough @bvt
 #Flooring Groups - Open - View History
 Scenario: Verify_Admin_Flooring_Groups_Open_View_history
 	Given HDS Home page is displayed
@@ -362,19 +362,19 @@ Scenario: Verify_Admin_Flooring_Groups_Open_View_history
 	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
 	Then the view history page for the flooring group is loaded
 
-@tc:2090
+@tc:2090 @clickthrough @bvt
 Scenario: Verify_Diagram_Colors_page  
 	Given HDS Home page is displayed
 	When  Diagram Colors page link under Administration Menu is clicked
 	Then  Diagram Colors page is loaded
 
-@tc:2091
+@tc:2091 @clickthrough @bvt
 Scenario: Verify_Admin_About_page  
 	Given HDS Home page is displayed
 	When  About page link under Administration Menu is clicked
 	Then  About page is loaded 
 
-@tc:2092
+@tc:2092 @clickthrough @bvt
 Scenario Outline: Verify_Admin_Design_Extras
 	Given HDS Home page is displayed
 	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
@@ -384,7 +384,7 @@ Examples:
 | Flooring        |
 | Counter & Wall  |
 
-@tc:2093
+@tc:2093 @clickthrough @bvt
 #Design Extras - Open
 # 66
 Scenario Outline: Verify_Admin_Design_Extras_Open
@@ -398,7 +398,7 @@ Examples:
 
 #Design Extras - New
 #68
-@tc:2094
+@tc:2094 @clickthrough @bvt
 Scenario Outline: Verify_Admin_Design_Extras_New
 	Given HDS Home page is displayed
 		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
@@ -411,7 +411,7 @@ Examples:
 
 #Design Extras - Open - Product Search 
 #67
-@tc:2095
+@tc:2095 @clickthrough @bvt
 Scenario Outline: Verify_Admin_Design_Extras_Open_ProdSearch_Modal 
 	Given HDS Home page is displayed
 		And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
@@ -421,7 +421,7 @@ Scenario Outline: Verify_Admin_Design_Extras_Open_ProdSearch_Modal
 
 #Design Extras - Open - Cancel 
 #69
-@tc:2096
+@tc:2096 @clickthrough @bvt
 Scenario: Verify_Admin_Design_Extras_Open_Cancel_bttn
 	Given HDS Home page is displayed
 		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
@@ -432,13 +432,13 @@ Examples:
 | ServiceOffering |
 | Counter & Wall  |
 
-@tc:2097
+@tc:2097 @clickthrough @bvt
 Scenario: Verify_Admin_Tagging_Install_Methods_page  
 	Given HDS Home page is displayed
 	When  Tagging Install Methods page link under Administration Menu is clicked
 	Then  Tagging Install Methods page is loaded
 
-@tc:2098
+@tc:2098 @clickthrough @bvt
 Scenario: Verify_Admin_Audit_Report_page  
 	Given HDS Home page is displayed
 	When  Audit Report page link under Administration Menu is clicked
@@ -446,27 +446,27 @@ Scenario: Verify_Admin_Audit_Report_page
 
 
 # ##ACCOUNTING======================================================
-@tc:2099
+@tc:2099 @clickthrough @bvt
 Scenario: Verify_Accounting_Complete_Qoute_Buyers_page  
 	Given HDS Home page is displayed
 	When  Complete Quote or Buyers page link under Accounting Menu is clicked
 	Then  Complete Quote or Buyers page is loaded
 
-@tc:2100
+@tc:2100 @clickthrough @bvt
 Scenario: Verify_Accounting_Set_Cut_Off_Dates_page  
 	Given HDS Home page is displayed
 	When  Set Cut Off Dates page link under Accounting Menu is clicked
 	Then  Set Cut Off Dates page is loaded 
 
 
-@tc:2101
+@tc:2101 @clickthrough @bvt
 #Commission Forms  16
 Scenario: Verify_Accounting_CommissionForms_list page 
 	Given HDS Home page is displayed
 	When  Commission Forms page link under Accounting Menu is clicked
 	Then  the Commission Forms list page under Accounting menu is loaded
 
-@tc:2102
+@tc:2102 @clickthrough @bvt
 #Commission Forms - Open 18
 Scenario: Verify_Accounting_CommissionForms_Open (editor) 
 	Given HDS Home page is displayed
@@ -475,14 +475,14 @@ Scenario: Verify_Accounting_CommissionForms_Open (editor)
 	Then  the Commission Form detail page under Accounting menu is loaded 
 
 # ##PRODUCT MANAGEMENT========================================================
-@tc:2103
+@tc:2103 @clickthrough @bvt
 #Product Management - Catalogs
 Scenario: Verify_Prod_Mgmt_Catalogs_page  
 	Given HDS Home page is displayed
 	When  Catalogs page link under Product Management Menu is clicked
 	Then  Catalogs page is loaded
 
-@tc:2104
+@tc:2104 @clickthrough @bvt
 #Product Management - Catalogs - Edit
 Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog  
 	Given HDS Home page is displayed
@@ -490,7 +490,7 @@ Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog
 	When the Edit button for the first catalog listed is clicked
 	Then  Excluded Offering text element is displayed
 
-@tc:2105
+@tc:2105 @clickthrough @bvt
 #Product Management - Catalogs - Show Products
 Scenario: Verify_Prod_Mgmt_Catalogs_page_showProducts  
 	Given HDS Home page is displayed
@@ -498,7 +498,7 @@ Scenario: Verify_Prod_Mgmt_Catalogs_page_showProducts
 	When the Show Products button for the first catalog listed is clicked
 	Then Product List page is loaded
 
-@tc:2106
+@tc:2106 @clickthrough @bvt
 #Product Management - Catalogs - New
 Scenario: Verify_Prod_Mgmt_Catalogs_page_New_catalog  
 	Given HDS Home page is displayed
@@ -687,127 +687,127 @@ Scenario: Verify_Prod_Mgmt_Install_Methods_page
 	Then  Install Methods list page is loaded 
 
 
-
-# #Install Methods - Open 
-# #93
-# Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_Page 
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 	When the Open button for the first Install method is clicked in the Install methods page
-# 	Then the install Methods Editor page is loaded
+@tc:2124 @clickthrough @bvt			
+#Install Methods - Open 
+#93
+Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_Page 
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+	When the Open button for the first Install method is clicked in the Install methods page
+	Then the install Methods Editor page is loaded
 	
-# #Install Methods - New 
-# #94
-# Scenario: Verify_Prod_Mgmt_Install_Methods_page_New 
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 	When the New button is clicked in the Install Methods list page
-# 	Then the install Methods Editor page is loaded
+#Install Methods - New 
+#94
+@tc:2125 @clickthrough @bvt	
+Scenario: Verify_Prod_Mgmt_Install_Methods_page_New 
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+	When the New button is clicked in the Install Methods list page
+	Then the install Methods Editor page is loaded
 
-# #Install Methods - Open -  View history		
-# #96
-# Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_ViewHistory
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 		And the Open button for the first Install method is clicked in the Install methods page
-# 	When the View button is clicked in the Install Method Editor page
-# 	Then the Install Method History page is loaded
+#Install Methods - Open -  View history		
+#96
+@tc:2126 @clickthrough @bvt	
+Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_ViewHistory
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+		And the Open button for the first Install method is clicked in the Install methods page
+	When the View button is clicked in the Install Method Editor page
+	Then the Install Method History page is loaded
 
+@tc:2127 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pages
+	Given HDS Home page is displayed
+	When  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	Then  the <ServiceOffering> Install Methods Group page is loaded
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
+| Flooring        |
 
+@tc:2128 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn_FL 
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring
+	Then  the selected install method group displays in edit mode in the in the Install Method group page 
+Examples: 
+| ServiceOffering |
+| Flooring        |
 
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pages
-# 	Given HDS Home page is displayed
-# 	When  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	Then  the <ServiceOffering> Install Methods Group page is loaded 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-# | Counter and Wall|
+@tc:2129 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn  
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
+	Then  the selected install method group displays in edit mode in the in the Install Method group page
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
 
+@tc:2130 @clickthrough @bvt
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_CW  
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
+	Then a confirmation dialog or alert is displayed in the Install Method group page 
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
 
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn_FL 
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page
-# 	Then  the selected install method group displays in edit mode in the in the Install Method group page Second 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn  
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
-# 	Then  the selected install method group displays in edit mode in the in the Install Method group page
-# Examples: 
-# | ServiceOffering |
-# | Counter and Wall|
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_CW  
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
-# 	Then a confirmation dialog or alert is displayed in the Install Method group page 
-# Examples: 
-# | ServiceOffering |
-# | Counter and Wall|
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_Flooring
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page
-# 	Then a confirmation dialog or alert is displayed in the Install Method group page
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-
-# ##==================COMMUNITY MANAGEMENT====================================
-
-
-
+@tc:2131 @clickthrough @bvt
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_Flooring
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring
+	Then a confirmation dialog or alert is displayed in the Install Method group page
+Examples: 
+| ServiceOffering |
+| Flooring        |
 
 
 # #=====================DESIGN CENTER=======================================
-# Scenario: Verify_DC_Communities_page  
-# 	Given HDS Home page is displayed
-# 	When  Communities page link under Design Center Menu is clicked
-# 	Then  Communities page of the Design Center Menu is loaded
+@tc:2132 @clickthrough @bvt
+Scenario: Verify_DC_Communities_page  
+	Given HDS Home page is displayed
+	When  Communities page link under Design Center Menu is clicked
+	Then  Communities page of the Design Center Menu is loaded
 
-# #Communities - Open
-# Scenario: Verify_DC_Communities_page_Open  
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 	When the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 	Then the design center community home page is loaded
+@tc:2133 @clickthrough @bvt
+#Communities - Open
+Scenario: Verify_DC_Communities_page_Open  
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+	When the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+	Then the design center community home page is loaded
 
-# #Commission Forms  18
-# Scenario: Verify_DC_CommissionForm page 
-# 	Given HDS Home page is displayed
-# 	When  Commission Forms page link under Design Center Menu is clicked
-# 	Then  the design center Commission Form page is loaded 
+@tc:2134 @clickthrough @bvt
+#Commission Forms  18
+Scenario: Verify_DC_CommissionForm page 
+	Given HDS Home page is displayed
+	When  Commission Forms page link under Design Center Menu is clicked
+	Then  the design center Commission Form page is loaded 
+
+@tc:2135 @clickthrough @bvt
+#Communities - Open - Home Sites
+Scenario: Verify_DC_Communities_page_Open_Homesites_list_page
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+	When the Homesite setup link is clikced in the design center community home page
+	Then the Homesite list page for the  design center community is loaded
 
 
-
-
-# #Communities - Open - Home Sites
-# Scenario: Verify_DC_Communities_page_Open_Homesites_list_page
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 	When the Homesite setup link is clikced in the design center community home page
-# 	Then the Homesite list page for the  design center community is loaded
-
-
-# #Communities - Open - Home Sites - New
-# Scenario: Verify_DC_Communities_page_Open_Homesites_New_bttn
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 		And the Homesite setup link is clikced in the design center community home page
-# 	When the New button is clikced in the design center Community Homesite list page
-# 	Then the Homesite editor/information page for the design center community homesite is loaded
-# 	Then ignore Homesite unsaved alert message 
+#Communities - Open - Home Sites - New
+@tc:2135 @clickthrough @bvt
+Scenario: Verify_DC_Communities_page_Open_Homesites_New_bttn
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+		And the Homesite setup link is clikced in the design center community home page
+	When the New button is clikced in the design center Community Homesite list page
+	Then the Homesite editor or information page for the design center community homesite is loaded
+	Then ignore Homesite unsaved alert message 
 
 # #Communities - Open - Home Sites - Open
 # Scenario: Verify_DC_Communities_page_Open_Homesites_editor_page
