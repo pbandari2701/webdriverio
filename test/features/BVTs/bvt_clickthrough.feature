@@ -833,69 +833,71 @@ Scenario: Verify_DC_Buyers_page_New_bttn
 	Given HDS Home page is displayed
 		And Buyers page link under Design Center Menu is clicked
 	When the New button is clicked in the Buyers List Page
-	Then  The buyers info page loaded 
+	Then  The buyers info page loaded
 
 @tc:2139 @clickthrough @bvt
 Scenario Outline:  Verify_DC_Buyers_Info_Page
 	Given HDS Home page is displayed
 		And Buyers page link under Design Center Menu is clicked
-	When A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-	Then  The buyers info page loaded 
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	Then  The buyers info page loaded
 Examples: 
  | Buyer_Name   | Community_Name 		  |
- |Automation101 | Bella Fiore-25522250000 |
+ |autotest 		| Westford 3s PH 2        |
+
+ @tc:2140 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Info_Page_EstMoPmt_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Estimate Monthly Payment button is clicked in the Buyer's Info page
+	Then a new window for displaying the buyer's monthly payment is loaded
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-#  Scenario Outline:  Verify_DC_Buyers_Info_Page_EstMoPmt_bttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Estimate Monthly Payment button is clicked in the Buyer's Info page
-# 	Then a new window for displaying the buyer's monthly payment is loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+ @tc:2141 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Info_Page_Additional_Buyer_info_Bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Add Additional Buyer button is clicked in the Buyer info Page
+	Then the Additional Buyer Info page is loaded 
+Examples: 
+ | Buyer_Name   | Community_Name		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-
-#  Scenario Outline:  Verify_DC_Buyers_Info_Page_Additional_Buyer_info_Bttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Add Additional Buyer button is clicked in the Buyer info Page
-# 	Then the Additional Buyer Info page is loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
-
-
-# #Buyers - Open - Update Costs
-# #206
-# Scenario Outline:  Verify_DC_Buyers_UPdateCost
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page
-# 	Then the Update Costs modal is dislayed in the buyer's info page
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+#Buyers - Open - Update Costs
+#206
+ @tc:2142 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_UPdateCost
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page
+	Then the Update Costs modal is dislayed in the buyer's info page
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-# #Buyers - Open - View Quote (flooring)
-# #Buyers - Open - View Quote (CW)
-# #Buyers - Open - View Quote (LSO)
-# Scenario Outline:  Verify_DC_BuyerInfo_viewQT_bttn
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the view Quote Button is clicked for <Service_Offering> service offering in the buyer info page
-# 	Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name          |
-#  | Flooring         | Automation101| Bella Fiore-25522250000 |
-#  | Counter and Wall | Automation101| Bella Fiore-25522250000 | 
-#  | Lifestyle Options| Automation101| Bella Fiore-25522250000 | 
+#Buyers - Open - View Quote (flooring)
+#Buyers - Open - View Quote (CW)
+#Buyers - Open - View Quote (LSO)
+ @tc:2143 @clickthrough @bvt
+Scenario Outline:  Verify_DC_BuyerInfo_viewQT_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the view Quote Button is clicked for <Service_Offering> service offering in the buyer info page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
 # Scenario: Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link

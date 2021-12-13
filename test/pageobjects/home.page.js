@@ -1,4 +1,4 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDisplayed, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert } from "../helpers/customcommands";
+import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectNotToBeDisplayed,switchToNewWindow, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -114,7 +114,16 @@ class HomePage extends BasePage{
  get homesiteSetupDC ()                     { return $("//a[text()='Homesite Setup']")}
  get unsavedChanges ()                      { return $("//strong[text()='YOU HAVE UNSAVED CHANGES!']")}
  get buyersDC ()                            { return $('//a[@href="/dc__buyer_list.aspx"]')}
-
+ get serchBoxBuyers ()                      { return $("//input[@id='txtSearchPhrase']")}
+ get searchGo ()                            { return $("//a[@id='cmdSearch']")}
+ get monthlyPaymentButton ()                { return $("//a[@id='_ctl0_MS_hypLoanParameters']")}
+ get monthlyPaymentWindow()                 { return $("//span[@id='lblHeading']")}
+ get addAdditionalBuyerButton ()            { return $("//a[@id='_ctl0_body_cmdAddContact']")}
+ get updateCostsButton ()                   { return $("//input[@id='_ctl0_body_ctlCounterWallQuoteInfo_btnViewCostUpdates']")}
+ get updateCostsPopUp ()                    { return $("//h4[text()='Update Costs']")}
+ get viewQuoteButtonCW ()                   { return $("//input[@id='_ctl0_body_ctlCounterWallQuoteInfo_btnViewQuote']")}
+ get viewQuoteButtonFlooring()              { return $("//input[@id='_ctl0_body_ctlFlooringQuoteInfo_btnViewQuote']")}
+ get viewQuoteButtonLo()                    { return $ ("//input[@id='_ctl0_body_ctlLifeOptsQuoteInfo_btnViewQuote']")}             
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -574,8 +583,44 @@ clickingOnBuyersDC () {
 clickingOnNewButtonInBuyerListPage () {
     waitAndClick(this.newButton2, ' new button');
 }
+setValueToSerchBoxBuyers(Buyer_Name, Community_Name) {
+    sendKeys(this.serchBoxBuyers, Buyer_Name, 'serch Box Buyers' );
+    waitAndClick(this.searchGo, 'search Go');
+    waitAndClick(this.openButton, 'open button');
+}
+clickingOnMonthlyPaymentButton(){
+    this.monthlyPaymentButton.scrollIntoView();
+    waitAndClick(this.monthlyPaymentButton, 'monthly payment button');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__loan_values.aspx');
+}
+validateMonthlyPaymentWindowIsDisplayed () {
+    expectToBeDisplayed( this.monthlyPaymentWindow, 'monthly payment window')
+}
+clickingOnAddAdditionalBuyerButton() {
+    this.addAdditionalBuyerButton.scrollIntoView();
+    waitAndClick(this.addAdditionalBuyerButton, 'additional buyer button');
+    }
+clickingOnUpdateCostsButton(){
+    this.updateCostsButton.scrollIntoView();
+    waitAndClick(this.updateCostsButton, 'update costs button');
+}
+clickingOnUpdateCostsPopUpIsDisplayed() {
+    expectToBeDisplayed(this.updateCostsPopUp, 'update cost popup')
+}
+clickingOnService_Offering (Service_Offering){
+if(Service_Offering == 'Flooring') {
+    this.viewQuoteButtonFlooring.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonFlooring, ' view quote button for flooring');
+}else if(Service_Offering == 'Counter & Wall') {
+    this.viewQuoteButtonCW.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonCW, ' view quote button for counter and wall');
+}else if(Service_Offering == 'Lifestyle Options') {
+    this.viewQuoteButtonLo.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonLo, ' view quote button for Lifestyle options');
+}
+}
 
-  getData(){
+getData(){
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }
 

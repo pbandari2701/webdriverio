@@ -476,6 +476,38 @@ When(/^the New button is clicked in the Buyers List Page$/, function() {
 Then(/^The buyers info page loaded$/,  function() {
     expectToHaveTitle('HDS (QA) - Buyer Information - HDS')
 }) 
+When(/^A buyer with the following attributes is opened: (.+) and (.+)$/, function(Community_Name, Buyer_Name) {
+    HomePage.setValueToSerchBoxBuyers(Buyer_Name, Community_Name);
+})
+When(/^the Estimate Monthly Payment button is clicked in the Buyer's Info page$/, function() {
+    HomePage.clickingOnMonthlyPaymentButton();
+})
+Then(/^a new window for displaying the buyer's monthly payment is loaded$/,  function(){
+    HomePage.validateMonthlyPaymentWindowIsDisplayed();
+}) 
+When(/^the Add Additional Buyer button is clicked in the Buyer info Page$/, function() {
+    HomePage.clickingOnAddAdditionalBuyerButton();
+})
+Then(/^the Additional Buyer Info page is loaded$/,  function(){
+    expectToHaveTitle('Additional Buyer Information - HDS')
+}) 
+When(/^the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page$/, function() {
+    HomePage.clickingOnUpdateCostsButton();
+})
+Then(/^the Update Costs modal is dislayed in the buyer's info page$/, function() {
+    HomePage.clickingOnUpdateCostsPopUpIsDisplayed();
+})
+When(/^the view Quote Button is clicked for (.+) service offering in the buyer info page$/, function(Service_Offering) {
+    HomePage.clickingOnService_Offering (Service_Offering);
+})
+Then(/^The Buyers Report page is loaded for (.+)$/,  function(Service_Offering){
+    pauseBrowser(5000);
+    expectToHaveTitle('Buyer Report - HDS');
+})
+
+
+
+
 
 
 
