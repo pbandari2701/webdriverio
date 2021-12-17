@@ -123,7 +123,32 @@ class HomePage extends BasePage{
  get updateCostsPopUp ()                    { return $("//h4[text()='Update Costs']")}
  get viewQuoteButtonCW ()                   { return $("//input[@id='_ctl0_body_ctlCounterWallQuoteInfo_btnViewQuote']")}
  get viewQuoteButtonFlooring()              { return $("//input[@id='_ctl0_body_ctlFlooringQuoteInfo_btnViewQuote']")}
- get viewQuoteButtonLo()                    { return $ ("//input[@id='_ctl0_body_ctlLifeOptsQuoteInfo_btnViewQuote']")}             
+ get viewQuoteButtonLo()                    { return $ ("//input[@id='_ctl0_body_ctlLifeOptsQuoteInfo_btnViewQuote']")} 
+ get firstTracerDiagram ()                  { return $("//a[@id='_ctl0_body_repTracerDiagrams__ctl0_lnkEditTracing']")} 
+ get CWQuoteLink ()                         { return $("//a[@id='_ctl0_MS_hypCounterWallQuote']")}
+ get flooringQuoteLink()                    { return $("//a[@id='_ctl0_MS_hypFlooringQuote']")}
+ get LOQuotedLink ()                        { return $("//a[@id='_ctl0_MS_hypLifestyleOptionsQuote']")}
+ get scenarioListCW ()                      { return $("//a[@id='hypCWScenarioList']")}
+ get scenarioListFl()                       { return $("//a[@id='hypFloorinhScenarioList']")}
+ get scenarioListLo ()                      { return $("//a[@id='hypOptionList']")}
+ get FlSelectorPageHeading ()               { return $("//span[@id='_ctl0_body_lblHeadingDetail']")}
+ get selectionsFl ()                        { return $("//a[@id='hypFlooringSelections']")}
+ get printPriliminaryQuoteBtn ()            { return $('//input[@value="Print Preliminary Quote"]')}
+ get printPriliminaryQuoteBtnCW ()          { return $("//button[text()='Print Preliminary Quote']")}
+ get calculatorBreakdownReportButton()      { return $("//a[text()=' Calculator Breakdown Report']")}    
+ get wholeHouseCarpet ()                    { return $("//a[text()='Whole House Carpet']")}
+ get addNewItemBtn  ()                      { return $("//a[text()=' Add New Item']")}
+ get addlItemsEditorField ()                { return $("//h4[text()='Additional Item Editor:']/following-sibling::div[1]")}
+ get cancelButton2 ()                       { return $("//a[text()='Cancel']")}
+ get modifyFlooringSelectionTab ()          { return $("//img[@id='imgTab__Mod']")}
+ get addlItemsTab ()                        { return $("//img[@id='imgTab__Add']")}
+ get roomStandardsTab ()                    { return $("//img[@id='imgTab__Std']")}
+ get adjustmentsTab ()                      { return $("//img[@id='imgTab__Adj']")}
+ get addNewAdjustmentBtn ()                 { return $("//a[text()=' Add New Adjustment']")}
+ get adjustmentEditorField ()               { return $("//h4[text()='Adjustment Editor:']/following-sibling::table")}
+ get selectFromProductListButton ()         { return $("//button[@id='product-list-button']")}
+ get productSearchModal ()                  { return $('//div[@class="modal-body"]')}
+ get goButton ()                            { return $("//a[@id='quick-search-button']")}
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
@@ -619,7 +644,111 @@ if(Service_Offering == 'Flooring') {
     waitAndClick(this.viewQuoteButtonLo, ' view quote button for Lifestyle options');
 }
 }
-
+clickingOnFirstTracerDiagram() {
+    waitAndClick(this.firstTracerDiagram, ' first tracer  diagram');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__floorplan_viewer.aspx?subscriberID=75&quoteid=502463&roomGraphID=152429');
+    pauseBrowser(5000)
+}
+clickingOnCurrentQuoteLinkfor(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        this.flooringQuoteLink.scrollIntoView();
+        waitAndClick(this.flooringQuoteLink, 'flooring quote link')
+    }else if (Service_Offering == 'Counter & Wall'){
+        this.CWQuoteLink.scrollIntoView();
+        waitAndClick(this.CWQuoteLink, 'CW quote link')
+    }else if(Service_Offering == 'Lifestyle Options'){
+        this.LOQuotedLink.scrollIntoView();
+        waitAndClick(this.LOQuotedLink, 'LO quote link');
+    }
+}
+clickingOnScenarioList(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        this.scenarioListFl.scrollIntoView();
+        waitAndClick(this.scenarioListFl, ' scenario list  flooring'); 
+    } else if (Service_Offering == 'Counter & Wall'){
+        this.scenarioListCW.scrollIntoView();
+        waitAndClick(this.scenarioListCW, ' scenario list counter & wall');
+    } else if (Service_Offering == 'Lifestyle Options'){
+        this.scenarioListLo.scrollIntoView();
+        waitAndClick(this.scenarioListLo, ' scenario list   lifestyle options');
+    }
+}
+clickingOnNewButtonInFlooringScenarioList() {
+    waitAndClick(this.newButton2, ' new button');
+}
+validateFlooringSelectorPage() {
+    pauseBrowser(5000)
+    this.FlSelectorPageHeading.scrollIntoView({block:"start"});
+    expectToBeDisplayed(this.FlSelectorPageHeading, ' Fl Selector Page Heading');
+}
+clickingOnOpenButtonInActiveService_OfferingDS (){
+    waitAndClick(this.openButton, ' open button');
+}
+clickingOnSelectionsFl_DC() {
+    waitAndClick(this.selectionsFl, ' selections fl');
+}
+clickingOnPrintPriliminaryQuoteBtn (Service_Offering) {
+    if (Service_Offering == 'Counter & Wall'){
+        waitAndClick(this.printPriliminaryQuoteBtnCW, ' print Priliminary Quote Btn for CW');
+    }else{
+    waitAndClick (this.printPriliminaryQuoteBtn, 'print  priliminary quote button'); 
+    }
+}
+clickingOnCalculatorBreakdownReportButtonForFlooring () {
+    waitAndClick( this.calculatorBreakdownReportButton, ' calculator Breakdown Report Button');
+} 
+clickingOnFirstTracerDiagramForBuyers() {
+    waitAndClick(this.firstTracerDiagram, ' first tracer  diagram');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__floorplan_viewer.aspx?subscriberID=75&fdsid=315159&roomGraphID=152429')
+    pauseBrowser(5000)
+}
+clickingOnWholeHouseCarpet (){
+    waitAndClick(this.wholeHouseCarpet, ' whole house carpet');
+}
+clickingOnTabInRoomEditor(Tab) {
+    if (Tab == 'Additional Items') {
+        waitAndClick(this.addlItemsTab, ' additional items  tab');
+    } else if (Tab == 'Adjustments') {
+        waitAndClick(this.adjustmentsTab, ' adjustments tab');
+    } else if (Tab == 'Modify Flooring Selection') {
+        waitAndClick(this.modifyFlooringSelectionTab, ' modify flooring selection tab');
+    } else if (Tab == 'Room Standards') {
+        waitAndClick(this.roomStandardsTab, ' room standards tab');
+    }
+}
+clickingOnAddNewItemBtn() {
+    waitAndClick(this.addNewItemBtn, ' add new item   button');
+}
+validateAddlItemsEditorFieldIsDisplayed (){
+    expectToBeDisplayed(this.addlItemsEditorField, 'addl items editor field');
+}
+clickingOnCancelButtonInAddlItemsTab () {
+    waitAndClick(this.cancelButton2, 'cancel button');
+}
+validateAddlItemsEditorFieldIsNotDisplayed (){
+    expectNotToBeDisplayed(this.addlItemsEditorField, 'addl items editor field');
+}
+clickingOnAddNewAdjustmentBtn (){
+    waitAndClick(this.addNewAdjustmentBtn, 'add new adjustment button');
+}
+validateAdjustmentEditorFieldIsDisplayed (){
+    expectToBeDisplayed(this.adjustmentEditorField, 'adjustment editor field');
+}
+clickingOnCancelBtnInAdjustments (){
+    waitAndClick(this.cancelButton2, ' cancel button  in adjustments'); 
+}
+validateAdjustmentEditorFieldIsNotDisplayed (){
+    expectNotToBeDisplayed(this.adjustmentEditorField, 'adjustment editor field');
+}
+clickingOnSelectFromProductListButton (){
+    waitAndClick(this.selectFromProductListButton, ' select from product list');
+}
+validateProductSearchModalIsDisplayed (){
+    expectToBeDisplayed (this.productSearchModal, 'product search  modal');
+}
+clickingOnGoButtonInRoomEditor(){
+    waitAndClick(this.goButton, 'go button  in room editor');
+}
 getData(){
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }

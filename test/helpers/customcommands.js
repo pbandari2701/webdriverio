@@ -99,7 +99,8 @@ module.exports = {
 
     switchToNewWindow: function(windowName){
         browser.switchWindow(windowName);
-        console.log("switched to window"+windowName)
+        console.log("switched to window>>>"+windowName)
+        allureReporter.addStep("switched to window"+windowName)
     },
 
     acceptAlert: function(){

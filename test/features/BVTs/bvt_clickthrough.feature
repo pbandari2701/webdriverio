@@ -899,327 +899,332 @@ Examples:
  | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
  | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
+ @tc:2144 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the view Quote Button is clicked for Flooring service offering in the buyer info page
+    	And the link for the first tracer diagram listed is clicked in the Buyer Report page
+	Then A new window for displaying tracer diagram selected from Buyer Report page is loaded
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
-# Scenario: Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And the view Quote Button is clicked for Flooring service offering in the buyer info page
-#     When the link for the first tracer diagram listed is clicked in the Buyer Report page
-# 	#Then A new window for displaying tracer diagram selected from Buyer Report page is loaded
-
-
-
-#  #|Flooring | Jia Zhuan | Bella Fiore-25522250000  |
-
-# #Buyers - Open - (Current Quote) - [Flooring] 200
-# #Buyers - Open - (Current Quote) - CW  137
-# #Buyers - Open - (Current Quote) - LSO  170
-#  Scenario Outline:  Verify_DC_BuyerInfo_current Quotes
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Current Quote link for <Service_Offering> service offering is clicked in the buyer info page
-# 	Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name		    |
-#  |Flooring			| Automation101	| Bella Fiore-25522250000   |
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000	| 
-#  | Lifestyle Options| Automation101 | Bella Fiore-25522250000    | 
+#Buyers - Open - (Current Quote) - [Flooring] 200
+#Buyers - Open - (Current Quote) - CW  137
+#Buyers - Open - (Current Quote) - LSO  170
+ @tc:2145 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_BuyerInfo_current Quotes
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Current Quote link for <Service_Offering> service offering is clicked in the buyer info page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - Flooring - 
 # #  Buyers - Open - CW
 # #  Buyers - Open - Lifestyle Options
-
-# Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	Then the <Service_Offering> scenario list or Options selector page loaded
-# Examples: 
-#  | Service_Offering  | Buyer_Name		 | Community_Name            |
-#  | Flooring          | Automation101     | Bella Fiore-25522250000 |
-#  | Counter and Wall  | Automation101	 | Bella Fiore-25522250000	 |
-#  | Lifestyle Options | Automation101     | Bella Fiore-25522250000   |
-
-
-
-# #Buyers - Open - Flooring - New
-# #207
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_New
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	 When the 'New' button is clicked in the Flooring scenario list page
-# 	 Then the flooring selector page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 |
+ @tc:2146 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	Then the <Service_Offering> scenario list or Options selector page loaded
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
-#   Scenario Outline:  Verify_DC_Buyers_Open_Flooring_selection_link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And User Navigates to The Buyer's Report page
-# 	#When user clicks on the Selections link under the Flooring link in the Design Center Menu
-# 	#Then the flooring selector page is displayed
 
-	 
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 |
+#Buyers - Open - Flooring - New
+#207
+ @tc:2147 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_New
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	 	And the 'New' button is clicked in the Flooring scenario list page
+	 Then the flooring selector page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          |
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
 
-# #  Buyers - Open - Flooring - Open -  Print prelim Quote
-# #215
-# #  Buyers - Open - CW - Open -  Print prelim Quote
-# #  Buyers - Open - LifestyleOptions -  Print prelim Quote
-# Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg_PrintPrelim
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	 When the Print preliminary Qoute button in the design scenario or option selector page is clicked for <Service_Offering>
-# 	 Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name           |
-#  | Flooring         |Automation101 | Bella Fiore-25522250000  |
-#  |Counter and Wall  |Automation101 | Bella Fiore-25522250000  |
-#  |Lifestyle Options |Automation101 | Bella Fiore-25522250000  |
+  @tc:2148 @clickthrough @bvt
+  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_selection_link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And User Navigates to The Buyer's Report page in Design Center
+		And user clicks on the Selections link under the Flooring link in the Design Center Menu
+	Then the flooring selector page is displayed in the design center
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          |
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
+
+#  Buyers - Open - Flooring - Open -  Print prelim Quote
+#215
+#  Buyers - Open - CW - Open -  Print prelim Quote
+#  Buyers - Open - LifestyleOptions -  Print prelim Quote
+@tc:2149 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg_PrintPrelim
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	 When the Print preliminary Quote button in the design scenario or option selector page is clicked for <Service_Offering>
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
-#   #Buyers - Open - Flooring - Open - Print
-#   #209 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CW_CalcBrdReport
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	 And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
-# #	 Then the <Service_Offering> Selector Reports page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 | 
-
+  #Buyers - Open - Flooring - Open - Print
+  #209
+  @tc:2150 @clickthrough @bvt  @wip
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CW_CalcBrdReport
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	 	And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
+	 Then the <Service_Offering> Selector Reports page is loaded
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
 
 # #Buyers - Open - Flooring - Open - Print - calc. brkdn rprt
 # #212
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CalcBrkdReport_link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
-# 	 When User Clicks on the Calculator Breakdown Report Link for <Service_Offering> 
-# 	# Then the Report Viewer page of the buyer is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 | 
+@tc:2151 @clickthrough @bvt  @wip
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CalcBrkdReport_link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
+	 Then User Clicks on the Calculator Breakdown Report Link for <Service_Offering> 
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
+
+
+#Buyers - Open - Flooring - Open - Print - room by room selctor report
+#210
+@tc:2152 @clickthrough @bvt 
+
+Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_Print_room by room Slctr report
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	# 	And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page
+	# When User Clicks on the Room by Room Selector Report link
+	# Then the Report Viewer page of the buyer is loaded
+Examples: 
+ | Service_Offering | Buyer_Name     | Community_Name         | 
+ | Counter          | autotest	     | Westford 3s PH 2       | 
+
+@tc:2153 @clickthrough @bvt 
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_TracerDiagram link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the Flooring scenario list or Options selector page is clicked
+		And The active Flooring design scenario is opened if Svc Offering is Flooring or CW
+    	And the link for the first diagram listed is clicked in the Buyer's flooring selector page
+	Then A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
+
+
+ #Buyers - Open - Flooring - Open - Open (Room) 
+ @tc:2154 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor 
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		When the link for the room named <RoomName> is clicked in the Flooring Selector page
+	 Then the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 		| Westford 3s PH 2    		 | Whole House Carpet |
+
+#Buyers - Open - Flooring - Open - Open (Room) - Modify Flooring Selection
+#Buyers - Open - Flooring - Open - Open (Room) - Additional Items
+#Buyers - Open - Flooring - Open - Open (Room) - Room Standards
+#Buyers - Open - Flooring - Open - Open (Room) - Adjustments
+#Buyers - Open - Flooring - Open - Open (Room) - Flooring Extras
+@tc:2155 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Tabs
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 When the <Tab> tab is clicked in the flooring room editor page
+	 Then the panel for the <Tab> is displayed in the flooring room editor page
+Examples: 
+| Tab                       | Service_Offering | Buyer_Name     | Community_Name         | RoomName    |
+| Modify Flooring Selection | Flooring         | autotest 	    | Westford 3s PH 2		 | livingroom  |
+| Additional Items          | Flooring         | autotest 		| Westford 3s PH 2		 | livingroom  |
+| Room Standards            | Flooring         | autotest 		| Westford 3s PH 2    	 | livingroom  |
+| Adjustments               | Flooring         | autotest 		| Westford 3s PH 2 		 | livingroom  |
+| Flooring Extras           | Flooring         | autotest 		| Westford 3s PH 2 		 | livingroom  |
+
+@tc:2156 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+	 	And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
+	 Then the Additional Items Editor field is displayed in the flooring room editor page
+
+Examples: 
+| Tab               | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
+| Additional Items  | Flooring         | autotest 	   | Westford 3s PH 2		 | Whole House Carpet |
 
 
 
-# #Buyers - Open - Flooring - Open - Print - room by room selctor report
-# #210
-#  Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_Print_room by room Slctr report
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page
-# 	# When User Clicks on the Room by Room Selector Report link
-# 	# Then the Report Viewer page of the buyer is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name     | Community_Name         | 
-#  | Counter          | Automation101  |Bella Fiore-25522250000 | 
-
-#   Scenario:  Verify_DC_Buyers_Open_Flooring_Open_TracerDiagram link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And the link for the Flooring scenario list or Options selector page is clicked
-# 		And The active Flooring design scenario is opened if Svc Offering is Flooring or CW
-#     When the link for the first diagram listed is clicked in the Buyer's flooring selector page
-# 	Then A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded
+@tc:2157 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items_Cancel button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
+	    And the Cancel button is clicked in the Additional Items tab of the flooring room editor page
+	Then the Additional Items Editor field is not displayed in the flooring room editor page
+Examples: 
+| Tab              | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
+| Additional Items | Flooring         | autotest 	  |  Westford 3s PH 2 		| Whole House Carpet  |
 
 
-#  #Buyers - Open - Flooring - Open - Open (Room) 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor 
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		When the link for the room named <RoomName> is clicked in the Flooring Selector page
-# 	 Then the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
+ @tc:2158 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add Adjustments button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
+	 Then the Adjustment Editor field is displayed in the flooring room editor page
 
-
-# #Buyers - Open - Flooring - Open - Open (Room) - Modify Flooring Selection
-# #Buyers - Open - Flooring - Open - Open (Room) - Additional Items
-# #Buyers - Open - Flooring - Open - Open (Room) - Room Standards
-# #Buyers - Open - Flooring - Open - Open (Room) - Adjustments
-# #Buyers - Open - Flooring - Open - Open (Room) - Flooring Extras
- 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Tabs
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the <Tab> tab is clicked in the flooring room editor page
-# 	 Then the panel for the <Tab> is displayed in the flooring room editor page
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName |
-# | Modify Flooring Selection | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Room Standards            | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Adjustments               | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Flooring Extras           | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 	 When the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
-# 	 Then the Additional Items Editor field is displayed in the flooring room editor page
-
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
+Examples: 
+| Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName         |
+| Adjustments | Flooring         | autotest 	 |  Westford 3s PH 2	   |Whole House Carpet|
 
 
 
+ @tc:2159 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Adjustment_Cancel button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
+	 	And the Cancel button is clicked in the Adjustments tab of the flooring room editor page
+	 Then the Adjustments Editor field is not displayed in the flooring room editor page
 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items_Cancel button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 		And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
-# 	 When the Cancel button is clicked in the Additional Items tab of the flooring room editor page
-# 	 Then the Additional Items Editor field is not displayed in the flooring room editor page
+Examples: 
+| Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName			|
+| Adjustments | Flooring         | autotest 	 |  Westford 3s PH 2 	   | Whole House Carpet |
 
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
-
-
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add Adjustments button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 	 When the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
-# 	 Then the Adjustment Editor field is displayed in the flooring room editor page
-
-# Examples: 
-# | Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName         |
-# | Adjustments | Flooring         | Automation101 | Bella Fiore-25522250000 |Whole House Carpet|
+ #Buyers - Open - Flooring - Open - Open (Room) - - Select From Prod List (prod search)
+  @tc:2160 @clickthrough @bvt 
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_selectFromProdlist
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 When the 'Select From Product List' button is clicked in the flooring room editor page
+	 Then the Product search modal in the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 	 	|  Westford 3s PH 2    		 | Whole House Carpet |
 
 
-
-# #
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Adjustment_Cancel button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
-# 	 When the Cancel button is clicked in the Adjustments tab of the flooring room editor page
-# 	 Then the Adjustments Editor field is not displayed in the flooring room editor page
-
-# Examples: 
-# | Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName			|
-# | Adjustments | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
-
-#  #Buyers - Open - Flooring - Open - Open (Room) - - Select From Prod List (prod search)
-#   Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_selectFromProdlist
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the 'Select From Product List' button is clicked in the flooring room editor page
-# 	 Then the Product search modal in the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
+ # Buyers - Open - Flooring - Open - Open (Room) - - search product (go button)
+@tc:2161 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickProdSearchBttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 	And the 'Go' button for quick product search is clicked in the flooring room editor page
+	 Then the Product search modal in the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 	 	|  Westford 3s PH 2    		 | Whole House Carpet |
 
 
-#  # Buyers - Open - Flooring - Open - Open (Room) - - search product (go button)
-#    Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickProdSearchBttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the 'Go' button for quick product search is clicked in the flooring room editor page
-# 	 Then the Product search modal in the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
-
-
-# # Buyers - Open - Flooring - Open - Open (Room) - - search product (go button) - select product
-#    Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickPrdSearch_addProd
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the 'Go' button for quick product search is clicked in the flooring room editor page
-# 	 When A product is randmoly selected for upgrade in the the flooring room editor product search modal
-# 	 Then the product for the room is changed to the selected product in the flooring room editor page
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name          | RoomName           |
-#  | Flooring         | Automation101| Bella Fiore-25522250000 | Whole House Carpet |
-
-
+# Buyers - Open - Flooring - Open - Open (Room) - - search product (go button) - select product
+@tc:2162 @clickthrough @bvt
+   Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickPrdSearch_addProd
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the 'Go' button for quick product search is clicked in the flooring room editor page
+	 	And A product is randmoly selected for upgrade in the the flooring room editor product search modal
+	 Then the product for the room is changed to the selected product in the flooring room editor page
+Examples: 
+ | Service_Offering | Buyer_Name   | Community_Name          | RoomName           |
+ | Flooring         | autotest 	   |  Westford 3s PH 2 		 | Whole House Carpet |
 
 # # Buyers - Open - CW - Open
 # # Buyers - Open - Flooring - Open
-
-
-# Scenario Outline:  Verify_DC_SvcOffring_Open_a_Scenario
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	When The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	Then The active <Service_Offering> design scenario page is opened
+@tc:2163 @clickthrough @bvt
+Scenario Outline:  Verify_DC_SvcOffring_Open_a_Scenario
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	When The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	Then The active <Service_Offering> design scenario page is opened
 		
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name	    	|
-#  | Flooring         | Automation101 | Bella Fiore-25522250000   |
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000	|
+Examples: 
+ | Service_Offering | Buyer_Name   | Community_Name	    	|
+ | Flooring         | autotest 	   |  Westford 3s PH 2   	|
+ | Counter & Wall   | autotest 	   |  Westford 3s PH 2		|
 
 
 #  #143

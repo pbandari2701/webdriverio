@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { pauseBrowser, expectToHaveTitle } from "../helpers/customcommands";
-import homePage from "../pageobjects/home.page";
+import buyersPage from "../pageobjects/buyers.page";
 import HomePage from '../pageobjects/home.page'
 
 
@@ -504,6 +504,124 @@ Then(/^The Buyers Report page is loaded for (.+)$/,  function(Service_Offering){
     pauseBrowser(5000);
     expectToHaveTitle('Buyer Report - HDS');
 })
+When(/^the link for the first tracer diagram listed is clicked in the Buyer Report page$/, function(){
+    HomePage.clickingOnFirstTracerDiagram();
+})
+Then(/^A new window for displaying tracer diagram selected from Buyer Report page is loaded$/,  function(){
+    expectToHaveTitle('Floor Plan Diagram Tracer');
+})
+When(/^the Current Quote link for (.+) service offering is clicked in the buyer info page$/, function(Service_Offering)  { 
+    HomePage.clickingOnCurrentQuoteLinkfor(Service_Offering);
+})
+When(/^the link for the (.+) scenario list or Options selector page is clicked$/, function(Service_Offering){
+    HomePage.clickingOnScenarioList(Service_Offering);
+})
+Then(/^the (.+) scenario list or Options selector page loaded$/,  function(Service_Offering) {
+if(Service_Offering == 'Flooring') {
+    expectToHaveTitle('Flooring Scenario List - HDS');
+} else if(Service_Offering == 'Counter & Wall') {
+    expectToHaveTitle('Counter & Wall Scenario List - HDS');
+} else if (Service_Offering == 'Lifestyle Options') {
+    expectToHaveTitle('Options List - HDS');
+}
+})
+When(/^the 'New' button is clicked in the Flooring scenario list page$/, function(){
+    HomePage.clickingOnNewButtonInFlooringScenarioList();
+})
+Then(/^the flooring selector page is displayed$/, function(){
+    HomePage.validateFlooringSelectorPage();
+})
+When(/^The active (.+) design scenario is opened if Svc Offering is Flooring or CW$/, function(Service_Offering) {
+    if ((Service_Offering == 'Flooring') || (Service_Offering == 'Counter & Wall')){
+    HomePage.clickingOnOpenButtonInActiveService_OfferingDS();
+    }
+})
+When(/^user clicks on the Selections link under the Flooring link in the Design Center Menu$/, function() {
+    HomePage.clickingOnSelectionsFl_DC();
+})
+When(/^User Navigates to The Buyer's Report page in Design Center$/, function() { 
+    buyersPage.navigateToBuyersReportsPage();
+})
+Then(/^the flooring selector page is displayed in the design center$/, function() {
+    expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+})
+When(/^the Print preliminary Quote button in the design scenario or option selector page is clicked for (.+)$/,  function(Service_Offering) {
+   HomePage.clickingOnPrintPriliminaryQuoteBtn (Service_Offering);
+})
+When(/^the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring$/, function() {
+    HomePage.clickingOnCalculatorBreakdownReportButtonForFlooring();
+})
+Then(/^the (.+) Selector Reports page is loaded$/,  function(Service_Offering){
+    
+})
+When(/^the link for the first diagram listed is clicked in the Buyer's flooring selector page$/, function() {
+    HomePage.clickingOnFirstTracerDiagramForBuyers();
+})
+Then(/^A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded$/, function() { 
+    expectToHaveTitle('Floor Plan Diagram Tracer');
+})
+When(/^the link for the room named (.+) is clicked in the Flooring Selector page$/, function(RoomName) {
+    HomePage.clickingOnWholeHouseCarpet();
+})
+Then(/^the flooring room editor page is displayed$/,  function(){
+    expectToHaveTitle('HDS (QA) - Room Editor - HDS');
+})
+When(/^flooring Room Editor page for the room named (.+) is opened$/, function(RoomName) {
+    HomePage.clickingOnWholeHouseCarpet();
+})
+When(/^the (.+) tab is clicked in the flooring room editor page$/, function(Tab) {
+    HomePage.clickingOnTabInRoomEditor(Tab);
+})
+When(/^the Add New Item button is clicked in the Additional Items tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnAddNewItemBtn();
+})
+Then(/^the Additional Items Editor field is displayed in the flooring room editor page$/, function() {
+    HomePage.validateAddlItemsEditorFieldIsDisplayed();
+})
+When(/^the Cancel button is clicked in the Additional Items tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnCancelButtonInAddlItemsTab();
+})
+Then(/^the Additional Items Editor field is not displayed in the flooring room editor page$/, function() {
+    HomePage.validateAddlItemsEditorFieldIsNotDisplayed();
+})
+When(/^the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnAddNewAdjustmentBtn();
+})
+Then(/^the Adjustment Editor field is displayed in the flooring room editor page$/, function() {
+    HomePage.validateAdjustmentEditorFieldIsDisplayed();
+})
+When(/^the Cancel button is clicked in the Adjustments tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnCancelBtnInAdjustments();
+})
+Then(/^the Adjustments Editor field is not displayed in the flooring room editor page$/, function()  {
+    HomePage.validateAdjustmentEditorFieldIsNotDisplayed();
+})
+When(/^the 'Select From Product List' button is clicked in the flooring room editor page$/, function() {
+    HomePage.clickingOnSelectFromProductListButton();
+})
+Then(/^the Product search modal in the flooring room editor page is displayed$/, function(){
+    HomePage.validateProductSearchModalIsDisplayed();
+})
+When(/^the 'Go' button for quick product search is clicked in the flooring room editor page$/, function() {
+    HomePage.clickingOnGoButtonInRoomEditor();
+})
+Then(/^The active (.+) design scenario page is opened$/, function(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+    }else if  (Service_Offering == 'Counter & Wall') { 
+        pauseBrowser(5000)       
+        expectToHaveTitle('Counter & Wall Scenario Editor - HDS')
+    }
+})
+
+
+
+
+
+
+
+
+
 
 
 
