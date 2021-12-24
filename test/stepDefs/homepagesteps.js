@@ -2,7 +2,7 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { pauseBrowser, expectToHaveTitle } from "../helpers/customcommands";
 import buyersPage from "../pageobjects/buyers.page";
 import HomePage from '../pageobjects/home.page'
-
+import quotePage from '../pageobjects/quote.page'
 
 Then(/^The appropriate settings pertaining to the (.+) should be validated$/, function(subscriber){
     console.log("subscriber is"+subscriber)
@@ -69,6 +69,13 @@ When(/^the Edit button is clicked for a randomly selected Takeoff in the site-le
 Then(/^the take Off editor Modal is displayed in the site-level Assign Take Offs list page$/, function(){
     HomePage.validateTakeOffEditorModalIsDisplayed();
 })
+When(/^the Delete button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
+    HomePage.clickingOnDeleteBtnInAssignTakeOff();
+})
+Then(/^the Modal for deleteing a take off is displayed in the site-level Assign Take Offs list page$/, function(){
+    HomePage.validateDeleteModalAT();
+})
+
 When(/^the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
     HomePage.clickingOnDisableButtonAssignTakeOffs();
 })
@@ -94,17 +101,58 @@ Then(/^the New Pattern Modal is displayed in the site-level patterns list page$/
     HomePage.validateAddPatternPopUpIsDisplayed();
 })
 Given(/^Area Type Selected$/, function(){
-
+    HomePage.selectingAreaTypeInPatterns();
 })
 When(/^the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page$/, function(){
-
+    HomePage.clckingOnEditBtnInSelectedPattern();
 })
-Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
+When(/^the Disable button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function()  { 
+    HomePage.clickingOnDisableBtnInPatterns()
+})
 
+Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.valiadteEditPatternModalIsDisplayed();
+})
+When(/^the Copy button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clckingOnCopyButtonInPatterns();
+})
+Then(/^the Copy Pattern Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateCopyPatternModalIsDisplayed();
+})
+Given(/^the (.+) is clicked for a randomly selected Pattern in the  Patterns list page$/, function(button){
+    HomePage.clickingOnButtonsInPatterns (button);
+})
+When(/^the hide link is clicked in the modal displayed in the site-level (.+) page$/, function(pattern) { 
+    HomePage.clickingOnHideLinkInPatternModal (pattern);
+}) 
+Then(/^the pattern image in (.+) modal is not displayed$/, function(pattern) { 
+    HomePage.validatePatternImgIsNotDisplayed();
+})
+When(/^the image is clicked in the Pattern Editor modal$/, function() {
+    HomePage.clickingOnPatternUpdateImg();
+}) 
+Then(/^file upload field is displayed in the Pattern editor modal$/, function() {
+    HomePage.validateUploadFieldIsDisplayedInThePatternEditorModal();
 })
 When(/^Tagging Product Categories page link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnTaggingProductCategories();
 })
+Then(/^the Disable Pattern Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateDisablePatternModalIsDisplayed();
+})
+When(/^the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clickingOnAddNewTakeOffButton();
+})
+Then(/^the Add New TakeOff Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateAddTakeOffPopUpIsDisplayed();
+})
+When(/^the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clickingOnTracerBtnInPatterns();
+})
+Then(/^A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page$/, function() {
+    HomePage.validateNewWindowForEditingCWPatternTracerIsOpened();
+}) 
+
 Then(/^Tagging Product Categories page is loaded$/, function () {
     expectToHaveTitle('Tagging Product Categories - HDS');
 }) 
@@ -319,14 +367,8 @@ When(/^Global HDS Catalog Search List page link under Product Management Menu is
 Then(/^Global HDS Catalog Search List page is loaded$/,  function(){
     expectToHaveTitle('Global HDS Catalog Search - HDS');
 })
-Then(/^Write (.+) on SAP Number textbox and Searched$/, function(){
-
-})
 Then(/^verify the search filter products according to the given keyword for Style Number$/, function() {
     HomePage.validateSearchFilterProductsIsDisplayedForSN();
-})
-Then(/^click on Export Button to export the product to the spreadsheet$/, function() {
-
 })
 Then(/^Write F70ACCE on Style Number textbox and Searched$/, function(){
     HomePage.setValueToStyleNumberTextBox();
@@ -551,9 +593,6 @@ When(/^the Print preliminary Quote button in the design scenario or option selec
 When(/^the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring$/, function() {
     HomePage.clickingOnCalculatorBreakdownReportButtonForFlooring();
 })
-Then(/^the (.+) Selector Reports page is loaded$/,  function(Service_Offering){
-    
-})
 When(/^the link for the first diagram listed is clicked in the Buyer's flooring selector page$/, function() {
     HomePage.clickingOnFirstTracerDiagramForBuyers();
 })
@@ -561,17 +600,21 @@ Then(/^A new window for displaying tracer diagram selected from Buyer's flooring
     expectToHaveTitle('Floor Plan Diagram Tracer');
 })
 When(/^the link for the room named (.+) is clicked in the Flooring Selector page$/, function(RoomName) {
-    HomePage.clickingOnWholeHouseCarpet();
+    HomePage.clickingOnRoomLink(RoomName);
 })
 Then(/^the flooring room editor page is displayed$/,  function(){
     expectToHaveTitle('HDS (QA) - Room Editor - HDS');
 })
 When(/^flooring Room Editor page for the room named (.+) is opened$/, function(RoomName) {
-    HomePage.clickingOnWholeHouseCarpet();
+    HomePage.clickingOnRoomLink(RoomName);
 })
 When(/^the (.+) tab is clicked in the flooring room editor page$/, function(Tab) {
     HomePage.clickingOnTabInRoomEditor(Tab);
 })
+Then(/^the panel for the (.+) is displayed in the flooring room editor page$/, function(Tab) {
+    HomePage.validatePanelForTabIsDisplayed(Tab);
+})
+
 When(/^the Add New Item button is clicked in the Additional Items tab of the flooring room editor page$/, function() {
     HomePage.clickingOnAddNewItemBtn();
 })
@@ -613,6 +656,59 @@ Then(/^The active (.+) design scenario page is opened$/, function(Service_Offeri
         expectToHaveTitle('Counter & Wall Scenario Editor - HDS')
     }
 })
+When(/^A product is randmoly selected for upgrade in the the flooring room editor product search modal$/, function(){
+    HomePage.clickingOnProductInProductSearchModal();
+})
+// Then(/^the product for the room is changed to the selected product in the flooring room editor page$/, function() { 
+//     // HomePage.validateSelectedProductInTheFlooringRoomEditorPage();
+// })
+When(/^the 'Copy' button is clicked in the CW scenario overview page$/, function() { 
+    HomePage.clckingOnCopyBtnInCWScenarioPage();
+})
+Then(/^a modal for copying the design scenario is displayed in the CW scenario overview page$/, function() { 
+    HomePage.validateCopyDesignScenario();
+})
+When(/^the 'New' button is clicked in the Counter and Wall scenario list page$/, function(){
+    HomePage.clickingOnNewBtnInCWScenarioListPage();
+})
+Then(/^the 'Create New Scenario' modal is displayed in the Counter and Wall Scenario list page$/, function(){
+    HomePage.valiadteCreateNewScenarioModalIsDisplayed();
+})
+When(/^the 'View Latest Quote' button is clicked in the (.+) scenario list or option selector page$/, function(Service_Offering) { 
+    HomePage.clickingOnViewLatestQuoteBtnInScenarioListPage(Service_Offering);
+})
+When(/^the 'View Quote History' button is clicked in the buyer info page for (.+) service offering$/, function(Service_Offering)  {
+    HomePage.clickingOnViewQuoteHistoryButton(Service_Offering);
+})
+Then(/^the Quote History dialog box for (.+) service offering is displayed in the Buyer info page$/, function(Service_Offering) {
+    HomePage.validateQuoteHistoryDialogBox(Service_Offering);
+})
+When(/^the 'View' link is clicked in Quote History dialog box for the first quote listed in the  Buyer info page$/, function() { 
+    HomePage.clickingOnQuoteHistoryDialogBox();
+})
+Then(/^the Buyer's report page loads successfully$/, function() {
+     expectToHaveTitle('HDS (QA) - Report List - HDS');
+})
+When(/^User Navigates to The Buyer's Report page in DC$/, function()  {
+    buyersPage.navigateToBuyersReportsPage();
+})
+When(/^the (.+) link is cliked in the buyer's report page$/, function(Report_Type) {
+    HomePage.clickingOnReportTypeInReportsPage(Report_Type);
+})
+Then(/^the (.+) page of the selected (.+) of the Buyer is loaded$/, function(Expected_Page, Report_Type) {
+    if (Report_Type == 'hypSaleCalculatorSummary'){
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    }  else if (Report_Type == 'hypCalculatorBreakdown'){
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    }  else if (Report_Type == 'hypCWCalculatorBreakdownReport') {
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    } else {
+        expectToHaveTitle(Expected_Page);
+    }
+})
+
+
+
 
 
 
