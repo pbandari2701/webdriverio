@@ -1,7 +1,9 @@
-import { clearTextBox, expectToBeDisabled, expectToBeDisplayed, expectToBeEnabled, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled } from "../helpers/customcommands";
+import { expect } from "pactum";
+import { clearTextBox, expectToBeDisabled,assertEquals,switchToNextWindowArray,expectToHaveUrlContaining, expectToBeDisplayed, expectNotToBeDisplayed,switchToNewWindow, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert, selectByTxt } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
+const CATALOG_DATA_FILE_NAME = "catalog";
 
 
 class HomePage extends BasePage{
@@ -32,24 +34,171 @@ class HomePage extends BasePage{
  get editButton()               { return $('//a[@title="Edit"]')}
  get editDefaultArea()          { return $("//h4[text()='Edit Default Area']")}
  get disableButton()            { return $('//a[@title="Disable"]')}
+ get disableButton2 ()          { return $("//button[text()=' Disable']")}
+ get patternImg ()              { return $("//img[@id='originalPatternImage']")}
  get disableDefaultArea()       { return $("//h4[text()='Disable Default Area']")}
  get deleteButton()             { return $('//a[@title="Delete"]')}
  get deleteDefaultArea()        { return $("//h4[text()='Delete Area Type']")}
- get assignTakeOffs()           { return $("//a[text()='Assign Take Offs']")}                      
+ get assignTakeOffs()           { return $("//a[text()='Assign Take Offs']")}
+ get deleteModalAT ()           { return $("//h4[text()= 'Delete Take Off']")}                      
  get missingQuantitiesReport()  { return $("//a[text()='Missing Quantities Report']")}
  get editTakeOff()              { return $("//h4[text()='Edit Take Off']")}                  
- get LoadingGif()               { return $("//h3[text()='Loading...']")}
+ get LoadingGif()               { return $("//h3[contains(text(),'Loading')]")}
  get disableTakeOff()           { return $("//h4[text()='Disable Take Off']")}
  get addTakeOffButton()         { return $('//a[text()=" Add Take Off"]')}
+ get addNewTakeOffButton()      { return $('//a[text()=" Add New Take Off"]')}
  get addTakeOffPopUp ()         { return $('//h4[text()="Add Take Off"]')}
  get patterns()                 { return $("//a[text()='Patterns']")}
  get newPattern ()              { return $("//button[text()=' New Pattern']")}
+ get hideEditPattern ()         { return $("//div[@id='editPatternModal']//a[text()='hide']")}
+ get hideCopyPattern ()         { return $("//div[@id='copyPatternModal']//a[text()='hide']")}
+ get hideDisableaPattern ()     { return $("//div[@id='disablePatternModal']//a[text()='hide']")}
+ get patternUpdateImg ()        { return $("//img[@id='originalPatternImage']")}
+ get fileUploadTxtBox ()        { return $("//input[@id='fileEditUpload']")}
+ get disablePatternModal ()     { return $("//h4[text()= 'Disable Pattern']")}
  get addPatternPopUp ()         { return $ ("//h4[text()='Add Pattern']")}
  get taggingProductCategories() { return $("//a[text()='Tagging Product Categories']")}
+ get buyerTypes ()              { return $("//a[text()='Buyer Types']")}
+ get newButton2 ()              { return $("//a[text()=' New']")}
+ get openButton ()              { return $('//a[@class="btn btn-info btn-xs"]')}
+ get categoryServiceOffering()  { return $("//a[text()='Category Service Offering']")}
+ get subscriberSettings ()      { return $("//a[text()='Subscriber Settings']")}
+ get companySetupPage()         { return $("//th[text()='Company Information:']")}
+ get globalSettingsPage()       { return $("//th[text()='Product Settings:']")}
+ get reportSetUpPage()          { return $("//th[text()='Report Setup - Default Disclosure Statements:']")}
+ get featuresPage()             { return $("//th[text()='Extras']")}
+ get erpPage()                  { return $("//th[text()='Integration']")}
+ get patternAvailability()      { return $("//a[text()='Pattern Availability']")}
+ get flooringGroups()           { return $("//a[text()='Flooring Groups']")}
+ get viewButton()               { return $("//a[text()=' View']")}
+ get viewButton2 ()             { return $("//a[text()='View']")}
+ get diagramColors()            { return $("//a[text()='Diagram Colors']")}
+ get aboutLink()                { return $("//a[text()='About']")}
+ get DECounterWall()            {return $("//a[@href='/Administration/SubscriberDesignExtras.aspx']")}
+ get DEFlooring()               { return $("//a[@href='/Administration/FlooringDesignExtras.aspx']")}
+ get openButton2()              {return $("//a[text()='Open']")}
+ get DEeditorPanel()            { return $("#PageLabel")}
+ get DEeditorPanel2()           { return $("//span[text()='Edit Counter & Wall Design Extra']")}
+ get NewDesignExtra()           {return $("//a[@id='NewDesignExtra']")}
+ get cancelButton()             {return $("//button[contains(text(), 'Cancel')]")}
+ get taggingInstallMethods ()   { return $("//a[text()='Tagging Install Methods']")}
+ get auditReports()             { return $("//a[text()='Audit Reports']")}
+ get completeQuotesBuyers()     { return $("//a[text()='Complete Quotes/Buyers']")}
+ get setCutoffDate()            { return $("//a[text()='Set Cut-off Date']")}
+ get commissionForms()          { return $("//a[text()='Commission Forms']")}
+ get catalogs ()                { return $("//a[text()='Catalogs']")}
+ get editButton2()              { return $('//a[text()=" Edit"]')}
+ get editBtn3()                 { return $('//button[text()=" Edit"]')}
+ get editpatternModal ()        { return $("//h4[text()= 'Edit Pattern']")}
+ get excludedOffering ()        { return $('#filtersLabel')}
+ get showProducts ()            { return $("//a[text()=' Show Products']")}
+ get catalogDD()                { return $("//select[@id='_ctl0_body_ddlCatalogNames']")}
+ get productsList()             { return $("//a[text()='Products List']")}
+ get importButton()             { return $("//a[text()=' Import']")}
+ get catalogImportPage()        { return $("#_ctl0_body_lblHeading")}
+ get detailsTabInProductInfo()  { return $("//a[text()='Details']")}
+ get openCommunitiesInDetailsTab()           { return $("//a[text()='Open Communities']")}
+ get anyOpenBuyerScenariosInDetailsTab ()    { return $("//a[text()='Any Open Buyer Scenarios']")}
+ get openBuyerActiveScenariosInDetailsTab () { return $("//a[text()='Open Buyer Active Scenarios']")}
+ get globalHDSCatalogSearch ()              { return $("//a[text()='Global HDS Catalog Search']")}
+ get styleNumberTextBox()                   { return $("//input[@id='txtStyleNumber']")}
+ get globalSearchButton ()                  { return $("//a[@id='globalSearchButton']")}
+ get styleNumberColumnInTable()             { return $("//tbody/tr[1]/td[2]/span[1]")}
+ get styleTypeTextBox()                     { return $("//input[@id='txtStyleType']")}
+ get commercialLevelCutLoop()               { return $("//span[text()='COMMERCIAL LEVEL CUT LOOP']")}
+ get styleNameTextBox()                     { return $("//input[@id='txtStyleName']")}
+ get styleNameCoumnInTable()                { return $("//tbody/tr[2]/td[1]/span[1]")}
+ get vendorTextBox()                        { return $("//input[@id='txtVendor']")}
+ get arizonaTileLLC()                       { return $("//span[text()='ARIZONA TILE LLC (11067)']")}
+ get ILGNumber()                            { return $("//input[@id='txtILGNumber']")}
+ get ILGNumberColumnInTable()               { return $("//tbody/tr[1]/td[8]/span")}
+ get productCategory()                      { return $("//input[@id='txtProductCategory']")}
+ get hardwood()                             { return $("//span[text()='Hardwood']")}
+ get colorNameTextBox()                     { return $("//input[@id='txtColorName']")}
+ get colorColumnInTable ()                  { return $("//tbody/tr[1]/td[6]")}
+ get productTypes ()                        { return $("//a[text()='Product Types']")}
+ get installMethods()                       { return $("//a[text()='Install Methods']")}
+ get IMCounterAndWall()                     { return $("//a[@href='/ProductManagement/CWInstallMethodGroups.aspx']")}
+ get IMFlooring()                           { return $("//a[@href='/ProductManagement/FlooringInstallMethodGroups.aspx']")}
+ get editButton2()                          { return $('//a[text()=" Edit"]')}
+ get updateButton ()                        { return $("//a[text()=' Update']")}
+ get deleteButton2 ()                       { return $('//a[text()=" Delete"]')}
+ get DCCommunities()                        { return $("//a[@href='/dc__community_list.aspx']")}
+ get commissionFormDC ()                    { return $('//a[@href="/dc__commission_form.aspx"]')}
+ get homesiteSetupDC ()                     { return $("//a[text()='Homesite Setup']")}
+ get unsavedChanges ()                      { return $("//strong[text()='YOU HAVE UNSAVED CHANGES!']")}
+ get buyersDC ()                            { return $('//a[@href="/dc__buyer_list.aspx"]')}
+ get serchBoxBuyers ()                      { return $("//input[@id='txtSearchPhrase']")}
+ get searchGo ()                            { return $("//a[@id='cmdSearch']")}
+ get monthlyPaymentButton ()                { return $("//a[@id='_ctl0_MS_hypLoanParameters']")}
+ get monthlyPaymentWindow()                 { return $("//span[@id='lblHeading']")}
+ get addAdditionalBuyerButton ()            { return $("//a[@id='_ctl0_body_cmdAddContact']")}
+ get updateCostsButton ()                   { return $("//input[@id='_ctl0_body_ctlCounterWallQuoteInfo_btnViewCostUpdates']")}
+ get updateCostsPopUp ()                    { return $("//h4[text()='Update Costs']")}
+ get viewQuoteButtonCW ()                   { return $("//input[@id='_ctl0_body_ctlCounterWallQuoteInfo_btnViewQuote']")}
+ get viewQuoteButtonFlooring()              { return $("//input[@id='_ctl0_body_ctlFlooringQuoteInfo_btnViewQuote']")}
+ get viewQuoteButtonLo()                    { return $ ("//input[@id='_ctl0_body_ctlLifeOptsQuoteInfo_btnViewQuote']")} 
+ get firstTracerDiagram ()                  { return $("//a[@id='_ctl0_body_repTracerDiagrams__ctl0_lnkEditTracing']")} 
+ get CWQuoteLink ()                         { return $("//a[@id='_ctl0_MS_hypCounterWallQuote']")}
+ get flooringQuoteLink()                    { return $("//a[@id='_ctl0_MS_hypFlooringQuote']")}
+ get LOQuotedLink ()                        { return $("//a[@id='_ctl0_MS_hypLifestyleOptionsQuote']")}
+ get scenarioListCW ()                      { return $("//a[@id='hypCWScenarioList']")}
+ get scenarioListFl()                       { return $("//a[@id='hypFloorinhScenarioList']")}
+ get scenarioListLo ()                      { return $("//a[@id='hypOptionList']")}
+ get FlSelectorPageHeading ()               { return $("//span[@id='_ctl0_body_lblHeadingDetail']")}
+ get selectionsFl ()                        { return $("//a[@id='hypFlooringSelections']")}
+ get printPriliminaryQuoteBtn ()            { return $('//input[@value="Print Preliminary Quote"]')}
+ get printPriliminaryQuoteBtnCW ()          { return $("//button[text()='Print Preliminary Quote']")}
+ get calculatorBreakdownReportButton()      { return $("//a[text()=' Calculator Breakdown Report']")}    
+ get wholeHouseCarpet ()                    { return $("//a[text()='Whole House Carpet']")}
+ get diningroomLink ()                      { return $("//a[text()='33 Dining ']")}
+ get addNewItemBtn  ()                      { return $("//a[text()=' Add New Item']")}
+ get addlItemsEditorField ()                { return $("//h4[text()='Additional Item Editor:']/following-sibling::div[1]")}
+ get cancelButton2 ()                       { return $("//a[text()='Cancel']")}
+ get copyButton2()                          { return $("//button[text()=' Copy']")}
+ get copyPatternModal()                     { return $("//h4[text()= 'Copy Pattern']")}
+ get tracerBtn ()                           { return $("//button[text()=' Tracer ']")}
+ get modifyFlooringSelectionTab ()          { return $("//img[@id='imgTab__Mod']")}
+ get addlItemsTab ()                        { return $("//img[@id='imgTab__Add']")}
+ get roomStandardsTab ()                    { return $("//img[@id='imgTab__Std']")}
+ get flooringExtrsaTab ()                   { return $("//img[@id='imgTab__Extras']")}
+ get adjustmentsTab ()                      { return $("//img[@id='imgTab__Adj']")}
+ get addNewAdjustmentBtn ()                 { return $("//a[text()=' Add New Adjustment']")}
+ get adjustmentEditorField ()               { return $("//h4[text()='Adjustment Editor:']/following-sibling::table")}
+ get modifyFlooringSelectionPanel ()        { return $('#pnlModifyFlooringSelections')}
+ get flooringExtrasPanel ()                 { return $('#pnlFlooringExtras')}
+ get roomStandardsPanel ()                  { return $('#pnlRoomStandards')} 
+ get adjustmentListPanel ()                 { return $('#pnlAdjustmentsList')}
+ get addlItemsPanel ()                      { return $('#pnlAdditionalItemsList')}
+ get selectFromProductListButton ()         { return $("//button[@id='product-list-button']")}
+ get productSearchModal ()                  { return $('//div[@class="modal-body"]')}
+ get goButton ()                            { return $("//a[@id='quick-search-button']")}
+ get productInProductSearchModal ()         { return $('//span[@class="select-product-link"]')}
+ get applyBtn ()                            { return $('#buttonApplySearch')}
+ get selectedProductLabel ()                { return $('#lblProduct')}
+ get copyButton ()                          { return $("#cmdCopyCwDesign")}
+ get copyDesignScenario ()                  { return $("//h4[text()='Copy Counter & Wall Scenario']")}
+ get NewBtn3 ()                             { return $("//button[contains(text(),'New')]")}
+ get createNewScenario ()                   { return $("//h4[text()= 'Create New Scenario']")}
+ get viewLatestQuoteBtn ()                  { return $("//input[@id='_ctl0_body_viewLatestQuote']")}
+ get viewLatestQuoteBtnInLO ()              { return $("//input[@id='_ctl0__ctl0_body_body_viewLatestQuote']")}
+ get viewQuoteHistoryCW ()                  { return $("#_ctl0_body_ctlCounterWallQuoteInfo_btnViewQuoteHistory")}
+ get viewQuoteHistoryFl ()                  { return $("#_ctl0_body_ctlFlooringQuoteInfo_btnViewQuoteHistory")}
+ get viewQuoteHistoryLO()                   { return $("#_ctl0_body_ctlLifeOptsQuoteInfo_btnViewQuoteHistory")}
+ get CWQuoteHistory ()                      { return $("//span[text()='Counter & Wall Quote History']")}           
+ get flooringQuoteHistory ()                { return $("//span[text()='Flooring Quote History']")}
+ get LOQuoteHistory ()                      { return $("//span[text()='Lifestyle Options Quote History']")}
+ get areaTypeDD ()                                { return $("//select[@id='areaTypeFilter']")}
 
+ getReportType(Report_Type) {
+     return $("//a[@id='_ctl0__ctl0_body_body_"+Report_Type+"']")
+ }
  getFloorGroupVal(groupVal) {
     return $('//div/strong[contains(text(),"Floor Group:")]/../following-sibling::div[1]/select//option[@value='+groupVal+']')
  }
+ getSubscriberSettingsPageTab(SubscriberSettingsPageTab){ 
+    return $('//a[text()="'+SubscriberSettingsPageTab+'"]')
+}
 
  navigateToProductListPage(){
      waitAndClick(this.productList, "Product List");
@@ -153,7 +302,10 @@ validateDisableDefaultAreaPopUpIsDisplayed(){
     expectToBeDisplayed(this.disableDefaultArea, "Disable Default Area pop up");
 }
 clickingOnDeleteButtonAreaTypes(){
-    waitAndClick(this.deleteButton,  'Delete button Area Types');
+    let isDisplayed = this.deleteButton.isDisplayed();
+    if (isDisplayed == true){
+        waitAndClick(this.deleteButton,  'Delete button Area Types');
+    }
 }
 validateDeleteDefaultArea(){ 
     expectToBeDisplayed(this.deleteDefaultArea, "Delete Default Area pop up");
@@ -161,7 +313,7 @@ validateDeleteDefaultArea(){
  clickingOnAssignTakeOffs() {
      waitAndClick(this.assignTakeOffs, "Assign Take Offs");
      waitUntilElementIsDisabled(this.LoadingGif);
-
+     pauseBrowser(10000);
  }
  clickingOnMissingQuantitiesReport(){
      waitAndClick(this.missingQuantitiesReport, "Missing Quantities Report");
@@ -187,15 +339,618 @@ validateAddTakeOffPopUpIsDisplayed(){
 clickingOnPatterns (){
     waitAndClick(this.patterns, "Patterns");
     waitUntilElementIsDisabled(this.LoadingGif);
-
+    pauseBrowser(5000)
 }
 clickingOnNewPatternButtonInPatterns() { 
     waitAndClick(this.newPattern, "New pattern button");
 }
+valiadteEditPatternModalIsDisplayed() {
+    expectToBeDisplayed(this.editpatternModal, " Edit pattern modal");
+} 
 validateAddPatternPopUpIsDisplayed(){
     expectToBeDisplayed(this.addPatternPopUp, "Add pattern pop up");
 }
-clickingOnTaggingProductCategories(){ 
+selectingAreaTypeInPatterns (){
+    selectByTxt( this.areaTypeDD,this.getData()['areaType'], 'areaTypeDD');
+    pauseBrowser(8000)
 }
+clckingOnEditBtnInSelectedPattern () {
+    waitAndClick(this.editBtn3, "Edit button  in selected pattern");
+}
+clickingOnDisableBtnInPatterns () {
+    pauseBrowser(8000)
+    waitAndClick(this.disableButton2, "Disable button in  pattern");
+}
+clckingOnCopyButtonInPatterns () {
+    waitAndClick(this.copyButton2, "Copy button in selected pattern")
+}
+validateCopyPatternModalIsDisplayed (){
+    expectToBeDisplayed(this.copyPatternModal, "Copy pattern modal");
+}
+clickingOnHideLinkInPatternModal (pattern) {
+    if (pattern == 'Edit_Pattern') {
+        waitAndClick(this.hideEditPattern, " hide link Edit pattern");
+    } else if ( pattern == 'Copy_Pattern') {
+        waitAndClick(this.hideCopyPattern, " hide link copy pattern");
+    } else if ( pattern == 'Disable_Pattern') {
+        waitAndClick(this.hideDisableaPattern, " hide link disable pattern");
+    }
+}
+clickingOnButtonsInPatterns (button) {
+    if (button == 'Copy') {
+        waitAndClick(this.copyButton2, "Copy button in selected pattern")
+    } else if (button == 'Edit') {
+        waitAndClick(this.editBtn3, "Edit button  in selected pattern");
+    } else if (button == 'Disable')   {
+        waitAndClick(this.disableButton2, "Disable button in selected pattern");
+    }
+}
+validatePatternImgIsNotDisplayed () {
+    expectNotToBeDisplayed(this.patternImg, '  pattern image');
+}
+validateUploadFieldIsDisplayedInThePatternEditorModal (){
+    expectToBeDisplayed (this.fileUploadTxtBox, 'upload field in the edit pattern');
+    let isClickable = this.fileUploadTxtBox.isClickable();
+    allureReporter.addStep('upload field in the edit pattern is clickable>>>>'+isClickable);
+    return true;
+}
+clickingOnTaggingProductCategories(){ 
+    waitAndClick(this.taggingProductCategories, "tagging  Product categories");
+}
+clickingOnBuyerTypes (){
+    waitAndClick(this.buyerTypes, "Buyer types");
+}
+clickingOnNewButtonInBuyerTypes() {
+    waitAndClick(this.newButton2, "New button  in buyer types");
+} 
+clickingOnOpenButtonInBuyerTypes() {
+    waitAndClick(this.openButton, "Open button");
+}
+clickingOnCategoryServiceOffering(){
+    waitAndClick(this.categoryServiceOffering, "Category service offering");
+}
+clickingOnNewButtonInCategoryServiceOffering() {
+    waitAndClick(this.newButton2, "New button in category service  offering");
+}
+clickingOnOpenButtonInCategoryServiceOffering() {
+    waitAndClick(this.openButton, "Open button");
+} 
+clickingOnDeleteBtnInAssignTakeOff (){
+    waitAndClick(this.deleteButton2, "Delete button");
+}
+clickingOnTracerBtnInPatterns () {
+    waitAndClick(this.tracerBtn, "Tracer button");
+}
+validateDeleteModalAT (){
+    expectToBeDisplayed(this.deleteModalAT, "Delete Modal AT");
+}
+clickingOnPatternUpdateImg (){
+    waitAndClick(this.patternUpdateImg, "Update pattern image");
+}
+validateDisablePatternModalIsDisplayed (){
+    expectToBeDisplayed(this.disablePatternModal, "Disable pattern modal")
+}
+clickingOnAddNewTakeOffButton (){
+    waitAndClick(this.addNewTakeOffButton, "Add new take off button");
+}
+validateNewWindowForEditingCWPatternTracerIsOpened (){
+    switchToNextWindowArray();
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__cw_tracer');
+    }
+
+clicikingSubscriberSettings() {
+    waitAndClick(this.subscriberSettings, "subscriber settings");
+} 
+clickingOnSubscriberSettingsPageTab(SubscriberSettingsPageTab){
+    waitAndClick(this.getSubscriberSettingsPageTab(SubscriberSettingsPageTab), 'subscriber settings page tab');
+}  
+validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
+    if (SubscriberSettingsPageTab == 'Company Setup') {
+        expectToBeDisplayed(this.companySetupPage, 'company setup page');
+    } else if(SubscriberSettingsPageTab == 'Global Settings'){
+        expectToBeDisplayed(this.globalSettingsPage, 'global settings page');
+    }else if(SubscriberSettingsPageTab == 'Report Setup'){
+        expectToBeDisplayed(this.reportSetUpPage, 'report set up page');
+    }else if(SubscriberSettingsPageTab == 'Features') {
+        expectToBeDisplayed(this.featuresPage,  'featuresPage');
+    } else if(SubscriberSettingsPageTab == 'ERP')  {
+        expectToBeDisplayed(this.erpPage, ' ERP Page');
+    } 
+ }
+ clickingOnPatternAvailability(){
+     waitAndClick(this.patternAvailability, 'pattern availability');
+     waitUntilElementIsDisabled(this.LoadingGif);
+ } 
+ clickingOnFlooringGroups(){
+    waitAndClick(this.flooringGroups, 'flooring groups'); 
+ }
+ clckingOnNewButtonInFlooringGroups(){
+     waitAndClick (this.newButton2,'newButton');
+ }
+ clickingOnOpenButtonFlooringGroups(){
+     waitAndClick (this.openButton, "Open button")
+ }
+ clickingOnViewButtonFlooringGroups(){
+     waitAndClick (this.viewButton, "View button")
+ }
+ clickingOnDiagramColors()  {
+     waitAndClick(this.diagramColors,  'diagram Colors');
+ }
+ clickingOnAboutLink (){
+     waitAndClick(this.aboutLink, 'about');
+ }
+ clickingOnDesignExtras(ServiceOffering){
+     if (ServiceOffering == 'Counter & Wall') {
+         waitAndClick(this.DECounterWall, 'DE CounterWall');
+         waitUntilElementIsDisabled(this.LoadingGif);
+     } else if (ServiceOffering == 'Flooring'){ 
+         waitAndClick(this.DEFlooring, '  DE Flooring');
+         waitUntilElementIsDisabled(this.LoadingGif);
+     }
+  }
+  clickingOnOpenButtonInCounterWallDesignExtras(){
+      waitAndClick(this.openButton2, ' Open button' );
+  }
+  valiadteDesignExtrasEditorPanelIsDisplayed(){
+      expectToBeDisplayed(this.DEeditorPanel, 'design extras Editor  Panel');
+  }
+  clickingOnNewButtonInDECounterWall(){
+      waitAndClick(this.NewDesignExtra, ' New button   in DE CounterWall');
+  }
+  clickingOnCancelButton(){
+      waitAndClick(this.cancelButton, ' Cancel button');
+  }
+  valiadteDesignExtrasEditorPanelIsNOTDisplayed(){
+      expectNotToBeDisplayed(this.DEeditorPanel2, "design extras Editor  Panel")
+  }
+  clickingOnTaggingInstallMethods()   {
+      waitAndClick (this.taggingInstallMethods, 'Tagging Install Methods');
+  }
+  clickingOnAuditReports() {
+      waitAndClick (this.auditReports, 'Audit Reports');
+  }
+  clickingOnCompleteQuotesBuyers() {
+      waitAndClick (this.completeQuotesBuyers, 'CompleteQuotes')
+  }
+  clickingOnSetCutoffDate() {
+      waitAndClick (this.setCutoffDate, 'Set Cutoff Date');
+  }
+  clickingOnCommissionForms() {
+      waitAndClick (this.commissionForms, 'Commission Forms');
+  }
+  clickingOnOpenButtonInCommissionForms() {
+      waitAndClick (this.openButton, 'Open button');
+  }
+  clickingOnCatalogs() {
+    waitAndClick (this.catalogs, 'Catalogs');
+  }
+  clickingOnEditButtonInCatalogList() {
+      waitAndClick (this.editButton2, 'Edit button');
+  }
+  validateExcludedOfferingIsDisplayed(){
+      expectToBeDisplayed(this.excludedOffering, ' excluded Offering')
+  } 
+  clickingOnShowProducts(){
+      waitAndClick(this.showProducts, ' show  Products');
+  }
+  clickingOnNewButtonInCatalogList(){ 
+      waitAndClick(this.newButton2, 'New button');
+  }
+  validateCatalogDDIsDisplayed (){
+      expectToBeDisplayed(this.catalogDD, ' catalog Drop Down');
+  }
+  clickingOnProductsList() {
+      waitAndClick(this.productsList, ' products List');
+  }
+  clickingOnImportButtonInProductList(){ 
+      waitAndClick(this.importButton, 'Import button');
+  }
+  validateCatalogImportPage() {
+      expectToBeDisplayed(this.catalogImportPage, ' catalog Import Page');
+  }
+  clickingOnOpenButtonInProductList() {
+      waitAndClick(this.openButton, 'Open button');
+      waitUntilElementIsDisabled(this.LoadingGif);
+  }
+  clickingOnOpenCommunitiesInProductInfo()  {
+      waitAndClick(this.detailsTabInProductInfo, '  details tab in product info');
+      waitAndClick(this.openCommunitiesInDetailsTab, ' open communities in details tab');
+  }
+  clickingOnAnyOpenBuyerScenariosInDetailsTab(){ 
+      waitAndClick(this.detailsTabInProductInfo, 'details tab in product info');
+      waitAndClick(this.anyOpenBuyerScenariosInDetailsTab, ' any open scenarios in details tab');
+  }
+  clickingOnOpenBuyerActiveScenariosInDetailsTab (){
+    waitAndClick(this.detailsTabInProductInfo, 'details tab in product info');
+    waitAndClick(this.openBuyerActiveScenariosInDetailsTab, 'open buyer active scenarios in details tab');
+  }
+  clickingOnGlobalHDSCatalogSearch (){
+      waitAndClick(this.globalHDSCatalogSearch, 'global catalog search'); 
+  }
+  setValueToStyleNumberTextBox (){
+      sendKeys(this.styleNumberTextBox, this.getData()['stylenumber'], 'style Number TextBox');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(15000);
+  }
+  validateSearchFilterProductsIsDisplayedForSN (){
+      this.styleNumberColumnInTable.scrollIntoView();
+      let text = this.styleNumberColumnInTable.getText();
+      let isDisplayed = text.includes(this.getData()['stylenumber']);
+      allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+      return isDisplayed;
+  }
+  setValueToStyleTypeTextBox (){
+    sendKeys(this.styleTypeTextBox, this.getData()['styletype'], 'style type');
+    waitAndClick(this.globalSearchButton, 'global search');
+    waitUntilElementIsDisabled(this.LoadingGif);
+    pauseBrowser(10000)
+  }
+  validateSearchFilterProductsIsDisplayedForST() {
+      this.commercialLevelCutLoop.scrollIntoView();
+      expectToBeDisplayed(this.commercialLevelCutLoop, 'commercial level cut loop');
+  }
+  setValueToStyleNameTextBox (){
+      sendKeys(this.styleNameTextBox, this.getData()['stylename'], 'style name');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(25000)
+  }
+  validateSearchFilterProductsIsDisplayedForStyleName() {
+    this.styleNameCoumnInTable.scrollIntoView();
+    let text = this.styleNameCoumnInTable.getText();
+    let isDisplayed = text.includes(this.getData()['stylename']);
+    allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+    return isDisplayed;
+  }
+  setValueToVendorTextBox() {
+      sendKeys(this.vendorTextBox, this.getData()['vendor'], 'vendor');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      //pauseBrowser(25000);
+  }
+  validateSearchFilterProductsIsDisplayedForVendor() {
+    //this.arizonaTileLLC.scrollIntoView();
+    expectToBeDisplayed(this.arizonaTileLLC, 'ARIZONA TILE LLC (11067)')
+  }
+  setValueToILGNumberTextBox() {
+      sendKeys(this.ILGNumber, this.getData()['ilgnumber'], 'ILG Number');
+      waitAndClick(this.globalSearchButton, 'global search');
+      waitUntilElementIsDisabled(this.LoadingGif);
+      pauseBrowser(10000)
+  }
+    validateILGNumberColumnInTable() { 
+        this.ILGNumberColumnInTable.scrollIntoView();
+        let text = this.ILGNumberColumnInTable.getText();
+        let isDisplayed = text.includes(this.getData()['ilgnumber']);
+        allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+        return isDisplayed;    
+    }
+    setValueToProductCategoryTextBox  () { 
+        sendKeys(this.productCategory,this.getData()['productcategory'] , ' product Category');
+        waitAndClick(this.globalSearchButton, 'global search');
+        waitUntilElementIsDisabled(this.LoadingGif);
+        pauseBrowser(20000)  
+    }
+    validateSearchFilterProductsIsDisplayedForPC(){
+        this.hardwood.scrollIntoView();
+        expectToBeDisplayed(this.hardwood, 'hardwood');
+    }
+   setValueToColorNameTextBox (){
+       sendKeys(this.colorNameTextBox, this.getData()['colorname'],'colorName');
+       waitAndClick(this.globalSearchButton, 'global search');
+       waitUntilElementIsDisabled(this.LoadingGif);
+       pauseBrowser(15000);
+   }
+   validateSearchFilterProductsIsDisplayedForCN(){
+    this.colorColumnInTable.scrollIntoView();
+    let text = this.colorColumnInTable.getText();
+    let isDisplayed = text.includes(this.getData()['colorname']);
+    allureReporter.addStep('search filter products according to the given keyword isDisplayed>>>>' +isDisplayed)
+    return isDisplayed; 
+   }  
+   clickingOnproductTypes(){
+       waitAndClick(this.productTypes, 'product Types')
+   }
+   clickingOnOpenButtonInProductTypes(){
+       waitAndClick(this.openButton,  'open button')
+   }
+   clickingOnNewButtonInProductTypes(){
+       waitAndClick(this.newButton2, 'new button')
+   }
+   clickingOnInstallMethods (){
+       waitAndClick(this.installMethods, 'install methods')
+   }
+   clickingOnOpenButtonInInstallmethods()   {
+       waitAndClick(this.openButton, 'open button');
+   }
+   clickingOnNewButtonInInstallMethods() {
+       waitAndClick(this.newButton2, 'new button');
+   }
+   clickingOnViewButtonInInstallmethodsEDitorPage() {
+       waitAndClick(this.viewButton, 'view button');
+   }
+   clickOnServiceOfferingInInstallMethods (ServiceOffering) {
+        if (ServiceOffering == 'Counter & Wall'){
+            waitAndClick(this.IMCounterAndWall, 'IM Counter And Wall')
+        }else if (ServiceOffering == 'Flooring'){
+            waitAndClick(this.IMFlooring,'IM Flooring ')
+        }
+   }
+   clickingOnEditButtonInInstallMethodsForFlooring () {
+       waitAndClick(this.editButton2, ' edit button');
+   }
+   validateInstallMethodPageDisplayedInEditMode () {
+       expectToBeDisplayed( this.updateButton, 'Install Method Page  In Edit Mode');
+   }
+   clickingOnEditButtonInInstallMethodsForCW() {
+       waitAndClick(this.editButton2, ' edit button');
+   }
+   clickingOnDeleteButtonInInstallMethodsForCW() {
+       waitAndClick(this.deleteButton2, ' delete button');
+   }
+   validateConfirmationDialogIsDisplayed() {
+    acceptAlert();
+    allureReporter.addStep('alert/confirmation dialog is displayed');
+}
+   clickingOnDeleteButtonInInstallMethodsForFlooring() {
+    waitAndClick(this.deleteButton2, ' delete button');
+    pauseBrowser(5000)
+}
+clickingOnDCCommunities (){
+    waitAndClick(this.DCCommunities, 'DC Communities')
+}
+clickingOnOpenButtonInDCCommunities (){
+    waitAndClick(this.openButton2, ' open button');
+}
+clickingOnCommissionFormDC() {
+    waitAndClick(this.commissionFormDC, 'commission Form DC')
+}
+clickingOnHomesiteSetupDC (){
+    waitAndClick(this.homesiteSetupDC, 'homesite Setup DC')
+}
+clickingOnNewButtonInHomesites(){
+    waitAndClick(this.newButton2, ' new button');
+    pauseBrowser(7000)
+}
+valiadateUnsavedChangesIsDisplayed () {
+    expectToBeDisplayed(this.unsavedChanges, ' unsaved changes');
+}
+clickingOnEditButtonInHomesites () {
+    waitAndClick(this.editButton2, ' edit button');
+    pauseBrowser(7000)
+}
+clickingOnBuyersDC () {
+    waitAndClick(this.buyersDC, ' buyers DC');
+}
+clickingOnNewButtonInBuyerListPage () {
+    waitAndClick(this.newButton2, ' new button');
+}
+setValueToSerchBoxBuyers(Buyer_Name, Community_Name) {
+    sendKeys(this.serchBoxBuyers, Buyer_Name, 'serch Box Buyers' );
+    waitAndClick(this.searchGo, 'search Go');
+    waitAndClick(this.openButton, 'open button');
+}
+clickingOnMonthlyPaymentButton(){
+    this.monthlyPaymentButton.scrollIntoView();
+    waitAndClick(this.monthlyPaymentButton, 'monthly payment button');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__loan_values.aspx');
+}
+validateMonthlyPaymentWindowIsDisplayed () {
+    expectToBeDisplayed( this.monthlyPaymentWindow, 'monthly payment window')
+}
+clickingOnAddAdditionalBuyerButton() {
+    this.addAdditionalBuyerButton.scrollIntoView();
+    waitAndClick(this.addAdditionalBuyerButton, 'additional buyer button');
+    }
+clickingOnUpdateCostsButton(){
+    this.updateCostsButton.scrollIntoView();
+    waitAndClick(this.updateCostsButton, 'update costs button');
+}
+clickingOnUpdateCostsPopUpIsDisplayed() {
+    expectToBeDisplayed(this.updateCostsPopUp, 'update cost popup')
+}
+clickingOnService_Offering (Service_Offering){
+if(Service_Offering == 'Flooring') {
+    this.viewQuoteButtonFlooring.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonFlooring, ' view quote button for flooring');
+}else if(Service_Offering == 'Counter & Wall') {
+    this.viewQuoteButtonCW.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonCW, ' view quote button for counter and wall');
+}else if(Service_Offering == 'Lifestyle Options') {
+    this.viewQuoteButtonLo.scrollIntoView();
+    waitAndClick(this.viewQuoteButtonLo, ' view quote button for Lifestyle options');
+}
+}
+clickingOnFirstTracerDiagram() {
+    waitAndClick(this.firstTracerDiagram, ' first tracer  diagram');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__floorplan_viewer.aspx?subscriberID=75&quoteid=502463&roomGraphID=152429');
+    pauseBrowser(5000)
+}
+clickingOnCurrentQuoteLinkfor(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        this.flooringQuoteLink.scrollIntoView();
+        waitAndClick(this.flooringQuoteLink, 'flooring quote link')
+    }else if (Service_Offering == 'Counter & Wall'){
+        this.CWQuoteLink.scrollIntoView();
+        waitAndClick(this.CWQuoteLink, 'CW quote link')
+    }else if(Service_Offering == 'Lifestyle Options'){
+        this.LOQuotedLink.scrollIntoView();
+        waitAndClick(this.LOQuotedLink, 'LO quote link');
+    }
+}
+clickingOnScenarioList(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        this.scenarioListFl.scrollIntoView();
+        waitAndClick(this.scenarioListFl, ' scenario list  flooring'); 
+    } else if (Service_Offering == 'Counter & Wall'){
+        this.scenarioListCW.scrollIntoView();
+        waitAndClick(this.scenarioListCW, ' scenario list counter & wall');
+    } else if (Service_Offering == 'Lifestyle Options'){
+        this.scenarioListLo.scrollIntoView();
+        waitAndClick(this.scenarioListLo, ' scenario list   lifestyle options');
+    }
+}
+clickingOnNewButtonInFlooringScenarioList() {
+    waitAndClick(this.newButton2, ' new button');
+}
+validateFlooringSelectorPage() {
+    pauseBrowser(5000)
+    this.FlSelectorPageHeading.scrollIntoView({block:"start"});
+    expectToBeDisplayed(this.FlSelectorPageHeading, ' Fl Selector Page Heading');
+}
+clickingOnOpenButtonInActiveService_OfferingDS (){
+    waitAndClick(this.openButton, ' open button');
+    pauseBrowser(5000);
+}
+clickingOnSelectionsFl_DC() {
+    waitAndClick(this.selectionsFl, ' selections fl');
+}
+clickingOnPrintPriliminaryQuoteBtn (Service_Offering) {
+    if (Service_Offering == 'Counter & Wall'){
+        waitAndClick(this.printPriliminaryQuoteBtnCW, ' print Priliminary Quote Btn for CW');
+    }else{
+    waitAndClick (this.printPriliminaryQuoteBtn, 'print  priliminary quote button'); 
+    }
+}
+clickingOnCalculatorBreakdownReportButtonForFlooring () {
+    waitAndClick( this.calculatorBreakdownReportButton, ' calculator Breakdown Report Button');
+} 
+clickingOnFirstTracerDiagramForBuyers() {
+    waitAndClick(this.firstTracerDiagram, ' first tracer  diagram');
+    switchToNewWindow('https://qa.homedesignsystems.com/dc__floorplan_viewer.aspx?subscriberID=75&fdsid=315159&roomGraphID=152429')
+    pauseBrowser(5000)
+}
+clickingOnRoomLink(RoomName){
+    if (RoomName == 'Whole House Carpet') {
+    waitAndClick(this.wholeHouseCarpet, ' whole house carpet');
+    } else if (RoomName  == 'diningroom') {
+        waitAndClick(this.diningroomLink,  ' dining room Link');
+    }
+}
+clickingOnTabInRoomEditor(Tab) {
+    if (Tab == 'Additional Items') {
+        waitAndClick(this.addlItemsTab, ' additional items  tab');
+        pauseBrowser(5000);
+    } else if (Tab == 'Adjustments') {
+        waitAndClick(this.adjustmentsTab, ' adjustments tab');
+        pauseBrowser(5000);
+    } else if (Tab == 'Modify Flooring Selection') {
+        waitAndClick(this.modifyFlooringSelectionTab, ' modify flooring selection tab');
+        pauseBrowser(5000);
+    } else if (Tab == 'Room Standards') {
+        waitAndClick(this.roomStandardsTab, ' room standards tab');
+        pauseBrowser(5000);
+    }
+    else if (Tab == 'Flooring Extras')  {
+        waitAndClick(this.flooringExtrsaTab, ' flooring Extras tab');
+        pauseBrowser(5000);
+    }
+}
+validatePanelForTabIsDisplayed(Tab)  {
+    if (Tab == 'Additional Items') {
+        expectToBeDisplayed(this.addlItemsPanel, ' addl items panel');
+    } else if (Tab == 'Adjustments') {
+        expectToBeDisplayed(this.adjustmentListPanel, ' adjustment List Panel');
+    } else if (Tab == 'Modify Flooring Selection') {
+        expectToBeDisplayed(this.modifyFlooringSelectionPanel, ' modify Flooring Selection Panel');
+    } else if (Tab == 'Room Standards') {
+        expectToBeDisplayed(this.roomStandardsPanel, ' room Standards Panel');
+    }
+    else if (Tab == 'Flooring Extras')  {
+        expectToBeDisplayed(this.flooringExtrasPanel, 'flooring Extras Panel');
+    }
+}
+clickingOnAddNewItemBtn() {
+    waitAndClick(this.addNewItemBtn, ' add new item   button');
+}
+validateAddlItemsEditorFieldIsDisplayed (){
+    expectToBeDisplayed(this.addlItemsEditorField, 'addl items editor field');
+}
+clickingOnCancelButtonInAddlItemsTab () {
+    waitAndClick(this.cancelButton2, 'cancel button');
+}
+validateAddlItemsEditorFieldIsNotDisplayed (){
+    expectNotToBeDisplayed(this.addlItemsEditorField, 'addl items editor field');
+}
+clickingOnAddNewAdjustmentBtn (){
+    waitAndClick(this.addNewAdjustmentBtn, 'add new adjustment button');
+}
+validateAdjustmentEditorFieldIsDisplayed (){
+    expectToBeDisplayed(this.adjustmentEditorField, 'adjustment editor field');
+}
+clickingOnCancelBtnInAdjustments (){
+    waitAndClick(this.cancelButton2, ' cancel button  in adjustments'); 
+}
+validateAdjustmentEditorFieldIsNotDisplayed (){
+    expectNotToBeDisplayed(this.adjustmentEditorField, 'adjustment editor field');
+}
+clickingOnSelectFromProductListButton (){
+    waitAndClick(this.selectFromProductListButton, ' select from product list');
+}
+validateProductSearchModalIsDisplayed (){
+    expectToBeDisplayed (this.productSearchModal, 'product search  modal');
+}
+clickingOnGoButtonInRoomEditor(){
+    waitAndClick(this.goButton, 'go button  in room editor');
+}
+clickingOnProductInProductSearchModal (){
+    let text = this.productInProductSearchModal.getText();
+    waitAndClick(this.productInProductSearchModal, 'product in product search modal');
+    waitAndClick(this.applyBtn, 'apply button');
+    pauseBrowser(10000);
+    assertEquals(text, this.selectedProductLabel.getText());
+    }
+validateSelectedProductInTheFlooringRoomEditorPage  (){
+    let text =  this.selectedProductLabel.getText();
+    expect(text).to.beEqual(productName);
+}
+clckingOnCopyBtnInCWScenarioPage (){
+    waitAndClick(this.copyButton, 'copy button in CW scenario');
+}
+validateCopyDesignScenario (){
+    expectToBeDisplayed(this.copyDesignScenario, 'copy design scenario in CW')
+}
+clickingOnNewBtnInCWScenarioListPage (){
+    waitAndClick(this.NewBtn3, 'New Btn in CW scenario');
+}
+valiadteCreateNewScenarioModalIsDisplayed (){
+    expectToBeDisplayed(this.createNewScenario, 'Create new scenario in CW');
+}
+clickingOnViewLatestQuoteBtnInScenarioListPage(Service_Offering){
+    if (Service_Offering == 'Lifestyle Options') {
+        waitAndClick(this.viewLatestQuoteBtnInLO, 'View latest quote in Lifestyle Options')
+    }else {
+    waitAndClick(this.viewLatestQuoteBtn, 'view latest quote btn in   scenario list page');
+        }
+}
+clickingOnViewQuoteHistoryButton(Service_Offering)   {
+    if (Service_Offering == 'Lifestyle Options') {
+        waitAndClick(this.viewQuoteHistoryLO, ' View quote  history in Lifestyle Options')
+    } else if(Service_Offering == 'Counter & Wall')  {
+        waitAndClick(this.viewQuoteHistoryCW, ' View quote history in Counter & Wall');
+    } else if(Service_Offering == 'Flooring')  {
+        waitAndClick(this.viewQuoteHistoryFl, ' View quote history in Flooring');
+    }
+}
+validateQuoteHistoryDialogBox(Service_Offering) {
+    if (Service_Offering == 'Flooring')  {
+        expectToBeDisplayed( this.flooringQuoteHistory, 'flooring Quote History');
+    } else if (Service_Offering == 'Counter & Wall') {
+        expectToBeDisplayed( this.CWQuoteHistory, 'counter wall Quote History')
+    } else if (Service_Offering == 'Lifestyle Options')  {
+        expectToBeDisplayed( this. LOQuoteHistory, 'LO Quote History');
+    }
+}
+clickingOnReportTypeInReportsPage(Report_Type) {
+    waitAndClick(this.getReportType(Report_Type), Report_Type);
+}
+clickingOnQuoteHistoryDialogBox() { 
+    waitAndClick(this.viewButton2,'view button');
+}
+getData(){
+    return super.testDataJson(CATALOG_DATA_FILE_NAME);
+    }
+
 }
 export default new HomePage();

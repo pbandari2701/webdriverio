@@ -7,7 +7,7 @@
 
 
 # ##SECURITY MENU======================================================
-
+@test
 Feature: BVT Click Through Functionality of HDS application
 
     Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
@@ -56,7 +56,7 @@ Scenario: Verify_Security_User_Editor_Page_for_existing_User
 
 # ##SITE ADMINISTRATION MENU======================================================
 
-@tc:2058 @clickthrough
+@tc:2058 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_page  
 	Given HDS Home page is displayed
 	When  Area Types link under Site Administration Menu is clicked
@@ -64,7 +64,7 @@ Scenario: Verify_Site_Admin_Area_Types_page
 
 
 #Area Types-New
-@tc:2059
+@tc:2059   @clickthrough @bvt    
 Scenario: Verify_Site_Admin_Area_Types_New
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -73,7 +73,7 @@ Scenario: Verify_Site_Admin_Area_Types_New
 
 
 #Area Types-Edit
-@tc:2060
+@tc:2060 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_Edit
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -82,7 +82,7 @@ Scenario: Verify_Site_Admin_Area_Types_Edit
 
 
 #Area Types-Disable
-@tc:2061
+@tc:2061 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Area_Types_disable
 	Given HDS Home page is displayed
 		And Area Types link under Site Administration Menu is clicked
@@ -90,16 +90,16 @@ Scenario: Verify_Site_Admin_Area_Types_disable
 	Then the modal for disabling an Area type is displayed in the site-level Area Type page
 
 
-#Area Types-Delete
-@tc:2062 @wip
-Scenario: Verify_Site_Admin_Area_Types_delete
-	Given HDS Home page is displayed
-		And Area Types link under Site Administration Menu is clicked
-	When the Delete button is clicked for a randomly selected AreaType in the site-level Area Type page
-	Then the modal for deleting an Area type is displayed in the site-level Area Type page
+# #Area Types-Delete
+# @tc:2062 @wip @clickthrough @bvt
+# Scenario: Verify_Site_Admin_Area_Types_delete
+# 	Given HDS Home page is displayed
+# 		And Area Types link under Site Administration Menu is clicked
+# 	When the Delete button is clicked for a randomly selected AreaType in the site-level Area Type page
+# 	Then the modal for deleting an Area type is displayed in the site-level Area Type page
 
 
-@tc:2063
+@tc:2063 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page  
 	Given HDS Home page is displayed
 	When  Assign Take Offs page link under Site Administration Menu is clicked
@@ -107,63 +107,50 @@ Scenario: Verify_Site_Admin_Assign_Take_Off_page
 
 
 #Assign Take Off--Missing Quantities Report
-@tc:2064
+@tc:2064 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_Missing_Qty's_Rprt_link
 	Given HDS Home page is displayed
 	When the Missing Quantities Report link in the Site Admin menu is clicked
 	Then the Report Viewer page loaded
 
 #Assign Take Offs-Edit
-@tc:2065
+@tc:2065 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_edit_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
 	When the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
 	Then the take Off editor Modal is displayed in the site-level Assign Take Offs list page
 
-
-# #Assign Take Offs-Delete
-# @tc:2066
-# Scenario: Verify_Site_Admin_Assign_Take_Off_page_delete_bttn
-# 	Given HDS Home page is displayed
-# 		And  Assign Take Offs page link under Site Administration Menu is clicked
-# 	When the Delete button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
-# 	Then the Modal for deleteing a take off is displayed in the site-level Assign Take Offs list page
-
-
-
 #Assign Take Offs-Disable 
-@tc:2067
+@tc:2067 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_disable_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
 	When the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page
 	Then the Modal for disabling a take off is displayed in the site-level Assign Take Offs list page
 
-
-
 #Assign Take Offs-Add Take Off 
-@tc:2068
+@tc:2068 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Assign_Take_Off_page_add_TakeOff_bttn
 	Given HDS Home page is displayed
 		And  Assign Take Offs page link under Site Administration Menu is clicked
 	When the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page
 	Then the Modal for adding a take off is displayed in the site-level Assign Take Offs list page
 
-@tc:2069
+@tc:2069 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_page  
 	Given HDS Home page is displayed
 	When  Patterns link under Site Administration Menu is clicked
 	Then  Patterns page is loaded 
 
-@tc:2070
+@tc:2070 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_New_Pattern_bttn  
 	Given HDS Home page is displayed
 		And Patterns link under Site Administration Menu is clicked
 	When the New Pattern button is clicked in the site-level Patterns list page
 	Then the New Pattern Modal is displayed in the site-level patterns list page
-
-@tc:2071
+ 
+@tc:2071 @clickthrough @bvt
 Scenario: Verify_Site_Admin_Patterns_Edit_bttn
 	Given HDS Home page is displayed
 		And Patterns link under Site Administration Menu is clicked
@@ -171,121 +158,124 @@ Scenario: Verify_Site_Admin_Patterns_Edit_bttn
 	When the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page
 	Then the pattern editor Modal is displayed in the site-level patterns list page
 
-# Scenario: Verify_Site_Admin_Patterns_Copy_bttn
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected 
-# 	When the Copy button is clicked for a randomly selected Pattern in the site-level Patterns list page
-# 	Then the Copy Pattern Modal is displayed in the site-level patterns list page
+@tc:2072 @clickthrough @bvt
+Scenario: Verify_Site_Admin_Patterns_Copy_bttn
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected
+	When the Copy button is clicked for a randomly selected Pattern in the site-level Patterns list page
+	Then the Copy Pattern Modal is displayed in the site-level patterns list page
 
+@tc:2073 @clickthrough @bvt
+Scenario Outline: Verify_Site_Admin_Patterns_Modals_hide_image
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected 
+		And the <button> is clicked for a randomly selected Pattern in the  Patterns list page
+	When the hide link is clicked in the modal displayed in the site-level <pattern> page 
+	Then the pattern image in <pattern> modal is not displayed
+Examples: 
+		| button  | pattern         |
+		| Copy    | Copy_Pattern    |
+		| Edit    | Edit_Pattern    |
+		| Disable | Disable_Pattern |
 
-# Scenario Outline: Verify_Site_Admin_Patterns_Modals_hide_image
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected 
-# 		And the <button> is clicked for a randomly selected Pattern in the site-level Patterns list page
-# 	When the hide link is clicked clicked in the modal displayed in the site-level Patterns page 
-# 	Then the pattern image in <this_> modal is not displayed
-# Examples: 
-# 		| button  | this_           |
-# 		| Copy    | Copy_Pattern    |
-# 		| Edit    | Edit_Pattern    |
-# 		| Disable | Disable_Pattern |
+@tc:2074 @clickthrough @bvt
+Scenario: Verify_Site_Admin_Patterns_Edit_uploadNew Image
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected 
+		And the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page
+	When the image is clicked in the Pattern Editor modal 
+	Then file upload field is displayed in the Pattern editor modal
 
+@tc:2075_2  @clickthrough @bvt
+Scenario: Verify_Site_Admin_Patterns_Disable_bttn  
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected
+	When the Disable button is clicked for a randomly selected Pattern in the site-level Patterns list page
+	Then the Disable Pattern Modal is displayed in the site-level patterns list page
 
+@tc:2075_3 @clickthrough @bvt
+Scenario: Verify_Site_Admin_Patterns_Add_New_TO_bttn  
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected
+	When the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page
+	Then the Add New TakeOff Modal is displayed in the site-level patterns list page
 
-# Scenario: Verify_Site_Admin_Patterns_Edit_uploadNew Image
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected 
-# 		And the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page
-# 	When the image is clicked in the Pattern Editor modal 
-# 	Then file upload field is displayed in the Pattern editor modal
+@tc:2075_4 @clickthrough @bvt
+Scenario: Verify_Site_Admin_Patterns_Tracer_bttn
+	Given HDS Home page is displayed
+		And Patterns link under Site Administration Menu is clicked
+		And Area Type Selected
+	When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page
+	Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page
 
-# @tc:2072
-# Scenario: Verify_Site_Admin_Patterns_Disable_bttn  
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected
-# 	When the Disable button is clicked for a randomly selected Pattern in the site-level Patterns list page
-# 	Then the Disable Pattern Modal is displayed in the site-level patterns list page
-
-# @tc:2073
-# Scenario: Verify_Site_Admin_Patterns_Add_New_TO_bttn  
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected
-# 	When the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page
-# 	Then the Add New TakeOff Modal is displayed in the site-level patterns list page
-@2074
-# Scenario: 04 Verify_Site_Admin_Patterns_Tracer_bttn
-# 	Given HDS Home page is displayed
-# 		And Patterns link under Site Administration Menu is clicked
-# 		And Area Type Selected 
-# 	When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page
-# 	Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page. 
-
-@2075
+@tc:2075 @clickthrough @bvt
 Scenario: Verify_Tagging_Prod_Categories_page  
 	Given HDS Home page is displayed
 	When  Tagging Product Categories page link under Site Administration Menu is clicked
-	Then  Tagging Product Categories page is loaded 
+	Then  Tagging Product Categories page is loaded
 
-# Scenario: Verify_Buyer_Types_page  
-# 	Given HDS Home page is displayed
-# 	When  Buyer Types Page link under Site Administration Menu is clicked
-# 	Then  Buyer Types Page is loaded 
+@tc:2076 @clickthrough @bvt
+Scenario: Verify_Buyer_Types_page  
+	Given HDS Home page is displayed
+	When  Buyer Types Page link under Site Administration Menu is clicked
+	Then  Buyer Types Page is loaded 
 
-# #Buyer Types - New
-# #46
-# Scenario: Verify_Buyer_Types_page_New_bttn 
-# 	Given HDS Home page is displayed
-# 		And Buyer Types Page link under Site Administration Menu is clicked
-# 	When the New button is clicked in the Buyer Type list page
-# 	Then the Buyer type editor page under Site Admin menu is loaded
-
-
-# #Buyer Types - Edit
-# #47
-# Scenario: Verify_Buyer_Types_page_Open
-# 	Given HDS Home page is displayed
-# 		And Buyer Types Page link under Site Administration Menu is clicked
-#     When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page
-# 	Then the Buyer type editor page under Site Admin menu is loaded
+#Buyer Types - New
+#46
+@tc:2077 @clickthrough @bvt
+Scenario: Verify_Buyer_Types_page_New_bttn 
+	Given HDS Home page is displayed
+		And Buyer Types Page link under Site Administration Menu is clicked
+	When the New button is clicked in the Buyer Type list page
+	Then the Buyer type editor page under Site Admin menu is loaded
 
 
-# ##ADMINISTRATION MENU======================================================
-# Scenario: Verify_Admin_Category_Svc_Offering_listPage  
-# 	Given HDS Home page is displayed
-# 	When  Category Service Offering page link under Administration Menu is clicked
-# 	Then  Category Service Offering page is loaded 
+#Buyer Types - Edit
+#47
+@tc:2078 @clickthrough @bvt
+Scenario: Verify_Buyer_Types_page_Open
+	Given HDS Home page is displayed
+		And Buyer Types Page link under Site Administration Menu is clicked
+    When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page
+	Then the Buyer type editor page under Site Admin menu is loaded
 
-# #Category Svc Offerings - New
-# #50
-# Scenario: Verify_Admin_Category_Svc_Offering_New_bttn  
-# 	Given HDS Home page is displayed
-# 		And Category Service Offering page link under Administration Menu is clicked
-# 	When the New button is clicked in the Category Service Offering list page
-# 	Then the Category Service Offering editor page is loaded
+@tc:2079 @clickthrough @bvt
+Scenario: Verify_Admin_Category_Svc_Offering_listPage  
+	Given HDS Home page is displayed
+	When  Category Service Offering page link under Administration Menu is clicked
+	Then  Category Service Offering page is loaded 
 
-# #Category Svc Offerings  - Edit
-# #51
-# Scenario: Verify_Admin_Category_Svc_Offering_Open  
-# 	Given HDS Home page is displayed
-# 		And Category Service Offering page link under Administration Menu is clicked
-# 	When the Open button is clicked for a randomly selected Category in the Category Service Offering list page
-# 	Then the Category Service Offering editor page is loaded
+#Category Svc Offerings - New
+#50
+@tc:2080 @clickthrough @bvt
+Scenario: Verify_Admin_Category_Svc_Offering_New_bttn  
+	Given HDS Home page is displayed
+		And Category Service Offering page link under Administration Menu is clicked
+	When the New button is clicked in the Category Service Offering list page
+	Then the Category Service Offering editor page is loaded
+
+#Category Svc Offerings  - Edit
+#51
+@tc:2081 @clickthrough @bvt
+Scenario: Verify_Admin_Category_Svc_Offering_Open  
+	Given HDS Home page is displayed
+		And Category Service Offering page link under Administration Menu is clicked
+	When the Open button is clicked for a randomly selected Category in the Category Service Offering list page
+	Then the Category Service Offering editor page is loaded
            
+# ##ADMINISTRATION MENU======================================================
+@tc:2082 @clickthrough @bvt
+Scenario: Verify_Admin_Subscriber_Settings_page  
+	Given HDS Home page is displayed
+	When  Subscriber Settings page link under Administration Menu is clicked
+	Then  Subscriber Settings page is loaded
 
-# Scenario: Verify_Admin_Subscriber_Settings_page  
-# 	Given HDS Home page is displayed
-# 	When  Subscriber Settings page link under Administration Menu is clicked
-# 	Then  Subscriber Settings page is loaded 
-
-
-
-
-
+# @tc:2083 @clickthrough @bvt
 # #Subscriber Settings - Company setup - Flooring DD (max IM wast factore)
 # #Subscriber Settings - Company setup - CW DD (max IM wast factore)
 # Scenario Outline: Verify_Admin_Subscriber_Settings_page_MaxIM waste factor drop down bttn
@@ -293,321 +283,367 @@ Scenario: Verify_Tagging_Prod_Categories_page
 # 		And Subscriber Settings page link under Administration Menu is clicked
 # 	When the <Service_Offering> drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page
 # 	Then a drop down for showing max install Method waste factor is displayed for <Service_Offering> service offering is displayed in the Subscriber Settings page
-
 # Examples: 
 # | Service_Offering |
 # | Flooring         |
 # | Counter and Wall |
 
+#Subscriber Settings - Company setup
+#Subscriber Settings - Repot setup - 
+#Subscriber Settings - Email setup - 
+#Subscriber Settings - Available Patterns- 
+
+@tc:2084 @clickthrough @bvt
+Scenario Outline: Verify_Admin_Subscriber_Settings_page_tabs
+	Given HDS Home page is displayed
+		And Subscriber Settings page link under Administration Menu is clicked
+	When the <SubscriberSettingsPageTab> tab is clicked in the Subscriber Settings page
+	Then the panel for <SubscriberSettingsPageTab> tab is displayed in the Subscriber Settings page
+
+Examples: 
+| SubscriberSettingsPageTab |
+| Company Setup             |
+| Global Settings           |
+| Report Setup              |
+| Features                  |
+| ERP                       |
 
 
-# #Subscriber Settings - Company setup
-# #Subscriber Settings - Repot setup - 
-# #Subscriber Settings - Email setup - 
-# #Subscriber Settings - Available Patterns- 
-# Scenario Outline: Verify_Admin_Subscriber_Settings_page_tabs
+@tc:2085 @clickthrough @bvt        
+Scenario: Verify_Pattern_Availability_page   
+	Given HDS Home page is displayed
+	When  Pattern Availability page link under Administration Menu is clicked
+	Then  Pattern Availability page is loaded
+
+@tc:2086 @clickthrough @bvt
+Scenario: Verify_Admin_Flooring_Groups_listpage  
+	Given HDS Home page is displayed
+	When  Flooring Groups page link under Administration Menu is clicked
+	Then  Flooring Groups page is loaded 
+
+#Flooring Groups - New 
+@tc:2087 @clickthrough @bvt
+Scenario: Verify_Admin_Flooring_Groups_New_Bttn
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+	When the New button is clicked in the in the Flooring Groups list page under Administration Menu
+	Then the Flooring Groups editor page is loaded
+
+
+#Flooring Groups - Open
+@tc:2088 @clickthrough @bvt
+Scenario: Verify_Admin_Flooring_Groups_pg_Open
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+	When the Open button is clicked for a randomly selected group in the flooring group list page
+	Then the Flooring Groups editor page is loaded
+
+@tc:2089 @clickthrough @bvt
+#Flooring Groups - Open - View History
+Scenario: Verify_Admin_Flooring_Groups_Open_View_history
+	Given HDS Home page is displayed
+		And Flooring Groups page link under Administration Menu is clicked
+		And the Open button is clicked for a randomly selected group in the flooring group list page
+	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
+	Then the view history page for the flooring group is loaded
+
+@tc:2090 @clickthrough @bvt
+Scenario: Verify_Diagram_Colors_page  
+	Given HDS Home page is displayed
+	When  Diagram Colors page link under Administration Menu is clicked
+	Then  Diagram Colors page is loaded
+
+@tc:2091 @clickthrough @bvt
+Scenario: Verify_Admin_About_page  
+	Given HDS Home page is displayed
+	When  About page link under Administration Menu is clicked
+	Then  About page is loaded 
+
+@tc:2092 @clickthrough @bvt
+Scenario Outline: Verify_Admin_Design_Extras
+	Given HDS Home page is displayed
+	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	Then  Design Extras page is loaded
+Examples: 
+| ServiceOffering |
+| Flooring        |
+| Counter & Wall  |
+
+@tc:2093 @clickthrough @bvt
+#Design Extras - Open
+# 66
+Scenario Outline: Verify_Admin_Design_Extras_Open
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	When the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+	Then the design extra editor panel is displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
+
+#Design Extras - New
+#68
+@tc:2094 @clickthrough @bvt
+Scenario Outline: Verify_Admin_Design_Extras_New
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+	When the New button is clicked in the subscriber Design Extra list page
+	Then the design extra editor panel is displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
+
+
+#Design Extras - Open - Product Search 
+#67
+# @tc:2095 @clickthrough @bvt @q1
+# Scenario Outline: Verify_Admin_Design_Extras_Open_ProdSearch_Modal 
 # 	Given HDS Home page is displayed
-# 		And Subscriber Settings page link under Administration Menu is clicked
-# 	When the <SubscriberSettingsPageTab> tab is clicked in the Subscriber Settings page
-# 	Then the panel for <SubscriberSettingsPageTab> tab is displayed in the Subscriber Settings page
+# 		And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
+# 		And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+# 	# When the product search button is clicked in the design Extra page 
+# 	# Then the Design Extra Item Selector Modal is displayed in the subscriber design extra page
 
-# Examples: 
-# | SubscriberSettingsPageTab |
-# | Company_Setup             |
-# | Global_Settings           |
-# | Report_Setup              |
-# | Features                  |
-# | ERP                       |
+#Design Extras - Open - Cancel 
+#69
+@tc:2096 @clickthrough @bvt
+Scenario: Verify_Admin_Design_Extras_Open_Cancel_bttn
+	Given HDS Home page is displayed
+		And  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
+		And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
+	When the Cancel button is clicked in the design Extra page
+	Then the design extra editor panel is no longer displayed in the subscriber design extra page
+Examples:
+| ServiceOffering |
+| Counter & Wall  |
 
+@tc:2097 @clickthrough @bvt
+Scenario: Verify_Admin_Tagging_Install_Methods_page  
+	Given HDS Home page is displayed
+	When  Tagging Install Methods page link under Administration Menu is clicked
+	Then  Tagging Install Methods page is loaded
 
-
-# Scenario: Verify_Pattern_Availability_page   
-# 	Given HDS Home page is displayed
-# 	When  Pattern Availability page link under Administration Menu is clicked
-# 	Then  Pattern Availability page is loaded 
-
-# Scenario: Verify_Admin_Flooring_Groups_listpage  
-# 	Given HDS Home page is displayed
-# 	When  Flooring Groups page link under Administration Menu is clicked
-# 	Then  Flooring Groups page is loaded 
-
-# #Flooring Groups - New 
-# Scenario: Verify_Admin_Flooring_Groups_New_Bttn
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
-# 	When the New button is clicked in the in the Flooring Groups list page under Administration Menu
-# 	Then the Flooring Groups editor page is loaded
-
-
-# #Flooring Groups - Open
-# Scenario: Verify_Admin_Flooring_Groups_pg_Open
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
-# 	When the Open button is clicked for a randomly selected group in the flooring group list page
-# 	Then the Flooring Groups editor page is loaded
+@tc:2098 @clickthrough @bvt
+Scenario: Verify_Admin_Audit_Report_page  
+	Given HDS Home page is displayed
+	When  Audit Report page link under Administration Menu is clicked
+	Then  Admin Audit Report page is loaded 
 
 
-# #Flooring Groups - Open - View History
-# Scenario: Verify_Admin_Flooring_Groups_Open_View_history
-# 	Given HDS Home page is displayed
-# 		And Flooring Groups page link under Administration Menu is clicked
+# ##ACCOUNTING======================================================
+@tc:2099 @clickthrough @bvt
+Scenario: Verify_Accounting_Complete_Qoute_Buyers_page  
+	Given HDS Home page is displayed
+	When  Complete Quote or Buyers page link under Accounting Menu is clicked
+	Then  Complete Quote or Buyers page is loaded
 
-# 		And the Open button is clicked for a randomly selected group in the flooring group list page
-# 	When the 'view' button is clicked in the Flooring Group Editor page under Administration menu
-# 	Then the view history page for the flooring group is loaded
-
-
-# Scenario: Verify_Diagram_Colors_page  
-# 	Given HDS Home page is displayed
-# 	When  Diagram Colors page link under Administration Menu is clicked
-# 	Then  Diagram Colors page is loaded 
-
-# Scenario: Verify_Admin_About_page  
-# 	Given HDS Home page is displayed
-# 	When  About page link under Administration Menu is clicked
-# 	Then  About page is loaded 
-
-# Scenario Outline: Verify_Admin_Design_Extras
-# 	Given HDS Home page is displayed
-# 	When  Design Extras page link under Administration Menu is clicked for <ServiceOffering> service offering
-# 	Then  Design Extras page is loaded 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-# | Counter and Wall|
-
-# #Design Extras - Open
-# # 66
-# Scenario: Verify_Admin_Design_Extras_Open
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	When the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	Then the design extra editor panel is displayed in the subscriber design extra page
+@tc:2100 @clickthrough @bvt
+Scenario: Verify_Accounting_Set_Cut_Off_Dates_page  
+	Given HDS Home page is displayed
+	When  Set Cut Off Dates page link under Accounting Menu is clicked
+	Then  Set Cut Off Dates page is loaded 
 
 
-# #Design Extras - New
-# #68
-# Scenario: Verify_Admin_Design_Extras_New
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	When the New button is clicked in the subscriber Design Extra list page
-# 	Then the design extra editor panel is displayed in the subscriber design extra page
+@tc:2101 @clickthrough @bvt
+#Commission Forms  16
+Scenario: Verify_Accounting_CommissionForms_list page 
+	Given HDS Home page is displayed
+	When  Commission Forms page link under Accounting Menu is clicked
+	Then  the Commission Forms list page under Accounting menu is loaded
 
-# #Design Extras - Open - Product Search 
-# #67
-# Scenario: Verify_Admin_Design_Extras_Open_ProdSearch_Modal 
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	#When the product search button is clicked in the design Extra page 
-# 	#Then the Design Extra Item Selector Modal is displayed in the subscriber design extra page
-
-# #Design Extras - Open - Cancel 
-# #69
-# Scenario: Verify_Admin_Design_Extras_Open_Cancel_bttn
-# 	Given HDS Home page is displayed
-# 	And  Design Extras page link under Administration Menu is clicked for Counter and Wall service offering
-# 	And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page
-# 	When the Cancel button is clicked in the design Extra page 
-# 	Then the design extra editor panel is no longer displayed in the subscriber design extra page
-
-# Scenario: Verify_Admin_Tagging_Install_Methods_page  
-# 	Given HDS Home page is displayed
-# 	When  Tagging Install Methods page link under Administration Menu is clicked
-# 	Then  Tagging Install Methods page is loaded 
-
-# Scenario: Verify_Admin_Audit_Report_page  
-# 	Given HDS Home page is displayed
-# 	When  Audit Report page link under Administration Menu is clicked
-# 	Then  Admin Audit Report page is loaded 
-
-
-# ##ADMINISTRATION MENU======================================================
-# Scenario: Verify_Accounting_Complete_Qoute_Buyers_page  
-# 	Given HDS Home page is displayed
-# 	When  Complete Qoute/Buyers page link under Accounting Menu is clicked
-# 	Then  Complete Qoute/Buyers page is loaded 
-
-# Scenario: Verify_Accounting_Set_Cut_Off_Dates_page  
-# 	Given HDS Home page is displayed
-# 	When  Set Cut Off Dates page link under Accounting Menu is clicked
-# 	Then  Set Cut Off Dates page is loaded 
-
-# #Commission Forms  16
-# Scenario: Verify_Accounting_CommissionForms_list page 
-# 	Given HDS Home page is displayed
-# 	When  Commission Forms page link under Accounting Menu is clicked
-# 	Then  the Commission Forms list page under Accounting menu is loaded 
-
-# #Commission Forms - Open 18
-# Scenario: Verify_Accounting_CommissionForms_Open (editor) 
-# 	Given HDS Home page is displayed
-# 		And  Commission Forms page link under Accounting Menu is clicked
-# 	When the Open button for the first Commission form  listed in the commission forms list page is clicked
-# 	Then  the Commission Form detail page under Accounting menu is loaded 
+@tc:2102 @clickthrough @bvt
+#Commission Forms - Open 18
+Scenario: Verify_Accounting_CommissionForms_Open (editor) 
+	Given HDS Home page is displayed
+		And  Commission Forms page link under Accounting Menu is clicked
+	When the Open button for the first Commission form  listed in the commission forms list page is clicked
+	Then  the Commission Form detail page under Accounting menu is loaded 
 
 # ##PRODUCT MANAGEMENT========================================================
+@tc:2103 @clickthrough @bvt
+#Product Management - Catalogs
+Scenario: Verify_Prod_Mgmt_Catalogs_page  
+	Given HDS Home page is displayed
+	When  Catalogs page link under Product Management Menu is clicked
+	Then  Catalogs page is loaded
 
-# #Product Management - Catalogs
-# Scenario: Verify_Prod_Mgmt_Catalogs_page  
-# 	Given HDS Home page is displayed
-# 	When  Catalogs page link under Product Management Menu is clicked
-# 	Then  Catalogs page is loaded 
+@tc:2104 @clickthrough @bvt
+#Product Management - Catalogs - Edit
+Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog  
+	Given HDS Home page is displayed
+		And Catalogs page link under Product Management Menu is clicked
+	When the Edit button for the first catalog listed is clicked
+	Then  Excluded Offering text element is displayed
 
-# #Product Management - Catalogs - Edit
-# Scenario: Verify_Prod_Mgmt_Catalogs_page_Edit_catalog  
-# 	Given HDS Home page is displayed
-# 		And Catalogs page link under Product Management Menu is clicked
-# 	When the Edit button for the first catalog listed is clicked
-# 	Then  Excluded Offering text element is displayed
+@tc:2105 @clickthrough @bvt
+#Product Management - Catalogs - Show Products
+Scenario: Verify_Prod_Mgmt_Catalogs_page_showProducts  
+	Given HDS Home page is displayed
+		And Catalogs page link under Product Management Menu is clicked
+	When the Show Products button for the first catalog listed is clicked
+	Then Product List page is loaded
 
-# #Product Management - Catalogs - Show Products
-# Scenario: Verify_Prod_Mgmt_Catalogs_page_showProducts  
-# 	Given HDS Home page is displayed
-# 		And Catalogs page link under Product Management Menu is clicked
-# 	When the Show Products button for the first catalog listed is clicked
-# 	Then Product List page is loaded
+@tc:2106 @clickthrough @bvt
+#Product Management - Catalogs - New
+Scenario: Verify_Prod_Mgmt_Catalogs_page_New_catalog  
+	Given HDS Home page is displayed
+		And Catalogs page link under Product Management Menu is clicked
+	When new button is clicked in the Catalog list page
+	Then  the catalog drop down field is displayed
 
-# #Product Management - Catalogs - New
-# Scenario: Verify_Prod_Mgmt_Catalogs_page_New_catalog  
-# 	Given HDS Home page is displayed
-# 		And Catalogs page link under Product Management Menu is clicked
-# 	When new button is clicked in the Catalog list page
-# 	Then  the catalog drop down field is displayed
-
-
-# # Product Management Product list 
-# Scenario: Verify_Prod_Mgmt_Product_List_page  
-# 	Given HDS Home page is displayed
-# 	When  Product List page link under Product Management Menu is clicked
-# 	Then  Product List page is loaded 
-
-
-# #Product list - Import 
-# #137
-# Scenario: Verify_Prod_Mgmt_Product_List_Import
-# 	Given HDS Home page is displayed
-# 		And  Product List page link under Product Management Menu is clicked
-# 	When the Import button in the Product list page is clicked
-# 	Then Subscriber Catalog Import page is loaded 
+@tc:2107    @clickthrough @bvt
+# Product Management Product list 
+Scenario: Verify_Prod_Mgmt_Product_List_page  
+	Given HDS Home page is displayed
+	When  Product List page link under Product Management Menu is clicked
+	Then  Product List page is loaded 
 
 
-# #Product list - Open 
-# #81
-# Scenario: Verify_Prod_Mgmt_Product_Editor_page 
-# 	Given HDS Home page is displayed
-# 		And  Product List page link under Product Management Menu is clicked
-# 	When the Open button for the first product listed in the Product list page is clicked
-# 	Then  Product Editor page is loaded 
+#Product list - Import 
+#137
+@tc:2107	@clickthrough @bvt																						 
+Scenario: Verify_Prod_Mgmt_Product_List_Import
+	Given HDS Home page is displayed
+		And  Product List page link under Product Management Menu is clicked
+	When the Import button in the Product list page is clicked
+	Then Subscriber Catalog Import page is loaded 
 
+@tc:2108 @clickthrough @bvt																						 
+#Product list - Open 
+#81
+Scenario: Verify_Prod_Mgmt_Product_Editor_page 
+	Given HDS Home page is displayed
+		And  Product List page link under Product Management Menu is clicked
+	When the Open button for the first product listed in the Product list page is clicked
+	Then  Product Editor page is loaded
 
-# #Product list - Open - Open communities
-# #82
-# Scenario: Verify_Prod_Mgmt_Product_Editor_OpenComms
-# 	Given HDS Home page is displayed
-# 		And  Product List page link under Product Management Menu is clicked
-# 		And the Open button for the first product listed in the Product list page is clicked
-# #	When the 'Open Communities' link is clicked in the Product Editor page
-# #	Then Communities page of the Community Management Menu is loaded
+@tc:2109 @clickthrough @bvt																			 
+#Product list - Open - Open communities
+#82
+Scenario: Verify_Prod_Mgmt_Product_Editor_OpenComms
+	Given HDS Home page is displayed
+		And  Product List page link under Product Management Menu is clicked
+		And the Open button for the first product listed in the Product list page is clicked
+	When the 'Open Communities' link is clicked in the Product Editor page
+	Then Communities page of the Community Management Menu is loaded
 
+@tc:2110 @clickthrough @bvt												 
+#Product list - Open - Any Open  Buyer Scenario
+#83
+Scenario: Verify_Prod_Mgmt_Product_Editor_OpenAnyBuyerScenario
+	Given HDS Home page is displayed
+		And  Product List page link under Product Management Menu is clicked
+		And the Open button for the first product listed in the Product list page is clicked
+	When the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page
+	Then the Buyers list page is loaded
 
-# #Product list - Open - Any Open  Buyer Scenario
-# #83
-# Scenario: Verify_Prod_Mgmt_Product_Editor_OpenAnyBuyerScenario
-# 	Given HDS Home page is displayed
-# 		And  Product List page link under Product Management Menu is clicked
-# 		And the Open button for the first product listed in the Product list page is clicked
-# #	When the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page
-# #	Then the Buyers' list page is loaded
+@tc:2111 @clickthrough @bvt												 
+#Product list - Open - Open Buyer Active Scenario 
+#85
+Scenario: Verify_Prod_Mgmt_Product_Editor_OpenBuyerActiveScenarios
+	Given HDS Home page is displayed
+		And  Product List page link under Product Management Menu is clicked
+		And the Open button for the first product listed in the Product list page is clicked
+	When the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#
+	Then the Buyers list page is loaded
 
-
-# #Product list - Open - Open Buyer Active Scenario 
-# #85
-# Scenario: Verify_Prod_Mgmt_Product_Editor_OpenBuyerActiveScenarios
-# 	Given HDS Home page is displayed
-# 		And  Product List page link under Product Management Menu is clicked
-# 		And the Open button for the first product listed in the Product list page is clicked
-# #	When the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#
-# #	Then the Buyers' list page is loaded
-
-# # 86 Global HDS Catalog Search - HDS 
-# Scenario: Verify_Global_HDS_Catalog_Search  
-# 	Given HDS Home page is displayed
-# 	When  Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then  Global HDS Catalog Search List page is loaded 
+@tc:2112 @clickthrough @bvt						 
+# 86 Global HDS Catalog Search - HDS 
+Scenario: Verify_Global_HDS_Catalog_Search  
+	Given HDS Home page is displayed
+	When  Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then  Global HDS Catalog Search List page is loaded 
 
 # Scenario: Verify_Global_HDS_Catalog_Search_for_SAPNumber
 # 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search Tab page link under Product Management Menu is clicked
+# 	When  Global HDS Catalog Search List page link under Product Management Menu is clicked
 # 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write * on SAP Number textbox and Searched
-# 	And verify the search filter products according to the given keyword
-# 	And click on Export Button to export the product to the spreadsheet 
-# 	#05EE
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Number
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write F70ACCE on Style Number textbox and Searched
-# 	And verify the search filter products according to the given keyword
-# 	#F70ACCE
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Type
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched
-# 	And verify the search filter products according to the given keyword
+# 	   And Write * on SAP Number textbox and Searched
+# 	   And verify the search filter products according to the given keyword
+# 	   And click on Export Button to export the product to the spreadsheet 
+
+	#05EE
+@tc:2113 @clickthrough @bvt						 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Number
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+	   And  Write F70ACCE on Style Number textbox and Searched
+	   And verify the search filter products according to the given keyword for Style Number
+	
+#F70ACCE
+@tc:2114 @clickthrough @bvt						 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Type
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched
+		And verify the search filter products according to the given keyword for Style Type
 
 # Scenario: Verify_Global_HDS_Catalog_Search_for_Sales_Description
 # 	Given HDS Home page is displayed
 # 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
 # 	Then Global HDS Catalog Search List page is loaded
 # 	And  Write THRESHOLD  on Sales Description textbox and Searched
+
 # 	#THRESHOLD
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Name
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write ante on Style Name textbox and Searched
+@tc:2115 @clickthrough @bvt						 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Style_Name
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write ante on Style Name textbox and Searched
+		And verify the search filter products according to the given keyword for Style Name
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Vendor
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write ARIZONA TILE LLC (11067) on Vendor textbox and Searched
+@tc:2116 @clickthrough @bvt					 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Vendor
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write ARIZONA TILE LLC 11067 on Vendor textbox and Searched
+		And verify the search filter products according to the given keyword for vendor
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_ILG_Number
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write ILG-1001-10040 on ILG Number textbox and Searched
+@tc:2117 @clickthrough @bvt					 
+Scenario: Verify_Global_HDS_Catalog_Search_for_ILG_Number
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write ILG-1001-10040 on ILG Number textbox and Searched
+		And verify the search filter products according to the given keyword for ILG Number
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Product_Category
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	And  Write hardwood on Product Category textbox and Searched
 
-# Scenario: Verify_Global_HDS_Catalog_Search_for_Color_Name
-# 	Given HDS Home page is displayed
-# 	When Global HDS Catalog Search List page link under Product Management Menu is clicked
-# 	Then Global HDS Catalog Search List page is loaded
-# 	#Then  Write TOUR  on Color Name textbox and Searched
+@tc:2118 @clickthrough @bvt					 
+Scenario: Verify_Global_HDS_Catalog_Search_for_Product_Category 
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write hardwood on Product Category textbox and Searched
+		And verify the search filter products according to the given keyword for Product Category
 
-# #Product Type list
-# #88
-# Scenario: Verify_Prod_Mgmt_Product_Types_List_page  
-# 	Given HDS Home page is displayed
-# 	When  Product Types list page link under Product Management Menu is clicked
-# 	Then  Product Types list page is loaded 
+@tc:2119 @clickthrough @bvt					
+Scenario: Verify_Global_HDS_Catalog_Search_for_Color_Name
+	Given HDS Home page is displayed
+	When Global HDS Catalog Search List page link under Product Management Menu is clicked
+	Then Global HDS Catalog Search List page is loaded
+		And  Write TOUR  on Color Name textbox and Searched
+		And verify the search filter products according to the given keyword for Color Name
+
+#Product Type 
+#88
+@tc:2120 @clickthrough @bvt					
+Scenario: Verify_Prod_Mgmt_Product_Types_List_page  
+	Given HDS Home page is displayed
+	When  Product Types  page link under Product Management Menu is clicked
+	Then  Product Types  page is loaded 
  
-# #Product Type - Open
-# #89
-# Scenario: Verify_Prod_Mgmt_Product_Types_Editor_page  
-# 	Given HDS Home page is displayed
-# 		And Product Types list page link under Product Management Menu is clicked
-# 	When the Open button for the first product type In the product types list page is clicked
-# 	Then  Product Types Editor page is loaded
+#Product Type - Open
+#89
+@tc:2121 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Product_Types_Editor_page  
+	Given HDS Home page is displayed
+		And Product Types  page link under Product Management Menu is clicked
+	When the Open button for the first product type In the product types list page is clicked
+	Then  Product Types Editor page is loaded
 
 
 
@@ -620,702 +656,669 @@ Scenario: Verify_Tagging_Prod_Categories_page
 # #Install Methods - Open -  View history
 # #96
 
-# #Product Type - New
-# #90
-# 	Scenario: Verify_Prod_Mgmt_Product_Types_List_page_New 
-# 	Given HDS Home page is displayed
-# 		And Product Types list page link under Product Management Menu is clicked
-# 	When the New button in the Product Type list page is clicked
-# 	Then  Product Types Editor page is loaded
+#Product Type - New
+#90
+@tc:2122 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Product_Types_List_page_New 
+	Given HDS Home page is displayed
+		And Product Types  page link under Product Management Menu is clicked
+	When the New button in the Product Type list page is clicked
+	Then  Product Types Editor page is loaded
+
+@tc:2123 @clickthrough @bvt				
+Scenario: Verify_Prod_Mgmt_Install_Methods_page  
+	Given HDS Home page is displayed
+	When  Install Methods page link under Product Management Menu is clicked
+	Then  Install Methods list page is loaded 
 
 
-# Scenario: Verify_Prod_Mgmt_Install_Methods_page  
-# 	Given HDS Home page is displayed
-# 	When  Install Methods page link under Product Management Menu is clicked
-# 	Then  Install Methods list page is loaded 
-
-
-
-# #Install Methods - Open 
-# #93
-# Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_Page 
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 	When the Open button for the first Install method is clicked in the Install methods page
-# 	Then the install Methods Editor page is loaded
+@tc:2124 @clickthrough @bvt			
+#Install Methods - Open 
+#93
+Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_Page 
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+	When the Open button for the first Install method is clicked in the Install methods page
+	Then the install Methods Editor page is loaded
 	
-# #Install Methods - New 
-# #94
-# Scenario: Verify_Prod_Mgmt_Install_Methods_page_New 
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 	When the New button is clicked in the Install Methods list page
-# 	Then the install Methods Editor page is loaded
+#Install Methods - New 
+#94
+@tc:2125 @clickthrough @bvt	
+Scenario: Verify_Prod_Mgmt_Install_Methods_page_New 
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+	When the New button is clicked in the Install Methods list page
+	Then the install Methods Editor page is loaded
 
-# #Install Methods - Open -  View history		
-# #96
-# Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_ViewHistory
-# 	Given HDS Home page is displayed
-# 		And Install Methods page link under Product Management Menu is clicked
-# 		And the Open button for the first Install method is clicked in the Install methods page
-# 	When the View button is clicked in the Install Method Editor page
-# 	Then the Install Method History page is loaded
+#Install Methods - Open -  View history		
+#96
+@tc:2126 @clickthrough @bvt	
+Scenario: Verify_Prod_Mgmt_Install_Methods_Editor_ViewHistory
+	Given HDS Home page is displayed
+		And Install Methods page link under Product Management Menu is clicked
+		And the Open button for the first Install method is clicked in the Install methods page
+	When the View button is clicked in the Install Method Editor page
+	Then the Install Method History page is loaded
 
+@tc:2127 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pages
+	Given HDS Home page is displayed
+	When  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	Then  the <ServiceOffering> Install Methods Group page is loaded
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
+| Flooring        |
 
+@tc:2128 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn_FL 
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring
+	Then  the selected install method group displays in edit mode in the in the Install Method group page 
+Examples: 
+| ServiceOffering |
+| Flooring        |
 
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pages
-# 	Given HDS Home page is displayed
-# 	When  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	Then  the <ServiceOffering> Install Methods Group page is loaded 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-# | Counter and Wall|
+@tc:2129 @clickthrough @bvt	
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn  
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
+	Then  the selected install method group displays in edit mode in the in the Install Method group page
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
 
+@tc:2130 @clickthrough @bvt
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_CW  
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
+	Then a confirmation dialog or alert is displayed in the Install Method group page 
+Examples: 
+| ServiceOffering |
+| Counter & Wall  |
 
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn_FL 
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page
-# 	Then  the selected install method group displays in edit mode in the in the Install Method group page Second 
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_Edit_bttn  
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
-# 	Then  the selected install method group displays in edit mode in the in the Install Method group page
-# Examples: 
-# | ServiceOffering |
-# | Counter and Wall|
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_CW  
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW
-# 	Then a confirmation dialog or alert is displayed in the Install Method group page 
-# Examples: 
-# | ServiceOffering |
-# | Counter and Wall|
-
-# Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_Flooring
-# 	Given HDS Home page is displayed
-# 		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
-# 	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page
-# 	Then a confirmation dialog or alert is displayed in the Install Method group page
-# Examples: 
-# | ServiceOffering |
-# | Flooring        |
-
-# ##==================COMMUNITY MANAGEMENT====================================
-
-
-
+@tc:2131 @clickthrough @bvt
+Scenario Outline: Verify_Prod_Mgmt_Install_Methods_Group_pg_delete_bttn_Flooring
+	Given HDS Home page is displayed
+		And  the <ServiceOffering> Install Methods Group link under Product Management Menu is clicked
+	When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring
+	Then a confirmation dialog or alert is displayed in the Install Method group page
+Examples: 
+| ServiceOffering |
+| Flooring        |
 
 
 # #=====================DESIGN CENTER=======================================
-# Scenario: Verify_DC_Communities_page  
-# 	Given HDS Home page is displayed
-# 	When  Communities page link under Design Center Menu is clicked
-# 	Then  Communities page of the Design Center Menu is loaded
+@tc:2132 @clickthrough @bvt
+Scenario: Verify_DC_Communities_page  
+	Given HDS Home page is displayed
+	When  Communities page link under Design Center Menu is clicked
+	Then  Communities page of the Design Center Menu is loaded
 
-# #Communities - Open
-# Scenario: Verify_DC_Communities_page_Open  
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 	When the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 	Then the design center community home page is loaded
+@tc:2133 @clickthrough @bvt
+#Communities - Open
+Scenario: Verify_DC_Communities_page_Open  
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+	When the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+	Then the design center community home page is loaded
 
-# #Commission Forms  18
-# Scenario: Verify_DC_CommissionForm page 
-# 	Given HDS Home page is displayed
-# 	When  Commission Forms page link under Design Center Menu is clicked
-# 	Then  the design center Commission Form page is loaded 
+@tc:2134 @clickthrough @bvt
+#Commission Forms  18
+Scenario: Verify_DC_CommissionForm page 
+	Given HDS Home page is displayed
+	When  Commission Forms page link under Design Center Menu is clicked
+	Then  the design center Commission Form page is loaded 
 
-
-
-
-# #Communities - Open - Home Sites
-# Scenario: Verify_DC_Communities_page_Open_Homesites_list_page
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 	When the Homesite setup link is clikced in the design center community home page
-# 	Then the Homesite list page for the  design center community is loaded
-
-
-# #Communities - Open - Home Sites - New
-# Scenario: Verify_DC_Communities_page_Open_Homesites_New_bttn
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 		And the Homesite setup link is clikced in the design center community home page
-# 	When the New button is clikced in the design center Community Homesite list page
-# 	Then the Homesite editor/information page for the design center community homesite is loaded
-# 	Then ignore Homesite unsaved alert message 
-
-# #Communities - Open - Home Sites - Open
-# Scenario: Verify_DC_Communities_page_Open_Homesites_editor_page
-# 	Given HDS Home page is displayed
-# 		And Communities page link under Design Center Menu is clicked
-# 		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
-# 		And the Homesite setup link is clikced in the design center community home page
-# 	When the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page
-# 	Then the Homesite editor/information page for the design center community homesite is loaded
+@tc:2135 @clickthrough @bvt
+#Communities - Open - Home Sites
+Scenario: Verify_DC_Communities_page_Open_Homesites_list_page
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+	When the Homesite setup link is clikced in the design center community home page
+	Then the Homesite list page for the  design center community is loaded
 
 
-# Scenario: Verify_DC_Buyers_page  
-# 	Given HDS Home page is displayed
-# 	When  Buyers page link under Design Center Menu is clicked
-# 	Then  the Buyers' list page is loaded
+#Communities - Open - Home Sites - New
+@tc:2135 @clickthrough @bvt
+Scenario: Verify_DC_Communities_page_Open_Homesites_New_bttn
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+		And the Homesite setup link is clikced in the design center community home page
+	When the New button is clikced in the design center Community Homesite list page
+	Then the Homesite editor or information page for the design center community homesite is loaded
+	Then ignore Homesite unsaved alert message 
+
+@tc:2136 @clickthrough @bvt
+#Communities - Open - Home Sites - Open
+Scenario: Verify_DC_Communities_page_Open_Homesites_editor_page
+	Given HDS Home page is displayed
+		And Communities page link under Design Center Menu is clicked
+		And the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page
+		And the Homesite setup link is clikced in the design center community home page
+	When the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page
+	Then the Homesite editor or information page for the design center community homesite is loaded
+
+@tc:2137 @clickthrough @bvt
+Scenario: Verify_DC_Buyers_page  
+	Given HDS Home page is displayed
+	When  Buyers page link under Design Center Menu is clicked
+	Then  the Buyers list page is loaded
 
 
-# #Buyers -  New 
-# #190
-# Scenario: Verify_DC_Buyers_page_New_bttn
-# 	Given HDS Home page is displayed
-# 		And Buyers page link under Design Center Menu is clicked
-# 	When the New button is clicked in the Buyers List Page
-# 	Then  The buyer's info page loaded 
+#Buyers -  New 
+#190
+@tc:2138 @clickthrough @bvt
+Scenario: Verify_DC_Buyers_page_New_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When the New button is clicked in the Buyers List Page
+	Then  The buyers info page loaded
 
-# Scenario Outline:  Verify_DC_Buyers_Info_Page
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	When A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	Then  The buyer's info page loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+@tc:2139 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Info_Page
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	Then  The buyers info page loaded
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
-
-#  Scenario Outline:  Verify_DC_Buyers_Info_Page_EstMoPmt_bttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Estimate Monthly Payment button is clicked in the Buyer's Info page
-# 	Then a new window for displaying the buyer's monthly payment is loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
-
-
-
-#  Scenario Outline:  Verify_DC_Buyers_Info_Page_Additional_Buyer_info_Bttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Add Additional Buyer button is clicked in the Buyer info Page
-# 	Then the Additional Buyer Info page is loaded 
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+ @tc:2140 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Info_Page_EstMoPmt_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Estimate Monthly Payment button is clicked in the Buyer's Info page
+	Then a new window for displaying the buyer's monthly payment is loaded
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-# #Buyers - Open - Update Costs
-# #206
-# Scenario Outline:  Verify_DC_Buyers_UPdateCost
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page
-# 	Then the Update Costs modal is dislayed in the buyer's info page
-# Examples: 
-#  | Buyer_Name   | Community_Name |
-#  |Automation101 | Bella Fiore-25522250000 |
+ @tc:2141 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Info_Page_Additional_Buyer_info_Bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Add Additional Buyer button is clicked in the Buyer info Page
+	Then the Additional Buyer Info page is loaded 
+Examples: 
+ | Buyer_Name   | Community_Name		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-# #Buyers - Open - View Quote (flooring)
-# #Buyers - Open - View Quote (CW)
-# #Buyers - Open - View Quote (LSO)
-# Scenario Outline:  Verify_DC_BuyerInfo_viewQT_bttn
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the view Quote Button is clicked for <Service_Offering> service offering in the buyer info page
-# 	Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name          |
-#  | Flooring         | Automation101| Bella Fiore-25522250000 |
-#  | Counter and Wall | Automation101| Bella Fiore-25522250000 | 
-#  | Lifestyle Options| Automation101| Bella Fiore-25522250000 | 
+#Buyers - Open - Update Costs
+#206
+ @tc:2142 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_UPdateCost
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page
+	Then the Update Costs modal is dislayed in the buyer's info page
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
 
-# Scenario: Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And the view Quote Button is clicked for Flooring service offering in the buyer info page
-#     When the link for the first tracer diagram listed is clicked in the Buyer Report page
-# 	#Then A new window for displaying tracer diagram selected from Buyer Report page is loaded
+#Buyers - Open - View Quote (flooring)
+#Buyers - Open - View Quote (CW)
+#Buyers - Open - View Quote (LSO)
+ @tc:2143 @clickthrough @bvt
+Scenario Outline:  Verify_DC_BuyerInfo_viewQT_bttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the view Quote Button is clicked for <Service_Offering> service offering in the buyer info page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
+ @tc:2144 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the view Quote Button is clicked for Flooring service offering in the buyer info page
+    	And the link for the first tracer diagram listed is clicked in the Buyer Report page
+	Then A new window for displaying tracer diagram selected from Buyer Report page is loaded
+Examples: 
+ | Buyer_Name   | Community_Name 		  |
+ |autotest 		| Westford 3s PH 2        |
 
-
-#  #|Flooring | Jia Zhuan | Bella Fiore-25522250000  |
-
-# #Buyers - Open - (Current Quote) - [Flooring] 200
-# #Buyers - Open - (Current Quote) - CW  137
-# #Buyers - Open - (Current Quote) - LSO  170
-#  Scenario Outline:  Verify_DC_BuyerInfo_current Quotes
-# 	Given HDS Home page is displayed
-# 	And Buyer's list page is opened
-# 	And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the Current Quote link for <Service_Offering> service offering is clicked in the buyer info page
-# 	Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name		    |
-#  |Flooring			| Automation101	| Bella Fiore-25522250000   |
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000	| 
-#  | Lifestyle Options| Automation101 | Bella Fiore-25522250000    | 
+#Buyers - Open - (Current Quote) - [Flooring] 200
+#Buyers - Open - (Current Quote) - CW  137
+#Buyers - Open - (Current Quote) - LSO  170
+ @tc:2145 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_BuyerInfo_current Quotes
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+	   And the Current Quote link for <Service_Offering> service offering is clicked in the buyer info page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - Flooring - 
 # #  Buyers - Open - CW
 # #  Buyers - Open - Lifestyle Options
-
-# Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	Then the <Service_Offering> scenario list or Options selector page loaded
-# Examples: 
-#  | Service_Offering  | Buyer_Name		 | Community_Name            |
-#  | Flooring          | Automation101     | Bella Fiore-25522250000 |
-#  | Counter and Wall  | Automation101	 | Bella Fiore-25522250000	 |
-#  | Lifestyle Options | Automation101     | Bella Fiore-25522250000   |
-
-
-
-# #Buyers - Open - Flooring - New
-# #207
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_New
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	 When the 'New' button is clicked in the Flooring scenario list page
-# 	 Then the flooring selector page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 |
+ @tc:2146 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	Then the <Service_Offering> scenario list or Options selector page loaded
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
-#   Scenario Outline:  Verify_DC_Buyers_Open_Flooring_selection_link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And User Navigates to The Buyer's Report page
-# 	#When user clicks on the Selections link under the Flooring link in the Design Center Menu
-# 	#Then the flooring selector page is displayed
 
-	 
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 |
+#Buyers - Open - Flooring - New
+#207
+ @tc:2147 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_New
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	 	And the 'New' button is clicked in the Flooring scenario list page
+	 Then the flooring selector page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          |
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
 
-# #  Buyers - Open - Flooring - Open -  Print prelim Quote
-# #215
-# #  Buyers - Open - CW - Open -  Print prelim Quote
-# #  Buyers - Open - LifestyleOptions -  Print prelim Quote
-# Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg_PrintPrelim
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	 When the Print preliminary Qoute button in the design scenario or option selector page is clicked for <Service_Offering>
-# 	 Then The Buyers Report page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name           |
-#  | Flooring         |Automation101 | Bella Fiore-25522250000  |
-#  |Counter and Wall  |Automation101 | Bella Fiore-25522250000  |
-#  |Lifestyle Options |Automation101 | Bella Fiore-25522250000  |
+  @tc:2148 @clickthrough @bvt
+  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_selection_link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And User Navigates to The Buyer's Report page in Design Center
+		And user clicks on the Selections link under the Flooring link in the Design Center Menu
+	Then the flooring selector page is displayed in the design center
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          |
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
+
+#  Buyers - Open - Flooring - Open -  Print prelim Quote
+#215
+#  Buyers - Open - CW - Open -  Print prelim Quote
+#  Buyers - Open - LifestyleOptions -  Print prelim Quote
+@tc:2149 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_SvcOfferingPg_PrintPrelim
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	 When the Print preliminary Quote button in the design scenario or option selector page is clicked for <Service_Offering>
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
-#   #Buyers - Open - Flooring - Open - Print
-#   #209 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CW_CalcBrdReport
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	 And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
-# #	 Then the <Service_Offering> Selector Reports page is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 | 
-
+  #Buyers - Open - Flooring - Open - Print
+  #209
+ @tc:2150 @clickthrough @bvt  @wip
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CW_CalcBrdReport
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	 	And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
+	#  Then the <Service_Offering> Selector Reports page is loaded
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
 
 # #Buyers - Open - Flooring - Open - Print - calc. brkdn rprt
 # #212
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CalcBrkdReport_link
+@tc:2151 @clickthrough @bvt  @wip @q
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_CalcBrkdReport_link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
+	#  Then User Clicks on the Calculator Breakdown Report Link for <Service_Offering> 
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
+
+
+#Buyers - Open - Flooring - Open - Print - room by room selctor report
+#210
+# @tc:2152 @clickthrough @bvt @q
+
+# Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_Print_room by room Slctr report
 # 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring
-# 	 When User Clicks on the Calculator Breakdown Report Link for <Service_Offering> 
-# 	# Then the Report Viewer page of the buyer is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Flooring         | Automation101 | Bella Fiore-25522250000 | 
-
-
-
-# #Buyers - Open - Flooring - Open - Print - room by room selctor report
-# #210
-#  Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_Print_room by room Slctr report
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
+# 		And Buyers page link under Design Center Menu is clicked
+# 	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
 # 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
 # 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
 # 		And the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page
-# 	# When User Clicks on the Room by Room Selector Report link
-# 	# Then the Report Viewer page of the buyer is loaded
-# Examples: 
-#  | Service_Offering | Buyer_Name     | Community_Name         | 
-#  | Counter          | Automation101  |Bella Fiore-25522250000 | 
+	# When User Clicks on the Room by Room Selector Report link
+	# Then the Report Viewer page of the buyer is loaded
+Examples: 
+ | Service_Offering | Buyer_Name     | Community_Name         | 
+ | Counter          | autotest	     | Westford 3s PH 2       | 
 
-#   Scenario:  Verify_DC_Buyers_Open_Flooring_Open_TracerDiagram link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And the link for the Flooring scenario list or Options selector page is clicked
-# 		And The active Flooring design scenario is opened if Svc Offering is Flooring or CW
-#     When the link for the first diagram listed is clicked in the Buyer's flooring selector page
-# 	Then A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded
-
-
-#  #Buyers - Open - Flooring - Open - Open (Room) 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor 
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		When the link for the room named <RoomName> is clicked in the Flooring Selector page
-# 	 Then the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
+@tc:2153 @clickthrough @bvt 
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_TracerDiagram link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the Flooring scenario list or Options selector page is clicked
+		And The active Flooring design scenario is opened if Svc Offering is Flooring or CW
+    	And the link for the first diagram listed is clicked in the Buyer's flooring selector page
+	Then A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Flooring         | autotest		| Westford 3s PH 2 		  |
 
 
-# #Buyers - Open - Flooring - Open - Open (Room) - Modify Flooring Selection
-# #Buyers - Open - Flooring - Open - Open (Room) - Additional Items
-# #Buyers - Open - Flooring - Open - Open (Room) - Room Standards
-# #Buyers - Open - Flooring - Open - Open (Room) - Adjustments
-# #Buyers - Open - Flooring - Open - Open (Room) - Flooring Extras
- 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Tabs
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the <Tab> tab is clicked in the flooring room editor page
-# 	 Then the panel for the <Tab> is displayed in the flooring room editor page
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName |
-# | Modify Flooring Selection | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Room Standards            | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Adjustments               | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
-# | Flooring Extras           | Flooring         | Automation101 | Bella Fiore-25522250000 | livingroom  |
+ #Buyers - Open - Flooring - Open - Open (Room) 
+ @tc:2154 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor 
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		When the link for the room named <RoomName> is clicked in the Flooring Selector page
+	 Then the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 		| Westford 3s PH 2    		 | Whole House Carpet |
 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 	 When the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
-# 	 Then the Additional Items Editor field is displayed in the flooring room editor page
+#Buyers - Open - Flooring - Open - Open (Room) - Modify Flooring Selection
+#Buyers - Open - Flooring - Open - Open (Room) - Additional Items
+#Buyers - Open - Flooring - Open - Open (Room) - Room Standards
+#Buyers - Open - Flooring - Open - Open (Room) - Adjustments
+#Buyers - Open - Flooring - Open - Open (Room) - Flooring Extras
+@tc:2155 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Tabs
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 	And the <Tab> tab is clicked in the flooring room editor page
+	 Then the panel for the <Tab> is displayed in the flooring room editor page
+Examples: 
+| Tab                       | Service_Offering | Buyer_Name     | Community_Name         | RoomName    |
+| Modify Flooring Selection | Flooring         | autotest 	    | Westford 3s PH 2		 | diningroom  |
+| Additional Items          | Flooring         | autotest 		| Westford 3s PH 2		 | diningroom  |
+| Room Standards            | Flooring         | autotest 		| Westford 3s PH 2    	 | diningroom  |
+| Adjustments               | Flooring         | autotest 		| Westford 3s PH 2 		 | diningroom  |
+| Flooring Extras           | Flooring         | autotest 		| Westford 3s PH 2 		 | diningroom  |
 
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
+@tc:2156 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+	 	And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
+	 Then the Additional Items Editor field is displayed in the flooring room editor page
 
-
-
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items_Cancel button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 		And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
-# 	 When the Cancel button is clicked in the Additional Items tab of the flooring room editor page
-# 	 Then the Additional Items Editor field is not displayed in the flooring room editor page
-
-# Examples: 
-# | Tab                       | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
-# | Additional Items          | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
+Examples: 
+| Tab               | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
+| Additional Items  | Flooring         | autotest 	   | Westford 3s PH 2		 | Whole House Carpet |
 
 
 
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add Adjustments button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 	 When the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
-# 	 Then the Adjustment Editor field is displayed in the flooring room editor page
-
-# Examples: 
-# | Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName         |
-# | Adjustments | Flooring         | Automation101 | Bella Fiore-25522250000 |Whole House Carpet|
-
-
-
-# #
-#  Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Adjustment_Cancel button
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the <Tab> tab is clicked in the flooring room editor page
-# 		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
-# 	 When the Cancel button is clicked in the Adjustments tab of the flooring room editor page
-# 	 Then the Adjustments Editor field is not displayed in the flooring room editor page
-
-# Examples: 
-# | Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName			|
-# | Adjustments | Flooring         | Automation101 | Bella Fiore-25522250000 | Whole House Carpet |
-
-#  #Buyers - Open - Flooring - Open - Open (Room) - - Select From Prod List (prod search)
-#   Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_selectFromProdlist
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the 'Select From Product List' button is clicked in the flooring room editor page
-# 	 Then the Product search modal in the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
+@tc:2157 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Additional items_Cancel button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Item button is clicked in the Additional Items tab of the flooring room editor page
+	    And the Cancel button is clicked in the Additional Items tab of the flooring room editor page
+	Then the Additional Items Editor field is not displayed in the flooring room editor page
+Examples: 
+| Tab              | Service_Offering | Buyer_Name    | Community_Name          | RoomName			  |
+| Additional Items | Flooring         | autotest 	  |  Westford 3s PH 2 		| Whole House Carpet  |
 
 
-#  # Buyers - Open - Flooring - Open - Open (Room) - - search product (go button)
-#    Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickProdSearchBttn
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 	 When the 'Go' button for quick product search is clicked in the flooring room editor page
-# 	 Then the Product search modal in the flooring room editor page is displayed
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
-#  | Flooring         | Automation101 | Bella Fiore-25522250000    | Whole House Carpet |
+ @tc:2158 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add Adjustments button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
+	 Then the Adjustment Editor field is displayed in the flooring room editor page
+
+Examples: 
+| Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName         |
+| Adjustments | Flooring         | autotest 	 |  Westford 3s PH 2	   |Whole House Carpet|
 
 
-# # Buyers - Open - Flooring - Open - Open (Room) - - search product (go button) - select product
-#    Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickPrdSearch_addProd
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 		And flooring Room Editor page for the room named <RoomName> is opened
-# 		And the 'Go' button for quick product search is clicked in the flooring room editor page
-# 	 When A product is randmoly selected for upgrade in the the flooring room editor product search modal
-# 	 Then the product for the room is changed to the selected product in the flooring room editor page
-# Examples: 
-#  | Service_Offering | Buyer_Name   | Community_Name          | RoomName           |
-#  | Flooring         | Automation101| Bella Fiore-25522250000 | Whole House Carpet |
+
+ @tc:2159 @clickthrough @bvt 
+ Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_Add New Adjustment_Cancel button
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the <Tab> tab is clicked in the flooring room editor page
+		And the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page
+	 	And the Cancel button is clicked in the Adjustments tab of the flooring room editor page
+	 Then the Adjustments Editor field is not displayed in the flooring room editor page
+
+Examples: 
+| Tab         | Service_Offering | Buyer_Name    | Community_Name          | RoomName			|
+| Adjustments | Flooring         | autotest 	 |  Westford 3s PH 2 	   | Whole House Carpet |
+
+ #Buyers - Open - Flooring - Open - Open (Room) - - Select From Prod List (prod search)
+  @tc:2160 @clickthrough @bvt 
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_selectFromProdlist
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 When the 'Select From Product List' button is clicked in the flooring room editor page
+	 Then the Product search modal in the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 	 	|  Westford 3s PH 2    		 | Whole House Carpet |
 
 
+# Buyers - Open - Flooring - Open - Open (Room) - - search product (go button)
+@tc:2161 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickProdSearchBttn
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+	 	And the 'Go' button for quick product search is clicked in the flooring room editor page
+	 Then the Product search modal in the flooring room editor page is displayed
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name             | RoomName           |
+ | Flooring         | autotest 	 	|  Westford 3s PH 2    		 | Whole House Carpet |
+
+
+# Buyers - Open - Flooring - Open - Open (Room) - - search product (go button) - select product
+@tc:2162 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_Flooring_Open_RmEditor_QuickPrdSearch_addProd
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And flooring Room Editor page for the room named <RoomName> is opened
+		And the 'Go' button for quick product search is clicked in the flooring room editor page
+	 	And A product is randmoly selected for upgrade in the the flooring room editor product search modal
+	#  Then the product for the room is changed to the selected product in the flooring room editor page
+Examples: 
+ | Service_Offering | Buyer_Name   | Community_Name          | RoomName           |
+ | Flooring         | autotest 	   |  Westford 3s PH 2 		 | Whole House Carpet |
 
 # # Buyers - Open - CW - Open
 # # Buyers - Open - Flooring - Open
-
-
-# Scenario Outline:  Verify_DC_SvcOffring_Open_a_Scenario
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	When The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-# 	Then The active <Service_Offering> design scenario page is opened
+@tc:2163 @clickthrough @bvt
+Scenario Outline:  Verify_DC_SvcOffring_Open_a_Scenario
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+	When The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	Then The active <Service_Offering> design scenario page is opened
 		
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name	    	|
-#  | Flooring         | Automation101 | Bella Fiore-25522250000   |
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000	|
+Examples: 
+ | Service_Offering | Buyer_Name   | Community_Name	    	|
+ | Flooring         | autotest 	   |  Westford 3s PH 2   	|
+ | Counter & Wall   | autotest 	   |  Westford 3s PH 2		|
 
 
 #  #143
-# Scenario:  Verify_DC_Buyers_Open_CW_overviewPage_Copy modal
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And the link for the Counter and Wall scenario list or Options selector page is clicked
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 	When the 'Copy' button is clicked in the CW scenario overview page
-# 	Then a modal for copying the design scenario is displayed in the CW scenario overview page
+@tc:2164 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_overviewPage_Copy modal
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the 'Copy' button is clicked in the CW scenario overview page
+	Then a modal for copying the design scenario is displayed in the CW scenario overview page
+Examples: 
+ | Service_Offering | Buyer_Name   | Community_Name	    	|
+ | Counter & Wall   | autotest 	   |  Westford 3s PH 2		|
 
 # #  Buyers - Open - CW- New
 # #Note: has an order 0 Afterscenario step associated in 'BVT_tests'
-
-# Scenario Outline:  Verify_DC_Buyers_Open_CW_NewScenario
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	When the 'New' button is clicked in the Counter and Wall scenario list page
-# 	Then the 'Create New Scenario' modal is displayed in the Counter and Wall Scenario list page
-
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000 | 
-
-
+@tc:2165 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_NewScenario
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And the 'New' button is clicked in the Counter and Wall scenario list page
+	Then the 'Create New Scenario' modal is displayed in the Counter and Wall Scenario list page
+Examples: 
+ | Service_Offering | Buyer_Name    | Community_Name          | 
+ | Counter & Wall   | autotest 	    |  Westford 3s PH 2		  |
 
 # # Buyers - Open - CW- view latest quote
 # # Buyers - Open - Lifestyle Options - View latest quote
 # # Buyers - Open - Flooring - View Latest Quote
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewLatestQt
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 	When the 'View Latest Quote' button is clicked in the <Service_Offering> scenario list/option selector page
-# 	Then The Buyers Report page is loaded
-
-# Examples: 
-#  | Service_Offering  | Buyer_Name    | Community_Name          |
-#  | Flooring          | Automation101 | Bella Fiore-25522250000 |
-#  | Counter and Wall  | Automation101 | Bella Fiore-25522250000 |
-#  | Lifestyle Options | Automation101  |Bella Fiore-25522250000 | 
-
-
-
-
+ @tc:2166 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewLatestQt
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And the 'View Latest Quote' button is clicked in the <Service_Offering> scenario list or option selector page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - View Quote History (flooring)
 # #Buyers - Open - View Quote History (cw)
 # #Buyers - Open - View Quote History (lifestyle options)
+ @tc:2167 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewQtHistory
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the 'View Quote History' button is clicked in the buyer info page for <Service_Offering> service offering
+	Then the Quote History dialog box for <Service_Offering> service offering is displayed in the Buyer info page
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
+
+#Buyers - Open - View Quote History -view Link (flooring)
+#Buyers - Open - View Quote History -view Link (cw)
+#Buyers - Open - View Quote History -view Link (lifestyle options)
+ @tc:2168 @clickthrough @bvt
+ Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewQtHistory_View Link
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the 'View Quote History' button is clicked in the buyer info page for <Service_Offering> service offering
+		And the 'View' link is clicked in Quote History dialog box for the first quote listed in the  Buyer info page
+	Then The Buyers Report page is loaded for <Service_Offering>
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Flooring           |autotest 		| Westford 3s PH 2        |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
 
-#  Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewQtHistory
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When the 'View Quote History' button is clicked in the buyer info page for <Service_Offering> service offering
-# 	Then the Quote History dialog box for <Service_Offering> service offering is displayed in the Buyer info page
-
-# Examples: 
-#  | Service_Offering  | Buyer_Name      | Community_Name          |
-#  | Flooring          | Automation101   | Bella Fiore-25522250000 |
-#  | Counter and Wall  | Automation101   | Bella Fiore-25522250000 |
-#  | Lifestyle Options | Automation101   | Bella Fiore-25522250000 | 
-
- 
-# #Buyers - Open - View Quote History -view Link (flooring)
-# #Buyers - Open - View Quote History -view Link (cw)
-# #Buyers - Open - View Quote History -view Link (lifestyle options)
-#  Scenario Outline:  Verify_DC_Buyers_Open_SvcOff_ViewQtHistory_View Link
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the 'View Quote History' button is clicked in the buyer info page for <Service_Offering> service offering
-# #	When the 'View' link is clicked in Quote History dialog box for the first quote listed in the  Buyer info page
-# #	Then The Buyers Report page is loaded
-
-# Examples: 
-#  | Service_Offering  | Buyer_Name| Community_Name          |
-#  | Flooring          | Automation101  | Bella Fiore-25522250000 |
-#  | Counter and Wall  | Automation101  | Bella Fiore-25522250000 |
-#  | Lifestyle Options | Automation101  | Bella Fiore-25522250000 | 
-
-# #   Buyers - Open - CW - Open -  Show Quotability status
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_ShowQtabilityStatus
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And an inactive <Service_Offering> scenario is opened
-# 	When the 'Show Quotability Status' button is clicked in the CW Scenario Overview page
-# 	Then One or more quotability comments are displayed in the CW Scenario Overview page
-# 		And the 'Hide Quotability Status' button is displayed in the CW Scenario Overview page
-# 	#And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000 | 
- 
-
-
-#  #Buyers - Open - CW - Open -  Hide Quotability status 
-
-#  Scenario Outline:  Verify_DC_Buyers_Open_CW_Open_HideQtabilityStatus
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And the link for the <Service_Offering> scenario list or Options selector page is clicked
-# 		And an inactive <Service_Offering> scenario is opened
-# 	    And the 'Show Quotability Status' button is clicked in the CW Scenario Overview page
-# 	When the 'Hide Quotability Status' button is clicked  in the CW Scenario Overview page
-# 	Then Quotability comments are not displayed in the CW Scenario Overview page
-# 		And  the 'Show Quotability Status' button is displayed in the CW Scenario Overview page
-# 	#And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
-
-# Examples: 
-#  | Service_Offering | Buyer_Name    | Community_Name          | 
-#  | Counter and Wall | Automation101 | Bella Fiore-25522250000 |
-
-
-
-# #  Buyers - Open - Reports 
-
-#   Scenario Outline:  Verify_DC_Buyers_Open_reports_Page
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 	When User Navigates to The Buyer's Report page 
-# 	Then the Buyer's report page loads successfully
-# Examples: 
-# | Buyer_Name   | Community_Name             | 
-# | Automation101 | Bella Fiore-25522250000 |
+#  Buyers - Open - Reports 
+  @tc:2169 @clickthrough @bvt
+  Scenario Outline:  Verify_DC_Buyers_Open_reports_Page
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And User Navigates to The Buyer's Report page in DC
+	Then the Buyer's report page loads successfully
+Examples: 
+| Buyer_Name    | Community_Name             | 
+| autotest      | Westford 3s PH 2    		 |
 
 
 #  #Buyers - Open - Reports - Options Details (Preliminary)
 #  #Buyers - Open - Reports - Flooring Selector (Preliminary)
-#  #Buyers - Open - Reports - Design Summary Buyer (Preliminary)
-#   Scenario Outline:  Verify_DC_Buyers_Open_reports_report_links
-# 	Given HDS Home page is displayed
-# 		And Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: <Community_Name>,<Buyer_Name>
-# 		And User Navigates to The Buyer's Report page 
-# 	When the <Report_Type> link is cliked in the buyer's report page
-# 	Then the <Expected_Page> page of the selected <Report_Type> of the Buyer is loaded
-# Examples: 
-# | Report_Type                                   | Expected_Page                        | Community_Name				   | Buyer_Name   |
-# #| Option Details_Preliminary                    | Report Viewer                        | 0AutmtionTier1_Dont_delete   | AutoTstBuyer |
-# #| Flooring Selector_Preliminary                 | Report Viewer                        | 0AutmtionTier1_Dont_delete   | AutoTstBuyer |
+#  #Buyers - Open - Reports - Design Summary Buyer (Preliminary)6
+  @tc:2170 @clickthrough @bvt
+  Scenario Outline:  Verify_DC_Buyers_Open_reports_report_links
+	Given HDS Home page is displayed
+		And Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And User Navigates to The Buyer's Report page in DC
+		And the <Report_Type> link is cliked in the buyer's report page
+	Then the <Expected_Page> page of the selected <Report_Type> of the Buyer is loaded
+Examples: 
+| Report_Type                                   | Expected_Page                         | Community_Name				| Buyer_Name   |
+#| Option Details_Preliminary                    | Report Viewer                        | 0AutmtionTier1_Dont_delete   | AutoTstBuyer |
+#| Flooring Selector_Preliminary                 | Report Viewer                        | 0AutmtionTier1_Dont_delete   | AutoTstBuyer |
 # | Design Summary Buyer_Preliminary              | Configure Buyer Summary Report       | Bella Fiore-25522250000	   | Automation101 |
 # | Sales Calculator Summary_Preliminary		    | sales calculator summary             | Bella Fiore-25522250000       | Automation101 |
 # | Flooring Quote Calculator Breakdown           | flooring calculator breakdown        | Bella Fiore-25522250000	   | Automation101 |
@@ -1325,10 +1328,21 @@ Scenario: Verify_Tagging_Prod_Categories_page
 # | Design Summary Participant_Quote              | Configure Participant Summary Report | Bella Fiore-25522250000	   | Automation101 |
 # | Design Summary Buyer_Quote                    | Configure Buyer Summary Report       | Bella Fiore-25522250000	   | Automation101 |
 # | Room Allowance Summary By Category_Quote      | Quote Summary By Category Report     | Bella Fiore-25522250000	   | Automation101 |
+  |hypDesignBuyerSummary						|Configure Buyer Summary Report - HDS			|Westford 3s PH 2				|autotest|
+  |hypSaleCalculatorSummary						|SalesCalculatorSummary(Flooring Design_315159)|Westford 3s PH 2				|autotest|
+  |hypCalculatorBreakdown						|CalculatorBreakdown(Job_159338)				|Westford 3s PH 2				|autotest|
+  |hypCWCalculatorBreakdownReport	|CalculatorBreakdownWallQuote(Counter & Wall Design_159338)|Westford 3s PH 2				|autotest|
+  |hypJobReport									|HDS (QA) - Configure Job Detail Report - HDS |Westford 3s PH 2				|autotest|
+  |hypDesignJobSummary							|HDS (QA) - Configure Job Summary Report - HDS|Westford 3s PH 2				|autotest|
+  |hypDesignBuilderSummary						|Configure Participant Summary Report - HDS	  |Westford 3s PH 2				|autotest|
+  |hypDesignBuyerSummaryqd						|Configure Buyer Summary Report - HDS		  |Westford 3s PH 2				|autotest|
+  |hypQuoteSummaryByCategoryReport				|Quote Summary By Category Report - HDS		  |Westford 3s PH 2				|autotest|
+
+
 
 #  #Buyers - Open -Reports - Flooring Quote Calculator Breakdown
 
-
+# @q
 # #Buyers - Open - CW - Open -  Scenario details page (open area)
 # Scenario:  Verify_DC_Buyers_Open_CW_scneario_details_page
 # 	Given Buyer's list page is opened
@@ -1347,7 +1361,7 @@ Scenario: Verify_Tagging_Prod_Categories_page
 # 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
 # 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
 # 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Change Pattern buttn is clicked in the CW design scenario details page
+# 	When the Change Pattern button is clicked in the CW design scenario details page
 # 	Then the Pattern selection modal is displayed in the CW scenario details page 
 
 

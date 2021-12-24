@@ -1,9 +1,8 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { pauseBrowser, expectToHaveTitle } from "../helpers/customcommands";
-import homePage from "../pageobjects/home.page";
+import buyersPage from "../pageobjects/buyers.page";
 import HomePage from '../pageobjects/home.page'
-const allureReporter = require('@wdio/allure-reporter').default
-
+import quotePage from '../pageobjects/quote.page'
 
 Then(/^The appropriate settings pertaining to the (.+) should be validated$/, function(subscriber){
     console.log("subscriber is"+subscriber)
@@ -11,21 +10,21 @@ Then(/^The appropriate settings pertaining to the (.+) should be validated$/, fu
     HomePage.validateProductDetails(subscriber)
 });
 
-Given(/^HDS Home page is displayed$/, async function(){
-    expectToHaveTitle('  - HDS');
+Given(/^HDS Home page is displayed$/, function(){
+    expectToHaveTitle('- HDS');
 })
 
 When(/^Manage User link under Security Menu is clicked$/, function(){
     HomePage.getManageUsers();
 })
 
-Then(/^Manage Users page is loaded$/, async function(){   
+Then(/^Manage Users page is loaded$/,  function(){   
     expectToHaveTitle('Manage Users - HDS')
 })
 When(/^Area Types link under Site Administration Menu is clicked$/, function(){
     HomePage.clcikingOnAreaTypesInSiteAdmin();
 })
-Then(/^Area Typespage is loaded$/, async function(){
+Then(/^Area Typespage is loaded$/,  function(){
     expectToHaveTitle('Area Types - HDS');
 })
 When(/^the New button is clicked in the site-level Area Type page$/, function(){
@@ -55,13 +54,13 @@ Then(/^the modal for deleting an Area type is displayed in the site-level Area T
 When(/^Assign Take Offs page link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnAssignTakeOffs();
 })
-Then(/^Assign Take Offs page is loaded$/, async function(){
+Then(/^Assign Take Offs page is loaded$/,  function(){
     expectToHaveTitle('Assign Take Offs - HDS');
 })
 When(/^the Missing Quantities Report link in the Site Admin menu is clicked$/, function(){ 
     HomePage.clickingOnMissingQuantitiesReport();
 })    
-Then(/^the Report Viewer page loaded$/, async function() {
+Then(/^the Report Viewer page loaded$/,  function() {
     expectToHaveTitle('Report Viewer - HDS');
 })
 When(/^the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
@@ -70,6 +69,13 @@ When(/^the Edit button is clicked for a randomly selected Takeoff in the site-le
 Then(/^the take Off editor Modal is displayed in the site-level Assign Take Offs list page$/, function(){
     HomePage.validateTakeOffEditorModalIsDisplayed();
 })
+When(/^the Delete button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
+    HomePage.clickingOnDeleteBtnInAssignTakeOff();
+})
+Then(/^the Modal for deleteing a take off is displayed in the site-level Assign Take Offs list page$/, function(){
+    HomePage.validateDeleteModalAT();
+})
+
 When(/^the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page$/, function(){
     HomePage.clickingOnDisableButtonAssignTakeOffs();
 })
@@ -85,7 +91,7 @@ Then(/^the Modal for adding a take off is displayed in the site-level Assign Tak
 When(/^Patterns link under Site Administration Menu is clicked$/, function(){
     HomePage.clickingOnPatterns();
 })
-Then(/^Patterns page is loaded$/, async function(){
+Then(/^Patterns page is loaded$/,  function(){
     expectToHaveTitle('Patterns - HDS');
 })
 When(/^the New Pattern button is clicked in the site-level Patterns list page$/, function(){
@@ -95,20 +101,664 @@ Then(/^the New Pattern Modal is displayed in the site-level patterns list page$/
     HomePage.validateAddPatternPopUpIsDisplayed();
 })
 Given(/^Area Type Selected$/, function(){
-
+    HomePage.selectingAreaTypeInPatterns();
 })
 When(/^the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page$/, function(){
-
+    HomePage.clckingOnEditBtnInSelectedPattern();
 })
-Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
+When(/^the Disable button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function()  { 
+    HomePage.clickingOnDisableBtnInPatterns()
+})
 
+Then(/^the pattern editor Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.valiadteEditPatternModalIsDisplayed();
+})
+When(/^the Copy button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clckingOnCopyButtonInPatterns();
+})
+Then(/^the Copy Pattern Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateCopyPatternModalIsDisplayed();
+})
+Given(/^the (.+) is clicked for a randomly selected Pattern in the  Patterns list page$/, function(button){
+    HomePage.clickingOnButtonsInPatterns (button);
+})
+When(/^the hide link is clicked in the modal displayed in the site-level (.+) page$/, function(pattern) { 
+    HomePage.clickingOnHideLinkInPatternModal (pattern);
+}) 
+Then(/^the pattern image in (.+) modal is not displayed$/, function(pattern) { 
+    HomePage.validatePatternImgIsNotDisplayed();
+})
+When(/^the image is clicked in the Pattern Editor modal$/, function() {
+    HomePage.clickingOnPatternUpdateImg();
+}) 
+Then(/^file upload field is displayed in the Pattern editor modal$/, function() {
+    HomePage.validateUploadFieldIsDisplayedInThePatternEditorModal();
 })
 When(/^Tagging Product Categories page link under Site Administration Menu is clicked$/, function(){
-    
+    HomePage.clickingOnTaggingProductCategories();
 })
-Then(/^Tagging Product Categories page is loaded$ /, function () {
+Then(/^the Disable Pattern Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateDisablePatternModalIsDisplayed();
+})
+When(/^the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clickingOnAddNewTakeOffButton();
+})
+Then(/^the Add New TakeOff Modal is displayed in the site-level patterns list page$/, function(){
+    HomePage.validateAddTakeOffPopUpIsDisplayed();
+})
+When(/^the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page$/, function(){
+    HomePage.clickingOnTracerBtnInPatterns();
+})
+Then(/^A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page$/, function() {
+    HomePage.validateNewWindowForEditingCWPatternTracerIsOpened();
+}) 
+
+Then(/^Tagging Product Categories page is loaded$/, function () {
+    expectToHaveTitle('Tagging Product Categories - HDS');
+}) 
+When(/^Buyer Types Page link under Site Administration Menu is clicked$/, function(){
+    HomePage.clickingOnBuyerTypes();
+})
+Then(/^Buyer Types Page is loaded$/,  function () {
+    expectToHaveTitle('Buy Type List - HDS');
+}) 
+When(/^the New button is clicked in the Buyer Type list page$/, function(){
+    HomePage.clickingOnNewButtonInBuyerTypes();
+    })
+Then(/^the Buyer type editor page under Site Admin menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Buyer Types Editor - HDS');
+})
+When(/^the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page$/, function(){
+    HomePage.clickingOnOpenButtonInBuyerTypes();
+})
+When(/^Category Service Offering page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnCategoryServiceOffering();
+})
+Then(/^Category Service Offering page is loaded$/,  function(){
+    expectToHaveTitle('Category Service Offering - HDS');
+})
+When(/^the New button is clicked in the Category Service Offering list page$/, function(){
+    HomePage.clickingOnCategoryServiceOffering();
+})
+Then(/^the Category Service Offering editor page is loaded$/,  function(){
+    expectToHaveTitle('Category Service Offering Editor - HDS')
+})
+When(/^the Open button is clicked for a randomly selected Category in the Category Service Offering list page$/, function(){
+    HomePage.clickingOnOpenButtonInCategoryServiceOffering();
+})
+When(/^Subscriber Settings page link under Administration Menu is clicked$/, function(){
+    HomePage.clicikingSubscriberSettings();
+})
+Then(/^Subscriber Settings page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Subscriber Settings - HDS');
+}) 
+When(/^the (.+) drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page$/, function(Service_Offering){
+
+})
+Then(/^a drop down for showing max install Method waste factor is displayed for (.+) service offering is displayed in the Subscriber Settings page$/, function(Service_Offering){
+
+})
+When(/^the (.+) tab is clicked in the Subscriber Settings page$/, function(SubscriberSettingsPageTab){
+    HomePage.clickingOnSubscriberSettingsPageTab(SubscriberSettingsPageTab);
+})
+Then(/^the panel for (.+) tab is displayed in the Subscriber Settings page$/, function(SubscriberSettingsPageTab){
+    HomePage.validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab);
+})
+When(/^Pattern Availability page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnPatternAvailability();
+})
+Then(/^Pattern Availability page is loaded$/,  function() {
+    expectToHaveTitle('Pattern Availability - HDS');
+}) 
+When(/^Flooring Groups page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnFlooringGroups();
+})
+Then(/^Flooring Groups page is loaded$/,  function() {
+    expectToHaveTitle('Flooring Groups - HDS');
+}) 
+When(/^the New button is clicked in the in the Flooring Groups list page under Administration Menu$/, function(){
+    HomePage.clckingOnNewButtonInFlooringGroups();
+})
+Then(/^the Flooring Groups editor page is loaded$/,  function(){
+    expectToHaveTitle('Flooring Group Editor - HDS');
+})
+When(/^the Open button is clicked for a randomly selected group in the flooring group list page$/, function(){
+    HomePage.clickingOnOpenButtonFlooringGroups();
+})
+When(/^the 'view' button is clicked in the Flooring Group Editor page under Administration menu$/,function () {
+    HomePage.clickingOnViewButtonFlooringGroups();
+})
+Then(/^the view history page for the flooring group is loaded$/,  function(){
+    expectToHaveTitle('Flooring Group History - HDS');
+})
+When(/^Diagram Colors page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnDiagramColors();
+})
+Then(/^Diagram Colors page is loaded$/,  function(){
+    expectToHaveTitle('Diagram Color Preferences - HDS');
+})
+
+When(/^About page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnAboutLink();
+})
+Then(/^About page is loaded$/,  function(){
+    expectToHaveTitle('About - HDS');
+}) 
+When(/^Design Extras page link under Administration Menu is clicked for (.+) service offering$/, function(ServiceOffering){
+    HomePage.clickingOnDesignExtras(ServiceOffering);
+})
+Then(/^Design Extras page is loaded$/,  function(){
+    expectToHaveTitle(' HDS (QA) - Design Extras - HDS');
+})
+When(/^the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page$/, function(){
+    HomePage.clickingOnOpenButtonInCounterWallDesignExtras();
+})
+Then(/^the design extra editor panel is displayed in the subscriber design extra page$/, function() { 
+    HomePage.valiadteDesignExtrasEditorPanelIsDisplayed();
+})
+When(/^the New button is clicked in the subscriber Design Extra list page$/, function(){
+    HomePage.clickingOnNewButtonInDECounterWall();
+})
+When(/^the product search button is clicked in the design Extra page$/, function() {
 
 }) 
+Then(/^the Design Extra Item Selector Modal is displayed in the subscriber design extra page$/, function() { 
+
+})
+When(/^the Cancel button is clicked in the design Extra page$/, function() {
+    HomePage.clickingOnCancelButton();
+}) 
+Then(/^the design extra editor panel is no longer displayed in the subscriber design extra page$/, function(){
+    HomePage.valiadteDesignExtrasEditorPanelIsNOTDisplayed();
+})
+When(/^Tagging Install Methods page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnTaggingInstallMethods();
+})
+Then(/^Tagging Install Methods page is loaded$/,  function(){
+    expectToHaveTitle('Tagging Install Methods - HDS');
+}) 
+When(/^Audit Report page link under Administration Menu is clicked$/, function(){
+    HomePage.clickingOnAuditReports();
+})
+Then(/^Admin Audit Report page is loaded$/,  function(){
+    expectToHaveTitle('Audit Reports - HDS');
+}) 
+When(/^Complete Quote or Buyers page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnCompleteQuotesBuyers();
+})
+Then(/^Complete Quote or Buyers page is loaded$/,  function(){
+    expectToHaveTitle('Complete Quotes or Buyers - HDS');
+})
+When(/^Set Cut Off Dates page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnSetCutoffDate();
+})
+Then(/^Set Cut Off Dates page is loaded$/,  function(){
+    expectToHaveTitle('	Set Completion Cut-off Date - HDS');
+}) 
+When(/^Commission Forms page link under Accounting Menu is clicked$/, function(){
+    HomePage.clickingOnCommissionForms();
+})
+Then(/^the Commission Forms list page under Accounting menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Commission Forms - HDS')
+}) 
+When(/^the Open button for the first Commission form  listed in the commission forms list page is clicked$/, function(){ 
+    HomePage.clickingOnOpenButtonInCommissionForms();
+}) 
+Then(/^the Commission Form detail page under Accounting menu is loaded$/,  function(){
+    expectToHaveTitle('Commission Form - HDS');
+})
+When(/^Catalogs page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnCatalogs();
+})
+Then(/^Catalogs page is loaded$/, function(){
+    expectToHaveTitle('Catalog List - HDS')
+}) 
+When(/^the Edit button for the first catalog listed is clicked$/, function(){
+    HomePage.clickingOnEditButtonInCatalogList();
+})
+Then(/^Excluded Offering text element is displayed$/, function(){
+    HomePage.validateExcludedOfferingIsDisplayed();
+})
+When(/^the Show Products button for the first catalog listed is clicked$/, function(){
+    HomePage.clickingOnShowProducts();
+})
+Then(/^Product List page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Product List - HDS');
+})
+When(/^new button is clicked in the Catalog list page$/, function(){
+    HomePage.clickingOnNewButtonInCatalogList();
+})
+Then(/^the catalog drop down field is displayed$/,  function(){
+    HomePage.validateCatalogDDIsDisplayed();
+})
+When(/^Product List page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnProductsList();
+})
+When(/^the Import button in the Product list page is clicked$/, function(){
+    HomePage.clickingOnImportButtonInProductList();
+})
+Then(/^Subscriber Catalog Import page is loaded$/,  function(){
+    HomePage.validateCatalogImportPage();
+}) 
+When(/^the Open button for the first product listed in the Product list page is clicked$/, function(){
+    HomePage.clickingOnOpenButtonInProductList();
+})
+Then(/^Product Editor page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Product Editor - HDS');
+})
+When(/^the 'Open Communities' link is clicked in the Product Editor page$/, function()    {
+    HomePage.clickingOnOpenCommunitiesInProductInfo();
+})
+Then(/^Communities page of the Community Management Menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Communities List - HDS');
+})
+When(/^the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page$/, function() {
+    HomePage.clickingOnAnyOpenBuyerScenariosInDetailsTab();
+})
+Then(/^the Buyers list page is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Buyers - HDS');
+})
+When(/^the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#$/, function() {
+    HomePage.clickingOnOpenBuyerActiveScenariosInDetailsTab();
+})
+When(/^Global HDS Catalog Search List page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnGlobalHDSCatalogSearch();
+})
+Then(/^Global HDS Catalog Search List page is loaded$/,  function(){
+    expectToHaveTitle('Global HDS Catalog Search - HDS');
+})
+Then(/^verify the search filter products according to the given keyword for Style Number$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForSN();
+})
+Then(/^Write F70ACCE on Style Number textbox and Searched$/, function(){
+    HomePage.setValueToStyleNumberTextBox();
+})
+Then(/^Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched$/, function() {
+    HomePage.setValueToStyleTypeTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Style Type$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForST();
+})
+Then(/^Write ante on Style Name textbox and Searched$/,  function(){
+    HomePage.setValueToStyleNameTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Style Name$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForStyleName();
+})
+Then(/^Write ARIZONA TILE LLC 11067 on Vendor textbox and Searched$/, function(){
+    HomePage.setValueToVendorTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for vendor$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForVendor();
+})
+Then(/^Write ILG-1001-10040 on ILG Number textbox and Searched$/, function(){
+    HomePage.setValueToILGNumberTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for ILG Number$/, function() {
+    HomePage.validateILGNumberColumnInTable();
+})
+Then(/^Write hardwood on Product Category textbox and Searched$/,  function(){
+    HomePage.setValueToProductCategoryTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Product Category$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForPC();
+})
+Then(/^Write TOUR  on Color Name textbox and Searched$/,  function(){
+    HomePage.setValueToColorNameTextBox();
+})
+Then(/^verify the search filter products according to the given keyword for Color Name$/, function() {
+    HomePage.validateSearchFilterProductsIsDisplayedForCN();
+})
+When(/^Product Types  page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnproductTypes();
+})
+Then(/^Product Types  page is loaded$/,  function() {
+    expectToHaveTitle('Product Types - HDS')
+}) 
+When(/^the Open button for the first product type In the product types list page is clicked$/, function(){
+    HomePage.clickingOnOpenButtonInProductTypes();
+})
+Then(/^Product Types Editor page is loaded$/,  function(){
+    expectToHaveTitle('Product Type Editor - HDS')
+})
+When(/^the New button in the Product Type list page is clicked$/, function(){
+    HomePage.clickingOnNewButtonInProductTypes();
+})
+When(/^Install Methods page link under Product Management Menu is clicked$/, function(){
+    HomePage.clickingOnInstallMethods();
+})
+Then(/^Install Methods list page is loaded$/,  function(){
+    expectToHaveTitle('Install Methods - HDS');
+}) 
+When(/^the Open button for the first Install method is clicked in the Install methods page$/, function() {
+    HomePage.clickingOnOpenButtonInInstallmethods();
+})
+Then(/^the install Methods Editor page is loaded$/,  function() {
+    expectToHaveTitle('Install Method Editor - HDS');
+})
+When(/^the New button is clicked in the Install Methods list page$/, function(){
+    HomePage.clickingOnNewButtonInInstallMethods();
+})
+When(/^the View button is clicked in the Install Method Editor page$/, function() { 
+    HomePage.clickingOnViewButtonInInstallmethodsEDitorPage();
+})
+Then(/^the Install Method History page is loaded$/,  function(){
+    expectToHaveTitle('Install Method History List - HDS')
+})
+When(/^the (.+) Install Methods Group link under Product Management Menu is clicked$/, function (ServiceOffering){
+    HomePage.clickOnServiceOfferingInInstallMethods(ServiceOffering);
+})           
+Then(/^the (.+) Install Methods Group page is loaded$/, function (ServiceOffering) {
+    if (ServiceOffering == 'Flooring'){
+        expectToHaveTitle('Flooring Install Method Groups - HDS')
+    }else if (ServiceOffering == 'Counter & Wall'){
+        expectToHaveTitle('Counter & Wall Install Method Groups - HDS')
+    }
+})       
+When(/^the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring$/, function() { 
+    HomePage.clickingOnEditButtonInInstallMethodsForFlooring();
+})       
+Then(/^the selected install method group displays in edit mode in the in the Install Method group page$/, function() {
+    HomePage.validateInstallMethodPageDisplayedInEditMode();
+}) 
+When(/^the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW$/, function() { 
+    HomePage.clickingOnEditButtonInInstallMethodsForCW();
+})
+When(/^the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW$/, function() { 
+    HomePage.clickingOnDeleteButtonInInstallMethodsForCW();
+})
+Then(/^a confirmation dialog or alert is displayed in the Install Method group page$/, function(){ 
+    HomePage.validateConfirmationDialogIsDisplayed();
+})
+When(/^the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring$/, function() {
+    HomePage.clickingOnDeleteButtonInInstallMethodsForFlooring();
+})
+When(/^Communities page link under Design Center Menu is clicked$/, function(){
+    HomePage.clickingOnDCCommunities();
+})
+Then(/^Communities page of the Design Center Menu is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Communities - HDS')
+})
+When(/^the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page$/, function(){
+    HomePage.clickingOnOpenButtonInDCCommunities();
+})
+Then(/^the design center community home page is loaded$/,  function(){
+    expectToHaveTitle('Community Details - HDS');
+})
+When(/^Commission Forms page link under Design Center Menu is clicked$/, function(){
+    HomePage.clickingOnCommissionFormDC();
+})
+Then(/^the design center Commission Form page is loaded$/,  function(){
+    expectToHaveTitle('Commission Form - HDS')
+}) 
+When(/^the Homesite setup link is clikced in the design center community home page$/, function() {
+    HomePage.clickingOnHomesiteSetupDC();
+} )
+Then(/^the Homesite list page for the  design center community is loaded$/, function() {
+    expectToHaveTitle("Homesite Setup - HDS")
+})
+When(/^the New button is clikced in the design center Community Homesite list page$/, function(){
+    HomePage.clickingOnNewButtonInHomesites();
+})
+Then(/^the Homesite editor or information page for the design center community homesite is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Homesite Information - HDS')
+})
+Then(/^ignore Homesite unsaved alert message$/,  function() {
+    HomePage.valiadateUnsavedChangesIsDisplayed();
+}) 
+When(/^the Edit button is clikced for a randomly selected homesite in the design center Community Homesite list page$/, function(){
+    HomePage.clickingOnEditButtonInHomesites();
+})
+When(/^Buyers page link under Design Center Menu is clicked$/,  function(){
+    HomePage.clickingOnBuyersDC();
+})
+When(/^the New button is clicked in the Buyers List Page$/, function() {
+    HomePage.clickingOnNewButtonInBuyerListPage();
+})
+Then(/^The buyers info page loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Buyer Information - HDS')
+}) 
+When(/^A buyer with the following attributes is opened: (.+) and (.+)$/, function(Community_Name, Buyer_Name) {
+    HomePage.setValueToSerchBoxBuyers(Buyer_Name, Community_Name);
+})
+When(/^the Estimate Monthly Payment button is clicked in the Buyer's Info page$/, function() {
+    HomePage.clickingOnMonthlyPaymentButton();
+})
+Then(/^a new window for displaying the buyer's monthly payment is loaded$/,  function(){
+    HomePage.validateMonthlyPaymentWindowIsDisplayed();
+}) 
+When(/^the Add Additional Buyer button is clicked in the Buyer info Page$/, function() {
+    HomePage.clickingOnAddAdditionalBuyerButton();
+})
+Then(/^the Additional Buyer Info page is loaded$/,  function(){
+    expectToHaveTitle('Additional Buyer Information - HDS')
+}) 
+When(/^the Update Costs button under Counter and Wall Serivce offering is clicked in the Buyer's info page$/, function() {
+    HomePage.clickingOnUpdateCostsButton();
+})
+Then(/^the Update Costs modal is dislayed in the buyer's info page$/, function() {
+    HomePage.clickingOnUpdateCostsPopUpIsDisplayed();
+})
+When(/^the view Quote Button is clicked for (.+) service offering in the buyer info page$/, function(Service_Offering) {
+    HomePage.clickingOnService_Offering (Service_Offering);
+})
+Then(/^The Buyers Report page is loaded for (.+)$/,  function(Service_Offering){
+    pauseBrowser(5000);
+    expectToHaveTitle('Buyer Report - HDS');
+})
+When(/^the link for the first tracer diagram listed is clicked in the Buyer Report page$/, function(){
+    HomePage.clickingOnFirstTracerDiagram();
+})
+Then(/^A new window for displaying tracer diagram selected from Buyer Report page is loaded$/,  function(){
+    expectToHaveTitle('Floor Plan Diagram Tracer');
+})
+When(/^the Current Quote link for (.+) service offering is clicked in the buyer info page$/, function(Service_Offering)  { 
+    HomePage.clickingOnCurrentQuoteLinkfor(Service_Offering);
+})
+When(/^the link for the (.+) scenario list or Options selector page is clicked$/, function(Service_Offering){
+    HomePage.clickingOnScenarioList(Service_Offering);
+})
+Then(/^the (.+) scenario list or Options selector page loaded$/,  function(Service_Offering) {
+if(Service_Offering == 'Flooring') {
+    expectToHaveTitle('Flooring Scenario List - HDS');
+} else if(Service_Offering == 'Counter & Wall') {
+    expectToHaveTitle('Counter & Wall Scenario List - HDS');
+} else if (Service_Offering == 'Lifestyle Options') {
+    expectToHaveTitle('Options List - HDS');
+}
+})
+When(/^the 'New' button is clicked in the Flooring scenario list page$/, function(){
+    HomePage.clickingOnNewButtonInFlooringScenarioList();
+})
+Then(/^the flooring selector page is displayed$/, function(){
+    HomePage.validateFlooringSelectorPage();
+})
+When(/^The active (.+) design scenario is opened if Svc Offering is Flooring or CW$/, function(Service_Offering) {
+    if ((Service_Offering == 'Flooring') || (Service_Offering == 'Counter & Wall')){
+    HomePage.clickingOnOpenButtonInActiveService_OfferingDS();
+    }
+})
+When(/^user clicks on the Selections link under the Flooring link in the Design Center Menu$/, function() {
+    HomePage.clickingOnSelectionsFl_DC();
+})
+When(/^User Navigates to The Buyer's Report page in Design Center$/, function() { 
+    buyersPage.navigateToBuyersReportsPage();
+})
+Then(/^the flooring selector page is displayed in the design center$/, function() {
+    expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+})
+When(/^the Print preliminary Quote button in the design scenario or option selector page is clicked for (.+)$/,  function(Service_Offering) {
+   HomePage.clickingOnPrintPriliminaryQuoteBtn (Service_Offering);
+})
+When(/^the Calculator Breakdown Report button is clicked in the Buyer's flooring selector page for Flooring$/, function() {
+    HomePage.clickingOnCalculatorBreakdownReportButtonForFlooring();
+})
+When(/^the link for the first diagram listed is clicked in the Buyer's flooring selector page$/, function() {
+    HomePage.clickingOnFirstTracerDiagramForBuyers();
+})
+Then(/^A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded$/, function() { 
+    expectToHaveTitle('Floor Plan Diagram Tracer');
+})
+When(/^the link for the room named (.+) is clicked in the Flooring Selector page$/, function(RoomName) {
+    HomePage.clickingOnRoomLink(RoomName);
+})
+Then(/^the flooring room editor page is displayed$/,  function(){
+    expectToHaveTitle('HDS (QA) - Room Editor - HDS');
+})
+When(/^flooring Room Editor page for the room named (.+) is opened$/, function(RoomName) {
+    HomePage.clickingOnRoomLink(RoomName);
+})
+When(/^the (.+) tab is clicked in the flooring room editor page$/, function(Tab) {
+    HomePage.clickingOnTabInRoomEditor(Tab);
+})
+Then(/^the panel for the (.+) is displayed in the flooring room editor page$/, function(Tab) {
+    HomePage.validatePanelForTabIsDisplayed(Tab);
+})
+
+When(/^the Add New Item button is clicked in the Additional Items tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnAddNewItemBtn();
+})
+Then(/^the Additional Items Editor field is displayed in the flooring room editor page$/, function() {
+    HomePage.validateAddlItemsEditorFieldIsDisplayed();
+})
+When(/^the Cancel button is clicked in the Additional Items tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnCancelButtonInAddlItemsTab();
+})
+Then(/^the Additional Items Editor field is not displayed in the flooring room editor page$/, function() {
+    HomePage.validateAddlItemsEditorFieldIsNotDisplayed();
+})
+When(/^the Add New Adjustment button is clicked in the Adjustments tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnAddNewAdjustmentBtn();
+})
+Then(/^the Adjustment Editor field is displayed in the flooring room editor page$/, function() {
+    HomePage.validateAdjustmentEditorFieldIsDisplayed();
+})
+When(/^the Cancel button is clicked in the Adjustments tab of the flooring room editor page$/, function() {
+    HomePage.clickingOnCancelBtnInAdjustments();
+})
+Then(/^the Adjustments Editor field is not displayed in the flooring room editor page$/, function()  {
+    HomePage.validateAdjustmentEditorFieldIsNotDisplayed();
+})
+When(/^the 'Select From Product List' button is clicked in the flooring room editor page$/, function() {
+    HomePage.clickingOnSelectFromProductListButton();
+})
+Then(/^the Product search modal in the flooring room editor page is displayed$/, function(){
+    HomePage.validateProductSearchModalIsDisplayed();
+})
+When(/^the 'Go' button for quick product search is clicked in the flooring room editor page$/, function() {
+    HomePage.clickingOnGoButtonInRoomEditor();
+})
+Then(/^The active (.+) design scenario page is opened$/, function(Service_Offering) {
+    if (Service_Offering == 'Flooring') {
+        expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+    }else if  (Service_Offering == 'Counter & Wall') { 
+        pauseBrowser(5000)       
+        expectToHaveTitle('Counter & Wall Scenario Editor - HDS')
+    }
+})
+When(/^A product is randmoly selected for upgrade in the the flooring room editor product search modal$/, function(){
+    HomePage.clickingOnProductInProductSearchModal();
+})
+// Then(/^the product for the room is changed to the selected product in the flooring room editor page$/, function() { 
+//     // HomePage.validateSelectedProductInTheFlooringRoomEditorPage();
+// })
+When(/^the 'Copy' button is clicked in the CW scenario overview page$/, function() { 
+    HomePage.clckingOnCopyBtnInCWScenarioPage();
+})
+Then(/^a modal for copying the design scenario is displayed in the CW scenario overview page$/, function() { 
+    HomePage.validateCopyDesignScenario();
+})
+When(/^the 'New' button is clicked in the Counter and Wall scenario list page$/, function(){
+    HomePage.clickingOnNewBtnInCWScenarioListPage();
+})
+Then(/^the 'Create New Scenario' modal is displayed in the Counter and Wall Scenario list page$/, function(){
+    HomePage.valiadteCreateNewScenarioModalIsDisplayed();
+})
+When(/^the 'View Latest Quote' button is clicked in the (.+) scenario list or option selector page$/, function(Service_Offering) { 
+    HomePage.clickingOnViewLatestQuoteBtnInScenarioListPage(Service_Offering);
+})
+When(/^the 'View Quote History' button is clicked in the buyer info page for (.+) service offering$/, function(Service_Offering)  {
+    HomePage.clickingOnViewQuoteHistoryButton(Service_Offering);
+})
+Then(/^the Quote History dialog box for (.+) service offering is displayed in the Buyer info page$/, function(Service_Offering) {
+    HomePage.validateQuoteHistoryDialogBox(Service_Offering);
+})
+When(/^the 'View' link is clicked in Quote History dialog box for the first quote listed in the  Buyer info page$/, function() { 
+    HomePage.clickingOnQuoteHistoryDialogBox();
+})
+Then(/^the Buyer's report page loads successfully$/, function() {
+     expectToHaveTitle('HDS (QA) - Report List - HDS');
+})
+When(/^User Navigates to The Buyer's Report page in DC$/, function()  {
+    buyersPage.navigateToBuyersReportsPage();
+})
+When(/^the (.+) link is cliked in the buyer's report page$/, function(Report_Type) {
+    HomePage.clickingOnReportTypeInReportsPage(Report_Type);
+})
+Then(/^the (.+) page of the selected (.+) of the Buyer is loaded$/, function(Expected_Page, Report_Type) {
+    if (Report_Type == 'hypSaleCalculatorSummary'){
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    }  else if (Report_Type == 'hypCalculatorBreakdown'){
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    }  else if (Report_Type == 'hypCWCalculatorBreakdownReport') {
+        quotePage.validateDownloadedFilesFor(Expected_Page);
+    } else {
+        expectToHaveTitle(Expected_Page);
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -99,7 +99,8 @@ module.exports = {
 
     switchToNewWindow: function(windowName){
         browser.switchWindow(windowName);
-        console.log("switched to window"+windowName)
+        console.log("switched to window>>>"+windowName)
+        allureReporter.addStep("switched to window"+windowName)
     },
 
     acceptAlert: function(){
@@ -185,16 +186,37 @@ module.exports = {
             allureReporter.addStep(elementLabel+' is not displayed', getScreenshot(), 'failed');
         }
     },
-
-    expectToHaveTitle:async function(title){
+    expectNotToBeDisplayed: function(element, elementLabel){
         try {
-            await expect(browser).toHaveTitle(title);
-            this.pauseBrowser(5000)
+            const ele = element;
+            expect(ele).not.toBeDisplayed();
+            allureReporter.addStep(elementLabel+' is not displayed',getScreenshot(), 'passed');
+        } catch (Error) {   
+            allureReporter.addStep(elementLabel+' is  Present',getScreenshot(), 'failed');   
+            throw new ElementNotFoundError(elementLabel+' Element Is  Present ');
+        }
+    },
+    
+
+
+    expectToHaveTitle: function(title){
+        try {
+            expect(browser).toHaveTitle(title);
             allureReporter.addStep('Validated that '+title+' is successfully displayed', getScreenshot(),'passed');
         } catch (Error) {
             allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');
         }
     },
+    expectToHaveUrlContaining : function(contains) { 
+        try {
+            expect(browser).toHaveUrlContaining(contains);
+            allureReporter.addStep('Validated that URL contains '+contains+' is successfully displayed', getScreenshot(),'passed');
+        } catch (error) {
+            allureReporter.addStep('Expected URL contains '+contains+' is not displayed', getScreenshot(), 'failed');
+
+        }
+    },
+
 
     getAttributeValue: function(element, attribute){
         try {
@@ -314,22 +336,22 @@ module.exports = {
     },
 
     waitUntilElementIsDisabled : function (element) {
-    try {
-        console.log("IN WAIT UNTIL");
-        browser.waitUntil(
-            () => element.isDisplayed() === false,
-            WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE,
-            'ELEMENT IS STILL ENABLED AFTER '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
-    } catch (Error) {
-        console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
-    }
-        
-    },
+        try {
+            console.log("IN WAIT UNTIL");
+            browser.waitUntil(
+                () => element.isDisplayed() === false,{
+                timeout : WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE,
+                timeoutMsg : 'ELEMENT IS STILL ENABLED AFTER '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE});
+        } catch (Error) {
+            console.log('Element is still displayed after '+WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE);
+        }
+            
+        },
 
     waitForFileToDownload : function(fileName){
         try {
             browser.waitUntil(
-                () => fs.existsSync('./Reports/downloads/'+fileName) == true,{
+                () => fs.existsSync('./Reports/downloads/'+fileName) === true,{
                 timeout : WAIT_UNTIL_FILE_DOWNLOAD,
                 timeoutMsg : "FIle "+fileName+" not downloaded within "+WAIT_UNTIL_FILE_DOWNLOAD/1000+" seconds"
                 }
@@ -338,5 +360,34 @@ module.exports = {
         } catch (Error) {
             allureReporter.addStep(fileName+" not downloaded within "+WAIT_UNTIL_FILE_DOWNLOAD/1000+" seconds" ,getScreenshot(), 'failed')
         }
+    },
+    assertEquals : function(actual, expected){
+        try {
+            ASSERT.equal(actual, expected);
+            allureReporter.addStep(actual+ ' and ' +expected+ ' are equal');
+        } catch (error) {
+            allureReporter.addStep(actual+ ' and ' +expected+ ' are Not equal');
+        }
+    },
+    validateDownloadedFilesFor(expectedFileName){
+        pauseBrowser(10000)
+        fs.readdirSync('./Reports/downloads/').forEach(file=>{
+            if(file.includes(expectedFileName)){  
+                allureReporter.addStep('Validated that the Quote Reports '+file+ ' is downloaded succesfully', 'passed')
+            }else{ 
+                pauseBrowser(10000)     
+            }
+        })
+    },
+    switchToNextWindowArray() {
+        try {
+            browser.pause(5000)
+            browser.switchToWindow(browser.getWindowHandles()[1])
+            allureReporter.addStep("switched to next window", getScreenshot(), 'passed')    
+        } catch (error) {
+            allureReporter.addStep("switch to next window", getScreenshot(), 'failed')
+        }
     }
+
+
 }
