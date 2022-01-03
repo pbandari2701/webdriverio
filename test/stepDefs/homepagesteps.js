@@ -706,6 +706,195 @@ Then(/^the (.+) page of the selected (.+) of the Buyer is loaded$/, function(Exp
         expectToHaveTitle(Expected_Page);
     }
 })
+When(/^the link for one of the areas listed in the CW Scenario overview page is clicked$/, function() { 
+    HomePage.clickingOnStandardAreaCW();
+})
+Then(/^the CW design scenario details page is loaded$/,  function(){
+    expectToHaveTitle ('Counter & Wall: Design Scenario Detail Editor - HDS')
+})
+When(/^the Change Pattern button is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnChangeLayoutBtn();
+})
+Then(/^the Pattern selection modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateChangeLayoutModalIsDisplayed();
+}) 
+
+When(/^the select Grout buttn is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnSelectGroutBtn();
+})
+Then(/^the Grout selection modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateSelectGroutModalIsDisplayed();
+}) 
+When(/^the Optional Design Feature buttn is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnOptionalDesignFeatureBtn();
+})
+Then(/^the Optional Design Feature selection modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateOptionalDesignFeaturesModal();
+}) 
+When(/^the Speciality Items buttn is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnSpecialityItemsBtn();
+})
+Then(/^the Speciality Items selection modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateSpecialityItemsModalIsDisplayed();
+}) 
+When(/^the Extras buttn is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnExtrasBtn();
+})
+Then(/^the Optional Extras selection modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateExtrasModalIsDisplayed();
+}) 
+When(/^the Adjustments buttn is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnAdjustmentsBtn();
+})
+Then(/^the Adjustments modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateAdjustmentsModalIsDisplayed();
+}) 
+When(/^the Search button for any one of the required design features is clicked in the CW design scenario details page$/, function() {
+    HomePage.clickingOnRequiredDesignFeaturesSearch();
+})
+Then(/^the Product Search modal is displayed in the CW scenario details page$/, function() {
+    HomePage.validateSearchProductsModalIsDisplayed();
+}) 
+When(/^Communities page link under Community Management Menu is clicked$/,  function(){
+    HomePage.clickingOnCommmunitiesCMLink();
+})
+When(/^User opens community named (.+)$/, function(Community_Name) {
+    HomePage.setValueToCommunitiesSearchBox (Community_Name);
+})
+Then(/^Community info page is loaded$/,  function() {
+    expectToHaveTitle('Community Editor - HDS');
+})
+When(/^the tab (.+) is clicked in the Community Home page$/, function(CommunityTab) {
+    HomePage.clickingOnCommunityTab (CommunityTab);
+})
+Then(/^the panel (.+) for (.+) tab is displayed in the Community Home page$/, function(CommunityPanel, CommunityTab) {
+   HomePage.validatePanelForCommunityTabIsDisplayed(CommunityPanel, CommunityTab);
+})
+When(/^the Add New Contact link is clicked in the contact setup tab of the community home page$/, function() { 
+    HomePage.clickingOnAddNewContactLink();
+})
+Then(/^a new row is added to the contact setup tab of the community home page$/, function() {
+    HomePage.validateNewRowAddedInContactSetup();
+})
+When(/^the Builders Link is clicked under community management$/,  function(){
+    HomePage.clickingOnBuildersCM();
+})
+Then(/^The builders list page for the community is loaded$/, function() {
+    expectToHaveTitle('Builder List - HDS');
+})
+When(/^the Open button is clicked for the first builder listed in the Community Builders list page$/, function() {
+    HomePage.clickingOnFirstBuildersCM();
+})
+Then(/^the community Builder Editor page is opened$/,  function(){
+    expectToHaveTitle("Builder Editor - HDS");
+}) 
+When(/^the New button is clicked in the Community builders list page$/, function() {
+    HomePage.clickingOnnewBtnInCM();
+})
+When(/^the Add New Cutoff button is clicked in the community home page$/, function() {
+    HomePage.clickingOnAddNewCutOffBtn();
+})
+Then(/^the LSO cutoff page for the community is loaded$/, function() {
+    HomePage.validateLSOCutOffPageHeadingIsDisplayed();
+})
+When(/^the Open button is clicked for a randomly selected LSO Cutoff in the community home page$/, function() {
+    HomePage.clickingOnOpenBtnInLSOCutOffPage();
+})
+When(/^User clicks on Product Setup Link under Community Management$/, function(){
+    HomePage.clickingOnProductSetupLinkCM();
+})
+Then(/^the Community Product setup page is loaded$/,  function(){
+    expectToHaveTitle('Product List - HDS');
+})
+When(/^the Open button is clicked for a randomly selected product in the community product setup list page$/, function() { 
+    HomePage.clickingOnOpenBtnInCommunityProductSetupListPage();
+})
+Then(/^the Product Editor page for the community product setup is loaded$/, function() { 
+    expectToHaveTitle('Available Product Editor - HDS')
+})
+When(/^the View button in the community product setup product editor page is clicked$/, function() { 
+
+})
+Then(/^the history page for the selected Product of the community product setup is loaded$/, function() { 
+
+})
+When(/^User clicks on Standards Setup link under Community Management$/, function(){
+    HomePage.clickingOnStandardSetupLinkCM();
+})
+Then(/^the Community Standards setup page is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Standards Setup - HDS');
+})
+When(/^User clicks on Edit button for one of the standard products listed in the Community standard setup page$/, function()  {
+    HomePage.clickingOnEditBtnInStandardProducts();
+})
+Then(/^the product search modal is displayed in the community standard setup page$/, function() { 
+    HomePage.validateSearchProductsModalIsDisplayed();
+})
+When(/^User clicks on 'Add Product' button in the Community standard setup page$/, function() {
+    HomePage.clickingOnAddProductBtnInStandardProducts();
+})
+When(/^the (.+) is clicked in the Community standard setup page$/, function(tabname)  {
+    HomePage.clickingOnTabCommunityStandardSetupPage(tabname);
+})
+Then(/^(.+) are displayed in the Community standard setup page$/, function(Categories) {
+    HomePage.validateCatgryCommunityStandardSetupPageIsDisplayed (Categories);
+})
+When(/^User clicks on Floor Plan Link under Community Management$/, function(){
+    HomePage.clickingOnFloorPlansCM();
+})
+Then(/^the Community Floor Plan list page is loaded$/,  function(){
+    expectToHaveTitle('Floor Plans - HDS');
+})
+When(/^User clicks on Flooring Group Link under Community Management$/, function(){
+    HomePage.clickingOnFlooringGroupLinkCM();
+})
+Then(/^the Community Flooring Group list page is loaded$/,  function(){
+    expectToHaveTitle('HDS (QA) - Flooring Group Setup - HDS');
+}) 
+When(/^User clicks on Lifestyle Options Link under Community Management$/, function(){
+    HomePage.clickingOnLifestyleOptionsLinkCM();
+})
+Then(/^the Community Lifestyle Options list page is loaded$/,  function(){
+    expectToHaveTitle('Lifestyle Options - HDS');
+})
+When(/^the Open button is clicked for a randomly selected LSO in the community LSO page$/, function() {
+    HomePage.clickingOnOpenBtnInLSOCommunityPage();
+})
+Then(/^the Community LSO editor page is loaded$/,  function(){
+    expectToHaveTitle('Lifestyle Option Editor - HDS');
+})
+When(/^the New button is clicked in the community LSO page$/, function() {
+    HomePage.clickingOnNewBtnInCommunityLSOPage();
+})
+When(/^User clicks on Lifestyle Options (.+) under Community Management$/, function(link){
+    HomePage.clickingOnLSOOptions (link);
+})
+Then(/^the Community Lifestyle Options (.+) is loaded$/,  function(linkpage){
+    expectToHaveTitle(linkpage);    
+})
+When(/^User clicks on Homesite Link under Community Management$/,  function(){
+    HomePage.clickingOnHomesiteSetupLinkCM();
+})
+Then(/^the Community Homesite Setup page is loaded$/,  function(){
+    expectToHaveTitle('Homesite Setup - HDS');
+})
+When(/^the Edit button for the first homesite listed in the commmunity Homesite setup page is clicked$/, function(){
+    HomePage.clickingOnEditButtonInHomesiteSetupPageCM();
+})
+Then(/^the Community Homesite Editor page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Homesite Information - HDS');
+})
+When(/^the New button is clicked in the commmunity Homesite setup page$/, function() {
+
+})
+
+
+
+
+
+
+
+
 
 
 

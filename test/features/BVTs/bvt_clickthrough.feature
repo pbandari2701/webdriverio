@@ -1340,94 +1340,125 @@ Examples:
 
 
 
-#  #Buyers - Open -Reports - Flooring Quote Calculator Breakdown
-
-# @q
-# #Buyers - Open - CW - Open -  Scenario details page (open area)
-# Scenario:  Verify_DC_Buyers_Open_CW_scneario_details_page
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 	 When the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	 Then the CW design scenario details page is loaded
+ #Buyers - Open -Reports - Flooring Quote Calculator Breakdown
 
 
-# #Buyers - Open - CW - Open -  Scenario details page (open area) - Change Pattern
-# #243
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_pattern_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Change Pattern button is clicked in the CW design scenario details page
-# 	Then the Pattern selection modal is displayed in the CW scenario details page 
+
+
+#Buyers - Open - CW - Open -  Scenario details page (open area)
+@tc:2171 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_scneario_details_page
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+	 	And the link for one of the areas listed in the CW Scenario overview page is clicked
+	Then the CW design scenario details page is loaded
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+
+
+#Buyers - Open - CW - Open -  Scenario details page (open area) - Change Pattern
+#243
+@tc:2172 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_pattern_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Change Pattern button is clicked in the CW design scenario details page
+	Then the Pattern selection modal is displayed in the CW scenario details page 
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
 
 # #Buyers - Open - CW - Open -  Scenario details page (open area) - Change Grout
-
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_Change_Grout_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Change Grout buttn is clicked in the CW design scenario details page
-# 	Then the Grout selection modal is displayed in the CW scenario details page 
+@tc:2173 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_Change_Grout_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the select Grout buttn is clicked in the CW design scenario details page
+	Then the Grout selection modal is displayed in the CW scenario details page
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - CW - Open -  Scenario details page (open area) - Opt. Design Feat. - 
-
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_Opt_Design_Feature_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Optional Design Feature buttn is clicked in the CW design scenario details page
-# 	Then the Optional Design Feature selection modal is displayed in the CW scenario details page 
+@tc:2174 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_Opt_Design_Feature_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Optional Design Feature buttn is clicked in the CW design scenario details page
+	Then the Optional Design Feature selection modal is displayed in the CW scenario details page
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - CW - Open -  Scenario details page (open area) - Speciality Items
-
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_Specialty_Items_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Speciality Items buttn is clicked in the CW design scenario details page
-# 	Then the Speciality Items selection modal is displayed in the CW scenario details page 
+@tc:2175 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_Specialty_Items_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Speciality Items buttn is clicked in the CW design scenario details page
+	Then the Speciality Items selection modal is displayed in the CW scenario details page 
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
 # #Buyers - Open - CW - Open -  Scenario details page (open area) - Extras
-
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_Extras_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Extras buttn is clicked in the CW design scenario details page
-# 	Then the Optional Extras selection modal is displayed in the CW scenario details page 
+@tc:2176 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_Extras_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Extras buttn is clicked in the CW design scenario details page
+	Then the Optional Extras selection modal is displayed in the CW scenario details page
+Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
+ 
 
 # #Buyers - Open - CW - Open -  Scenario details page (open area) - Adjustments
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_Adjustments_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Adjustments buttn is clicked in the CW design scenario details page
-# 	Then the Adjustments modal is displayed in the CW scenario details page 
+@tc:2177 @clickthrough @bvt
+Scenario:  Verify_DC_Buyers_Open_CW_details_page_Adjustments_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Adjustments buttn is clicked in the CW design scenario details page
+	Then the Adjustments modal is displayed in the CW scenario details page
+ Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
-# #Buyers - Open - CW - Open -  Scenario details page (open area) - Design Feat. Search
-# Scenario:  Verify_DC_Buyers_Open_CW_details_page_design_Feature_Search_bttn
-# 	Given Buyer's list page is opened
-# 		And A buyer with the following attributes is opened: Bella Fiore-25522250000,Automation101
-# 		And User navigates to the buyer's scenario list/options selector Page for Counter and Wall Service Offering
-# 		And The active Counter and Wall design scenario is opened if Svc Offering is Flooring or CW
-# 		And the link for one of the areas listed in the CW Scenario overview page is clicked
-# 	When the Search button for any one of the required design features is clicked in the CW design scenario details page
-# 	Then the Product Search modal is displayed in the CW scenario details page 
+#Buyers - Open - CW - Open -  Scenario details page (open area) - Design Feat. Search
+@tc:2178 @clickthrough @bvt
+Scenario Outline:  Verify_DC_Buyers_Open_CW_details_page_design_Feature_Search_bttn
+	Given Buyers page link under Design Center Menu is clicked
+	When A buyer with the following attributes is opened: <Community_Name> and <Buyer_Name>
+		And the link for the <Service_Offering> scenario list or Options selector page is clicked
+		And The active <Service_Offering> design scenario is opened if Svc Offering is Flooring or CW
+		And the link for one of the areas listed in the CW Scenario overview page is clicked
+		And the Search button for any one of the required design features is clicked in the CW design scenario details page
+	Then the Product Search modal is displayed in the CW scenario details page 
+ Examples: 
+ | Service_Offering   | Buyer_Name      | Community_Name          |
+ | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
 
 
 #  #Buyers - Open -Reports - Job Report Material and Labor Breakdown (Quote)
@@ -1441,24 +1472,24 @@ Examples:
 
 
 
-# #Communities list
-# #105
-# Scenario: Verify_Comm_Communities_List page  
-# 	Given HDS Home page is displayed
-# 	When  Communities page link under Community Management Menu is clicked
-# Then  Communities page of the Community Management Menu is loaded 
-
-
-
-# #  CM - Open 
-# #111
-# Scenario:  Verify_Comm_HomePage
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	When User opens community named Bella Fiore-25522250000
-# 	Then Community info page is loaded
-
-
+#Communities list
+#105
+@tc:2179 @clickthrough @bvt
+Scenario: Verify_Comm_Communities_List page  
+	Given HDS Home page is displayed
+	When  Communities page link under Community Management Menu is clicked
+	Then  Communities page of the Community Management Menu is loaded
+#  CM - Open 
+#111
+@tc:2180 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_HomePage
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+	Then Community info page is loaded
+Examples:
+|Community_Name   |
+|Westford 3s PH 2 |
 
 # #CM - Open - Community Setup (tab)   
 # #CM - Open - Report Setup (tab)
@@ -1466,315 +1497,350 @@ Examples:
 # #CM - Open  - Calculation Setup (tab)
 # #CM - Open  - Contact Setup (tab)
 # #CM - Open  - Service Offerings (tab)
-# Scenario Outline: Verify_Comm_HomePage_Tabs
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When the tab <CommunityTab> is clicked in the Community Home page
-# 	Then the panel for <CommunityTab> tab is displayed in the Community Home page
+@tc:2181 @clickthrough @bvt
+Scenario Outline: Verify_Comm_HomePage_Tabs
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And the tab <CommunityTab> is clicked in the Community Home page
+	Then the panel <CommunityPanel> for <CommunityTab> tab is displayed in the Community Home page
+Examples: 
+|CommunityTab      |Community_Name   |CommunityPanel  				|
+|Community Setup   |Westford 3s PH 2 |Community Information:		|
+|Report Setup      |Westford 3s PH 2 |Report Disclosure Statements |
+|Email Setup       |Westford 3s PH 2 |Email Templates				|
+|Calculation Setup |Westford 3s PH 2 |Builder Calculation Method:	|
+|Contact Setup     |Westford 3s PH 2 |Add New Contact				|
+|Service Offerings |Westford 3s PH 2 |Service Offerings:			|
 
-# Examples: 
-# | CommunityTab      |
-# | Community_Setup   |
-# | Report_Setup      |
-# | Email_Setup       |
-# | Calculation_Setup |
-# | Contact_Setup     |
-# | Service_Offering  |
+#CM - Open - Community Setup - Add Contact - Add New Contact
+@tc:2182 @clickthrough @bvt
+Scenario Outline: Verify_Comm_HomePage_ContactSetup_Add New Contact
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And the tab <CommunityTab> is clicked in the Community Home page
+		And the Add New Contact link is clicked in the contact setup tab of the community home page
+	Then a new row is added to the contact setup tab of the community home page
+Examples: 
+| CommunityTab      |Community_Name   |
+| Contact Setup     |Westford 3s PH 2 |
 
-
-
-# #CM - Open - Community Setup - Add Contact - Add New Contact
-# Scenario Outline: Verify_Comm_HomePage_ContactSetup_Add New Contact
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And the tab <CommunityTab> is clicked in the Community Home page
-# 	When the Add New Contact button/link is clicked in the contact setup tab of the community home page
-# 	Then a new row is added to the contact setup tab of the community home page
-# Examples: 
-# | CommunityTab      |
-# | Contact_Setup     |
-
-# #Builders (Community Management)
-# #101
-# Scenario: Verify_Comm_Builders
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	When the Builders Link is clicked under community management
-# 	Then The builders list page for the community is loaded
+#Builders (Community Management)
+#101
+@tc:2183 @clickthrough @bvt
+Scenario: Verify_Comm_Builders
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When the Builders Link is clicked under community management
+	Then The builders list page for the community is loaded
 
 # #Builders - Open (Community Management)
 # #102
-# Scenario: Verify_Comm_Builders_Open
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And the Builders Link is clicked under community management
-# 	When the Open button is clicked for the first builder listed in the Community Builders list page
-# 	Then the community Builder Editor page is opened 
+@tc:2184 @clickthrough @bvt
+Scenario: Verify_Comm_Builders_Open
+	Given HDS Home page is displayed
+		And the Builders Link is clicked under community management
+	When the Open button is clicked for the first builder listed in the Community Builders list page
+	Then the community Builder Editor page is opened 
 
-# ##Builders - Open - Add New Contacts - (Community Management)
-# ##103
-# #Scenario: Verify_Comm_Builders_Open_AddNewContact
-# #	Given HDS Home page is displayed
-# #		And the Builders Link is clicked under community management
-# #		And the Open button is clicked for the first builder listed in the Community Builders list page
-# #	When the Add New Contact button is clikcked in the community builder editor page
-# #	Then the Contact editor page for the community builder is loaded
+#Builders - Open - Add New Contacts - (Community Management)
+#103
+@q1 @tc:2185 @clickthrough @bvt
+Scenario: Verify_Comm_Builders_Open_AddNewContact
+	Given HDS Home page is displayed
+		And the Builders Link is clicked under community management
+		And the Open button is clicked for the first builder listed in the Community Builders list page
+	When the Add New Contact button is clikcked in the community builder editor page
+	Then the Contact editor page for the community builder is loaded
 
-# #Builders - New (Community Management)
-# #104
-# Scenario: Verify_Comm_Builders_New_
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And the Builders Link is clicked under community management
-# 	When the New button is clicked in the Community builders list page
-# 	Then the community Builder Editor page is opened 
+#Builders - New (Community Management)
+#104
+@tc:2186 @clickthrough @bvt
+Scenario: Verify_Comm_Builders_New_
+	Given HDS Home page is displayed
+		And the Builders Link is clicked under community management
+	When the New button is clicked in the Community builders list page
+	Then the community Builder Editor page is opened 
 
-# ##CM - Open - Community Setup - Add Contact
-# ##117
-# #Scenario: Verify_Comm_HomePage_Add_Builder_Contact
-# #	Given HDS Home page is displayed
-# #		And Communities list page is opened
-# #		And User opens community named 0AutmtionTier1_Dont_delete
-# #	When the Add Contact button is clicked in the community home page
-# #	Then the builder Community contact page is loaded
-
-	
-# #CM - Open - Community Setup - Add New cutoff 
-# #119
-# Scenario: Verify_Comm_HomePage_Add_New_Cutoff
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When the Add New Cutoff button is clicked in the community home page
-# 	Then the LSO cutoff page for the community is loaded
+#CM - Open - Community Setup - Add Contact
+#117
+@q1 @tc:2187 @clickthrough @bvt
+Scenario: Verify_Comm_HomePage_Add_Builder_Contact
+	Given HDS Home page is displayed
+		And Communities list page is opened
+		And User opens community named 0AutmtionTier1_Dont_delete
+	When the Add Contact button is clicked in the community home page
+	Then the builder Community contact page is loaded
 
 	
-# #CM - Open - Community Setup -Open LSO cutff 
-# #120
-# Scenario: Verify_Comm_HomePage_Open_LSO_Cutoff
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When the Open button is clicked for a randomly selected LSO Cutoff in the community home page
-# 	Then the LSO cutoff page for the community is loaded
-
-
-# #CM - Open - Prod Setup	
-# #121
-# Scenario:  Verify_Comm_ProdSetupPage
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Product Setup Link under Community Management
-# 	Then the Community Product setup page is loaded
-
-# #CM - Open - Prod Setup	- Open
-# #121
-# Scenario:  Verify_Comm_ProdSetupPage_Open
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	And User opens community named Bella Fiore-25522250000
-# 	And User clicks on Product Setup Link under Community Management
-# 	When the Open button is clicked for a randomly selected product in the community product setup list page
-# 	Then the Product Editor page for the community product setup is loaded
-
-
-# #CM - Open - Prod Setup	- Open
-# #121
-# Scenario:  Verify_Comm_ProdSetupPage_Open_ViewHistory
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	And User opens community named Bella Fiore-25522250000
-# 	And User clicks on Product Setup Link under Community Management
-# 	And the Open button is clicked for a randomly selected product in the community product setup list page
-# 	When the View button in the community product setup product editor page is clicked
-# 	Then the history page for the selected Product of the community product setup is loaded
-
-
-# #CM - Open - Standards Setup
-# #126
-# Scenario:  Verify_Comm_Standard_Setup_page
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Standards Setup link under Community Management
-# 	Then the Community Standards setup page is loaded
-
-# #CM - Open - Standards Setup - Edit
-# #127
-# Scenario:  Verify_Comm_Standard_Setup_page_edit_Prod
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Standards Setup link under Community Management
-# 	When User clicks on Edit button for one of the standard products listed in the Community standard setup page
-# 	Then the product search modal is displayed in the community standard setup page
-
-
-# #CM - Open - Standards Setup - Add Product
-# #128
-# Scenario:  Verify_Comm_Standard_Setup_page_Add_Products
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Standards Setup link under Community Management
-# 	When User clicks on 'Add Product' button in the Community standard setup page
-# 	Then the product search modal is displayed in the community standard setup page
-
-# #CM - Open - Standards Setup - Flring Stndard prods (tab)
-# #130
-# Scenario:  Verify_Comm_Standard_Setup_page_Flooring_Tab
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Standards Setup link under Community Management
-# 	When the Flooring tab is clicked in the Community standard setup page
-# 	Then Flooring Product Categories are displayed in the Community standard setup page
+#CM - Open - Community Setup - Add New cutoff 
+#119
+@tc:2188 @clickthrough @bvt
+Scenario Outline: Verify_Comm_HomePage_Add_New_Cutoff
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And the Add New Cutoff button is clicked in the community home page
+	Then the LSO cutoff page for the community is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 	
-# #CM - Open - Standards Setup - CW Standard prods (tab)
-# Scenario:  Verify_Comm_Standard_Setup_page_CW_Tab
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Standards Setup link under Community Management
-# 	When the CW tab is clicked in the Community standard setup page
-# 	Then CW Product Categories are displayed in the Community standard setup page
+#CM - Open - Community Setup -Open LSO cutff 
+#12
+@tc:2189 @clickthrough @bvt
+Scenario: Verify_Comm_HomePage_Open_LSO_Cutoff
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And the Open button is clicked for a randomly selected LSO Cutoff in the community home page
+	Then the LSO cutoff page for the community is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
+
+#CM - Open - Prod Setup	
+#121
+@tc:2190 @clickthrough @bvt
+Scenario:  Verify_Comm_ProdSetupPage
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Product Setup Link under Community Management
+	Then the Community Product setup page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
+
+#CM - Open - Prod Setup	- Open
+#121
+@tc:2191 @clickthrough @bvt
+Scenario:  Verify_Comm_ProdSetupPage_Open
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Product Setup Link under Community Management
+		And the Open button is clicked for a randomly selected product in the community product setup list page
+	Then the Product Editor page for the community product setup is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
+
+#CM - Open - Prod Setup	- Open
+#121
+@q1 @tc:2192 @clickthrough @bvt
+Scenario:  Verify_Comm_ProdSetupPage_Open_ViewHistory
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+	And User clicks on Product Setup Link under Community Management
+	And the Open button is clicked for a randomly selected product in the community product setup list page
+	When the View button in the community product setup product editor page is clicked
+	Then the history page for the selected Product of the community product setup is loaded
 
 
-# #CM - Open - Floor Plans 
-# Scenario:  Verify_Comm_FloorPlan_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Floor Plan Link under Community Management
-# 	Then the Community Floor Plan list page is loaded 
+#CM - Open - Standards Setup
+#126
+@tc:2193 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_Standard_Setup_page
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+	When User clicks on Standards Setup link under Community Management
+	Then the Community Standards setup page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - Flooring Group Setup 
-# Scenario:  Verify_Comm_FlrngGrpSetUp_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 	And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Flooring Group Link under Community Management
-# 	Then the Community Flooring Group list page is loaded 
+#CM - Open - Standards Setup - Edit
+#127
+@tc:2194 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_Standard_Setup_page_edit_Prod
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Standards Setup link under Community Management
+		And User clicks on Edit button for one of the standard products listed in the Community standard setup page
+	Then the product search modal is displayed in the community standard setup page
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - LifeStyle Options  
-# Scenario:  Verify_Comm_LSO_list_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Lifestyle Options Link under Community Management
-# 	Then the Community Lifestyle Options list page is loaded
+#CM - Open - Standards Setup - Add Product
+#128
+@tc:2195 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_Standard_Setup_page_Add_Products
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Standards Setup link under Community Management
+		And User clicks on 'Add Product' button in the Community standard setup page
+	Then the product search modal is displayed in the community standard setup page
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - LifeStyle Options  - Open
-# #169
-# Scenario:  Verify_Comm_LSO_list_Pg Open
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Lifestyle Options Link under Community Management
-# 	When the Open button is clicked for a randomly selected LSO in the community LSO page
-# 	Then the Community LSO editor page is loaded 
-
-# #CM - Open - LifeStyle Options  - New
-# #167
-# Scenario:  Verify_Comm_LSO_list_Pg New
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Lifestyle Options Link under Community Management
-# 	When the New button is clicked in the community LSO page
-# 	Then the Community LSO editor page is loaded 
-
-
-
-# # CM - Open - LifeStyle Options - Plan Import  
-# Scenario:  Verify_Comm_LSO_PlnImport_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Lifestyle Options plan import Link under Community Management
-# 	Then the Community Lifestyle Options plan import page is loaded
-
-
-# #CM - Open - LifeStyle Options (option )import 
-# #174 
-# Scenario:  Verify_Comm_LSO_Option_Import_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Lifestyle Options option import Link under Community Management
-# 	Then the Community Lifestyle Options option import page is loaded
+#CM - Open - Standards Setup - Flring Stndard prods (tab)
+#130
+@tc:2196 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_Standard_Setup_page_Flooring_Tab
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Standards Setup link under Community Management
+		And the <tabname> is clicked in the Community standard setup page
+	Then <Categories> are displayed in the Community standard setup page
+Examples:
+	| tabname 		| Categories 		 |Community_Name  	|
+	| flooring_tab  |flooring_products	 | Westford 3s PH 2	|
+	| cw_tab		|cw_products		 | Westford 3s PH 2 |
+	| edge_tab		|edge_types			 | Westford 3s PH 2 |
 	
-# # CM - Open - LifeStyle Options - Option Export  
-# Scenario:  Verify_Comm_LSO_Option_Export_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Lifestyle Options option export Link under Community Management
-# 	Then the Community Lifestyle Options option export page is loaded
+#CM - Open - Floor Plans
+@tc:2197 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_FloorPlan_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	Then the Community Floor Plan list page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
+ 
+#CM - Open - Flooring Group Setup 
+@tc:2198 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_FlrngGrpSetUp_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Group Link under Community Management
+	Then the Community Flooring Group list page is loaded 
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
+#CM - Open - LifeStyle Option 
+@tc:2199 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_LSO_list_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options Link under Community Management
+	Then the Community Lifestyle Options list page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - LifeStyle Options Export  - View Options
-# #173
-# Scenario:  Verify_Comm_LSO_Option_Export_ViewOption_Bttn
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Lifestyle Options option export Link under Community Management
-# 	When the View Options button is clicked in the community LSO export page
-# 	Then the options table is displayed in the community LSO export page
+#CM - Open - LifeStyle Options  - Open
+#169
+@tc:2200 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_LSO_list_Pg Open
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options Link under Community Management
+		And the Open button is clicked for a randomly selected LSO in the community LSO page
+	Then the Community LSO editor page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - LifeStyle Options   -  Plan Export - View Options
-# #177
-# Scenario:  Verify_Comm_LSO_Plan_Export_ViewOption_Bttn
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Lifestyle Options option export Link under Community Management
-# 		When the View Options button is clicked in the community Lifestyle Options plan export page
-# 	Then the options table is displayed in the community Lifestyle Options plan export page
+#CM - Open - LifeStyle Options  - New
+#167
+@tc:2201 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_LSO_list_Pg New
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options Link under Community Management
+		And the New button is clicked in the community LSO page
+	Then the Community LSO editor page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-
-# #CM - Open - LifeStyle Options   -  Plan Export 
-# Scenario:  Verify_Comm_LSO_PlnExport_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Lifestyle Options plan export Link under Community Management
-# 	Then the Community Lifestyle Options plan export page is loaded
-
+# CM - Open - LifeStyle Options - all
+@tc:2202 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_LSO_all_options
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options <link> under Community Management
+	Then the Community Lifestyle Options <linkpage> is loaded
+Examples:
+|Community_Name   |link 			|linkpage										|
+|Westford 3s PH 2 |plan_import      |HDS (QA) - Lifestyle Options Plan Import - HDS	|
+|Westford 3s PH 2 |import   		|HDS (QA) - Lifestyle Options Import - HDS		|
+|Westford 3s PH 2 |export   		|Lifestyle Options Export - HDS					|
+|Westford 3s PH 2 |plan_export   	|HDS (QA) - Lifestyle Options Plan Export - HDS |
 	
-# #CM - Open - Homesites    
-# Scenario:  Verify_Comm_Homesite_Setup_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Homesite Link under Community Management
-# 	Then the Community Homesite Setup page is loaded
+#  CM - Open - LifeStyle Options Export  - View Options
+#173
+@tc:2203 @clickthrough @bvt @q1
+Scenario Outline:  Verify_Comm_LSO_Option_Export_ViewOption_Bttn
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options export under Community Management
+	When the View Options button is clicked in the community LSO export page
+	Then the options table is displayed in the community LSO export page
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
-# #CM - Open - Homesites   - Open
-   
-# Scenario:  Verify_Comm_Homesite_Setup_Pg_Edit
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Homesite Link under Community Management
-# 	When the Edit button for the first homesite listed in the commmunity Homesite setup page is clicked
-# 	Then the Community Homesite Editor page is loaded
+#CM - Open - LifeStyle Options   -  Plan Export - View Options
+#177
+@tc:2204 @clickthrough @bvt @q1
+Scenario Outline:  Verify_Comm_LSO_Plan_Export_ViewOption_Bttn
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Lifestyle Options option export Link under Community Management
+		When the View Options button is clicked in the community Lifestyle Options plan export page
+	Then the options table is displayed in the community Lifestyle Options plan export page
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
+	
+#CM - Open - Homesites
+@tc:2205 @clickthrough @bvt
+Scenario Outline:  Verify_Comm_Homesite_Setup_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Homesite Link under Community Management
+	Then the Community Homesite Setup page is loaded
+Examples:
+|Community_Name  |
+|Westford 3s PH 2|
 
+#CM - Open - Homesites   - Open
+@tc:2206 @clickthrough @bvt  
+Scenario Outline:  Verify_Comm_Homesite_Setup_Pg_Edit
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Homesite Link under Community Management
+	When the Edit button for the first homesite listed in the commmunity Homesite setup page is clicked
+	Then the Community Homesite Editor page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Homesites   - New
-   
-# Scenario:  Verify_Comm_Homesite_Setup_Pg_New
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Homesite Link under Community Management
-# 	When the New button is clicked in the commmunity Homesite setup page
-# 	Then the Community Homesite Editor page is loaded
-
+#CM - Open - Homesites   - New
+@tc:2207 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_Homesite_Setup_Pg_New
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Homesite Link under Community Management
+		And the New button is clicked in the commmunity Homesite setup page
+	Then the Community Homesite Editor page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
 # #CM - Open - Copy Utilities 
 # Scenario:  Verify_Comm_Copy_Utilities_Pg

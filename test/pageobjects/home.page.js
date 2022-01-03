@@ -128,7 +128,7 @@ class HomePage extends BasePage{
  get homesiteSetupDC ()                     { return $("//a[text()='Homesite Setup']")}
  get unsavedChanges ()                      { return $("//strong[text()='YOU HAVE UNSAVED CHANGES!']")}
  get buyersDC ()                            { return $('//a[@href="/dc__buyer_list.aspx"]')}
- get serchBoxBuyers ()                      { return $("//input[@id='txtSearchPhrase']")}
+ get serchBox ()                      { return $("//input[@id='txtSearchPhrase']")}
  get searchGo ()                            { return $("//a[@id='cmdSearch']")}
  get monthlyPaymentButton ()                { return $("//a[@id='_ctl0_MS_hypLoanParameters']")}
  get monthlyPaymentWindow()                 { return $("//span[@id='lblHeading']")}
@@ -188,7 +188,42 @@ class HomePage extends BasePage{
  get CWQuoteHistory ()                      { return $("//span[text()='Counter & Wall Quote History']")}           
  get flooringQuoteHistory ()                { return $("//span[text()='Flooring Quote History']")}
  get LOQuoteHistory ()                      { return $("//span[text()='Lifestyle Options Quote History']")}
- get areaTypeDD ()                                { return $("//select[@id='areaTypeFilter']")}
+ get areaTypeDD ()                          { return $("//select[@id='areaTypeFilter']")}
+ get standardArea  ()                       { return $ ("//span[text()= 'Gourmet Kitchen Backsplash']")} 
+ get changeLayoutBtn ()                     { return $("//button[text()='Change Layout']")} 
+ get changeLayoutModal ()                   { return $("//h4[text()='Change Layout']")}
+ get selectGroutBtn ()                      { return $("//button[text()='Select Grout']")}
+ get selectGroutModal ()                    { return $("//h4[text()='Select Grout']")}
+ get optionalDesignFeatureBtn ()            { return $("//button[@id='buttonOptionalTakeoffs']")}
+ get optionalDesignFeaturesModal ()         { return $("//h4[text()='Optional Design Features']")}
+ get specialityItemsBtn ()                  { return $("//button[@id='buttonAdditionalItems']")}
+ get specialityItemsModal ()                { return $("//h4[text()='Specialty Items']")}
+ get extrasBtn ()                           { return $("//button[@id='buttonOptionalExtras']")}
+ get extrasModal ()                         { return $("//h4[text()='Extras']")}
+ get adjustmentsBtn ()                      { return $("//button[@id='buttonAdjustments']")}
+ get adjustmentsModal ()                    { return $("//h4[text()='Adjustments']")}
+ get  requiredDesignFeaturesSearch ()       { return $("//button[@class='btn btn-info btn-sm cw_detail_search']")}
+ get searchProductsModal ()                 { return $("//h4[text()='Search Products']")}	
+ get commmunitiesCM ()                      { return $("//a[@href='/communitymanagement/community/list.aspx']")}
+ get communitySetupPanel ()                 { return $("//h4[text()='Community Information:']")}
+ get addNewContact ()                       { return $("//a[text()='Add New Contact']")}
+ get newContactRow ()                       { return $("//select[@id='_ctl0_body_grdContacts__ctl5_cboContact']")}
+ get buildersCM ()                          { return $("//a[@href='/communitymanagement/builder/list.aspx']")}
+ get addNewCutOff ()                        { return $("//a[text()=' Add New Cutoff']")}
+ get LSOCutOffPageHeading  ()               { return $("//span[text()='Lifestyle Options Cutoff Date Information - ']")}
+ get LSOOpenBtn ()                          { return $("//a[@id='_ctl0_body_grdCutoffDates__ctl2_hypOpen']")}
+ get productSetup ()                        { return $("//a[text()='Product Setup']")}
+ get standardSetUp ()                       { return $("//a[text()='Standards Setup']")}
+ get addProductBtn ()                       { return $("//button[text()='Add Product']")}
+ get FlooringProdCatgry ()                  { return $("#flooring_products")}
+ get CWProdCatgry ()                        { return $("#cw_products")}
+ get standardEdgeTypesCategory ()           { return $("#edge_types")}
+ get floorPlansCM ()                        { return $('//a[@href="/dm__floorplan_list.aspx"]')}
+ get flooringGroupLinkCM ()                 { return $('//a[@href="/dm__group_editor.aspx?Is_Proposal=0"]')}
+ get lifestyleOptionsCM ()                  { return $('//a[@href="/dm__option_list.aspx"]')}
+ get viewOptionsBtn  ()                     { return $('//input[@value="View Options"]')}
+ get homesiteSetup ()                      { return $('//a[@href="/dm__lot_list.aspx"]')}
+
 
  getReportType(Report_Type) {
      return $("//a[@id='_ctl0__ctl0_body_body_"+Report_Type+"']")
@@ -199,13 +234,33 @@ class HomePage extends BasePage{
  getSubscriberSettingsPageTab(SubscriberSettingsPageTab){ 
     return $('//a[text()="'+SubscriberSettingsPageTab+'"]')
 }
-
+getCommunityTab (CommunityTab){
+    return $('//a[text()="'+CommunityTab+'"]')
+}
+getCommunityPanel (CommunityPanel) {
+    return $('//h4[text()="'+CommunityPanel+'"]')
+}
+getCommunityPanel2 (CommunityPanel){
+    return $('//strong[text()="'+CommunityPanel+'"]')
+}
+getCommunityPanel3 (CommunityPanel)  {
+    return $('//a[text()="'+CommunityPanel+'"]')
+}
+getStandardSetupTabname  (tabname){
+    return $('//a[@id="'+tabname+'"]')
+}
+getStndrdProdCtgry (Categories)  {
+    return $('//div[@id="'+Categories+'"]')
+}
+getLSOOptions(link){
+    return $('//a[@href="/dm__option_'+link+'.aspx"]')
+}
  navigateToProductListPage(){
      waitAndClick(this.productList, "Product List");
      waitAndClick(this.openProduct, "Product")
  }
 
-    validateHDSHomePageIsDisplayed(){
+validateHDSHomePageIsDisplayed(){
         expectToBeDisplayed(this.homeDashboardText, "Home Dashboard");
 }
 
@@ -727,7 +782,7 @@ clickingOnNewButtonInBuyerListPage () {
     waitAndClick(this.newButton2, ' new button');
 }
 setValueToSerchBoxBuyers(Buyer_Name, Community_Name) {
-    sendKeys(this.serchBoxBuyers, Buyer_Name, 'serch Box Buyers' );
+    sendKeys(this.serchBox, Buyer_Name, 'serch Box Buyers' );
     waitAndClick(this.searchGo, 'search Go');
     waitAndClick(this.openButton, 'open button');
 }
@@ -948,6 +1003,163 @@ clickingOnReportTypeInReportsPage(Report_Type) {
 clickingOnQuoteHistoryDialogBox() { 
     waitAndClick(this.viewButton2,'view button');
 }
+clickingOnStandardAreaCW (){
+    waitAndClick (this.standardArea, 'standard area CW');
+    pauseBrowser(5000);
+}
+clickingOnChangeLayoutBtn (){
+    waitAndClick (this.changeLayoutBtn, 'change layout button')
+}
+validateChangeLayoutModalIsDisplayed (){
+    expectToBeDisplayed (this.changeLayoutModal, 'change layout modal')
+}
+ clickingOnSelectGroutBtn  () {
+     waitAndClick (this.selectGroutBtn, 'select grout button')
+ }
+ validateSelectGroutModalIsDisplayed () { 
+     expectToBeDisplayed (this.selectGroutModal, 'select grout modal');
+ }
+ clickingOnOptionalDesignFeatureBtn () {
+     waitAndClick (this.optionalDesignFeatureBtn, 'optional design feature  button')
+ }
+ validateOptionalDesignFeaturesModal (){
+     expectToBeDisplayed (this.optionalDesignFeaturesModal, 'optional design feature modal');
+ }
+ clickingOnSpecialityItemsBtn (){
+     waitAndClick (this.specialityItemsBtn, 'speciality items  button');
+ }
+ validateSpecialityItemsModalIsDisplayed (){
+    expectToBeDisplayed (this.specialityItemsModal, 'speciality items modal');
+ }
+ clickingOnExtrasBtn () {
+     waitAndClick(this.extrasBtn, 'extras button');
+ }   
+ validateExtrasModalIsDisplayed () {
+     expectToBeDisplayed (this.extrasModal, '  Extras modal');
+ }
+ clickingOnAdjustmentsBtn  (){
+     waitAndClick(this.adjustmentsBtn, 'adjustments button');
+ } 
+ validateAdjustmentsModalIsDisplayed () {
+     expectToBeDisplayed (this.adjustmentsModal, ' adjustments modal');
+ }  
+ clickingOnRequiredDesignFeaturesSearch () {
+     waitAndClick(this.requiredDesignFeaturesSearch, 'required design features search');
+ } 
+ validateSearchProductsModalIsDisplayed () {
+     expectToBeDisplayed (this.searchProductsModal, ' search products modal');
+ }
+ clickingOnCommmunitiesCMLink () {
+     waitAndClick (this.commmunitiesCM, ' commmunities link in CM');
+ }
+ setValueToCommunitiesSearchBox (Community_Name) {
+     sendKeys (this.serchBox, Community_Name, Community_Name);
+     waitAndClick(this.searchGo, ' search go');
+     waitAndClick (this.openButton2, ' open button');
+ }
+ clickingOnCommunityTab (CommunityTab) {
+    waitAndClick (this.getCommunityTab(CommunityTab), CommunityTab);
+    pauseBrowser(5000)
+ }
+ validatePanelForCommunityTabIsDisplayed(CommunityPanel, CommunityTab){
+    if(CommunityTab == 'Community Setup') {
+        expectToBeDisplayed(this.getCommunityPanel(CommunityPanel), CommunityPanel)
+    } else if(CommunityTab == 'Report Setup') {
+        expectToBeDisplayed(this.getCommunityPanel(CommunityPanel), CommunityPanel)
+    }else if(CommunityTab == 'Email Setup') {
+        expectToBeDisplayed(this.getCommunityPanel(CommunityPanel), CommunityPanel)
+    }
+    else if(CommunityTab == 'Calculation Setup') {
+        expectToBeDisplayed(this.getCommunityPanel2(CommunityPanel), CommunityPanel)
+    }else if(CommunityTab == 'Contact Setup') {
+        expectToBeDisplayed(this.getCommunityPanel3(CommunityPanel), CommunityPanel)
+    }else if(CommunityTab == 'Service Offerings') {
+        expectToBeDisplayed(this.getCommunityPanel2(CommunityPanel), CommunityPanel)
+    }
+ }
+ clickingOnAddNewContactLink () {
+     waitAndClick (this.addNewContact, 'Add New Contact link')
+ }
+ validateNewRowAddedInContactSetup () {
+     expectToBeDisplayed(this.newContactRow, 'New Contact row');
+ }
+ clickingOnBuildersCM () {
+     waitAndClick (this.buildersCM, 'Builders CM link')
+ }
+ clickingOnFirstBuildersCM () {
+     waitAndClick (this.openButton2, ' open button')
+ }
+ clickingOnnewBtnInCM () {
+     waitAndClick (this.newButton2, ' new button')
+ }
+ clickingOnAddNewCutOffBtn (){
+     waitAndClick (this.addNewCutOff, ' add new cut off  button')
+ }
+ validateLSOCutOffPageHeadingIsDisplayed (){
+     expectToBeDisplayed(this.LSOCutOffPageHeading, 'LSOCutOff page heading');
+ }
+ clickingOnOpenBtnInLSOCutOffPage(){
+    this.LSOOpenBtn.scrollIntoView();
+    waitAndClick (this.LSOOpenBtn, ' open button  in LSO CutOff page');
+ }
+ clickingOnProductSetupLinkCM () {
+     this.productSetup.scrollIntoView();
+     waitAndClick (this.productSetup, ' product setup link');
+ }
+ clickingOnOpenBtnInCommunityProductSetupListPage () {
+     waitAndClick (this.openButton2, ' open button in Community product setup list page');
+     pauseBrowser(5000);
+ }
+ clickingOnStandardSetupLinkCM  (){
+     this.standardSetUp.scrollIntoView();
+     waitAndClick(this.standardSetUp, ' standard SetUp');
+     pauseBrowser(5000)
+ }
+ clickingOnEditBtnInStandardProducts  (){
+     waitAndClick (this.editButton, ' edit button in Community Standards setup list page');
+ }
+ clickingOnAddProductBtnInStandardProducts (){
+     waitAndClick (this.addProductBtn, ' add product button in  Community Standards setup');
+ }
+ clickingOnTabCommunityStandardSetupPage(tabname){
+     waitAndClick (this.getStandardSetupTabname(tabname), tabname);
+ }
+ validateCatgryCommunityStandardSetupPageIsDisplayed (Categories){
+    expectToBeDisplayed(this.getStndrdProdCtgry (Categories), Categories);
+ }
+ clickingOnFloorPlansCM() {
+     this.floorPlansCM.scrollIntoView();
+     waitAndClick( this.floorPlansCM, ' floor plans  CM')
+ }
+ clickingOnFlooringGroupLinkCM (){
+     this.flooringGroupLinkCM.scrollIntoView();
+     waitAndClick (this.flooringGroupLinkCM, ' flooring group link CM');
+ }
+ clickingOnLifestyleOptionsLinkCM (){
+    this.lifestyleOptionsCM.scrollIntoView();
+     waitAndClick (this.lifestyleOptionsCM, 'lifestyle options link CM');
+ }
+ clickingOnOpenBtnInLSOCommunityPage(){
+     waitAndClick (this.openButton2, 'open button in LSO Community page');
+ }
+ clickingOnNewBtnInCommunityLSOPage(){
+     waitAndClick (this.newButton2, 'new button in Community LSO  page')
+ }
+ clickingOnLSOOptions(link){
+     this.getLSOOptions(link).scrollIntoView();
+     waitAndClick (this.getLSOOptions(link), link);
+ }
+clickingOnHomesiteSetupLinkCM (){
+    this.homesiteSetup.scrollIntoView();
+    waitAndClick (this.homesiteSetup, 'homesite setup link');
+}
+clickingOnEditButtonInHomesiteSetupPageCM (){
+    waitAndClick (this.editButton2, 'edit button in homesite setup page');
+}
+clickingOnNewBtnInHomesiteSetupCM (){
+    waitAndClick (this.newButton2, 'new button in homesite');
+}
+
 getData(){
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }
