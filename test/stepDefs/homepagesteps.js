@@ -885,9 +885,183 @@ Then(/^the Community Homesite Editor page is loaded$/,  function() {
     expectToHaveTitle('HDS (QA) - Homesite Information - HDS');
 })
 When(/^the New button is clicked in the commmunity Homesite setup page$/, function() {
+    HomePage.clickingOnNewBtnInHomesiteSetupCM();
+})
+When(/^User clicks on Copy Utilities Link under Community Management$/,  function(){
+    HomePage.clickingOnCopyUtilityCM();
+})
+Then(/^the Community Copy Utilities page is loaded$/,  function(){
+    expectToHaveTitle('Data Management Community Copy - HDS');
+})
+When(/^User clicks on Flooring Extra rules Link under Community Management$/, function(){
+    HomePage.clickingOnFlooringExtraRules();
+})
+Then(/^the Community Flooring Extra rules page is loaded$/, function(){
+    expectToHaveTitle ('Flooring Extra Rules - HDS')
+})
+When(/^the New button is clicked in the Flooring Extra Rules list page$/, function() {
+    HomePage.clickingOnNewBtnInFlooringExtraRules();
+})
+Then(/^the Flooring Extra Rules Editor page is loaded$/,  function() {
+    expectToHaveTitle('HDS (QA) - Flooring Extra Rules Editor - HDS');
+})
+When(/^the first flooring extra rule is opened from the Flooring Extra Rules list page$/, function() {
+    HomePage.clickingOnOpenBtnFlooringExtraRules();
+})
+When(/^the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page$/, function() {
+    HomePage.clickingOnChangeplansTakeoffsBtn();
+})
+Then(/^the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page$/, function() {
+    HomePage.validateChangeplansTakeoffsModalIsDisplayed();
+})
+When(/^the 'New' button is clicked in the Floor Plan List page$/, function() {
+    HomePage.clickingOnNewBtnInFloorPlans();
+})
+Then(/^the Community Floor Plan Editor page is loaded$/,  function() {
+    expectToHaveTitle('Floor Plan Editor - HDS');
+}) 
+When(/^the 'Edit' button is clicked for the first plan listed in the Floor Plan List page$/, function() {
+    HomePage.clickingOnEditBtnInFloorPlans();
+})
+When(/^the 'Upload New' link is clikced in the Community Floor Plan Editor page$/, function() {
+    HomePage.clickingOnUploadNewLink();
+})
+Then(/^A new window for uploading new tracer diagram to the community floor plan editor page is displayed$/, function(){
+    HomePage.validateNewWindowForUploadingTracerDiagramIsDisplayed();
+})
+When(/^the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page$/, function() {
+    HomePage.clickingOnUpdateDiagramLink();
+})
+When(/^the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page$/, function() {
+    HomePage.clickingOnImportDiagrams();
+})
+Then(/^A new window for importing tracer diagrams to the community floor plan editor page is displayed$/, function(){
+    HomePage.validateNewWindowForImportingTracerDiagrams();
+})
+When(/^the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page$/, function() {
+    HomePage.clickingOnEditLinkFloorPlanListpage();
+})
+Then(/^A Tracer diagram editor window is displayed for the floor plan$/, function() {
+    HomePage.validateTracerDiagramEditorWindowIsDisplayed();
+})
+When(/^the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page$/, function() {
+    HomePage.clickingOnCreateDiagramLink();
+})
+When(/^the Copy button is clicked in the Community Floor Plan list page$/, function() {
+    HomePage.clickingOnCopyBtnInFloorPlanListPage();
+})
+Then(/^the Floor Plan Copy page for the community is loaded$/, function() {
+    expectToHaveTitle('Floor Plan Copy - HDS');
+})
+When(/^the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page$/, function() {
+    HomePage.clickingOnRoomsLink();
+})
+Then(/^the room editor page for the Community floor plan is loaded$/, function() {
+    expectToHaveTitle('Counter & Wall Room Editor - HDS');
+})
+When(/^the Add New Room button is clicked in the Room editor page for the community floor plan$/, function(){
+    HomePage.clickingOnAddNewRoom();
+})
+Then(/^A new row is added in the Room editor page of the community floor plan$/, function() {
+
+}) 
+When(/^the takeoff option in the Flooring drop down of the first floor plan listed is clicked$/, function() {
+    HomePage.clickingOnTakeOffOptionInTheFlooringDD();
+})
+Then(/^the takeoff page for the community floor plan is loaded$/, function() { 
+    expectToHaveTitle('HDS (QA) - Community Floor Plan Take-offs - HDS')
+})
+When(/^the 'Allowance Comparison' button is clicked in the commpunity floorplan Takeoffs page$/, function() {
+    HomePage.clickingOnAllowanceComaparisonBtn();
+})
+Then(/^the Allowance Comparison modal is displayed in the Community floorplan Takeoffs page$/, function() {
+    HomePage.validateAllowanceComparisonModalIsDisplayed();
+})
+When(/^the edit rule button is clicked for a randomly selected room in the community floorplan takeoff page$/, function() {
+    HomePage.clickingOnEditRuleBtn();
+})
+Then(/^the Edit Takeoff Extra Rule modal is displayed in the community floorplan takeoff page$/, function() {
+    HomePage.validateEditRulesMoadlIsDisplayed();
+})
+When(/^the Add Takeoff button is clicked in the community flooring takeoff page$/, function() {
+    HomePage.clickingOnAddTakeOffBtn();
+})
+Then(/^a new row is added to the takeoff table of the community flooring takeoff page$/, function() {
 
 })
+When(/^the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page$/, function() {
+    HomePage.clickingOnAlterntRmconfigBtn();
+})
+Then(/^The Alternate Room Configuration page of the community floor plan is loaded$/, function() {
+    expectToHaveTitle('Alternate Room Configurations - HDS');
+})
+When(/^the Control option in the Flooring drop down of the first floor plan listed is clicked$/, function() {
+    HomePage.clickingOnControlOptionInFlooringDD();
+})
+Then(/^Product control By Area page of the selected Community floor plan is loaded$/, function() {
+    expectToHaveTitle('HDS (QA) - Product Control by Area - HDS');
+})
+When(/^the Import Template option in the Window Treatments drop down of the first floor plan listed is clicked$/, function() {
+    HomePage.clickingOnImportTemplateOption();
+})
+Then(/^the Import Window Treatement Template modal is displayed in the Community floorplan list page$/, function() {
+    HomePage.validateImportWindowTreatementTemplateModalIsDisplayed();
+})
+When(/^the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked$/, function(){
+    HomePage.clickingOnStructureOptionCWDD();
+})
+Then(/^the community Counter and Wall structure page for the floor plan is loaded$/,  function(){
+    expectToHaveTitle('Floorplan Structure Editor - HDS');
+})
+Given(/^all the rooms are expanded in the community CW structure page$/, function() {
+    HomePage.clickingOnExpandAllRoomsBtn();
+})
+When(/^the copy button for the first area displayed is clicked in the community CW structure page$/, function() {
+    HomePage.clickingOnCopyBtnAreaInCWStructre();
+})
+Then(/^the modal for copying area is displayed in the community CW structure page$/, function() {
+    HomePage.validateCopyAreaModalIsDisplayed();
+})
+When(/^User navigates to the Community CW structure page for floor plan$/, function() {
 
+})
+When(/^the Copy Structure or Detail button is clicked in the community CW structure page$/, function() {
+
+})
+Then(/^all the rooms in the CW community strucutre page are expanded$/, function() {
+    HomePage.validateAllTheRoomsAreExpanded();
+})
+When(/^the Collapse All button is clicked in the CW community strucutre page$/, function() {
+    HomePage.clickingOnCollapseRoomBtn();
+})
+Then(/^all the rooms in the CW community strucutre page are collapsed$/, function() {
+    HomePage.validateAllTheRoomsAreCollapsed();
+})
+When(/^the 'Add New Room' button is clicked in the Community CW Strucutre page$/, function() {
+    HomePage.clickingOnAddNewRoomBtnCWStrucutrePage();
+})
+Then(/^the modal for adding new room to the Community CW structure page is displayed$/, function(){
+    HomePage.validateAddNewRoomModalIsDisplayed();
+})
+When(/^the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked$/, function(){
+    HomePage.clickingOnDetailsOptionCWDropdown();
+})
+Then(/^the community Counter and Wall details page for the floor plan is loaded$/, function() {
+    expectToHaveTitle('Room Detail Editor - HDS');
+})
+When(/^the Expand All Rooms button is clicked in the CW community details page$/, function()  {
+    HomePage.clickingOnExpandAllRoomsBtn();
+})
+Then(/^all the rooms in the CW community details page are expanded$/, function()  {
+    pauseBrowser(15000);
+    HomePage.validateAllRoomsexpandedInCWDetails();
+})
+When(/^the collapse All button is clicked in the CW community details page$/,  function() {
+    HomePage.clickingOnCollapseRoomBtn();
+})
+Then(/^all the rooms in the CW community details page are collapsed$/, function() {
+    HomePage.validateAllTheRoomsAreCollapsedDetails();
+})
 
 
 

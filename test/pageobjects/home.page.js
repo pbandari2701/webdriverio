@@ -89,6 +89,7 @@ class HomePage extends BasePage{
  get catalogs ()                { return $("//a[text()='Catalogs']")}
  get editButton2()              { return $('//a[text()=" Edit"]')}
  get editBtn3()                 { return $('//button[text()=" Edit"]')}
+ get editBtn4 ()                { return $('//a[text()="Edit"]')}
  get editpatternModal ()        { return $("//h4[text()= 'Edit Pattern']")}
  get excludedOffering ()        { return $('#filtersLabel')}
  get showProducts ()            { return $("//a[text()=' Show Products']")}
@@ -222,9 +223,45 @@ class HomePage extends BasePage{
  get flooringGroupLinkCM ()                 { return $('//a[@href="/dm__group_editor.aspx?Is_Proposal=0"]')}
  get lifestyleOptionsCM ()                  { return $('//a[@href="/dm__option_list.aspx"]')}
  get viewOptionsBtn  ()                     { return $('//input[@value="View Options"]')}
- get homesiteSetup ()                      { return $('//a[@href="/dm__lot_list.aspx"]')}
-
-
+ get homesiteSetup ()                       { return $('//a[@href="/dm__lot_list.aspx"]')}
+ get copyUtilityCM ()                       { return $('//a[@href="/CommunityManagement/Community/Copy.aspx"]')}
+ get flooringExtraRules ()                  { return $('//a[@href="/FlooringExtrasRulesList.aspx"]')}
+ get changeplansTakeoffsModal ()            { return $("//h4[text()='Change Plans and Takeoffs']")}
+ get changeplansTakeoffsBtn  ()             { return $("//input[@id='btnChangeAreaButton']")}
+ get uploadNewLink ()                       { return $("//a[text()='Upload New']")}
+ get uploadNewFPText ()                     { return $("//strong[text()=' Upload New Floor Plan Image']")}
+ get updateDiagramLink ()                   { return $("//a[@id='_ctl0_body_repTracerDiagrams__ctl1_lnkUpdateDiagram']")}
+ get importDiagrams ()                      { return $("//a[text()='Import Diagrams']")}
+ get createDiagramLink ()                   { return $("//a[text()='Create Diagram']")}
+ get copyBtn3 ()                            { return $("//a[text()=' Copy']")}
+ get roomsLink ()                           { return $("//a[contains(text(), 'Rooms')]")}
+ get addNewRoomBtn ()                       { return $("//a[text()=' Add New Room']")}
+ get flooringDDCM ()                        { return $("//a[@class='btn btn-orange btn-default btn-xs dropdown-toggle']")}
+ get takeOffOption ()                       { return $("//a[text()='Take-Off']")}
+ get allowanceComaparisonBtn ()             { return $("//button[text()='Allowance Comparison']")}
+ get allowanceComparisonModal ()            { return $("//h4[text()='Allowance Comparison']")}
+ get editRuleBtn ()                         { return $('//button[@title="Edit Rules"]')}
+ get editRulesMoadl ()                      { return $("//h4[text()='Edit Takeoff Extras Rules']")}
+ get addTakeOffBtn2 ()                      { return $('//a[text()=" Add Take Off"]')}
+ get takeOffTable ()                        { return $$('//tr[@class="takeoffRow"]')}
+ get alterntRmconfigBtn ()                  { return $("//a[text()='Alternate Room Configurations']")}
+ get controlOption ()                       { return $("//a[text()='Control']")}
+ get windowTreatementsDD  ()                { return $("//button[text()='Window Treatments ']")}
+ get importTemplateOption ()                { return $("//a[text()='Import Template']")}
+ get importWindowTreatementTemplateModal () { return $("//h4[text()='Import Window Treatment Template']")}
+ get CWDD ()                                { return $("//button[text()='Counter & Wall ']")}
+ get structureOption ()                     { return $("//a[text()='Structure']")}
+ get expandAllRooms ()                      { return $("//span[@id='showHideRooms']")}
+ get copyCWArea ()                          { return $("//div[@id='area938271']//span[@class='glyphicon glyphicon-duplicate']")}
+ get copyAreaModal ()                       { return $("//h4[text()='Select A Room To Copy To']")} 
+ get roomExpandIcon ()                      { return $("//span[@class='glyphicon glyphicon-chevron-down']")}
+ get roomCollapseIcon ()                    { return $('//span[@class="glyphicon glyphicon-chevron-right"]')}
+ get collapseRoomBtn ()                     { return $("//span[text()='Collapse All Rooms']")}
+ get addNewRoomModal ()                     { return $("//h4[text()='Select A Room Name']")}
+ get addNewRoomBtnCW ()                     { return $("//a[contains(text(),  'Add New Room')]")}
+ get detailsOption ()                       { return $("//a[contains(text(),'Details')]")}
+ get applyProducts ()                       { return $("//button[text()='Apply Products']")}
+ get roomCollapseIcon2 ()                   { return $("//div[@class='col-md-6 pull-left']//div[2]//div[1]//div[1]//span[1]//span[1]")}
  getReportType(Report_Type) {
      return $("//a[@id='_ctl0__ctl0_body_body_"+Report_Type+"']")
  }
@@ -1158,9 +1195,165 @@ clickingOnEditButtonInHomesiteSetupPageCM (){
 }
 clickingOnNewBtnInHomesiteSetupCM (){
     waitAndClick (this.newButton2, 'new button in homesite');
+    pauseBrowser(5000)
+}
+clickingOnCopyUtilityCM () {
+    waitAndClick (this.copyUtilityCM, '  copying utility');
+}
+clickingOnFlooringExtraRules () {
+    waitAndClick (this.flooringExtraRules, 'flooring extra rules')
+}
+clickingOnNewBtnInFlooringExtraRules () {
+    waitAndClick (this.newButton2, 'new button in flooring extra rules');
+    pauseBrowser(5000)
+}
+clickingOnOpenBtnFlooringExtraRules  () {
+    waitAndClick (this.openButton2, 'open button in flooring extra rules');
+    pauseBrowser(10000)
+}
+clickingOnChangeplansTakeoffsBtn (){
+    waitAndClick(this.changeplansTakeoffsBtn, 'changeplans takeoffs Button');
+}
+validateChangeplansTakeoffsModalIsDisplayed  () {
+    expectToBeDisplayed (this.changeplansTakeoffsModal, '  changing takeoffs modal');
+}
+clickingOnNewBtnInFloorPlans () {
+    waitAndClick (this.newButton2, ' new button in floor plans');
+}
+clickingOnEditBtnInFloorPlans () {
+    waitAndClick (this.editBtn4, ' edit button in floor plans')
+}
+clickingOnUploadNewLink (){
+    waitAndClick (this.uploadNewLink, ' upload new link');
+}
+validateNewWindowForUploadingTracerDiagramIsDisplayed (){
+    switchToNextWindowArray();
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__upload_floorplan_image.aspx');
+}
+clickingOnUpdateDiagramLink (){
+    waitAndClick (this.updateDiagramLink, ' update diagram link');
+}
+clickingOnImportDiagrams () {
+    waitAndClick (this.importDiagrams, ' import diagram');
+}
+validateNewWindowForImportingTracerDiagrams (){
+    switchToNextWindowArray();
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__import_floorplan_diagrams')
+}
+clickingOnEditLinkFloorPlanListpage (){
+    waitAndClick (this.editBtn4, ' edit floor plan list page');
+}
+validateTracerDiagramEditorWindowIsDisplayed (){
+    switchToNextWindowArray();
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__floorplan_tracer.aspx')
+}
+clickingOnCreateDiagramLink  () {
+    waitAndClick(this.createDiagramLink, 'create Diagram Link');
+}
+clickingOnCopyBtnInFloorPlanListPage () {
+    waitAndClick(this.copyBtn3, 'copy Btn  in Floor Plan List Page');
+}
+clickingOnRoomsLink () {
+    waitAndClick(this.roomsLink, '  rooms Link');
+}
+clickingOnAddNewRoom () {
+    waitAndClick(this.addNewRoomBtn, 'add New Room Button');
+}
+clickingOnTakeOffOptionInTheFlooringDD (){
+    waitAndClick(this.flooringDDCM, 'flooring DD Options');
+    pauseBrowser(2000);
+    waitAndClick(this.takeOffOption, 'take off option');
+    pauseBrowser(5000);
+}
+clickingOnAllowanceComaparisonBtn(){
+    waitAndClick(this.allowanceComaparisonBtn, 'allowance comparision btn');
+}
+validateAllowanceComparisonModalIsDisplayed   () {
+    expectToBeDisplayed (this.allowanceComparisonModal, 'allowance comparision modal');
+}
+clickingOnEditRuleBtn () {
+    waitAndClick(this.editRuleBtn, 'edit rule button');
+}
+validateEditRulesMoadlIsDisplayed () {
+    expectToBeDisplayed (this.editRulesMoadl, '  Edit rules modal');
+}
+clickingOnAddTakeOffBtn () {
+    let rows  = [];
+    rows = this.takeOffTable;
+    let trSize = rows.length;
+    console.log ('=====trSize is==========',trSize);
+    waitAndClick(this.addTakeOffBtn2, 'add take off  button');
+    pauseBrowser(5000);
+    if(this.takeOffTable.count()== trSize+1) {
+        console.log ('=====trSize+1 is==========',trSize);
+        return true;
+    }
+}
+validateNewRowIsAddedToTheTakeoffTable (){
+
+}
+clickingOnAlterntRmconfigBtn  () {
+    waitAndClick(this.alterntRmconfigBtn, 'alter config button');
+}
+clickingOnControlOptionInFlooringDD () {
+    waitAndClick(this.flooringDDCM, 'flooring DD Options');
+    pauseBrowser(2000);
+    waitAndClick (this.controlOption, 'control option in flooring  DD');
+    pauseBrowser (5000);
+}
+clickingOnImportTemplateOption (){
+    waitAndClick(this.windowTreatementsDD, 'window Treatements DD');
+    pauseBrowser(2000)
+    waitAndClick(this.importTemplateOption, 'import template option');
+    pauseBrowser (5000);
+}
+validateImportWindowTreatementTemplateModalIsDisplayed() {
+    expectToBeDisplayed(this.importWindowTreatementTemplateModal, 'import template  modal');
+}
+clickingOnStructureOptionCWDD () {
+    waitAndClick(this.CWDD, 'CWDD');
+    pauseBrowser(2000)
+    waitAndClick(this.structureOption, 'structure option in CWDD');
+    pauseBrowser (5000);
+}
+clickingOnExpandAllRoomsBtn () {
+    waitAndClick(this.expandAllRooms, ' expand All Rooms button');
+}
+clickingOnCopyBtnAreaInCWStructre (){
+    waitAndClick(this.copyCWArea, 'Copy CW area in CW structure');
+}
+validateCopyAreaModalIsDisplayed (){
+    expectToBeDisplayed(this.copyAreaModal, 'copy Area Modal');
+}
+validateAllTheRoomsAreExpanded (){
+    expectToBeDisplayed (this.roomExpandIcon, 'All room Expand Icons')
+}
+clickingOnCollapseRoomBtn (){
+    waitAndClick (this.collapseRoomBtn, 'collapse Room button')
+}
+validateAllTheRoomsAreCollapsed (){
+    expectToBeDisplayed (this.roomCollapseIcon, 'All Rooms collapse Icons')
+}
+clickingOnAddNewRoomBtnCWStrucutrePage (){
+    waitAndClick (this.addNewRoomBtnCW, 'add New Room button in CW   Strucutre page')
+}
+validateAddNewRoomModalIsDisplayed (){
+    expectToBeDisplayed (this.addNewRoomModal, '  Add New Room Modal');
+}
+clickingOnDetailsOptionCWDropdown (){
+    waitAndClick (this.CWDD, ' CW DD');
+    pauseBrowser(2000);
+    waitAndClick (this.detailsOption, 'details option in CWDD');
+    pauseBrowser(3000)
+}
+validateAllRoomsexpandedInCWDetails (){
+    expectToBeDisplayed(this.applyProducts, 'Apply Products')
+}
+validateAllTheRoomsAreCollapsedDetails (){
+    expectToBeDisplayed (this.roomCollapseIcon2, 'All Rooms collapse Icons in details')
 }
 
-getData(){
+getData(){ 
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }
 
