@@ -1842,47 +1842,58 @@ Examples:
 |Community_Name  | 
 |Westford 3s PH 2|
 
-# #CM - Open - Copy Utilities 
-# Scenario:  Verify_Comm_Copy_Utilities_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Copy Utilities Link under Community Management
-# 	Then the Community Copy Utilities page is loaded
+#CM - Open - Copy Utilities
+@tc:2208 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_Copy_Utilities_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Copy Utilities Link under Community Management
+	Then the Community Copy Utilities page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Flooring Extra rules
+@tc:2209 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_Flring_Extra_Rules_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Extra rules Link under Community Management
+	Then the Community Flooring Extra rules page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Flooring Extra rules - New
+@tc:2210 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_Flring_ExtrRls_New_Pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Extra rules Link under Community Management
+		And the New button is clicked in the Flooring Extra Rules list page
+	Then the Flooring Extra Rules Editor page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Flooring Extra rules
-# Scenario:  Verify_Comm_Flring_Extra_Rules_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 	When User clicks on Flooring Extra rules Link under Community Management
-# 	Then the Community Flooring Extra rules page is loaded
-
-
-
-# #CM - Open - Flooring Extra rules - New
-# Scenario:  Verify_Comm_Flring_ExtrRls_New_Pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Flooring Extra rules Link under Community Management
-# 	When the New button is clicked in the Flooring Extra Rules list page
-# 	Then the Flooring Extra Rules Editor page is loaded
-
-
-# #CM - Open - Flooring Extra rules - Edit
-# Scenario:  Verify_Comm_Flring_ExtrRls_Open
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Flooring Extra rules Link under Community Management
-# 	When the first flooring extra rule is opened from the Flooring Extra Rules list page
-# 	Then the Flooring Extra Rules Editor page is loaded
-
+#CM - Open - Flooring Extra rules - Edit
+@tc:2211 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_Flring_ExtrRls_Open
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Extra rules Link under Community Management
+		And the first flooring extra rule is opened from the Flooring Extra Rules list page
+	Then the Flooring Extra Rules Editor page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
 # #CM - Open - Flooring Extra rules - New - Select a Product
+# @tc:2211 @clickthrough @bvt @q1
 # Scenario:  Verify_Comm_Flring_ExtrRls_New_SelctProduct
 # 	Given HDS Home page is displayed
 # 		And Communities list page is opened
@@ -1893,337 +1904,424 @@ Examples:
 # 	#Then the flooring Extra Selector dialog is displayed in the Flooring Extra Rules Editor Page
 
 
-# #CM - Open - Flooring Extra rules - New - Change Plans and Take offs
-# Scenario:  Verify_Comm_Flring_ExtrRls_New_ChangePlansAndTakeOffs
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Flooring Extra rules Link under Community Management
-# 		And the New button is clicked in the Flooring Extra Rules list page
-# 	When the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page
-# 	Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
-
+#CM - Open - Flooring Extra rules - New - Change Plans and Take offs
+@tc:2212 @clickthrough @bvt     
+Scenario:  Verify_Comm_Flring_ExtrRls_New_ChangePlansAndTakeOffs
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Extra rules Link under Community Management
+		And the New button is clicked in the Flooring Extra Rules list page
+		And the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page
+	Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
 # # CM - Open - Flooring Extra rules - Edit - Change
+# @tc:2213 @clickthrough @bvt @q1    
 # Scenario:  Verify_Comm_Flring_ExtrRls_Open_ChangeBttn
 # 	Given HDS Home page is displayed
 # 		And Communities list page is opened
 # 		And User opens community named Bella Fiore-25522250000
 # 		And User clicks on Flooring Extra rules Link under Community Management
 # 		And the first flooring extra rule is opened from the Flooring Extra Rules list page
-# 	#When the 'Change' button is clicked in the Flooring Extra Rules Editor Page
-# 	#Then the flooring Extra Selector dialog is displayed in the Flooring Extra Rules Editor Page
+# 	When the 'Change' button is clicked in the Flooring Extra Rules Editor Page
+# 	Then the flooring Extra Selector dialog is displayed in the Flooring Extra Rules Editor Page
 
-# #CM - Open - Flooring Extra rules - Edit - Change Plans and Take offs
-# Scenario:  Verify_Comm_Flring_ExtrRls_Open_ChangePlansAndTakeOffs
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Flooring Extra rules Link under Community Management
-# 		And the first flooring extra rule is opened from the Flooring Extra Rules list page
-# 	When the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page
-# 	Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
+#CM - Open - Flooring Extra rules - Edit - Change Plans and Take offs
+@tc:2214 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_Flring_ExtrRls_Open_ChangePlansAndTakeOffs
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Flooring Extra rules Link under Community Management
+		And the first flooring extra rule is opened from the Flooring Extra Rules list page
+		And the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page
+	Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - New 
-# Scenario:  Verify_Comm_FloorPlan_New
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the 'New' button is clicked in the Floor Plan List page
-# 	Then the Community Floor Plan Editor page is loaded 
+#CM - Open - Floor Plans - New
+@tc:2215 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_New
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'New' button is clicked in the Floor Plan List page
+	Then the Community Floor Plan Editor page is loaded 
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans - Edit
+@tc:2216 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+	Then the Community Floor Plan Editor page is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - Edit
-# Scenario:  Verify_Comm_FloorPlan_Edit
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	Then the Community Floor Plan Editor page is loaded 
+#CM - Open - Floor Plans - Edit - Upload New
+#151
+@tc:2217 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit_uploadNewTrcerDiag
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+		And the 'Upload New' link is clikced in the Community Floor Plan Editor page
+	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - Edit - Upload New
-# #151
-# Scenario:  Verify_Comm_FloorPlan_Edit_uploadNewTrcerDiag
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the 'Upload New' link is clikced in the Community Floor Plan Editor page
-# 	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+#CM - Open - Floor Plans - Edit - Upload New
+@tc:2218 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit_Update Image link
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+		And the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - Edit - Upload New
-# Scenario:  Verify_Comm_FloorPlan_Edit_Update Image link
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page
-# 	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+#CM - Open - Floor Plans - Edit - Import Diagram
+@tc:2219 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit_ImportTrcerDiag
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+		And the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page
+	Then A new window for importing tracer diagrams to the community floor plan editor page is displayed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
+         			   
+#CM - Open - Floor Plans - Edit - Edit Diagram
+@tc:2220 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit_Edit_TrcerDiag
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+		And the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+	Then A Tracer diagram editor window is displayed for the floor plan
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - Edit - Import Diagram
-# Scenario:  Verify_Comm_FloorPlan_Edit_ImportTrcerDiag
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page
-# 	Then A new window for importing tracer diagrams to the community floor plan editor page is displayed
+#CM - Open - Floor Plans - Edit - Create Diagram
+@tc:2221 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Edit_Create_TrcerDiag
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+		And the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page
+	Then A Tracer diagram editor window is displayed for the floor plan
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-	           
-			   
-# #CM - Open - Floor Plans - Edit - Edit Diagram
-# Scenario:  Verify_Comm_FloorPlan_Edit_Edit_TrcerDiag
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page
-# 	#Then A Tracer diagram editor window is displayed for the floor plan
+#CM - Open - Floor Plans  - Copy
+@tc:2222 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Copy
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the Copy button is clicked in the Community Floor Plan list page
+	Then the Floor Plan Copy page for the community is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans - Edit - Create Diagram
-# Scenario:  Verify_Comm_FloorPlan_Edit_Create_TrcerDiag
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page
-# 	#Then A Tracer diagram editor window is displayed for the floor plan
+#CM - Open - Floor Plans  - Rooms
+@tc:2223 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Rooms
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
+	Then the room editor page for the Community floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  - Copy
-# Scenario:  Verify_Comm_FloorPlan_Copy
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the Copy button is clicked in the Community Floor Plan list page
-# 	Then the Floor Plan Copy page for the community is loaded
+#CM - Open - Floor Plans  - Rooms - Add New Room
+@tc:2224 @clickthrough @bvt @wip      
+Scenario Outline:  Verify_Comm_FloorPlan_Rooms_AddNewRm
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
+		And the Add New Room button is clicked in the Room editor page for the community floor plan
+	Then A new row is added in the Room editor page of the community floor plan 
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans  -  - Flooring Take off
+@tc:2225 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_Flring_TakeOffs_pg
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	 	And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+	Then the takeoff page for the community floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans  -  - Flooring Take off - Allowance Comparison
+@tc:2226 @clickthrough @bvt      
+Scenario Outline:  Verify_Comm_FloorPlan_FlringTakeoffs_AllwnceComparison
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+		And the 'Allowance Comparison' button is clicked in the commpunity floorplan Takeoffs page
+	Then the Allowance Comparison modal is displayed in the Community floorplan Takeoffs page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  - Rooms
-# Scenario:  Verify_Comm_FloorPlan_Rooms
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
-# 	Then the room editor page for the Community floor plan is loaded
+#CM - Open - Floor Plans  -  - Flooring Take off - Edit Rule
+@tc:2227 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_FlringTakeoffs_editRule
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+		And the edit rule button is clicked for a randomly selected room in the community floorplan takeoff page
+	Then the Edit Takeoff Extra Rule modal is displayed in the community floorplan takeoff page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans  -  - Flooring Take off - Add Takeoff
+@tc:2228 @clickthrough @bvt @wip      
+Scenario Outline:  Verify_Comm_FloorPlan_FlringTakeoffs_addTakeOff
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+		And the Add Takeoff button is clicked in the community flooring takeoff page
+	Then a new row is added to the takeoff table of the community flooring takeoff page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  - Rooms - Add New Room
-# Scenario:  Verify_Comm_FloorPlan_Rooms_AddNewRm
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
-# 	When the Add New Room button is clicked in the Room editor page for the community floor plan
-# 	Then A new row is added in the Room editor page of the community floor plan 
+#CM - Open - Floor Plans  -  - Flooring Take off - Alternate room configuration page  
+#19
+@tc:2229 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_FlringTakeoffs_Alternate room Configuration page
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+		And the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page
+	Then The Alternate Room Configuration page of the community floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans  -  - Flooring Control 
+#159
+@tc:2230 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_Flooring_Control
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the Control option in the Flooring drop down of the first floor plan listed is clicked
+	Then Product control By Area page of the selected Community floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-
-# #CM - Open - Floor Plans  -  - Flooring Take off
-# Scenario:  Verify_Comm_FloorPlan_Flring_TakeOffs_pg
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	 When the takeoff option in the Flooring drop down of the first floor plan listed is clicked
-# 	 Then the takeoff page for the community floor plan is loaded
-
-
-
-
-# #CM - Open - Floor Plans  -  - Flooring Take off - Allowance Comparison
-#  Scenario:  Verify_Comm_FloorPlan_FlringTakeoffs_AllwnceComparison
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
-# 	When the 'Allowance Comparison' button is clicked in the commpunity floorplan Takeoffs page
-# 	Then the Allowance Comparison modal is displayed in the Community floorplan Takeoffs page
-
-
-
-
-# #CM - Open - Floor Plans  -  - Flooring Take off - Edit Rule
-#  Scenario:  Verify_Comm_FloorPlan_FlringTakeoffs_editRule
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
-# 	When the edit rule button is clicked for a randomly selected room in the community floorplan takeoff page
-# 	Then the Edit Takeoff Extra Rule modal is displayed in the community floorplan takeoff page
-
-
-# #CM - Open - Floor Plans  -  - Flooring Take off - Add Takeoff
-#  Scenario:  Verify_Comm_FloorPlan_FlringTakeoffs_addTakeOff
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
-# 	When the Add Takeoff button is clicked in the community flooring takeoff page
-# 	Then a new row is added to the takeoff table of the community flooring takeoff page
-
-
-
-
-# #CM - Open - Floor Plans  -  - Flooring Take off - Alternate room configuration page  
-# #19
-#  Scenario:  Verify_Comm_FloorPlan_FlringTakeoffs_Alternate room Configuration page
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the takeoff option in the Flooring drop down of the first floor plan listed is clicked
-# 	When the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page
-# 	Then The Alternate Room Configuration page of the community floor plan is loaded
-
-# #CM - Open - Floor Plans  -  - Flooring Control 
-# #159
-#  Scenario:  Verify_Comm_FloorPlan_Flooring_Control
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the Control option in the Flooring drop down of the first floor plan listed is clicked in the Community floorPlan list page
-# 	Then Product control By Area page of the selected Community floor plan is loaded
-
-# #CM - Open - Floor Plans  -  - Flooring Report 
-# #160
-#  Scenario:  Verify_Comm_FloorPlan_Flooring_Report
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	#When the Report option in the Flooring drop down of the first floor plan listed is clicked in the Community floorPlan list page
-# 	#Then A new window for the flooring Take-Off Detail Report of the community floor plan is displayed
-
-
-# #CM - Open - Floor Plans  -  - Window Treatmnt - import temlate
-# #165
-#  Scenario:  Verify_Comm_FloorPlan_Window_Trtmnt_ImportTmplt
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	When the Import Template option in the Window Treatments drop down of the first floor plan listed is clicked in the Community floorPlan list page
-# 	Then the Import Window Treatement Template modal is displayed in the Community floorplan list page
-
-
-# #CM - Open - Floor Plans - CW Structure 
-# #161
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Page
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	 When the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 	 Then the community Counter and Wall structure page for the floor plan is loaded
-
-
-# #CM - Open - Floor Plans  -  - CW Structure - Copy Area
-# #152
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Page_copyAreaModal
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	#	And User navigates to the Community CW structure page for floor plan named testPlan2
-# 		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 		And all the rooms are expanded in the community CW structure page
-# 	When the copy button for the first area displayed is clicked in the community CW structure page
-# 	Then the modal for copying area is displayed in the community CW structure page
-
-
-
-# #CM - Open - Floor Plans  -  - CW Structure - copy structure/detail
-# #171
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Page_copy Structure/detail bttn
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And User navigates to the Community CW structure page for floor plan named testPlan
-# 	When the Copy Structure/Detail button is clicked in the community CW structure page
-# 	Then the Floor Plan Copy page for the community is loaded
-
-
-# #CM - Open - Floor Plans  -  - CW Structure - Expand All Rooms
-# #149
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Page_ExpandAllRooms
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 	When the Expand All button is clicked in the CW community strucutre page
-# 	Then all the rooms in the CW community strucutre page are expanded
+#CM - Open - Floor Plans  -  - Flooring Report 
+#160 @q1
+ Scenario:  Verify_Comm_FloorPlan_Flooring_Report
+	Given HDS Home page is displayed
+		And Communities list page is opened
+		And User opens community named Bella Fiore-25522250000
+		And User clicks on Floor Plan Link under Community Management
+	#When the Report option in the Flooring drop down of the first floor plan listed is clicked in the Community floorPlan list page
+	#Then A new window for the flooring Take-Off Detail Report of the community floor plan is displayed
 
 
-# #CM - Open - Floor Plans  -  - CW Structure - Collapse All Rooms
-# #129
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Page_CollapseAllRooms
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 		And all the rooms are expanded in the community CW structure page
-# 	When the Collapse All button is clicked in the CW community strucutre page
-# 	Then all the rooms in the CW community strucutre page are collapsed
+#CM - Open - Floor Plans  -  - Window Treatmnt - import temlate
+#165
+@tc:2232 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_Window_Trtmnt_ImportTmplt
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the Import Template option in the Window Treatments drop down of the first floor plan listed is clicked
+	Then the Import Window Treatement Template modal is displayed in the Community floorplan list page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans - CW Structure 
+#161
+@tc:2233 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	 	And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+	Then the community Counter and Wall structure page for the floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  -  - CW Structure - Add New Room
-# #162
-#  Scenario:  Verify_Comm_FloorPlan_CW Strucutre_Pg_AddNewRoom
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 	 When the 'Add New Room' buttn is clicked in the Community CW Strucutre page
-# 	 Then the modal for adding new room to the Community CW structure page is displayed
-# #CM - Open - Floor Plans  -  - CW Structure -Copy Structure/Detail
-# #163
-#  Scenario:  Verify_Comm_FloorPlan_CW Details_Page
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	 When the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 	 Then the community Counter and Wall details page for the floor plan is loaded
+#CM - Open - Floor Plans  -  - CW Structure - Copy Area
+#152
+@tc:2234 @clickthrough @bvt     
+ Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_copyAreaModal
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	#	And User navigates to the Community CW structure page for floor plan named testPlan2
+		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+		And all the rooms are expanded in the community CW structure page
+		And the copy button for the first area displayed is clicked in the community CW structure page
+	Then the modal for copying area is displayed in the community CW structure page
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
+#CM - Open - Floor Plans  -  - CW Structure - copy structure/detail
+#171
+@tc:2235 @clickthrough @bvt   @wip @q1   
+Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_copy Structure/detail bttn
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And User navigates to the Community CW structure page for floor plan
+		And the Copy Structure or Detail button is clicked in the community CW structure page
+	Then the Floor Plan Copy page for the community is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  -  - CW Details - Expand All Rooms
-# #164
-#  Scenario:  Verify_Comm_FloorPlan_CW Details_Page ExpandAll
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 	 When the Expand All button is clicked in the CW community details page
-# 	 Then all the rooms in the CW community details page are expanded
+#CM - Open - Floor Plans  -  - CW Structure - Expand All Rooms
+#149
+@tc:2236 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_ExpandAllRooms
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+		And all the rooms are expanded in the community CW structure page
+	Then all the rooms in the CW community strucutre page are expanded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
 
-# #CM - Open - Floor Plans  -  - CW Details - Collapse All Rooms
-# #136
-#  Scenario:  Verify_Comm_FloorPlan_CW Details_Page Collapse All
-# 	Given HDS Home page is displayed
-# 		And Communities list page is opened
-# 		And User opens community named Bella Fiore-25522250000
-# 		And User clicks on Floor Plan Link under Community Management
-# 	    And the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-# 		And all the rooms are expanded in the community CW details page
-# 	 When the collapse All button is clicked in the CW community details page
-# 	 Then all the rooms in the CW community details page are collapsed
+#CM - Open - Floor Plans  -  - CW Structure - Collapse All Rooms
+#129
+@tc:2237 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_CollapseAllRooms
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+		And all the rooms are expanded in the community CW structure page
+		And the Collapse All button is clicked in the CW community strucutre page
+	Then all the rooms in the CW community strucutre page are collapsed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
+
+#CM - Open - Floor Plans  -  - CW Structure - Add New Room
+#162
+@tc:2238 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Pg_AddNewRoom
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+	 	And the 'Add New Room' button is clicked in the Community CW Strucutre page
+	 Then the modal for adding new room to the Community CW structure page is displayed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
+
+#CM - Open - Floor Plans  -  - CW Structure -Copy Structure/Detail
+#163
+@tc:2239 @clickthrough @bvt     
+Scenario:  Verify_Comm_FloorPlan_CW Details_Page
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	 	And the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+	 Then the community Counter and Wall details page for the floor plan is loaded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
+
+#CM - Open - Floor Plans  -  - CW Details - Expand All Rooms
+#164
+@tc:2240 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Details_Page ExpandAll
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+	 	And the Expand All Rooms button is clicked in the CW community details page
+	Then all the rooms in the CW community details page are expanded
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
+
+#CM - Open - Floor Plans  -  - CW Details - Collapse All Rooms
+#136
+@tc:2241 @clickthrough @bvt     
+Scenario Outline:  Verify_Comm_FloorPlan_CW Details_Page Collapse All
+	Given HDS Home page is displayed
+		And Communities page link under Community Management Menu is clicked
+	When User opens community named <Community_Name>
+		And User clicks on Floor Plan Link under Community Management
+	    And the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+	 	And the Expand All Rooms button is clicked in the CW community details page
+	 	And the collapse All button is clicked in the CW community details page
+	Then all the rooms in the CW community details page are collapsed
+Examples:
+|Community_Name  | 
+|Westford 3s PH 2|
