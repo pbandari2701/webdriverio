@@ -963,7 +963,7 @@ When(/^the Add New Room button is clicked in the Room editor page for the commun
     HomePage.clickingOnAddNewRoom();
 })
 Then(/^A new row is added in the Room editor page of the community floor plan$/, function() {
-
+    HomePage.validateNewRowIsAddedInRoomEditorPage();
 }) 
 When(/^the takeoff option in the Flooring drop down of the first floor plan listed is clicked$/, function() {
     HomePage.clickingOnTakeOffOptionInTheFlooringDD();
@@ -987,7 +987,7 @@ When(/^the Add Takeoff button is clicked in the community flooring takeoff page$
     HomePage.clickingOnAddTakeOffBtn();
 })
 Then(/^a new row is added to the takeoff table of the community flooring takeoff page$/, function() {
-
+    HomePage.validateNewRowIsAddedToTheTakeoffTable();
 })
 When(/^the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page$/, function() {
     HomePage.clickingOnAlterntRmconfigBtn();

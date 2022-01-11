@@ -236,13 +236,14 @@ class HomePage extends BasePage{
  get copyBtn3 ()                            { return $("//a[text()=' Copy']")}
  get roomsLink ()                           { return $("//a[contains(text(), 'Rooms')]")}
  get addNewRoomBtn ()                       { return $("//a[text()=' Add New Room']")}
+ get roomsTr ()                             { return $$('//table[@class="table"]//tr')}
  get flooringDDCM ()                        { return $("//a[@class='btn btn-orange btn-default btn-xs dropdown-toggle']")}
  get takeOffOption ()                       { return $("//a[text()='Take-Off']")}
  get allowanceComaparisonBtn ()             { return $("//button[text()='Allowance Comparison']")}
  get allowanceComparisonModal ()            { return $("//h4[text()='Allowance Comparison']")}
  get editRuleBtn ()                         { return $('//button[@title="Edit Rules"]')}
  get editRulesMoadl ()                      { return $("//h4[text()='Edit Takeoff Extras Rules']")}
- get addTakeOffBtn2 ()                      { return $('//a[text()=" Add Take Off"]')}
+ get addTakeOffBtn2 ()                      { return $('//a[text()=" Add Takeoff"]')}
  get takeOffTable ()                        { return $$('//tr[@class="takeoffRow"]')}
  get alterntRmconfigBtn ()                  { return $("//a[text()='Alternate Room Configurations']")}
  get controlOption ()                       { return $("//a[text()='Control']")}
@@ -1257,7 +1258,21 @@ clickingOnRoomsLink () {
     waitAndClick(this.roomsLink, '  rooms Link');
 }
 clickingOnAddNewRoom () {
+    let rows = this.roomsTr.length;
+    console.log('==========rows>>>>'+rows);
     waitAndClick(this.addNewRoomBtn, 'add New Room Button');
+    pauseBrowser(5000);
+    if (this.roomsTr.length == rows+1) {
+        console.log('==========rows+1>>>>', rows+1);
+        return true;
+    }
+}
+validateNewRowIsAddedInRoomEditorPage  () {
+   if (this.clickingOnAddNewRoom() == true) {
+       allureReporter.addStep('New Row Is Added In Room Editor Page'+", "+true+ " ,"+ "passed");
+   } else {
+        allureReporter.addStep('New Row Is Added In Room Editor Page'+", "+false+ ", "+ "failed");
+   }
 }
 clickingOnTakeOffOptionInTheFlooringDD (){
     waitAndClick(this.flooringDDCM, 'flooring DD Options');
@@ -1278,19 +1293,21 @@ validateEditRulesMoadlIsDisplayed () {
     expectToBeDisplayed (this.editRulesMoadl, '  Edit rules modal');
 }
 clickingOnAddTakeOffBtn () {
-    let rows  = [];
-    rows = this.takeOffTable;
-    let trSize = rows.length;
+    let trSize = this.takeOffTable.length;
     console.log ('=====trSize is==========',trSize);
     waitAndClick(this.addTakeOffBtn2, 'add take off  button');
     pauseBrowser(5000);
-    if(this.takeOffTable.count()== trSize+1) {
-        console.log ('=====trSize+1 is==========',trSize);
+    if(this.takeOffTable.length == trSize+1) {
+        console.log ('=====trSize+1 is==========',trSize+1);
         return true;
     }
 }
 validateNewRowIsAddedToTheTakeoffTable (){
-
+   if (this.clickingOnAddTakeOffBtn() == true) {
+    allureReporter.addStep('New Row Is Added To The Takeoff Table'+" , "+true+", " +'passed');
+   } else {
+    allureReporter.addStep('New Row Is Added To The Takeoff Table'+", "+false+", "+ 'failed');
+   }
 }
 clickingOnAlterntRmconfigBtn  () {
     waitAndClick(this.alterntRmconfigBtn, 'alter config button');
