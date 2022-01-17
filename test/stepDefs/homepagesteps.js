@@ -1062,6 +1062,18 @@ When(/^the collapse All button is clicked in the CW community details page$/,  f
 Then(/^all the rooms in the CW community details page are collapsed$/, function() {
     HomePage.validateAllTheRoomsAreCollapsedDetails();
 })
+When(/^the View Options button is clicked in the community LSO (.+) page$/, function(link) {
+    HomePage.clickingOnViewOptionsBtnInLSOPage(link);
+})
+Then(/^the options table is displayed in the community LSO (.+) page$/, function(link) {
+    HomePage.validateOptionsTableIsDisplayedInLSOPage(link);
+})
+When(/^the history button in the community product setup product editor page is clicked$/, function(){
+    HomePage.clickingOnHistoryBtnProductSetupProductEditorPage();
+})
+Then(/^the history modal for the selected Product of the community product setup is loaded$/, function() {
+    HomePage.validateHistoryModalProductSetupPage();
+})
 
 
 

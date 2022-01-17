@@ -263,6 +263,10 @@ class HomePage extends BasePage{
  get detailsOption ()                       { return $("//a[contains(text(),'Details')]")}
  get applyProducts ()                       { return $("//button[text()='Apply Products']")}
  get roomCollapseIcon2 ()                   { return $("//div[@class='col-md-6 pull-left']//div[2]//div[1]//div[1]//span[1]//span[1]")}
+ get lsoEXportTable ()                      { return $('//td[@style="vertical-align:top;"]')}
+
+ get historyBtn ()                          { return $("//a[text()=' History']")}
+ get historyModal ()                        { return $('//table[@class="table dataTable no-footer"]')}
  getReportType(Report_Type) {
      return $("//a[@id='_ctl0__ctl0_body_body_"+Report_Type+"']")
  }
@@ -1369,7 +1373,18 @@ validateAllRoomsexpandedInCWDetails (){
 validateAllTheRoomsAreCollapsedDetails (){
     expectToBeDisplayed (this.roomCollapseIcon2, 'All Rooms collapse Icons in details')
 }
-
+clickingOnViewOptionsBtnInLSOPage(link){
+    waitAndClick (this.viewOptionsBtn, '  view options button in LSO"'+link+'"  page');
+} 
+validateOptionsTableIsDisplayedInLSOPage(link){
+    expectToBeDisplayed(this.lsoEXportTable, 'options table in LSO "'+link+'" page');
+}
+clickingOnHistoryBtnProductSetupProductEditorPage (){
+    waitAndClick (this.historyBtn, ' history button in product  setup product editor page');
+}
+validateHistoryModalProductSetupPage (){
+    expectToBeDisplayed(this.historyModal, 'history modal in product setup product editor page');
+}
 getData(){ 
     return super.testDataJson(CATALOG_DATA_FILE_NAME);
     }
