@@ -1,3 +1,11 @@
+@test
+Feature: BVT Click Through Functionality of HDS application
+
+    Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
+
+Background: Pre Login as HDS Admin
+    Given I am logged in to HDS as a Admin
+
 @tc:2079 @clickthrough @bvt
 Scenario: Verify_Admin_Category_Svc_Offering_listPage  
 	Given HDS Home page is displayed
