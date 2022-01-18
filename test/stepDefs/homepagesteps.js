@@ -963,7 +963,7 @@ When(/^the Add New Room button is clicked in the Room editor page for the commun
     HomePage.clickingOnAddNewRoom();
 })
 Then(/^A new row is added in the Room editor page of the community floor plan$/, function() {
-
+    HomePage.validateNewRowIsAddedInRoomEditorPage();
 }) 
 When(/^the takeoff option in the Flooring drop down of the first floor plan listed is clicked$/, function() {
     HomePage.clickingOnTakeOffOptionInTheFlooringDD();
@@ -987,7 +987,7 @@ When(/^the Add Takeoff button is clicked in the community flooring takeoff page$
     HomePage.clickingOnAddTakeOffBtn();
 })
 Then(/^a new row is added to the takeoff table of the community flooring takeoff page$/, function() {
-
+    HomePage.validateNewRowIsAddedToTheTakeoffTable();
 })
 When(/^the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page$/, function() {
     HomePage.clickingOnAlterntRmconfigBtn();
@@ -1061,6 +1061,18 @@ When(/^the collapse All button is clicked in the CW community details page$/,  f
 })
 Then(/^all the rooms in the CW community details page are collapsed$/, function() {
     HomePage.validateAllTheRoomsAreCollapsedDetails();
+})
+When(/^the View Options button is clicked in the community LSO (.+) page$/, function(link) {
+    HomePage.clickingOnViewOptionsBtnInLSOPage(link);
+})
+Then(/^the options table is displayed in the community LSO (.+) page$/, function(link) {
+    HomePage.validateOptionsTableIsDisplayedInLSOPage(link);
+})
+When(/^the history button in the community product setup product editor page is clicked$/, function(){
+    HomePage.clickingOnHistoryBtnProductSetupProductEditorPage();
+})
+Then(/^the history modal for the selected Product of the community product setup is loaded$/, function() {
+    HomePage.validateHistoryModalProductSetupPage();
 })
 
 
