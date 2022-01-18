@@ -1,3 +1,11 @@
+@test
+Feature: BVT Click Through Functionality of HDS application
+
+    Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
+
+Background: Pre Login as HDS Admin
+    Given I am logged in to HDS as a Admin
+
 # ##PRODUCT MANAGEMENT========================================================
 @tc:2103 @clickthrough @bvt
 #Product Management - Catalogs
