@@ -1,4 +1,4 @@
-import { assertTextPresentOnElement, selectByTxt, sendKeys, switchToNewWindow, switchWindowOnTitle, waitAndClick } from "../helpers/customcommands";
+import { pauseBrowser, selectByTxt, sendKeys, switchToNewWindow, switchWindowOnTitle, waitAndClick } from "../helpers/customcommands";
 import BasePage from "./base.page";
 let CREDENTIALS_FILE_NAME = 'credentials';
 

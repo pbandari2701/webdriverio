@@ -4,7 +4,6 @@
 	
 # Background: Pre Login as HDS Admin
 #     Given I am logged in to HDS as a Admin
-@test
 Feature: BVT Click Through Functionality of HDS application
 
     Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
@@ -16,14 +15,14 @@ Background: Pre Login as HDS Admin
 
 #Communities list
 #105
-@tc:2179 @clickthrough @bvt
+@tc:2179 @clickthrough @bvt 
 Scenario: Verify_Comm_Communities_List page  
 	Given HDS Home page is displayed
 	When  Communities page link under Community Management Menu is clicked
 	Then  Communities page of the Community Management Menu is loaded
 #  CM - Open 
 #111
-@tc:2180 @clickthrough @bvt
+@tc:2180 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_HomePage
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -39,7 +38,7 @@ Examples:
 # #CM - Open  - Calculation Setup (tab)
 # #CM - Open  - Contact Setup (tab)
 # #CM - Open  - Service Offerings (tab)
-@tc:2181 @clickthrough @bvt
+@tc:2181 @clickthrough @bvt 
 Scenario Outline: Verify_Comm_HomePage_Tabs
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -56,7 +55,7 @@ Examples:
 |Service Offerings |Westford 3s PH 2 |Service Offerings:			|
 
 #CM - Open - Community Setup - Add Contact - Add New Contact
-@tc:2182 @clickthrough @bvt
+@tc:2182 @clickthrough @bvt 
 Scenario Outline: Verify_Comm_HomePage_ContactSetup_Add New Contact
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -70,7 +69,7 @@ Examples:
 
 #Builders (Community Management)
 #101
-@tc:2183 @clickthrough @bvt
+@tc:2183 @clickthrough @bvt 
 Scenario: Verify_Comm_Builders
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -79,7 +78,7 @@ Scenario: Verify_Comm_Builders
 
 # #Builders - Open (Community Management)
 # #102
-@tc:2184 @clickthrough @bvt
+@tc:2184 @clickthrough @bvt 
 Scenario: Verify_Comm_Builders_Open
 	Given HDS Home page is displayed
 		And the Builders Link is clicked under community management
@@ -89,7 +88,7 @@ Scenario: Verify_Comm_Builders_Open
 
 #Builders - New (Community Management)
 #104
-@tc:2186 @clickthrough @bvt
+@tc:2186 @clickthrough @bvt 
 Scenario: Verify_Comm_Builders_New_
 	Given HDS Home page is displayed
 		And the Builders Link is clicked under community management
@@ -98,7 +97,7 @@ Scenario: Verify_Comm_Builders_New_
 	
 #CM - Open - Community Setup - Add New cutoff 
 #119
-@tc:2188 @clickthrough @bvt
+@tc:2188 @clickthrough @bvt 
 Scenario Outline: Verify_Comm_HomePage_Add_New_Cutoff
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -111,7 +110,7 @@ Examples:
 	
 #CM - Open - Community Setup -Open LSO cutff 
 #12
-@tc:2189 @clickthrough @bvt
+@tc:2189 @clickthrough @bvt 
 Scenario: Verify_Comm_HomePage_Open_LSO_Cutoff
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -124,7 +123,7 @@ Examples:
 
 #CM - Open - Prod Setup	
 #121
-@tc:2190 @clickthrough @bvt
+@tc:2190 @clickthrough @bvt 
 Scenario:  Verify_Comm_ProdSetupPage
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -151,7 +150,7 @@ Examples:
 
 #CM - Open - Prod Setup	- Open
 #121
-@tc:2192 @clickthrough @bvt
+@tc:2192 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_ProdSetupPage_Open_ViewHistory
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -166,7 +165,7 @@ Examples:
 
 #CM - Open - Standards Setup
 #126
-@tc:2193 @clickthrough @bvt
+@tc:2193 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Standard_Setup_page
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -179,7 +178,7 @@ Examples:
 
 #CM - Open - Standards Setup - Edit
 #127
-@tc:2194 @clickthrough @bvt
+@tc:2194 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Standard_Setup_page_edit_Prod
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -193,7 +192,7 @@ Examples:
 
 #CM - Open - Standards Setup - Add Product
 #128
-@tc:2195 @clickthrough @bvt
+@tc:2195 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Standard_Setup_page_Add_Products
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -207,7 +206,7 @@ Examples:
 
 #CM - Open - Standards Setup - Flring Stndard prods (tab)
 #130
-@tc:2196 @clickthrough @bvt
+@tc:2196 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Standard_Setup_page_Flooring_Tab
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -234,7 +233,7 @@ Examples:
 |Westford 3s PH 2|
  
 #CM - Open - Flooring Group Setup 
-@tc:2198 @clickthrough @bvt
+@tc:2198 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_FlrngGrpSetUp_Pg
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -246,13 +245,13 @@ Examples:
 |Westford 3s PH 2|
 
 #CM - Open - LifeStyle Option 
-@tc:2199 @clickthrough @bvt
+@tc:2199 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_LSO_list_Pg
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
 	When User opens community named <Community_Name>
-		And User clicks on Lifestyle Options Link under Community Management
-	Then the Community Lifestyle Options list page is loaded
+		And User clicks on Lifestyle Options Link under CM
+	Then the Community Lifestyle Options list page is displayed
 Examples:
 |Community_Name  |
 |Westford 3s PH 2|
@@ -264,7 +263,7 @@ Scenario Outline:  Verify_Comm_LSO_list_Pg Open
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
 	When User opens community named <Community_Name>
-		And User clicks on Lifestyle Options Link under Community Management
+		And User clicks on Lifestyle Options Link under CM
 		And the Open button is clicked for a randomly selected LSO in the community LSO page
 	Then the Community LSO editor page is loaded
 Examples:
@@ -273,12 +272,12 @@ Examples:
 
 #CM - Open - LifeStyle Options  - New
 #167
-@tc:2201 @clickthrough @bvt
+@tc:2201 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_LSO_list_Pg New
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
 	When User opens community named <Community_Name>
-		And User clicks on Lifestyle Options Link under Community Management
+		And User clicks on Lifestyle Options Link under CM
 		And the New button is clicked in the community LSO page
 	Then the Community LSO editor page is loaded
 Examples:
@@ -302,7 +301,7 @@ Examples:
 	
 #  CM - Open - LifeStyle Options Export  - View Options
 #173
-@tc:2203 @clickthrough @bvt
+@tc:2203 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_LSO_Option_Export_ViewOption_Bttn
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -316,7 +315,7 @@ Examples:
 
 #CM - Open - LifeStyle Options   -  Plan Export - View Options
 #177
-@tc:2204 @clickthrough @bvt
+@tc:2204 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_LSO_Plan_Export_ViewOption_Bttn
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -329,7 +328,7 @@ Examples:
 |Westford 3s PH 2|plan_export |
 	
 #CM - Open - Homesites
-@tc:2205 @clickthrough @bvt
+@tc:2205 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Homesite_Setup_Pg
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -341,7 +340,7 @@ Examples:
 |Westford 3s PH 2|
 
 #CM - Open - Homesites   - Open
-@tc:2206 @clickthrough @bvt  
+@tc:2206 @clickthrough @bvt 
 Scenario Outline:  Verify_Comm_Homesite_Setup_Pg_Edit
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -391,7 +390,7 @@ Examples:
 |Westford 3s PH 2|
 
 #CM - Open - Flooring Extra rules - New
-@tc:2210 @clickthrough @bvt     
+@tc:2210 @clickthrough @bvt   
 Scenario Outline:  Verify_Comm_Flring_ExtrRls_New_Pg
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -481,7 +480,7 @@ Examples:
 |Westford 3s PH 2|
 
 #CM - Open - Floor Plans - Edit
-@tc:2216 @clickthrough @bvt      
+@tc:2216 @clickthrough @bvt     
 Scenario Outline:  Verify_Comm_FloorPlan_Edit
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -493,76 +492,76 @@ Examples:
 |Community_Name  | 
 |Westford 3s PH 2|
 
-#CM - Open - Floor Plans - Edit - Upload New
-#151
-@tc:2217 @clickthrough @bvt      
-Scenario Outline:  Verify_Comm_FloorPlan_Edit_uploadNewTrcerDiag
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-		And the 'Upload New' link is clikced in the Community Floor Plan Editor page
-	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# #CM - Open - Floor Plans - Edit - Upload New
+# #151
+# @tc:2217 @clickthrough @bvt      
+# Scenario Outline:  Verify_Comm_FloorPlan_Edit_uploadNewTrcerDiag
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+# 		And the 'Upload New' link is clikced in the Community Floor Plan Editor page
+# 	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
 
-#CM - Open - Floor Plans - Edit - Upload New
-@tc:2218 @clickthrough @bvt      
-Scenario Outline:  Verify_Comm_FloorPlan_Edit_Update Image link
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-		And the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page
-	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# #CM - Open - Floor Plans - Edit - Upload New
+# @tc:2218 @clickthrough @bvt  @wip    
+# Scenario Outline:  Verify_Comm_FloorPlan_Edit_Update Image link
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+# 		And the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+# 	Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
 
-#CM - Open - Floor Plans - Edit - Import Diagram
-@tc:2219 @clickthrough @bvt      
-Scenario Outline:  Verify_Comm_FloorPlan_Edit_ImportTrcerDiag
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-		And the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page
-	Then A new window for importing tracer diagrams to the community floor plan editor page is displayed
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# #CM - Open - Floor Plans - Edit - Import Diagram
+# @tc:2219 @clickthrough @bvt @wip     
+# Scenario Outline:  Verify_Comm_FloorPlan_Edit_ImportTrcerDiag
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+# 		And the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page
+# 	Then A new window for importing tracer diagrams to the community floor plan editor page is displayed
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
          			   
-#CM - Open - Floor Plans - Edit - Edit Diagram
-@tc:2220 @clickthrough @bvt      
-Scenario Outline:  Verify_Comm_FloorPlan_Edit_Edit_TrcerDiag
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-		And the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page
-	Then A Tracer diagram editor window is displayed for the floor plan
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# #CM - Open - Floor Plans - Edit - Edit Diagram
+# @tc:2220 @clickthrough @bvt  @wip    
+# Scenario Outline:  Verify_Comm_FloorPlan_Edit_Edit_TrcerDiag
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+# 		And the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+# 	Then A Tracer diagram editor window is displayed for the floor plan
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
 
-#CM - Open - Floor Plans - Edit - Create Diagram
-@tc:2221 @clickthrough @bvt      
-Scenario Outline:  Verify_Comm_FloorPlan_Edit_Create_TrcerDiag
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
-		And the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page
-	Then A Tracer diagram editor window is displayed for the floor plan
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# #CM - Open - Floor Plans - Edit - Create Diagram
+# @tc:2221 @clickthrough @bvt  @wip    
+# Scenario Outline:  Verify_Comm_FloorPlan_Edit_Create_TrcerDiag
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 		And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+# 		And the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page
+# 	Then A Tracer diagram editor window is displayed for the floor plan
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
 
 #CM - Open - Floor Plans  - Copy
 @tc:2222 @clickthrough @bvt      
@@ -690,7 +689,7 @@ Examples:
 
 #CM - Open - Floor Plans  -  - Window Treatmnt - import temlate
 #165
-@tc:2232 @clickthrough @bvt     
+@tc:2232 @clickthrough @bvt  
 Scenario Outline:  Verify_Comm_FloorPlan_Window_Trtmnt_ImportTmplt
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -704,7 +703,7 @@ Examples:
 
 #CM - Open - Floor Plans - CW Structure 
 #161
-@tc:2233 @clickthrough @bvt     
+@tc:2233 @clickthrough @bvt    
 Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
@@ -718,20 +717,20 @@ Examples:
 
 #CM - Open - Floor Plans  -  - CW Structure - Copy Area
 #152
-@tc:2234 @clickthrough @bvt     
- Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_copyAreaModal
-	Given HDS Home page is displayed
-		And Communities page link under Community Management Menu is clicked
-	When User opens community named <Community_Name>
-		And User clicks on Floor Plan Link under Community Management
-	#	And User navigates to the Community CW structure page for floor plan named testPlan2
-		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
-		And all the rooms are expanded in the community CW structure page
-		And the copy button for the first area displayed is clicked in the community CW structure page
-	Then the modal for copying area is displayed in the community CW structure page
-Examples:
-|Community_Name  | 
-|Westford 3s PH 2|
+# @tc:2234 @clickthrough @bvt   @wip  
+#  Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page_copyAreaModal
+# 	Given HDS Home page is displayed
+# 		And Communities page link under Community Management Menu is clicked
+# 	When User opens community named <Community_Name>
+# 		And User clicks on Floor Plan Link under Community Management
+# 	#	And User navigates to the Community CW structure page for floor plan named testPlan2
+# 		And the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+# 		And all the rooms are expanded in the community CW structure page
+# 		And the copy button for the first area displayed is clicked in the community CW structure page
+# 	Then the modal for copying area is displayed in the community CW structure page
+# Examples:
+# |Community_Name  | 
+# |Westford 3s PH 2|
 
 # #CM - Open - Floor Plans  -  - CW Structure - copy structure/detail
 # #171
@@ -825,7 +824,7 @@ Examples:
 
 #CM - Open - Floor Plans  -  - CW Details - Collapse All Rooms
 #136
-@tc:2241 @clickthrough @bvt     
+@tc:2241 @clickthrough @bvt    
 Scenario Outline:  Verify_Comm_FloorPlan_CW Details_Page Collapse All
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked

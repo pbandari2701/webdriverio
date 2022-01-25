@@ -1,3 +1,4 @@
+@test123
 Feature: BVT Check Reports Tier1 Feature
 
     Feature Description "This feature validate the Business Critical Functionality of the HDS Application"
@@ -17,7 +18,7 @@ Examples:
 	| Service_offering  | Buyer_Name   | Community_Name    |
 	| Flooring          | autotest	   | Westford 3s PH 2  |
     | Lifestyle Options | autotest	   | Westford 3s PH 2  |
-	| Wall Tile         | autotest	   | Westford 3s PH 2  |
+	| Counter & Wall    | autotest	   | Westford 3s PH 2  |
 
 @bvt @tier1 
 Scenario Outline: Check CalcBreakDown report off of Active Design
@@ -30,7 +31,7 @@ Scenario Outline: Check CalcBreakDown report off of Active Design
 Examples: 
 	| Service_offering  | Buyer_Name   | Community_Name    |
 	| Flooring          | autotest	   | Westford 3s PH 2  |
- 	| Wall Tile         | autotest	   | Westford 3s PH 2  |
+	| Counter & Wall    | autotest	   | Westford 3s PH 2  |
 
 @bvt @tier1 
 Scenario Outline: Check Preliminary Design Summary Reports
@@ -46,7 +47,7 @@ Examples:
 	| Service_offering  | Buyer_Name   | Community_Name    |
 	| Flooring          | autotest	   | Westford 3s PH 2  |
     | LifeStyle Options | autotest	   | Westford 3s PH 2  |
-	| Wall Tile         | autotest	   | Westford 3s PH 2  |
+	| Counter & Wall    | autotest	   | Westford 3s PH 2  |
 
 @bvt @tier1 
 Scenario Outline: Check Flooring Quote Calculator breakdown Reports

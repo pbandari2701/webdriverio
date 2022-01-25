@@ -1,6 +1,6 @@
 const ASSERT = require('assert')
 const allureReporter = require('@wdio/allure-reporter').default
-const WAIT_FOR_TIMEOUT   = 30000;
+const WAIT_FOR_TIMEOUT   = 45000;
 const WAIT_UNTIL_TIMEOUT = 120000;
 const WAIT_UNTIL_FILE_DOWNLOAD = 300000;
 const WAIT_FOR_TIMEOUT_UNTIL_ELEMENT_GONE = 3000000;
@@ -26,7 +26,9 @@ function getScreenshot() {
 }
 
 module.exports = {
-    
+    closeWindow : function() { 
+        browser.window.close();
+    } ,
     waitAndClick: function(element, elementLabel) {
         let eleStatus = false;
         try {
@@ -387,6 +389,16 @@ module.exports = {
         } catch (error) {
             allureReporter.addStep("switch to next window", getScreenshot(), 'failed')
         }
+    },
+    switchToPreviousWindow () {
+        try {
+            browser.pause(5000)
+            browser.switchToWindow(browser.getWindowHandles()[0])
+            allureReporter.addStep("switched to previous window", getScreenshot(), 'passed')    
+        } catch (error) {
+            allureReporter.addStep("switch to previous window", getScreenshot(), 'failed')
+        }
+
     }
 
 

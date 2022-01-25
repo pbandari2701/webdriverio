@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:31:52" time="593.495" tests="24" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
+      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="featureFile" value=".\test\features\clickthrough\siteAdministrationMenu.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Area Types page" time="16.178">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Area Types link under Site Administration Menu is clicked✅ Then Area Typespage is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Area Types New" time="25.471">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Area Types link under Site Administration Menu is clicked✅ When the New button is clicked in the site-level Area Type page✅ Then the modal for creating new Area type is displayed in the site-level Area Type page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Area Types Edit" time="23.281">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Area Types link under Site Administration Menu is clicked✅ When the Edit button is clicked for a randomly selected AreaType in the site-level Area Type page✅ Then the Area Type editor Modal is displayed in the site-level Area Type page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Area Types disable" time="17.188">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Area Types link under Site Administration Menu is clicked✅ When the Disable button is clicked for a randomly selected AreaType in the site-level Area Type page✅ Then the modal for disabling an Area type is displayed in the site-level Area Type page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Assign Take Off page" time="24.371">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Assign Take Offs page link under Site Administration Menu is clicked✅ Then Assign Take Offs page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Assign Take Off Missing Qty s Rprt link" time="34.692">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When the Missing Quantities Report link in the Site Admin menu is clicked✅ Then the Report Viewer page loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Assign Take Off page edit bttn" time="37.679">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Assign Take Offs page link under Site Administration Menu is clicked✅ When the Edit button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page✅ Then the take Off editor Modal is displayed in the site-level Assign Take Offs list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Assign Take Off page disable bttn" time="27.396">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Assign Take Offs page link under Site Administration Menu is clicked✅ When the Disable button is clicked for a randomly selected Takeoff in the site-level Assign Take Offs list page✅ Then the Modal for disabling a take off is displayed in the site-level Assign Take Offs list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Assign Take Off page add TakeOff bttn" time="26.909">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Assign Take Offs page link under Site Administration Menu is clicked✅ When the Add take off button is clicked for a randomly selected Area Type in the site-level Assign Take Offs list page✅ Then the Modal for adding a take off is displayed in the site-level Assign Take Offs list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns page" time="22.077">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Patterns link under Site Administration Menu is clicked✅ Then Patterns page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns New Pattern bttn" time="17.017">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ When the New Pattern button is clicked in the site-level Patterns list page✅ Then the New Pattern Modal is displayed in the site-level patterns list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Edit bttn" time="31.887">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ When the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page✅ Then the pattern editor Modal is displayed in the site-level patterns list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Copy bttn" time="31.164">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ When the Copy button is clicked for a randomly selected Pattern in the site-level Patterns list page✅ Then the Copy Pattern Modal is displayed in the site-level patterns list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Modals hide image" time="31.262">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ And the Copy is clicked for a randomly selected Pattern in the  Patterns list page✅ When the hide link is clicked in the modal displayed in the site-level Copy_Pattern page✅ Then the pattern image in Copy_Pattern modal is not displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Modals hide image" time="29.256">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ And the Edit is clicked for a randomly selected Pattern in the  Patterns list page✅ When the hide link is clicked in the modal displayed in the site-level Edit_Pattern page✅ Then the pattern image in Edit_Pattern modal is not displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Modals hide image" time="29.385">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ And the Disable is clicked for a randomly selected Pattern in the  Patterns list page✅ When the hide link is clicked in the modal displayed in the site-level Disable_Pattern page✅ Then the pattern image in Disable_Pattern modal is not displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Edit uploadNew Image" time="28.998">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ And the Edit button is clicked for a randomly selected Pattern in the site-level Pattern page✅ When the image is clicked in the Pattern Editor modal✅ Then file upload field is displayed in the Pattern editor modal
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Disable bttn" time="39.34">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ When the Disable button is clicked for a randomly selected Pattern in the site-level Patterns list page✅ Then the Disable Pattern Modal is displayed in the site-level patterns list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Add New TO bttn" time="22.702">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ When the Add New TakeOff button is clicked for a randomly selected Pattern in the site-level Patterns list page✅ Then the Add New TakeOff Modal is displayed in the site-level patterns list page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Site Admin Patterns Tracer bttn" time="35.332">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Patterns link under Site Administration Menu is clicked✅ And Area Type Selected✅ When the 'Tracer' button is clicked for a randomly selected Pattern in the site-level Patterns list page✅ Then A new window for editing CW Pattern tracer is opened from the Site-Admin Patterns page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Tagging Prod Categories page" time="7.556">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Tagging Product Categories page link under Site Administration Menu is clicked✅ Then Tagging Product Categories page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Buyer Types page" time="10.731">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Buyer Types Page link under Site Administration Menu is clicked✅ Then Buyer Types Page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Buyer Types page New bttn" time="11.841">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Buyer Types Page link under Site Administration Menu is clicked✅ When the New button is clicked in the Buyer Type list page✅ Then the Buyer type editor page under Site Admin menu is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Buyer Types page Open" time="11.624">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Buyer Types Page link under Site Administration Menu is clicked✅ When the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page✅ Then the Buyer type editor page under Site Admin menu is loaded
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

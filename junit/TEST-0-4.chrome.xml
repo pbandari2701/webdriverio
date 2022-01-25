@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:11:56" time="4507.181" tests="68" failures="22" errors="22" skipped="3">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
+      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="featureFile" value=".\test\features\clickthrough\communityManagement.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Communities List page" time="13.826">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Communities page link under Community Management Menu is clicked✅ Then Communities page of the Community Management Menu is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage" time="56.797">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ Then Community info page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="24.249">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Community Setup is clicked in the Community Home page✅ Then the panel Community Information: for Community Setup tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="46.597">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Report Setup is clicked in the Community Home page✅ Then the panel Report Disclosure Statements for Report Setup tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="21.402">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Email Setup is clicked in the Community Home page✅ Then the panel Email Templates for Email Setup tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="38.561">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Calculation Setup is clicked in the Community Home page✅ Then the panel Builder Calculation Method: for Calculation Setup tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="35.814">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Contact Setup is clicked in the Community Home page✅ Then the panel Add New Contact for Contact Setup tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Tabs" time="20.308">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Service Offerings is clicked in the Community Home page✅ Then the panel Service Offerings: for Service Offerings tab is displayed in the Community Home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage ContactSetup Add New Contact" time="35.622">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the tab Contact Setup is clicked in the Community Home page✅ And the Add New Contact link is clicked in the contact setup tab of the community home page✅ Then a new row is added to the contact setup tab of the community home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Builders" time="15.809">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When the Builders Link is clicked under community management✅ Then The builders list page for the community is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Builders Open" time="16.023">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Builders Link is clicked under community management✅ When the Open button is clicked for the first builder listed in the Community Builders list page✅ Then the community Builder Editor page is opened
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Builders New" time="14.749">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Builders Link is clicked under community management✅ When the New button is clicked in the Community builders list page✅ Then the community Builder Editor page is opened
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Add New Cutoff" time="35.084">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the Add New Cutoff button is clicked in the community home page✅ Then the LSO cutoff page for the community is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm HomePage Open LSO Cutoff" time="35.578">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And the Open button is clicked for a randomly selected LSO Cutoff in the community home page✅ Then the LSO cutoff page for the community is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm ProdSetupPage" time="25.731">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Product Setup Link under Community Management✅ Then the Community Product setup page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm ProdSetupPage Open" time="29.724">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Product Setup Link under Community Management✅ And the Open button is clicked for a randomly selected product in the community product setup list page✅ Then the Product Editor page for the community product setup is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm ProdSetupPage Open ViewHistory" time="34.51">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Product Setup Link under Community Management✅ And the Open button is clicked for a randomly selected product in the community product setup list page✅ And the history button in the community product setup product editor page is clicked✅ Then the history modal for the selected Product of the community product setup is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page" time="40.433">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ When User clicks on Standards Setup link under Community Management✅ Then the Community Standards setup page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page edit Prod" time="35.783">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Standards Setup link under Community Management✅ And User clicks on Edit button for one of the standard products listed in the Community standard setup page✅ Then the product search modal is displayed in the community standard setup page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page Add Products" time="49.417">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Standards Setup link under Community Management✅ And User clicks on 'Add Product' button in the Community standard setup page✅ Then the product search modal is displayed in the community standard setup page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page Flooring Tab" time="87.743">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Standards Setup link under Community Management✅ And the flooring_tab is clicked in the Community standard setup page✅ Then flooring_products are displayed in the Community standard setup page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page Flooring Tab" time="60.537">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Standards Setup link under Community Management✅ And the cw_tab is clicked in the Community standard setup page✅ Then cw_products are displayed in the Community standard setup page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Standard Setup page Flooring Tab" time="23.786">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Standards Setup link under Community Management✅ And the edge_tab is clicked in the Community standard setup page✅ Then edge_types are displayed in the Community standard setup page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Pg" time="30.913">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Floor Plan Link under Community Management✅ Then the Community Floor Plan list page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FlrngGrpSetUp Pg" time="25.982">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Group Link under Community Management✅ Then the Community Flooring Group list page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO list Pg" time="35.317">
+      <skipped/>
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2⚠️ User clicks on Lifestyle Options Link under Community Management
+⚠️ the Community Lifestyle Options list page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO list Pg Open" time="12.335">
+      <skipped/>
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2⚠️ User clicks on Lifestyle Options Link under Community Management
+⚠️ the Open button is clicked for a randomly selected LSO in the community LSO page
+⚠️ the Community LSO editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO list Pg New" time="40.418">
+      <skipped/>
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2⚠️ User clicks on Lifestyle Options Link under Community Management
+⚠️ the New button is clicked in the community LSO page
+⚠️ the Community LSO editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO all options" time="17.112">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options plan_import under Community Management✅ Then the Community Lifestyle Options HDS (QA) - Lifestyle Options Plan Import - HDS is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO all options" time="16.624">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options import under Community Management✅ Then the Community Lifestyle Options HDS (QA) - Lifestyle Options Import - HDS is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO all options" time="16.99">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options export under Community Management✅ Then the Community Lifestyle Options Lifestyle Options Export - HDS is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO all options" time="20.951">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options plan_export under Community Management✅ Then the Community Lifestyle Options HDS (QA) - Lifestyle Options Plan Export - HDS is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO Option Export ViewOption Bttn" time="21.264">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options export under Community Management✅ And the View Options button is clicked in the community LSO export page✅ Then the options table is displayed in the community LSO export page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm LSO Plan Export ViewOption Bttn" time="20.643">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Lifestyle Options plan_export under Community Management✅ And the View Options button is clicked in the community LSO plan_export page✅ Then the options table is displayed in the community LSO plan_export page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Homesite Setup Pg" time="44.163">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Homesite Link under Community Management✅ Then the Community Homesite Setup page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Homesite Setup Pg Edit" time="20.525">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Homesite Link under Community Management✅ When the Edit button for the first homesite listed in the commmunity Homesite setup page is clicked✅ Then the Community Homesite Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Homesite Setup Pg New" time="46.289">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Homesite Link under Community Management✅ And the New button is clicked in the commmunity Homesite setup page✅ Then the Community Homesite Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Copy Utilities Pg" time="15.271">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Copy Utilities Link under Community Management✅ Then the Community Copy Utilities page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Flring Extra Rules Pg" time="19.697">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Extra rules Link under Community Management✅ Then the Community Flooring Extra rules page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Flring ExtrRls New Pg" time="36.446">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Extra rules Link under Community Management✅ And the New button is clicked in the Flooring Extra Rules list page✅ Then the Flooring Extra Rules Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Flring ExtrRls Open" time="38.34">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Extra rules Link under Community Management✅ And the first flooring extra rule is opened from the Flooring Extra Rules list page✅ Then the Flooring Extra Rules Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Flring ExtrRls New ChangePlansAndTakeOffs" time="28.708">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Extra rules Link under Community Management✅ And the New button is clicked in the Flooring Extra Rules list page✅ And the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page✅ Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm Flring ExtrRls Open ChangePlansAndTakeOffs" time="33.02">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Flooring Extra rules Link under Community Management✅ And the first flooring extra rule is opened from the Flooring Extra Rules list page✅ And the 'Change Plans and Takeoffs' button is clicked in the Flooring Extra Rules Editor Page✅ Then the Change Plans and Takeoffs dialog is displayed in the Flooring Extra Rules Editor Page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan New" time="44.323">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Floor Plan Link under Community Management✅ And the 'New' button is clicked in the Floor Plan List page✅ Then the Community Floor Plan Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit" time="19.281">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Floor Plan Link under Community Management✅ And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page✅ Then the Community Floor Plan Editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit uploadNewTrcerDiag" time="39.992">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Communities page link under Community Management Menu is clicked✅ When User opens community named Westford 3s PH 2✅ And User clicks on Floor Plan Link under Community Management✅ And the 'Edit' button is clicked for the first plan listed in the Floor Plan List page✅ And the 'Upload New' link is clikced in the Community Floor Plan Editor page✅ Then A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit Update Image link" time="124.325">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the 'Update Image' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+⚠️ A new window for uploading new tracer diagram to the community floor plan editor page is displayed
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit ImportTrcerDiag" time="123.39">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the 'Import Diagrams' link is clikced in the Community Floor Plan Editor page
+⚠️ A new window for importing tracer diagrams to the community floor plan editor page is displayed
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit Edit TrcerDiag" time="123.478">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the 'Edit' link is clicked for the first diagram listed in the Community Floor Plan Editor page
+⚠️ A Tracer diagram editor window is displayed for the floor plan
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Edit Create TrcerDiag" time="123.555">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Edit' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the 'Create Diagram' link is clicked for the first background Image listed in the Community Floor Plan Editor page
+⚠️ A Tracer diagram editor window is displayed for the floor plan
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Copy" time="125.951">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the Copy button is clicked in the Community Floor Plan list page
+⚠️ the Floor Plan Copy page for the community is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Rooms" time="124.733">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the room editor page for the Community floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Rooms AddNewRm" time="123.677">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Rooms' button is clicked for the first plan listed in the Floor Plan List page
+⚠️ the Add New Room button is clicked in the Room editor page for the community floor plan
+⚠️ A new row is added in the Room editor page of the community floor plan
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Flring TakeOffs pg" time="124.839">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ the takeoff page for the community floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan FlringTakeoffs AllwnceComparison" time="124.558">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ the 'Allowance Comparison' button is clicked in the commpunity floorplan Takeoffs page
+⚠️ the Allowance Comparison modal is displayed in the Community floorplan Takeoffs page
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan FlringTakeoffs editRule" time="436.597">
+      <failure/>
+      <error message="Error: function timed out, ensure the promise resolves within 180000 milliseconds"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ the edit rule button is clicked for a randomly selected room in the community floorplan takeoff page
+⚠️ the Edit Takeoff Extra Rule modal is displayed in the community floorplan takeoff page
+]]></system-out>
+      <system-err><![CDATA[
+Error: function timed out, ensure the promise resolves within 180000 milliseconds
+    at Timeout._onTimeout (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\cucumber-framework\node_modules\@cucumber\cucumber\src\user_code_runner.ts:80:18)
+    at listOnTimeout (internal/timers.js:557:17)
+    at processTimers (internal/timers.js:500:7)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan FlringTakeoffs addTakeOff" time="129.962">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ the Add Takeoff button is clicked in the community flooring takeoff page
+⚠️ a new row is added to the takeoff table of the community flooring takeoff page
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan FlringTakeoffs Alternate room Configuration page" time="127.041">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the takeoff option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ the 'Alternate Room Configuration' button is clicked in the Community floor plan take off page
+⚠️ The Alternate Room Configuration page of the community floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Flooring Control" time="126.835">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the Control option in the Flooring drop down of the first floor plan listed is clicked
+⚠️ Product control By Area page of the selected Community floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan Window Trtmnt ImportTmplt" time="126.27">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the Import Template option in the Window Treatments drop down of the first floor plan listed is clicked
+⚠️ the Import Window Treatement Template modal is displayed in the Community floorplan list page
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Strucutre Page" time="125.1">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ the community Counter and Wall structure page for the floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Strucutre Page copyAreaModal" time="123.777">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ all the rooms are expanded in the community CW structure page
+⚠️ the copy button for the first area displayed is clicked in the community CW structure page
+⚠️ the modal for copying area is displayed in the community CW structure page
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Strucutre Page ExpandAllRooms" time="124.402">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ all the rooms are expanded in the community CW structure page
+⚠️ all the rooms in the CW community strucutre page are expanded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Strucutre Page CollapseAllRooms" time="123.874">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ all the rooms are expanded in the community CW structure page
+⚠️ the Collapse All button is clicked in the CW community strucutre page
+⚠️ all the rooms in the CW community strucutre page are collapsed
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Strucutre Pg AddNewRoom" time="124.356">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Structure' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ the 'Add New Room' button is clicked in the Community CW Strucutre page
+⚠️ the modal for adding new room to the Community CW structure page is displayed
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Details Page" time="127.889">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ the community Counter and Wall details page for the floor plan is loaded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Details Page ExpandAll" time="123.453">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ the Expand All Rooms button is clicked in the CW community details page
+⚠️ all the rooms in the CW community details page are expanded
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Comm FloorPlan CW Details Page Collapse All" time="125.697">
+      <failure/>
+      <error message="AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled"/>
+      <system-out><![CDATA[
+❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
+⚠️ Communities page link under Community Management Menu is clicked
+⚠️ User opens community named Westford 3s PH 2
+⚠️ User clicks on Floor Plan Link under Community Management
+⚠️ the 'Details' option in the Counter and Wall drop down of the first floor plan listed in the community floor plan page is clicked
+⚠️ the Expand All Rooms button is clicked in the CW community details page
+⚠️ the collapse All button is clicked in the CW community details page
+⚠️ all the rooms in the CW community details page are collapsed
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError [ERR_ASSERTION]: Unable to set value to webelement UserName txt as the element is not enabled
+    + expected - actual
+
+    -false
+    +true
+
+    at sendKeys (C:\roopesh\wdio.hds.autotest\test\helpers\customcommands.js:79:13)
+    at LoginPage.loginHDS (C:\roopesh\wdio.hds.autotest\test\pageobjects\/login.page.js:17:9)
+    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/loginpagesteps.js:20:15)
+    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

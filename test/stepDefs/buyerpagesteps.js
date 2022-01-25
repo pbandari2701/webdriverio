@@ -16,7 +16,7 @@ Given(/^User navigates to the buyer's scenario options selector Page for (.+) Se
 
 Given(/^User navigates to the Buyer report page for (.+)$/,function(svcOffering){
     buyersPage.navigateToServiceOffering(svcOffering);
-    if((svcOffering == 'Flooring') || (svcOffering == 'Wall Tile')){
+    if((svcOffering == 'Flooring') || (svcOffering == 'Counter & Wall')){
 
         buyersPage.openSVCRecord();
     }    

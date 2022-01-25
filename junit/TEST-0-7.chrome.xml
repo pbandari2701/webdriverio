@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:30:28" time="75.869" tests="5" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
+      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="featureFile" value=".\test\features\clickthrough\securitymenu.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify HDS Home Page" time="12.702">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Then HDS Home page is displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Security Manage Users page" time="20.617">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Manage User link under Security Menu is clicked✅ Then Manage Users page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Security User Editor Page for New User" time="19.519">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Manage User link under Security Menu is clicked✅ When the New button is clicked in the Manage Users list page✅ Then the User editor page is loaded
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Security Users New ERP Linked bttn" time="9.587">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Manage User link under Security Menu is clicked✅ When the New ERP Linked button is clicked in the Manage Users list page✅ Then The ERP Designer Search modal is displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Security User Editor Page for existing User" time="13.383">
+      <system-out><![CDATA[
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Manage User link under Security Menu is clicked✅ When the Open button is clicked for the first user listed in the Manage users list page✅ Then the User editor page is loaded
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import { pauseBrowser, expectToHaveTitle } from "../helpers/customcommands";
+import { pauseBrowser,switchToPreviousWindow, expectToHaveTitle } from "../helpers/customcommands";
 import buyersPage from "../pageobjects/buyers.page";
 import HomePage from '../pageobjects/home.page'
 import quotePage from '../pageobjects/quote.page'
@@ -551,6 +551,7 @@ When(/^the link for the first tracer diagram listed is clicked in the Buyer Repo
 })
 Then(/^A new window for displaying tracer diagram selected from Buyer Report page is loaded$/,  function(){
     expectToHaveTitle('Floor Plan Diagram Tracer');
+    switchToPreviousWindow();
 })
 When(/^the Current Quote link for (.+) service offering is clicked in the buyer info page$/, function(Service_Offering)  { 
     HomePage.clickingOnCurrentQuoteLinkfor(Service_Offering);
@@ -598,6 +599,7 @@ When(/^the link for the first diagram listed is clicked in the Buyer's flooring 
 })
 Then(/^A new window for displaying tracer diagram selected from Buyer's flooring selector page is loaded$/, function() { 
     expectToHaveTitle('Floor Plan Diagram Tracer');
+    switchToPreviousWindow();
 })
 When(/^the link for the room named (.+) is clicked in the Flooring Selector page$/, function(RoomName) {
     HomePage.clickingOnRoomLink(RoomName);
@@ -769,6 +771,7 @@ When(/^the tab (.+) is clicked in the Community Home page$/, function(CommunityT
 })
 Then(/^the panel (.+) for (.+) tab is displayed in the Community Home page$/, function(CommunityPanel, CommunityTab) {
    HomePage.validatePanelForCommunityTabIsDisplayed(CommunityPanel, CommunityTab);
+   
 })
 When(/^the Add New Contact link is clicked in the contact setup tab of the community home page$/, function() { 
     HomePage.clickingOnAddNewContactLink();
@@ -851,10 +854,10 @@ When(/^User clicks on Flooring Group Link under Community Management$/, function
 Then(/^the Community Flooring Group list page is loaded$/,  function(){
     expectToHaveTitle('HDS (QA) - Flooring Group Setup - HDS');
 }) 
-When(/^User clicks on Lifestyle Options Link under Community Management$/, function(){
+When(/^User clicks on Lifestyle Options Link under CM$/, function(){
     HomePage.clickingOnLifestyleOptionsLinkCM();
 })
-Then(/^the Community Lifestyle Options list page is loaded$/,  function(){
+Then(/^the Community Lifestyle Options list page is displayed$/,  function(){
     expectToHaveTitle('Lifestyle Options - HDS');
 })
 When(/^the Open button is clicked for a randomly selected LSO in the community LSO page$/, function() {
@@ -1021,12 +1024,6 @@ When(/^the copy button for the first area displayed is clicked in the community 
 })
 Then(/^the modal for copying area is displayed in the community CW structure page$/, function() {
     HomePage.validateCopyAreaModalIsDisplayed();
-})
-When(/^User navigates to the Community CW structure page for floor plan$/, function() {
-
-})
-When(/^the Copy Structure or Detail button is clicked in the community CW structure page$/, function() {
-
 })
 Then(/^all the rooms in the CW community strucutre page are expanded$/, function() {
     HomePage.validateAllTheRoomsAreExpanded();

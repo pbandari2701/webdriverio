@@ -1,5 +1,5 @@
 import { expect } from "pactum";
-import { clearTextBox, expectToBeDisabled,assertEquals,switchToNextWindowArray,expectToHaveUrlContaining, expectToBeDisplayed, expectNotToBeDisplayed,switchToNewWindow, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert, selectByTxt } from "../helpers/customcommands";
+import { clearTextBox,switchToPreviousWindow,closeWindow, expectToBeDisabled,assertEquals,switchToNextWindowArray,expectToHaveUrlContaining, expectToBeDisplayed, expectNotToBeDisplayed,switchToNewWindow, expectToBePresent, expectToHaveTitle, getAttributeValue, getTextOfElement, pauseBrowser, reloadPage, sendKeys, sendTab, waitAndClick, waitForDisplay,waitUntilElementIsClickable,waitUntilElementIsDisabled,waitUntilElementIsDisplayed, waitUntilElementIsEnabled, acceptAlert, selectByTxt } from "../helpers/customcommands";
 import { default as BasePage } from "./base.page";
 const allureReporter = require('@wdio/allure-reporter').default
 const assert         = require('assert')
@@ -253,7 +253,7 @@ class HomePage extends BasePage{
  get CWDD ()                                { return $("//button[text()='Counter & Wall ']")}
  get structureOption ()                     { return $("//a[text()='Structure']")}
  get expandAllRooms ()                      { return $("//span[@id='showHideRooms']")}
- get copyCWArea ()                          { return $("//div[@id='area938271']//span[@class='glyphicon glyphicon-duplicate']")}
+ get copyCWArea ()                          { return $('//button[@class="btn btn-xs btn-default"]')}
  get copyAreaModal ()                       { return $("//h4[text()='Select A Room To Copy To']")} 
  get roomExpandIcon ()                      { return $("//span[@class='glyphicon glyphicon-chevron-down']")}
  get roomCollapseIcon ()                    { return $('//span[@class="glyphicon glyphicon-chevron-right"]')}
@@ -264,7 +264,7 @@ class HomePage extends BasePage{
  get applyProducts ()                       { return $("//button[text()='Apply Products']")}
  get roomCollapseIcon2 ()                   { return $("//div[@class='col-md-6 pull-left']//div[2]//div[1]//div[1]//span[1]//span[1]")}
  get lsoEXportTable ()                      { return $('//td[@style="vertical-align:top;"]')}
-
+ get closeBtn ()                            { return $("//span[text()='×']")}
  get historyBtn ()                          { return $("//a[text()=' History']")}
  get historyModal ()                        { return $('//table[@class="table dataTable no-footer"]')}
  getReportType(Report_Type) {
@@ -533,6 +533,7 @@ clickingOnAddNewTakeOffButton (){
 validateNewWindowForEditingCWPatternTracerIsOpened (){
     switchToNextWindowArray();
     expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__cw_tracer');
+    switchToPreviousWindow();
     }
 
 clicikingSubscriberSettings() {
@@ -684,6 +685,7 @@ validatePanelForSubscriberSettingsPageTabIsDisplayed(SubscriberSettingsPageTab){
     pauseBrowser(10000)
   }
   validateSearchFilterProductsIsDisplayedForST() {
+      pauseBrowser(10000)
       this.commercialLevelCutLoop.scrollIntoView();
       expectToBeDisplayed(this.commercialLevelCutLoop, 'commercial level cut loop');
   }
@@ -834,7 +836,8 @@ clickingOnMonthlyPaymentButton(){
     switchToNewWindow('https://qa.homedesignsystems.com/dc__loan_values.aspx');
 }
 validateMonthlyPaymentWindowIsDisplayed () {
-    expectToBeDisplayed( this.monthlyPaymentWindow, 'monthly payment window')
+    expectToBeDisplayed( this.monthlyPaymentWindow, 'monthly payment window');
+    switchToPreviousWindow();
 }
 clickingOnAddAdditionalBuyerButton() {
     this.addAdditionalBuyerButton.scrollIntoView();
@@ -1178,7 +1181,7 @@ validateChangeLayoutModalIsDisplayed (){
      waitAndClick (this.flooringGroupLinkCM, ' flooring group link CM');
  }
  clickingOnLifestyleOptionsLinkCM (){
-    this.lifestyleOptionsCM.scrollIntoView();
+     this.lifestyleOptionsCM.scrollIntoView();
      waitAndClick (this.lifestyleOptionsCM, 'lifestyle options link CM');
  }
  clickingOnOpenBtnInLSOCommunityPage(){
@@ -1234,6 +1237,7 @@ clickingOnUploadNewLink (){
 validateNewWindowForUploadingTracerDiagramIsDisplayed (){
     switchToNextWindowArray();
     expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__upload_floorplan_image.aspx');
+    browser.quit();
 }
 clickingOnUpdateDiagramLink (){
     waitAndClick (this.updateDiagramLink, ' update diagram link');
@@ -1243,14 +1247,16 @@ clickingOnImportDiagrams () {
 }
 validateNewWindowForImportingTracerDiagrams (){
     switchToNextWindowArray();
-    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__import_floorplan_diagrams')
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__import_floorplan_diagrams');
+    switchToPreviousWindow();
 }
 clickingOnEditLinkFloorPlanListpage (){
     waitAndClick (this.editBtn4, ' edit floor plan list page');
 }
 validateTracerDiagramEditorWindowIsDisplayed (){
     switchToNextWindowArray();
-    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__floorplan_tracer.aspx')
+    expectToHaveUrlContaining('https://qa.homedesignsystems.com/dm__floorplan_tracer.aspx');
+    switchToPreviousWindow();
 }
 clickingOnCreateDiagramLink  () {
     waitAndClick(this.createDiagramLink, 'create Diagram Link');
@@ -1342,6 +1348,7 @@ clickingOnExpandAllRoomsBtn () {
 }
 clickingOnCopyBtnAreaInCWStructre (){
     waitAndClick(this.copyCWArea, 'Copy CW area in CW structure');
+    waitAndClick(this.closeBtn, ' close btn');
 }
 validateCopyAreaModalIsDisplayed (){
     expectToBeDisplayed(this.copyAreaModal, 'copy Area Modal');
