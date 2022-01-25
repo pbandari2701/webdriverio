@@ -703,7 +703,7 @@ Examples:
 
 #CM - Open - Floor Plans - CW Structure 
 #161
-@tc:2233 @clickthrough @bvt    
+@tc:2233 @clickthrough @bvt    @tip1
 Scenario Outline:  Verify_Comm_FloorPlan_CW Strucutre_Page
 	Given HDS Home page is displayed
 		And Communities page link under Community Management Menu is clicked
