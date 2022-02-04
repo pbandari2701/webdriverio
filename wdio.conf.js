@@ -2,7 +2,7 @@ var allure           = require('allure-commandline')
 const fsextra        = require('fs-extra')
 const path           = require('path')
 const fs             = require('fs')
-var baseUrl          = 'https://qa.homedesignsystems.com/';
+var baseUrl          = 'https://uat.homedesignsystems.com/';
 const commands       = require('./test/helpers/customcommands.js')
 const pactum         = require('pactum');
 const { clear } = require('console');
@@ -33,13 +33,13 @@ exports.config = {
     ],
     maxInstances: 1,
     capabilities: [{
-        maxInstances: 2,
+        maxInstances: 1,
         browserName: testBrowser,
         'goog:chromeOptions': {
             
             // to run chrome headless the following flags are required
             // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-            args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
+            // args: ['--no-sandbox','--headless','--disable-dev-shm-usage','--window-size=1920x1080'],
             prefs:{
             'directory_upgrade': true,
             'prompt_for_download': false,

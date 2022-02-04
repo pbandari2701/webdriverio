@@ -209,6 +209,14 @@ module.exports = {
             allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');
         }
     },
+    expectToHaveTitleContaining : function(title) {
+        try {
+            expect(browser).toHaveTitleContaining(title);
+            allureReporter.addStep('Validated that '+title+' is successfully displayed', getScreenshot(),'passed');
+        } catch (Error) {
+            allureReporter.addStep('Expected page '+title+' is not displayed', getScreenshot(), 'failed');
+        }
+    },
     expectToHaveUrlContaining : function(contains) { 
         try {
             expect(browser).toHaveUrlContaining(contains);

@@ -1,178 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:16:04" time="858.872" tests="31" failures="1" errors="1" skipped="0">
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-28T15:37:49" time="570.001" tests="31" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
-      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="capabilities" value="chrome.97_0_4692_99.windows"/>
       <property name="featureFile" value=".\test\features\clickthrough\productManagement.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page" time="17.992">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page" time="20.708">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Catalogs page link under Product Management Menu is clicked✅ Then Catalogs page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page Edit catalog" time="23.974">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page Edit catalog" time="8.916">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Catalogs page link under Product Management Menu is clicked✅ When the Edit button for the first catalog listed is clicked✅ Then Excluded Offering text element is displayed
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page showProducts" time="20.321">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page showProducts" time="9.351">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Catalogs page link under Product Management Menu is clicked✅ When the Show Products button for the first catalog listed is clicked✅ Then Product List page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page New catalog" time="11.886">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Catalogs page New catalog" time="16.021">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Catalogs page link under Product Management Menu is clicked✅ When new button is clicked in the Catalog list page✅ Then the catalog drop down field is displayed
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product List page" time="14.518">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product List page" time="4.429">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Product List page link under Product Management Menu is clicked✅ Then Product List page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product List Import" time="35.337">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product List Import" time="36.405">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product List page link under Product Management Menu is clicked✅ When the Import button in the Product list page is clicked✅ Then Subscriber Catalog Import page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor page" time="23.889">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor page" time="19.504">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product List page link under Product Management Menu is clicked✅ When the Open button for the first product listed in the Product list page is clicked✅ Then Product Editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenComms" time="90">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenComms" time="34.002">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product List page link under Product Management Menu is clicked✅ And the Open button for the first product listed in the Product list page is clicked✅ When the 'Open Communities' link is clicked in the Product Editor page✅ Then Communities page of the Community Management Menu is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenAnyBuyerScenario" time="54.108">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenAnyBuyerScenario" time="42.098">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product List page link under Product Management Menu is clicked✅ And the Open button for the first product listed in the Product list page is clicked✅ When the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page✅ Then the Buyers list page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenBuyerActiveScenarios" time="52.839">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Editor OpenBuyerActiveScenarios" time="26.802">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product List page link under Product Management Menu is clicked✅ And the Open button for the first product listed in the Product list page is clicked✅ When the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#✅ Then the Buyers list page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search" time="60.44">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search" time="11.486">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Number" time="25.522">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Number" time="20.456">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write F70ACCE on Style Number textbox and Searched✅ And verify the search filter products according to the given keyword for Style Number
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Type" time="63.714">
-      <failure/>
-      <error message="Error: Can't call scrollIntoView on element with selector &quot;//span[text()='COMMERCIAL LEVEL CUT LOOP']&quot; because element wasn't found"/>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Type" time="24.047">
       <system-out><![CDATA[
-✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched❗ And verify the search filter products according to the given keyword for Style Type
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write COMMERCIAL LEVEL CUT LOOP on Style Type textbox and Searched✅ And verify the search filter products according to the given keyword for Style Type
 ]]></system-out>
-      <system-err><![CDATA[
-Error: Can't call scrollIntoView on element with selector "//span[text()='COMMERCIAL LEVEL CUT LOOP']" because element wasn't found
-    at Object.implicitWait [as default] (C:\roopesh\wdio.hds.autotest\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
-    at Element.elementErrorHandlerCallbackFn (C:\roopesh\wdio.hds.autotest\node_modules\webdriverio\build\middlewares.js:19:29)
-    at Element.runCommandWithHooks (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\wrapCommand.js:105:25)
-    at Element.runCommandWithHooks (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
-    at Element.wrapCommandFn (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
-    at Element.scrollIntoView (C:\roopesh\wdio.hds.autotest\node_modules\webdriverio\build\middlewares.js:44:12)
-    at HomePage.validateSearchFilterProductsIsDisplayedForST (C:\roopesh\wdio.hds.autotest\test\pageobjects\/home.page.js:687:35)
-    at World.<anonymous> (C:\roopesh\wdio.hds.autotest\test\stepDefs\/homepagesteps.js:380:14)
-    at World.executeSync (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:38:22)
-    at C:\roopesh\wdio.hds.autotest\node_modules\@wdio\sync\build\index.js:69:68
-]]></system-err>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Name" time="38.34">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Style Name" time="84.938">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write ante on Style Name textbox and Searched✅ And verify the search filter products according to the given keyword for Style Name
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Vendor" time="10.436">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Vendor" time="8.54">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write ARIZONA TILE LLC 11067 on Vendor textbox and Searched✅ And verify the search filter products according to the given keyword for vendor
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for ILG Number" time="35.399">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for ILG Number" time="23.63">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write ILG-1001-10040 on ILG Number textbox and Searched✅ And verify the search filter products according to the given keyword for ILG Number
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Product Category" time="26.162">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Product Category" time="26.155">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write hardwood on Product Category textbox and Searched✅ And verify the search filter products according to the given keyword for Product Category
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Color Name" time="23.105">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Global HDS Catalog Search for Color Name" time="19.482">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Global HDS Catalog Search List page link under Product Management Menu is clicked✅ Then Global HDS Catalog Search List page is loaded✅ And Write TOUR  on Color Name textbox and Searched✅ And verify the search filter products according to the given keyword for Color Name
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types List page" time="24.551">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types List page" time="14.802">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Product Types  page link under Product Management Menu is clicked✅ Then Product Types  page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types Editor page" time="41.346">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types Editor page" time="12.386">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product Types  page link under Product Management Menu is clicked✅ When the Open button for the first product type In the product types list page is clicked✅ Then Product Types Editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types List page New" time="30.008">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Product Types List page New" time="16.911">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Product Types  page link under Product Management Menu is clicked✅ When the New button in the Product Type list page is clicked✅ Then Product Types Editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods page" time="6.289">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods page" time="8.085">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Install Methods page link under Product Management Menu is clicked✅ Then Install Methods list page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Editor Page" time="30.838">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Editor Page" time="8.373">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Install Methods page link under Product Management Menu is clicked✅ When the Open button for the first Install method is clicked in the Install methods page✅ Then the install Methods Editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods page New" time="10.592">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods page New" time="4.686">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Install Methods page link under Product Management Menu is clicked✅ When the New button is clicked in the Install Methods list page✅ Then the install Methods Editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Editor ViewHistory" time="11.983">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Editor ViewHistory" time="8.96">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Install Methods page link under Product Management Menu is clicked✅ And the Open button for the first Install method is clicked in the Install methods page✅ When the View button is clicked in the Install Method Editor page✅ Then the Install Method History page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pages" time="8.13">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pages" time="7.543">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When the Counter & Wall Install Methods Group link under Product Management Menu is clicked✅ Then the Counter & Wall Install Methods Group page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pages" time="11.65">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pages" time="13.681">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When the Flooring Install Methods Group link under Product Management Menu is clicked✅ Then the Flooring Install Methods Group page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg Edit bttn FL" time="13.932">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg Edit bttn FL" time="10.702">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Flooring Install Methods Group link under Product Management Menu is clicked✅ When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring✅ Then the selected install method group displays in edit mode in the in the Install Method group page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg Edit bttn" time="19.071">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg Edit bttn" time="6.726">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Counter & Wall Install Methods Group link under Product Management Menu is clicked✅ When the Edit button is clicked for a randomly selected Install Method Group in the Install Method group page for CW✅ Then the selected install method group displays in edit mode in the in the Install Method group page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg delete bttn CW" time="6.204">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg delete bttn CW" time="5.314">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Counter & Wall Install Methods Group link under Product Management Menu is clicked✅ When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for CW✅ Then a confirmation dialog or alert is displayed in the Install Method group page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg delete bttn Flooring" time="16.121">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Prod Mgmt Install Methods Group pg delete bttn Flooring" time="14.657">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And the Flooring Install Methods Group link under Product Management Menu is clicked✅ When the Delete button is clicked for a randomly selected Install Method Group in the Install Method group page for Flooring✅ Then a confirmation dialog or alert is displayed in the Install Method group page
 ]]></system-out>

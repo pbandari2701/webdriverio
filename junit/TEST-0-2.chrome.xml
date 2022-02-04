@@ -1,38 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:05:55" time="356.588" tests="4" failures="1" errors="1" skipped="0">
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-28T15:31:07" time="37.825" tests="4" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
-      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="capabilities" value="chrome.97_0_4692_99.windows"/>
       <property name="featureFile" value=".\test\features\clickthrough\accounting.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting Complete Qoute Buyers page" time="16.432">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting Complete Qoute Buyers page" time="11.284">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Complete Quote or Buyers page link under Accounting Menu is clicked✅ Then Complete Quote or Buyers page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting Set Cut Off Dates page" time="180.045">
-      <failure/>
-      <error message="Error: function timed out, ensure the promise resolves within 180000 milliseconds"/>
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting Set Cut Off Dates page" time="16.478">
       <system-out><![CDATA[
-❗ Given I am logged in to HDS as a Admin⚠️ HDS Home page is displayed
-⚠️ Set Cut Off Dates page link under Accounting Menu is clicked
-⚠️ Set Cut Off Dates page is loaded
+✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Set Cut Off Dates page link under Accounting Menu is clicked✅ Then Set Cut Off Dates page is loaded
 ]]></system-out>
-      <system-err><![CDATA[
-Error: function timed out, ensure the promise resolves within 180000 milliseconds
-    at Timeout._onTimeout (C:\roopesh\wdio.hds.autotest\node_modules\@wdio\cucumber-framework\node_modules\@cucumber\cucumber\src\user_code_runner.ts:80:18)
-    at listOnTimeout (internal/timers.js:557:17)
-    at processTimers (internal/timers.js:500:7)
-]]></system-err>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting CommissionForms list page" time="143.59">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting CommissionForms list page" time="2.571">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Commission Forms page link under Accounting Menu is clicked✅ Then the Commission Forms list page under Accounting menu is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting CommissionForms Open editor" time="16.446">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Accounting CommissionForms Open editor" time="7.434">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Commission Forms page link under Accounting Menu is clicked✅ When the Open button for the first Commission form  listed in the commission forms list page is clicked✅ Then the Commission Form detail page under Accounting menu is loaded
 ]]></system-out>

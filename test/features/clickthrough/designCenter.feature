@@ -139,7 +139,7 @@ Examples:
  | Counter & Wall     |autotest 		| Westford 3s PH 2        | 
  | Lifestyle Options  |autotest 		| Westford 3s PH 2        | 
 
- @tc:2144 @clickthrough @bvt
+ @tc:2144 @clickthrough @bvt @tip
 Scenario Outline:  Verify_DC_Buyers_Open_viewQT_flooring_Tracer Diagram link
 	Given HDS Home page is displayed
 		And Buyers page link under Design Center Menu is clicked
@@ -154,7 +154,7 @@ Examples:
 #Buyers - Open - (Current Quote) - [Flooring] 200
 #Buyers - Open - (Current Quote) - CW  137
 #Buyers - Open - (Current Quote) - LSO  170
- @tc:2145 @clickthrough @bvt
+ @tc:2145 @clickthrough @bvt @tip
  Scenario Outline:  Verify_DC_BuyerInfo_current Quotes
 	Given HDS Home page is displayed
 		And Buyers page link under Design Center Menu is clicked

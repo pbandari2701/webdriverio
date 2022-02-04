@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-19T19:05:57" time="431.419" tests="23" failures="0" errors="0" skipped="0">
+  <testsuite name="BVT Click Through Functionality of HDS application" timestamp="2022-01-28T15:31:10" time="269.471" tests="23" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="BVT Click Through Functionality of HDS application"/>
-      <property name="capabilities" value="chrome.97_0_4692_71.windows"/>
+      <property name="capabilities" value="chrome.97_0_4692_99.windows"/>
       <property name="featureFile" value=".\test\features\clickthrough\administrationMenu.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering listPage" time="17.758">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering listPage" time="16.811">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Category Service Offering page link under Administration Menu is clicked✅ Then Category Service Offering page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering New bttn" time="17.033">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering New bttn" time="15.343">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Category Service Offering page link under Administration Menu is clicked✅ When the New button is clicked in the Category Service Offering list page✅ Then the Category Service Offering editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering Open" time="9.209">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Category Svc Offering Open" time="9.353">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Category Service Offering page link under Administration Menu is clicked✅ When the Open button is clicked for a randomly selected Category in the Category Service Offering list page✅ Then the Category Service Offering editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page" time="13.66">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page" time="7.257">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Subscriber Settings page link under Administration Menu is clicked✅ Then Subscriber Settings page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="9.671">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="7.025">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Subscriber Settings page link under Administration Menu is clicked✅ When the Company Setup tab is clicked in the Subscriber Settings page✅ Then the panel for Company Setup tab is displayed in the Subscriber Settings page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="12.965">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="16.496">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Subscriber Settings page link under Administration Menu is clicked✅ When the Global Settings tab is clicked in the Subscriber Settings page✅ Then the panel for Global Settings tab is displayed in the Subscriber Settings page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="18.995">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="8.247">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Subscriber Settings page link under Administration Menu is clicked✅ When the Report Setup tab is clicked in the Subscriber Settings page✅ Then the panel for Report Setup tab is displayed in the Subscriber Settings page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="20.044">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="12.945">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Subscriber Settings page link under Administration Menu is clicked✅ When the Features tab is clicked in the Subscriber Settings page✅ Then the panel for Features tab is displayed in the Subscriber Settings page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="12.105">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Subscriber Settings page tabs" time="7.327">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Subscriber Settings page link under Administration Menu is clicked✅ When the ERP tab is clicked in the Subscriber Settings page✅ Then the panel for ERP tab is displayed in the Subscriber Settings page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Pattern Availability page" time="40.381">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Pattern Availability page" time="40.353">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Pattern Availability page link under Administration Menu is clicked✅ Then Pattern Availability page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups listpage" time="26.564">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups listpage" time="23.636">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Flooring Groups page link under Administration Menu is clicked✅ Then Flooring Groups page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups New Bttn" time="9.599">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups New Bttn" time="5.042">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Flooring Groups page link under Administration Menu is clicked✅ When the New button is clicked in the in the Flooring Groups list page under Administration Menu✅ Then the Flooring Groups editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups pg Open" time="20.544">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups pg Open" time="7.163">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Flooring Groups page link under Administration Menu is clicked✅ When the Open button is clicked for a randomly selected group in the flooring group list page✅ Then the Flooring Groups editor page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups Open View history" time="23.698">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Flooring Groups Open View history" time="13.4">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Flooring Groups page link under Administration Menu is clicked✅ And the Open button is clicked for a randomly selected group in the flooring group list page✅ When the 'view' button is clicked in the Flooring Group Editor page under Administration menu✅ Then the view history page for the flooring group is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Diagram Colors page" time="19.86">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Diagram Colors page" time="3.024">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Diagram Colors page link under Administration Menu is clicked✅ Then Diagram Colors page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin About page" time="13.663">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin About page" time="4.407">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When About page link under Administration Menu is clicked✅ Then About page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras" time="24.384">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras" time="8.53">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Design Extras page link under Administration Menu is clicked for Flooring service offering✅ Then Design Extras page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras" time="21.187">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras" time="6.213">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Design Extras page link under Administration Menu is clicked for Counter & Wall service offering✅ Then Design Extras page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras Open" time="22.512">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras Open" time="10.441">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Design Extras page link under Administration Menu is clicked for Counter & Wall service offering✅ When the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page✅ Then the design extra editor panel is displayed in the subscriber design extra page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras New" time="31.102">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras New" time="11.433">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Design Extras page link under Administration Menu is clicked for Counter & Wall service offering✅ When the New button is clicked in the subscriber Design Extra list page✅ Then the design extra editor panel is displayed in the subscriber design extra page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras Open Cancel bttn" time="26.847">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Design Extras Open Cancel bttn" time="9.679">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ And Design Extras page link under Administration Menu is clicked for Counter & Wall service offering✅ And the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page✅ When the Cancel button is clicked in the design Extra page✅ Then the design extra editor panel is no longer displayed in the subscriber design extra page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Tagging Install Methods page" time="7.952">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Tagging Install Methods page" time="12.426">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Tagging Install Methods page link under Administration Menu is clicked✅ Then Tagging Install Methods page is loaded
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_71.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Audit Report page" time="11.547">
+    <testcase classname="CucumberJUnitReport-chrome.97_0_4692_99.windows.BVT Click Through Functionality of HDS application" name="Verify Admin Audit Report page" time="12.809">
       <system-out><![CDATA[
 ✅ Given I am logged in to HDS as a Admin✅ Given HDS Home page is displayed✅ When Audit Report page link under Administration Menu is clicked✅ Then Admin Audit Report page is loaded
 ]]></system-out>

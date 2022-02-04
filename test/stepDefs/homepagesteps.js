@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import { pauseBrowser,switchToPreviousWindow, expectToHaveTitle } from "../helpers/customcommands";
+import { pauseBrowser,switchToPreviousWindow, expectToHaveTitle,expectToHaveTitleContaining } from "../helpers/customcommands";
 import buyersPage from "../pageobjects/buyers.page";
 import HomePage from '../pageobjects/home.page'
 import quotePage from '../pageobjects/quote.page'
@@ -166,7 +166,7 @@ When(/^the New button is clicked in the Buyer Type list page$/, function(){
     HomePage.clickingOnNewButtonInBuyerTypes();
     })
 Then(/^the Buyer type editor page under Site Admin menu is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Buyer Types Editor - HDS');
+    expectToHaveTitleContaining('Buyer Types Editor - HDS');
 })
 When(/^the Open button is clicked for a randomly selected Buyer type in the Buyer Types list page$/, function(){
     HomePage.clickingOnOpenButtonInBuyerTypes();
@@ -190,7 +190,7 @@ When(/^Subscriber Settings page link under Administration Menu is clicked$/, fun
     HomePage.clicikingSubscriberSettings();
 })
 Then(/^Subscriber Settings page is loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Subscriber Settings - HDS');
+    expectToHaveTitleContaining('Subscriber Settings - HDS');
 }) 
 When(/^the (.+) drop down for maximum install Method waste factor is clicked in the company setup tab of subscriber settings page$/, function(Service_Offering){
 
@@ -248,7 +248,7 @@ When(/^Design Extras page link under Administration Menu is clicked for (.+) ser
     HomePage.clickingOnDesignExtras(ServiceOffering);
 })
 Then(/^Design Extras page is loaded$/,  function(){
-    expectToHaveTitle(' HDS (QA) - Design Extras - HDS');
+    expectToHaveTitleContaining('Design Extras - HDS');
 })
 When(/^the Open button is clicked for a randomly selected design Extra in the subscriber Design Extra list page$/, function(){
     HomePage.clickingOnOpenButtonInCounterWallDesignExtras();
@@ -299,7 +299,7 @@ When(/^Commission Forms page link under Accounting Menu is clicked$/, function()
     HomePage.clickingOnCommissionForms();
 })
 Then(/^the Commission Forms list page under Accounting menu is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Commission Forms - HDS')
+    expectToHaveTitleContaining('Commission Forms - HDS')
 }) 
 When(/^the Open button for the first Commission form  listed in the commission forms list page is clicked$/, function(){ 
     HomePage.clickingOnOpenButtonInCommissionForms();
@@ -323,7 +323,7 @@ When(/^the Show Products button for the first catalog listed is clicked$/, funct
     HomePage.clickingOnShowProducts();
 })
 Then(/^Product List page is loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Product List - HDS');
+    expectToHaveTitleContaining('Product List - HDS');
 })
 When(/^new button is clicked in the Catalog list page$/, function(){
     HomePage.clickingOnNewButtonInCatalogList();
@@ -344,19 +344,19 @@ When(/^the Open button for the first product listed in the Product list page is 
     HomePage.clickingOnOpenButtonInProductList();
 })
 Then(/^Product Editor page is loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Product Editor - HDS');
+    expectToHaveTitleContaining('Product Editor - HDS');
 })
 When(/^the 'Open Communities' link is clicked in the Product Editor page$/, function()    {
     HomePage.clickingOnOpenCommunitiesInProductInfo();
 })
 Then(/^Communities page of the Community Management Menu is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Communities List - HDS');
+    expectToHaveTitleContaining('Communities List - HDS');
 })
 When(/^the 'Any Open Buyer Scenarios' link is clicked in the Product Editor page$/, function() {
     HomePage.clickingOnAnyOpenBuyerScenariosInDetailsTab();
 })
 Then(/^the Buyers list page is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Buyers - HDS');
+    expectToHaveTitleContaining('Buyers - HDS');
 })
 When(/^the 'Open Buyer Active Scenarios' link is clicked in the Product Editor page#$/, function() {
     HomePage.clickingOnOpenBuyerActiveScenariosInDetailsTab();
@@ -477,7 +477,7 @@ When(/^Communities page link under Design Center Menu is clicked$/, function(){
     HomePage.clickingOnDCCommunities();
 })
 Then(/^Communities page of the Design Center Menu is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Communities - HDS')
+    expectToHaveTitleContaining('Communities - HDS')
 })
 When(/^the open button is clicked for Bella Fiore-25522250000 Community in the Design Center Communities list page$/, function(){
     HomePage.clickingOnOpenButtonInDCCommunities();
@@ -501,7 +501,7 @@ When(/^the New button is clikced in the design center Community Homesite list pa
     HomePage.clickingOnNewButtonInHomesites();
 })
 Then(/^the Homesite editor or information page for the design center community homesite is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Homesite Information - HDS')
+    expectToHaveTitleContaining('Homesite Information - HDS')
 })
 Then(/^ignore Homesite unsaved alert message$/,  function() {
     HomePage.valiadateUnsavedChangesIsDisplayed();
@@ -516,7 +516,7 @@ When(/^the New button is clicked in the Buyers List Page$/, function() {
     HomePage.clickingOnNewButtonInBuyerListPage();
 })
 Then(/^The buyers info page loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Buyer Information - HDS')
+    expectToHaveTitleContaining('Buyer Information - HDS')
 }) 
 When(/^A buyer with the following attributes is opened: (.+) and (.+)$/, function(Community_Name, Buyer_Name) {
     HomePage.setValueToSerchBoxBuyers(Buyer_Name, Community_Name);
@@ -586,7 +586,7 @@ When(/^User Navigates to The Buyer's Report page in Design Center$/, function() 
     buyersPage.navigateToBuyersReportsPage();
 })
 Then(/^the flooring selector page is displayed in the design center$/, function() {
-    expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+    expectToHaveTitleContaining('Flooring Selector - HDS')
 })
 When(/^the Print preliminary Quote button in the design scenario or option selector page is clicked for (.+)$/,  function(Service_Offering) {
    HomePage.clickingOnPrintPriliminaryQuoteBtn (Service_Offering);
@@ -605,7 +605,7 @@ When(/^the link for the room named (.+) is clicked in the Flooring Selector page
     HomePage.clickingOnRoomLink(RoomName);
 })
 Then(/^the flooring room editor page is displayed$/,  function(){
-    expectToHaveTitle('HDS (QA) - Room Editor - HDS');
+    expectToHaveTitleContaining('Room Editor - HDS');
 })
 When(/^flooring Room Editor page for the room named (.+) is opened$/, function(RoomName) {
     HomePage.clickingOnRoomLink(RoomName);
@@ -652,7 +652,7 @@ When(/^the 'Go' button for quick product search is clicked in the flooring room 
 })
 Then(/^The active (.+) design scenario page is opened$/, function(Service_Offering) {
     if (Service_Offering == 'Flooring') {
-        expectToHaveTitle('HDS (QA) - Flooring Selector - HDS')
+        expectToHaveTitleContaining('Flooring Selector - HDS')
     }else if  (Service_Offering == 'Counter & Wall') { 
         pauseBrowser(5000)       
         expectToHaveTitle('Counter & Wall Scenario Editor - HDS')
@@ -689,7 +689,7 @@ When(/^the 'View' link is clicked in Quote History dialog box for the first quot
     HomePage.clickingOnQuoteHistoryDialogBox();
 })
 Then(/^the Buyer's report page loads successfully$/, function() {
-     expectToHaveTitle('HDS (QA) - Report List - HDS');
+    expectToHaveTitleContaining('Report List - HDS');
 })
 When(/^User Navigates to The Buyer's Report page in DC$/, function()  {
     buyersPage.navigateToBuyersReportsPage();
@@ -825,7 +825,7 @@ When(/^User clicks on Standards Setup link under Community Management$/, functio
     HomePage.clickingOnStandardSetupLinkCM();
 })
 Then(/^the Community Standards setup page is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Standards Setup - HDS');
+    expectToHaveTitleContaining('Standards Setup - HDS');
 })
 When(/^User clicks on Edit button for one of the standard products listed in the Community standard setup page$/, function()  {
     HomePage.clickingOnEditBtnInStandardProducts();
@@ -852,7 +852,7 @@ When(/^User clicks on Flooring Group Link under Community Management$/, function
     HomePage.clickingOnFlooringGroupLinkCM();
 })
 Then(/^the Community Flooring Group list page is loaded$/,  function(){
-    expectToHaveTitle('HDS (QA) - Flooring Group Setup - HDS');
+    expectToHaveTitleContaining('Flooring Group Setup - HDS');
 }) 
 When(/^User clicks on Lifestyle Options Link under CM$/, function(){
     HomePage.clickingOnLifestyleOptionsLinkCM();
@@ -885,7 +885,7 @@ When(/^the Edit button for the first homesite listed in the commmunity Homesite 
     HomePage.clickingOnEditButtonInHomesiteSetupPageCM();
 })
 Then(/^the Community Homesite Editor page is loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Homesite Information - HDS');
+    expectToHaveTitleContaining('Homesite Information - HDS');
 })
 When(/^the New button is clicked in the commmunity Homesite setup page$/, function() {
     HomePage.clickingOnNewBtnInHomesiteSetupCM();
@@ -906,7 +906,7 @@ When(/^the New button is clicked in the Flooring Extra Rules list page$/, functi
     HomePage.clickingOnNewBtnInFlooringExtraRules();
 })
 Then(/^the Flooring Extra Rules Editor page is loaded$/,  function() {
-    expectToHaveTitle('HDS (QA) - Flooring Extra Rules Editor - HDS');
+    expectToHaveTitleContaining('Flooring Extra Rules Editor - HDS');
 })
 When(/^the first flooring extra rule is opened from the Flooring Extra Rules list page$/, function() {
     HomePage.clickingOnOpenBtnFlooringExtraRules();
@@ -972,7 +972,7 @@ When(/^the takeoff option in the Flooring drop down of the first floor plan list
     HomePage.clickingOnTakeOffOptionInTheFlooringDD();
 })
 Then(/^the takeoff page for the community floor plan is loaded$/, function() { 
-    expectToHaveTitle('HDS (QA) - Community Floor Plan Take-offs - HDS')
+    expectToHaveTitleContaining('Community Floor Plan Take-offs - HDS')
 })
 When(/^the 'Allowance Comparison' button is clicked in the commpunity floorplan Takeoffs page$/, function() {
     HomePage.clickingOnAllowanceComaparisonBtn();
@@ -1002,7 +1002,7 @@ When(/^the Control option in the Flooring drop down of the first floor plan list
     HomePage.clickingOnControlOptionInFlooringDD();
 })
 Then(/^Product control By Area page of the selected Community floor plan is loaded$/, function() {
-    expectToHaveTitle('HDS (QA) - Product Control by Area - HDS');
+    expectToHaveTitleContaining('Product Control by Area - HDS');
 })
 When(/^the Import Template option in the Window Treatments drop down of the first floor plan listed is clicked$/, function() {
     HomePage.clickingOnImportTemplateOption();
