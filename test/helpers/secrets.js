@@ -1,1 +1,1 @@
-var hdsPwd = 'Password1';
+var hdsPwd = '';

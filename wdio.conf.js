@@ -2,7 +2,7 @@ var allure           = require('allure-commandline')
 const fsextra        = require('fs-extra')
 const path           = require('path')
 const fs             = require('fs')
-var baseUrl          = 'https://uat.homedesignsystems.com/';
+var baseUrl          = '';
 const commands       = require('./test/helpers/customcommands.js')
 const pactum         = require('pactum');
 const { clear } = require('console');
@@ -16,7 +16,7 @@ console.log('TEST_ENVIRONMENT is '+process.env.TEST_ENVIRONMENT)
 console.log('ENVIRONMENT IS '+process.env['env'])
 let testBrowser      = 'chrome';
 var browserService   = 'geckodriver';
-var baseUrlapi = 'https://api-uat.homedesignsystems.com/';
+var baseUrlapi = '';
 
 if(testBrowser === 'firefox'){
     browserService = 'geckodriver'
